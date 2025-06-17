@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
     </button>
   );
   return (
-    <div className="relative w-full bg-[#f5f5f5] px-6 py-4  min-h-screen">
+    <div className="relative w-full bg-[#f5f5f5] px-6 py-4  md:min-h-screen">
       {/* Header with Logo */}
       <header className="relative z-10">
         <div className="">

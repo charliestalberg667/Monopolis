@@ -5,10 +5,7 @@ import { LanguageProvider } from '@/components/languageProvider/languageProvider
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
-import { FiArrowRight, FiStar, FiMapPin, FiHome, FiDollarSign, FiKey, FiMail, FiPhone, FiMap } from 'react-icons/fi';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import Image from 'next/image';
-import { useLanguage } from '@/components/languageProvider/languageProvider';
+import { FiArrowRight, FiStar, FiHome, FiDollarSign, FiKey } from 'react-icons/fi';
 import styles from './page.module.css';
 
 interface Property {
@@ -34,9 +31,7 @@ interface Testimonial {
 }
 
 const HomeContent = () => {
-  const { t } = useLanguage();
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
-
   const galleryImages = [
     '/header/image1.1.jpg',
     '/header/image1.jpg',
@@ -46,16 +41,16 @@ const HomeContent = () => {
     '/header/image3.jpeg'
   ];
 
-  const featuredProperties: Property[] = [
+  const properties: Property[] = [
     {
       id: '1',
       title: 'Modern Apartment in Brussels',
       location: 'Brussels, Belgium',
-      price: 450000,
-      bedrooms: 3,
-      bathrooms: 2,
-      area: 120,
-      image: '/header/image1.jpg',
+      price: 350000,
+      bedrooms: 2,
+      bathrooms: 1,
+      area: 85,
+      image: '/properties/modern-apartment.jpg',
       type: 'sale',
       featured: true
     },
@@ -121,14 +116,16 @@ const HomeContent = () => {
     }
   ];
 
+  const featuredProperties = properties.filter(property => property.featured);
+
   const testimonials: Testimonial[] = [
     {
       id: '1',
-      name: 'Sophie Martin',
+      name: 'John Smith',
       role: 'Home Buyer',
-      content: 'Monopolis made finding our dream home so easy. Their team was professional and attentive to our needs throughout the entire process.',
+      content: 'The team at Monopolis made the home buying process seamless and stress-free. Highly recommended!',
       rating: 5,
-      avatar: '/avatars/avatar1.jpg'
+      avatar: '/profile1.jpeg',
     },
     {
       id: '2',
@@ -149,8 +146,8 @@ const HomeContent = () => {
   ];
 
   const handleFavoriteToggle = (id: string) => {
-    setFavorites(prevFavorites => {
-      const newFavorites = new Set(prevFavorites);
+    setFavorites(prev => {
+      const newFavorites = new Set(prev);
       if (newFavorites.has(id)) {
         newFavorites.delete(id);
       } else {
@@ -159,43 +156,6 @@ const HomeContent = () => {
       return newFavorites;
     });
   };
-  
-  const properties: Property[] = [
-    {
-      id: '1',
-      title: 'Modern Villa in Uccle',
-      location: 'Brussels, Belgium',
-      price: 1250000,
-      bedrooms: 5,
-      bathrooms: 4,
-      area: 285,
-      image: '/properties/immage1.jpeg',
-      type: 'sale',
-      featured: true
-    },
-    {
-      id: '2',
-      title: 'Luxury Apartment',
-      location: 'Antwerp, Belgium',
-      price: 750000,
-      bedrooms: 3,
-      bathrooms: 2,
-      area: 185,
-      image: '/properties/luxury-apartment.jpg',
-      type: 'sale'
-    },
-    {
-      id: '3',
-      title: 'Chalet with Garden',
-      location: 'Spa, Belgium',
-      price: 950000,
-      bedrooms: 4,
-      bathrooms: 3,
-      area: 220,
-      image: '/properties/chalet.jpg',
-      type: 'sale'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -292,7 +252,7 @@ const HomeContent = () => {
                 ))}
               </div>
               <blockquote className="text-gray-600 italic mb-6">
-                "The team at Monopolis made our property search effortless. Their attention to detail and market knowledge is unmatched."
+                &quot;The team at Monopolis made our property search effortless. Their attention to detail and market knowledge is unmatched.&quot;
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
@@ -313,7 +273,7 @@ const HomeContent = () => {
                 ))}
               </div>
               <blockquote className="text-gray-600 italic mb-6">
-                "Professional, responsive, and truly understand their clients' needs. Found us our dream home within a week!"
+                &quot;Professional, responsive, and truly understand their clients&apos; needs. Found us our dream home within a week!&quot;
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
@@ -334,7 +294,7 @@ const HomeContent = () => {
                 ))}
               </div>
               <blockquote className="text-gray-600 italic mb-6">
-                "Exceptional service from start to finish. Their network and expertise in the luxury market are impressive."
+                &quot;Exceptional service from start to finish. Their network and expertise in the luxury market are impressive.&quot;
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
