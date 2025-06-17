@@ -31,6 +31,8 @@ interface Testimonial {
 }
 
 const HomeContent = () => {
+  // Favorites functionality will be implemented in a future update
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   // Gallery images will be used in a future update
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
