@@ -54,7 +54,7 @@ const HomeContent = () => {
       bedrooms: 2,
       bathrooms: 1,
       area: 85,
-      image: '/properties/modern-apartment.jpg',
+      image: '/header/image1.jpg',
       type: 'sale',
       featured: true
     },
