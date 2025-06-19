@@ -1,9 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useAnimation, useInView, Variants, AnimatePresence } from 'framer-motion';
+import { Slider } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
+// ✅ 1) Add your menuItems here as before:
 const menuItems = [
   { id: 'properties', label: 'Properties', href: '/properties' },
   { id: 'about', label: 'About Us', href: '/about' },
@@ -13,6 +17,38 @@ const menuItems = [
 
 const Hero: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const controls = useAnimation();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [controls, isInView]);
+
+  const logoContainerVariants: Variants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const logoItemVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2 + (i * 0.1),
+      },
+    }),
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,52 +58,28 @@ const Hero: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  // Navigation links
-  const navLinks = (
-    <div className="flex items-center space-x-1">
-      {menuItems.map((item) => (
-        <Link 
-          key={item.id}
-          href={item.href}
-          className="px-3 py-2 text-sm font-medium hover:underline transition-all duration-200"
-          style={{ color: 'black' }}
-        >
-          {item.label}
-        </Link>
-      ))}
-      <Link 
-        href="/login"
-        className="ml-2 py-2 px-3 flex items-center justify-center bg-black text-sm font-medium hover:bg-gray-800 transition-colors duration-200 no-underline"
-        style={{ color: 'white' }}
-      >
-        Log in
-      </Link>
-    </div>
-  );
-  
-  // Mobile menu button
-  const mobileMenuButton = (
-    <button 
-      onClick={toggleMenu}
-      className="md:hidden group relative z-50 flex items-center justify-center p-2"
-      aria-expanded={isMenuOpen}
-      aria-label="Toggle menu"
-    >
-      <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
-        <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
-        <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
-        <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
-      </div>
-    </button>
-  );
+  // ✅ 2) Add your navLinks + mobile menu as before...
+
   return (
-    <div className="relative w-full bg-[#f5f5f5] px-6 py-4  md:min-h-screen">
-      {/* Header with Logo */}
-      <header className="relative z-10">
-        <div className="">
+    <div className="relative w-full bg-[#f5f5f5] px-6 pt-2 pb-10 md:h-[100vh] overflow-visible z-10" style={{ position: 'relative', zIndex: 50 }}>
+
+      {/* Header */}
+      <motion.header 
+        className="relative z-50"
+        variants={logoContainerVariants}
+        initial="hidden"
+        animate="visible"
+        style={{ position: 'relative', zIndex: 50 }}
+      >
+        <div>
           <div className="flex justify-between items-end h-16">
+            {/* Logo */}
             <div className="flex items-end">
-              <div className="relative w-12 h-12">
+              <motion.div 
+                className="relative w-12 h-12"
+                variants={logoItemVariants}
+                custom={0}
+              >
                 <Image
                   src="/logo-black.svg"
                   alt="Monopolis Logo"
@@ -76,107 +88,362 @@ const Hero: React.FC = () => {
                   priority
                   className="h-full w-auto"
                 />
-              </div>
-              <div className='flex flex-col gap-1 ml-2'>
+              </motion.div>
+              <motion.div 
+                className='flex flex-col gap-1 ml-2'
+                variants={logoItemVariants}
+                custom={1}
+              >
                 <div className="text-2xl font-bold leading-none">Monopolis</div>
-                <div className="text-xs text-gray-600 leading-none">sales, rentals, domiciliation</div>
-              </div>
+                <motion.div 
+                  className="text-xs text-gray-600 leading-none"
+                  variants={logoItemVariants}
+                  custom={2}
+                >
+                  sales, rentals, domiciliation
+                </motion.div>
+              </motion.div>
             </div>
-            
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-1">
-              {navLinks}
-            </nav>
-            
-            {/* Mobile menu button */}
-            {mobileMenuButton}
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Menu */}
-      <div 
-        className={`md:hidden fixed inset-0 z-40 bg-black/20 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        onClick={closeMenu}
-      >
-        <div 
-          className={`absolute top-0 right-0 h-full bg-white shadow-2xl w-72 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          onClick={e => e.stopPropagation()}
-        >
-          <div className="p-6 h-full flex flex-col">
-            <div className="flex justify-between items-center mb-8">
-              <div className="flex items-center">
-                <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logo-black.svg"
-                    alt="Monopolis Logo"
-                    layout="fill"
-                    className="object-contain"
-                  />
-                </div>
-                <span className="ml-2 text-xl font-bold">Monopolis</span>
-              </div>
-              <button 
-                onClick={closeMenu}
-                className="p-2 -mr-2"
-                aria-label="Close menu"
+              {menuItems.map((item) => (
+                <Link 
+                  key={item.id}
+                  href={item.href}
+                  className="px-3 py-2 text-sm font-medium hover:underline transition-colors duration-200"
+                  style={{ color: 'black' }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link 
+                href="/login"
+                className="ml-2 py-2 px-3 flex items-center justify-center bg-[var(--accent)] text-sm font-medium !text-white hover:bg-[var(--accent-hover)] transition-colors duration-200 no-underline rounded-sm"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <nav className="flex-1">
-              <ul className="space-y-2">
-                {menuItems.map((item) => (
-                  <li key={item.id}>
-                    <Link 
-                      href={item.href}
-                      className="block px-4 py-3 text-base font-medium hover:bg-black/5 rounded-lg transition-colors duration-200"
-                      style={{ color: 'black' }}
-                      onClick={closeMenu}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link 
-                    href="/login"
-                    className="block px-4 py-3 text-base font-medium bg-black text-white hover:bg-gray-800 transition-colors duration-200 text-center no-underline"
-                    onClick={closeMenu}
-                  >
-                    Login
-                  </Link>
-                </li>
-              </ul>
+                Log in
+              </Link>
             </nav>
-            <div className="pt-6 mt-auto border-t border-gray-100">
-              <p className="px-4 text-sm text-gray-500">Monopolis © {new Date().getFullYear()}</p>
-            </div>
+
+            {/* Mobile menu button */}
+            <button 
+              onClick={toggleMenu}
+              className="md:hidden group relative z-50 flex items-center justify-center p-2"
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle menu"
+            >
+              <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
+                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
+                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
+                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
+              </div>
+            </button>
           </div>
         </div>
-      </div>
+      </motion.header>
 
       {/* Background Image */}
-      <div className="relative w-full h-[50vh] md:h-[calc(100vh-120px)] mt-8 mb-16 md:mb-24 pl-4">
+      <div className="relative w-full h-[50vh] md:h-[75vh] mt-8 mb-8 md:mb-12 pl-4">
         <Image
           src="/header/bgg.jpg"
           alt="Luxury house with pool"
           layout="fill"
           quality={100}
           objectFit="cover"
+          className="rounded-sm"
           priority
         />
-        {/* Top left title */}
         <div className="absolute top-8 left-8 max-w-md md:max-w-xl">
-          <h2 className="text-lg md:text-lg font-black text-white leading-tight">
-            EXCEPTIONAL PROPERTIES IN THE MOST SOUGHT-AFTER LOCATIONS
-          </h2>
+          <TypewriterText 
+            text="EXCEPTIONAL PROPERTIES IN THE MOST SOUGHT-AFTER LOCATIONS"
+            className="text-lg md:text-lg font-black text-white leading-tight"
+          />
+        </div>
+      </div>
+
+      {/* Filters Section — LEFT ALIGNED */}
+      <div className="w-full">
+        <Filters />
+      </div>
+    </div>
+  );
+};
+
+// Types
+type Option = {
+  value: string;
+  label: string;
+};
+
+type DropdownProps = {
+  label: string;
+  value: string;
+  options: Option[];
+  onChange: (value: string) => void;
+  className?: string;
+};
+
+// Custom Dropdown Component
+const Dropdown: React.FC<DropdownProps> = ({ label, value, options, onChange, className = '' }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const selectedOption = options.find((opt: Option) => opt.value === value) || { label };
+
+  return (
+    <div className={`relative ${className}`} ref={dropdownRef}>
+      <button
+        type="button"
+        className="flex items-center justify-between px-4 py-2 border border-gray-300 rounded-sm min-w-32 hover:bg-gray-50"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="mr-2">{selectedOption.label}</span>
+        <svg
+          className={`w-4 h-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            className="absolute z-[99999] w-full mt-1 bg-white border border-gray-200 rounded-sm shadow-lg overflow-hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+          >
+            <div className="py-1">
+              {options.map((option: Option, index) => (
+                <motion.button
+                  key={option.value}
+                  className={`block w-full px-4 py-2 text-left hover:bg-gray-100 ${
+                    value === option.value ? 'bg-gray-100 font-medium' : ''
+                  }`}
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * index }}
+                  onClick={() => {
+                    onChange(option.value);
+                    setIsOpen(false);
+                  }}
+                >
+                  {option.label}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+// Custom styled Material-UI Slider
+const CustomSlider = styled(Slider)({
+  color: '#000',
+  height: 2,
+  padding: '15px 0',
+  '& .MuiSlider-rail': {
+    opacity: 0.5,
+    backgroundColor: '#e5e7eb',
+  },
+  '& .MuiSlider-track': {
+    border: 'none',
+  },
+  '& .MuiSlider-thumb': {
+    height: 16,
+    width: 16,
+    backgroundColor: '#fff',
+    border: '2px solid #000',
+    '&:hover, &.Mui-focusVisible, &.Mui-active': {
+      boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.1)',
+    },
+    '&:before': {
+      display: 'none',
+    },
+  },
+  '& .MuiSlider-valueLabel': {
+    fontSize: 12,
+    fontWeight: 'normal',
+    top: -24,
+    backgroundColor: 'transparent',
+    color: '#000',
+    '&:before': {
+      display: 'none',
+    },
+  },
+});
+
+interface PriceRangeSliderProps {
+  min: number;
+  max: number;
+  value: [number, number];
+  onChange: (value: [number, number]) => void;
+  step?: number;
+  formatValue?: (value: number) => string;
+}
+
+const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
+  min,
+  max,
+  value: [minVal, maxVal],
+  onChange,
+  step = 10000,
+  formatValue = (val) => val.toLocaleString()
+}) => {
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    const [newMin, newMax] = newValue as [number, number];
+    onChange([newMin, newMax]);
+  };
+
+  return (
+    <div className="w-full flex items-center gap-4">
+      <div className="text-sm font-medium whitespace-nowrap w-24 text-right">
+        {formatValue(minVal)}
+      </div>
+      <div className="flex-1">
+        <CustomSlider
+          value={[minVal, maxVal]}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="range-slider"
+          min={min}
+          max={max}
+          step={step}
+          valueLabelFormat={(value) => formatValue(value)}
+        />
+      </div>
+      <div className="text-sm font-medium whitespace-nowrap w-24">
+        {formatValue(maxVal)}
+      </div>
+    </div>
+  );
+};
+
+const Filters: React.FC = () => {
+  const [filters, setFilters] = useState({
+    type: '',
+    bedrooms: '',
+    location: '',
+  });
+  
+  const [priceRange, setPriceRange] = useState<[number, number]>([100000, 1000000]);
+  const minPrice = 0;
+  const maxPrice = 2000000;
+  const step = 1000;
+
+  const propertyTypes = [
+    { value: '', label: 'Type' },
+    { value: 'apartment', label: 'Apartment' },
+    { value: 'villa', label: 'Villa' },
+    { value: 'townhouse', label: 'Townhouse' },
+  ];
+
+  const bedroomOptions = [
+    { value: '', label: 'Bedrooms' },
+    { value: '1', label: '1+' },
+    { value: '2', label: '2+' },
+    { value: '3', label: '3+' },
+    { value: '4', label: '4+' },
+  ];
+
+  const locations = [
+    { value: '', label: 'Location' },
+    { value: 'paris', label: 'Paris' },
+    { value: 'berlin', label: 'Berlin' },
+    { value: 'madrid', label: 'Madrid' },
+  ];
+
+  const handleFilterChange = (filterName: string, value: string) => {
+    setFilters(prev => ({
+      ...prev,
+      [filterName]: value
+    }));
+  };
+
+  return (
+    <div className="w-full space-y-4">
+      {/* Combined Filters Bubble */}
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
+        <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center py-2 md:py-0">
+          <Dropdown
+            label="Type"
+            value={filters.type}
+            options={propertyTypes}
+            onChange={(value) => handleFilterChange('type', value)}
+            className="w-full md:w-auto pr-4"
+          />
+          <div className="hidden md:block h-6 w-px bg-gray-300 mx-1"></div>
+          <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
+          <Dropdown
+            label="Bedrooms"
+            value={filters.bedrooms}
+            options={bedroomOptions}
+            onChange={(value) => handleFilterChange('bedrooms', value)}
+            className="w-full md:w-auto pr-4"
+          />
+          <div className="hidden md:block h-6 w-px bg-gray-300 mx-1"></div>
+          <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
+          <Dropdown
+            label="Location"
+            value={filters.location}
+            options={locations}
+            onChange={(value) => handleFilterChange('location', value)}
+            className="w-full md:w-auto md:pl-4"
+          />
+        </div>
+      </div>
+
+      {/* Price Range */}
+      <div className="flex items-center gap-4 border border-gray-300 rounded-2xl md:rounded-full p-4 md:px-6 bg-white w-full md:w-auto">
+        <div className="w-full px-2">
+          <PriceRangeSlider
+            min={minPrice}
+            max={maxPrice}
+            step={step}
+            value={priceRange}
+            onChange={setPriceRange}
+            formatValue={(val) => `${val.toLocaleString()} €`}
+          />
         </div>
       </div>
     </div>
   );
+};
+
+// ✅ Typewriter effect stays the same:
+const TypewriterText: React.FC<{ text: string; className?: string }> = ({ text, className }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 50 + Math.random() * 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text]);
+
+  return <h2 className={className}>{displayText}</h2>;
 };
 
 export default Hero;

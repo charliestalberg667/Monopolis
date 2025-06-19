@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-black py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-white mb-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="relative w-32 h-10">

@@ -60,7 +60,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   };
 
   return (
-    <article className="group flex flex-col bg-white">
+    <article className="group flex flex-col bg-white rounded-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={image}
@@ -75,29 +75,29 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         
         <div className="absolute top-3 left-3 flex flex-col gap-1">
           {featured && (
-            <span className="bg-black text-white text-xs px-2 py-1">
+            <span className="bg-black text-white text-xs px-2 py-1 rounded-sm">
               {t('featured')}
             </span>
           )}
           
-          <span className={`text-xs px-2 py-1 ${type === 'sale' ? 'bg-white text-black' : 'bg-black text-white'}`}>
+          <span className={`text-xs px-2 py-1 rounded-sm ${type === 'sale' ? 'bg-[var(--accent)] text-[var(--accent-foreground)]' : 'bg-black text-white'}`}>
             {type === 'sale' ? t('forSale') : t('forRent')}
           </span>
         </div>
         
         <button 
           type="button"
-          className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white transition-colors"
+          className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white transition-colors rounded-sm group"
           onClick={handleFavoriteClick}
           aria-label={isFavorite ? t('removeFromFavorites') : t('addToFavorites')}
           aria-pressed={isFavorite}
         >
-          <FiHeart className={`w-4 h-4 ${isFavorite ? 'fill-black' : ''}`} />
+          <FiHeart className={`w-4 h-4 ${isFavorite ? 'fill-[var(--accent)] text-[var(--accent)]' : 'group-hover:text-[var(--accent)]'}`} />
         </button>
       </div>
       
       <div className="p-4 flex-1 flex flex-col">
-        <h3 className="text-lg mb-1 font-medium" title={title}>
+        <h3 className="text-lg mb-1 font-medium group-hover:text-[var(--accent)] transition-colors" title={title}>
           {title}
         </h3>
         

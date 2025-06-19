@@ -164,8 +164,8 @@ const HomeContent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Hero />
+    <div className="min-h-screen bg-gray-50 relative z-10">
+      <Hero/>
 
       {/* Featured Properties */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -177,10 +177,10 @@ const HomeContent = () => {
             </div>
             <a 
               href="#" 
-              className="mt-4 md:mt-0 inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center text-[var(--accent)] hover:text-[var(--accent-hover)] font-medium transition-colors group"
             >
               View all properties
-              <FiArrowRight className="ml-2" />
+              <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
           
@@ -207,7 +207,7 @@ const HomeContent = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Service 1 */}
             <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
+              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
                 <FiHome className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-lg font-medium mb-3">Property Acquisition</h3>
@@ -218,7 +218,7 @@ const HomeContent = () => {
 
             {/* Service 2 */}
             <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
+              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
                 <FiDollarSign className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-lg font-medium mb-3">Valuation & Advisory</h3>
@@ -229,7 +229,7 @@ const HomeContent = () => {
 
             {/* Service 3 */}
             <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
+              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
                 <FiKey className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-lg font-medium mb-3">Legal & Transaction</h3>
@@ -251,7 +251,7 @@ const HomeContent = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
               <div className="text-amber-400 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
@@ -261,7 +261,7 @@ const HomeContent = () => {
                 &quot;The team at Monopolis made our property search effortless. Their attention to detail and market knowledge is unmatched.&quot;
               </blockquote>
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
+                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
                   JS
                 </div>
                 <div className="ml-4">
@@ -272,7 +272,7 @@ const HomeContent = () => {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
               <div className="text-amber-400 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
@@ -282,7 +282,7 @@ const HomeContent = () => {
                 &quot;Professional, responsive, and truly understand their clients&apos; needs. Found us our dream home within a week!&quot;
               </blockquote>
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
+                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
                   MS
                 </div>
                 <div className="ml-4">
@@ -293,7 +293,7 @@ const HomeContent = () => {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
               <div className="text-amber-400 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
@@ -303,7 +303,7 @@ const HomeContent = () => {
                 &quot;Exceptional service from start to finish. Their network and expertise in the luxury market are impressive.&quot;
               </blockquote>
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
+                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
                   TL
                 </div>
                 <div className="ml-4">
