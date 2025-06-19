@@ -51,8 +51,8 @@
   --accent-hover: #14b547;
   --accent-foreground: #ffffff;
 
-  --border: #d1d1d6;
-  --border-light: #e5e5ea;
+  --border: var(--accent);
+  --border-light: color-mix(in srgb, var(--accent) 40%, transparent);
   --input-bg: #f9f9f9;
   --ring: #007aff;
 

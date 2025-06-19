@@ -253,23 +253,24 @@ const Dropdown: React.FC<DropdownProps> = ({ label, value, options, onChange, cl
 
 // Custom styled Material-UI Slider
 const CustomSlider = styled(Slider)({
-  color: '#000',
-  height: 2,
+  color: '#009F32',
+  height: 4,
   padding: '15px 0',
   '& .MuiSlider-rail': {
-    opacity: 0.5,
-    backgroundColor: '#e5e7eb',
+    opacity: 0.3,
+    backgroundColor: '#009F32',
   },
   '& .MuiSlider-track': {
     border: 'none',
+    backgroundColor: '#009F32',
   },
   '& .MuiSlider-thumb': {
-    height: 16,
-    width: 16,
+    height: 20,
+    width: 20,
     backgroundColor: '#fff',
-    border: '2px solid #000',
+    border: '2px solid #009F32',
     '&:hover, &.Mui-focusVisible, &.Mui-active': {
-      boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 0 0 8px rgba(0, 159, 50, 0.1)',
     },
     '&:before': {
       display: 'none',
@@ -280,7 +281,7 @@ const CustomSlider = styled(Slider)({
     fontWeight: 'normal',
     top: -24,
     backgroundColor: 'transparent',
-    color: '#000',
+    color: '#009F32',
     '&:before': {
       display: 'none',
     },
@@ -318,12 +319,11 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
         <CustomSlider
           value={[minVal, maxVal]}
           onChange={handleChange}
-          valueLabelDisplay="auto"
+          valueLabelDisplay="off"
           aria-labelledby="range-slider"
           min={min}
           max={max}
           step={step}
-          valueLabelFormat={(value) => formatValue(value)}
         />
       </div>
       <div className="text-sm font-medium whitespace-nowrap w-24">
@@ -379,7 +379,7 @@ const Filters: React.FC = () => {
       <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-4">
         {/* Property Filters Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#009F32] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
             <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center">
               <Dropdown
                 label="Type"
@@ -416,7 +416,7 @@ const Filters: React.FC = () => {
 
         {/* Price Range Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex items-center border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
+          <div className="flex items-center border border-[#009F32] rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
             <div className="w-full min-w-[300px] md:min-w-[350px]">
               <PriceRangeSlider
                 min={minPrice}
