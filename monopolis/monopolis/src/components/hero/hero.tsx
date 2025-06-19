@@ -54,11 +54,7 @@ const Hero: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  // ✅ 2) Add your navLinks + mobile menu as before...
+  // Mobile menu toggle handled by isMenuOpen state
 
   return (
     <div className="relative w-full bg-[#f5f5f5] px-6 pt-2 pb-10 md:h-[100vh] overflow-visible z-10" style={{ position: 'relative', zIndex: 50 }}>
