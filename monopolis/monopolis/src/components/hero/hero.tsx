@@ -301,7 +301,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
   max,
   value: [minVal, maxVal],
   onChange,
-  step = 10000,
+  step = 2000000,
   formatValue = (val) => val.toLocaleString()
 }) => {
   const handleChange = (event: Event, newValue: number | number[]) => {
@@ -376,48 +376,58 @@ const Filters: React.FC = () => {
 
   return (
     <div className="w-full space-y-4">
-      {/* Combined Filters Bubble */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
-        <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center py-2 md:py-0">
-          <Dropdown
-            label="Type"
-            value={filters.type}
-            options={propertyTypes}
-            onChange={(value) => handleFilterChange('type', value)}
-            className="w-full md:w-auto pr-4"
-          />
-          <div className="hidden md:block h-6 w-px bg-gray-300 mx-1"></div>
-          <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
-          <Dropdown
-            label="Bedrooms"
-            value={filters.bedrooms}
-            options={bedroomOptions}
-            onChange={(value) => handleFilterChange('bedrooms', value)}
-            className="w-full md:w-auto pr-4"
-          />
-          <div className="hidden md:block h-6 w-px bg-gray-300 mx-1"></div>
-          <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
-          <Dropdown
-            label="Location"
-            value={filters.location}
-            options={locations}
-            onChange={(value) => handleFilterChange('location', value)}
-            className="w-full md:w-auto md:pl-4"
-          />
+      <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-4">
+        {/* Property Filters Bubble */}
+        <div className="w-full md:w-auto">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
+            <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center">
+              <Dropdown
+                label="Type"
+                value={filters.type}
+                options={propertyTypes}
+                onChange={(value) => handleFilterChange('type', value)}
+                className="w-full md:w-40"
+              />
+              <div className="hidden md:flex items-center">
+                <div className="h-6 w-px bg-gray-300 mx-2"></div>
+              </div>
+              <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
+              <Dropdown
+                label="Bedrooms"
+                value={filters.bedrooms}
+                options={bedroomOptions}
+                onChange={(value) => handleFilterChange('bedrooms', value)}
+                className="w-full md:w-32"
+              />
+              <div className="hidden md:flex items-center">
+                <div className="h-6 w-px bg-gray-300 mx-2"></div>
+              </div>
+              <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
+              <Dropdown
+                label="Location"
+                value={filters.location}
+                options={locations}
+                onChange={(value) => handleFilterChange('location', value)}
+                className="w-full md:w-40"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Price Range */}
-      <div className="flex items-center gap-4 border border-gray-300 rounded-2xl md:rounded-full p-4 md:px-6 bg-white w-full md:w-auto">
-        <div className="w-full px-2">
-          <PriceRangeSlider
-            min={minPrice}
-            max={maxPrice}
-            step={step}
-            value={priceRange}
-            onChange={setPriceRange}
-            formatValue={(val) => `${val.toLocaleString()} €`}
-          />
+        {/* Price Range Bubble */}
+        <div className="w-full md:w-auto">
+          <div className="flex items-center border border-gray-300 rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
+            <div className="w-full min-w-[300px] md:min-w-[350px]">
+              <PriceRangeSlider
+                min={minPrice}
+                max={maxPrice}
+                step={step}
+                value={priceRange}
+                onChange={setPriceRange}
+                formatValue={(val) => `${val.toLocaleString()} €`}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
