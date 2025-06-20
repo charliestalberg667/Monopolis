@@ -13,7 +13,7 @@ import Footer from '@/components/footer/footer';
 
 
 // Testimonials data
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Sarah Johnson",
@@ -23,7 +23,7 @@ const testimonials = [
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
-    id: 2,
+    id: "2",
     name: "Michael Chen",
     role: "Real Estate Investor",
     content: "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis.",
@@ -31,7 +31,7 @@ const testimonials = [
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
-    id: 3,
+    id: "3",
     name: "Emily Rodriguez",
     role: "First-time Seller",
     content: "Sold my property above asking price within a week! The team's marketing strategy was impressive.",
@@ -54,14 +54,14 @@ interface Property {
   featured?: boolean;
 }
 
-interface Testimonial {
+type Testimonial = {
   id: string;
   name: string;
   role: string;
   content: string;
   rating: number;
   avatar: string;
-}
+};
 
 const HomeContent: React.FC = () => {
   // Refs and state
@@ -70,6 +70,7 @@ const HomeContent: React.FC = () => {
   const controls = useAnimation();
   
   // Favorites functionality will be implemented in a future update
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [, setFavorites] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -154,42 +155,6 @@ const HomeContent: React.FC = () => {
   ];
 
   const featuredProperties: Property[] = properties.filter(property => property.featured);
-
-  // Testimonials will be used in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const testimonials: Testimonial[] = [
-    {
-      id: '1',
-      name: 'John Smith',
-      role: 'Home Buyer',
-      content: 'The team at Monopolis made the home buying process seamless and stress-free. Highly recommended!',
-      rating: 5,
-      avatar: '/profile1.jpeg',
-    },
-    {
-      id: '2',
-      name: 'Thomas Dubois',
-      role: 'Property Investor',
-      content: 'As an investor, I appreciate their market insights and professional approach. They helped me find properties with great potential.',
-      rating: 5,
-      avatar: '/avatars/avatar2.jpg'
-    },
-    {
-      id: '3',
-      name: 'Emma Janssens',
-      role: 'First-time Buyer',
-      content: 'The team guided me through every step of buying my first home. I couldn\'t be happier with their service and support.',
-      rating: 5,
-      avatar: '/avatars/avatar3.jpg'
-    }
-  ];
-
-
-
-  // Stats data (commented out since not currently used)
-  // const stats = [
-  //   { value: '500+', label: 'Properties', icon: <FiHome className="text-2xl" /> },
-  //   { value: '98%', label: 'Success Rate', icon: <FiStar className="text-2xl" /> },
 
   return (
     <div className="min-h-screen flex flex-col" ref={mainRef}>
@@ -378,7 +343,7 @@ const HomeContent: React.FC = () => {
 }
 
 // Testimonial Card Component
-const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: number }) => (
+const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, index: number }) => (
   <motion.div 
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ 
@@ -396,7 +361,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: numb
       <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
         <img 
           src={testimonial.avatar} 
-          alt={testimonial.name}
+          alt={`${testimonial.name}'s avatar`}
           className="w-full h-full object-cover"
         />
       </div>
@@ -414,12 +379,20 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: numb
         />
       ))}
     </div>
-    <p className="text-gray-600 italic flex-grow">"{testimonial.content}"</p>
+    <p className="text-gray-600 italic flex-grow">&ldquo;{testimonial.content}&rdquo;</p>
   </motion.div>
 );
 
 // Testimonial Carousel Component
-const ProcessCarousel = ({ items }: { items: any[] }) => {
+interface ProcessStepItem {
+  step: string;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  details: string[];
+}
+
+const ProcessCarousel = ({ items }: { items: ProcessStepItem[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -502,7 +475,7 @@ const ProcessCarousel = ({ items }: { items: any[] }) => {
   );
 };
 
-const TestimonialCarousel = ({ testimonials }: { testimonials: any[] }) => {
+const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -528,9 +501,9 @@ const TestimonialCarousel = ({ testimonials }: { testimonials: any[] }) => {
     <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="flex-[0_0_100%] min-w-0 px-2">
-              <TestimonialCard testimonial={testimonial} index={index} />
+              <TestimonialCard testimonial={testimonial} index={0} />
             </div>
           ))}
         </div>
@@ -605,7 +578,7 @@ const processSteps = [
   }
 ];
 
-const ProcessStep = ({ item, index, totalItems }: { item: any, index: number, totalItems: number }) => (
+const ProcessStep = ({ item, index, totalItems }: { item: ProcessStepItem, index: number, totalItems: number }) => (
   <div className="relative pb-12">
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <div className="flex items-center mb-4">
