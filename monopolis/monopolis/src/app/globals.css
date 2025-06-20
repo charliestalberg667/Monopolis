@@ -135,4 +135,13 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3);
 }
 
+/* Specific styles for the Get Started button */
+button.inline-flex.items-center.px-10.py-4 {
+  background-color: #01753f !important;
+}
+
+button.inline-flex.items-center.px-10.py-4:hover {
+  background-color: #016030 !important;
+}
+
 /* Optional: Dark mode */

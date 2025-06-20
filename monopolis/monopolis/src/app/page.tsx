@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, useAnimation, useInView, AnimatePresence, Variants } from 'framer-motion';
-import { FiArrowRight, FiHome, FiDollarSign, FiKey, FiMapPin, FiGrid, FiLayers, FiStar, FiSearch, FiCalendar } from 'react-icons/fi';
+import { FiArrowRight, FiHome, FiDollarSign, FiKey, FiMapPin, FiGrid, FiLayers, FiStar, FiSearch, FiCalendar, FiChevronLeft, FiChevronRight, FiCheck } from 'react-icons/fi';
+import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { LanguageProvider } from '@/components/languageProvider/languageProvider';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
+
 // Animation variants
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -313,18 +315,13 @@ const HomeContent: React.FC = () => {
       </motion.section>
 
       {/* Testimonials */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="py-20 bg-[#f8fafc] relative overflow-hidden"
-      >
+      <section className="py-20 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-[#e2e8f0] [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.8))] -z-0"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16"
           >
             <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
@@ -335,61 +332,24 @@ const HomeContent: React.FC = () => {
               Don't just take our word for it. Here's what our clients have to say about their experience with us.
             </p>
           </motion.div>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
-          >
-            {testimonials.map((testimonial) => (
-              <motion.div 
-                key={testimonial.id} 
-                variants={item}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-                <div className="flex mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <FiStar 
-                      key={i} 
-                      className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
-                      fill={i < testimonial.rating ? 'currentColor' : 'none'}
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-600 italic">"{testimonial.content}"</p>
-              </motion.div>
+          {/* Mobile Carousel */}
+          <div className="md:hidden relative">
+            <TestimonialCarousel testimonials={testimonials} />
+          </div>
+          {/* Desktop Grid */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard testimonial={testimonial} index={index} key={testimonial.id} />
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* How It Works - Minimalist Design */}
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto">
-            <span className="inline-block text-sm font-medium text-[#01753f] mb-4 tracking-wider">
+            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
               HOW IT WORKS
             </span>
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
@@ -401,84 +361,25 @@ const HomeContent: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-24">
-            {[
-              {
-                step: '01',
-                icon: <FiSearch className="w-6 h-6" />,
-                title: 'Find Your Property',
-                description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
-                details: [
-                  'Personalized recommendations',
-                  'Advanced search filters',
-                  'Save favorite listings',
-                  'Instant alerts for new matches'
-                ]
-              },
-              {
-                step: '02',
-                icon: <FiCalendar className="w-6 h-6" />,
-                title: 'Schedule a Viewing',
-                description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
-                details: [
-                  'Flexible scheduling',
-                  'Expert guidance',
-                  'Market insights',
-                  'Investment advice'
-                ]
-              },
-              {
-                step: '03',
-                icon: <FiHome className="w-6 h-6" />,
-                title: 'Complete the Process',
-                description: 'Our team handles everything from offer to closing with expert negotiation and support.',
-                details: [
-                  'Mortgage assistance',
-                  'Professional negotiation',
-                  'Legal support',
-                  'Smooth handover'
-                ]
-              }
-            ].map((item, index) => (
-              <div key={item.step} className="flex flex-col md:flex-row gap-12 group">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full border-2 border-[#01753f] flex items-center justify-center text-[#01753f] mb-6 transition-colors duration-300 group-hover:bg-[#01753f] group-hover:text-white">
-                    {item.icon}
-                  </div>
-                  {index < 2 && (
-                    <div className="hidden md:block w-0.5 h-24 bg-gray-200 mt-2"></div>
-                  )}
-                </div>
-                
-                <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-light text-gray-900 mb-5">
-                    <span className="text-[#01753f] font-medium mr-3">{item.step}.</span>
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-7">{item.description}</p>
-                  
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {item.details.map((detail, i) => (
-                      <li key={i} className="flex items-start group">
-                        <svg 
-                          className="h-5 w-5 text-[#01753f] mt-0.5 mr-3 flex-shrink-0 transform transition-transform group-hover:scale-110" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600 text-base">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          {/* Process Steps */}
+          <div className="hidden md:block space-y-24">
+            {processSteps.map((item, index) => (
+              <ProcessStep 
+                key={item.step} 
+                item={item} 
+                index={index} 
+                totalItems={processSteps.length} 
+              />
             ))}
           </div>
           
+          {/* Mobile Carousel */}
+          <div className="md:hidden mt-8">
+            <ProcessCarousel items={processSteps} />
+          </div>
+          
           <div className="mt-24 text-center group">
-            <button className="inline-flex items-center px-10 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-[#01753f] hover:bg-[#016030] transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 group-hover:bg-[#016030]">
+            <button className="inline-flex items-center px-10 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5">
               Get Started
               <FiArrowRight className="ml-3 transition-transform group-hover:translate-x-1" />
             </button>
@@ -535,6 +436,266 @@ const HomeContent: React.FC = () => {
     </div>
   );
 }
+
+// Testimonial Card Component
+const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: number }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        delay: index * 0.1,
+        duration: 0.5
+      }
+    }}
+    viewport={{ once: true, margin: "-50px" }}
+    className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col"
+  >
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+        <img 
+          src={testimonial.avatar} 
+          alt={testimonial.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div>
+        <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+        <p className="text-sm text-gray-500">{testimonial.role}</p>
+      </div>
+    </div>
+    <div className="flex mb-3">
+      {[...Array(5)].map((_, i) => (
+        <FiStar 
+          key={i} 
+          className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
+          fill={i < testimonial.rating ? 'currentColor' : 'none'}
+        />
+      ))}
+    </div>
+    <p className="text-gray-600 italic flex-grow">"{testimonial.content}"</p>
+  </motion.div>
+);
+
+// Testimonial Carousel Component
+const ProcessCarousel = ({ items }: { items: any[] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi, onSelect]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {items.map((item, index) => (
+            <div key={item.step} className="flex-[0_0_100%] min-w-0 px-2">
+              <div className="bg-white p-6 rounded-xl shadow-sm h-full">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#01753f] bg-opacity-10 flex items-center justify-center text-[#01753f] mr-4">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500">Step {item.step}</span>
+                    <h4 className="font-semibold text-gray-900">{item.title}</h4>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">{item.description}</p>
+                <ul className="space-y-2">
+                  {item.details.map((detail: string, i: number) => (
+                    <li key={i} className="flex items-center text-sm text-gray-600">
+                      <FiCheck className="text-green-500 mr-2" />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Navigation Buttons */}
+      <button 
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
+        onClick={scrollPrev}
+      >
+        <FiChevronLeft className="w-5 h-5 text-gray-700" />
+      </button>
+      <button 
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
+        onClick={scrollNext}
+      >
+        <FiChevronRight className="w-5 h-5 text-gray-700" />
+      </button>
+      
+      {/* Dots */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {scrollSnaps.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => scrollTo(idx)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              idx === selectedIndex ? 'bg-[#01753f]' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TestimonialCarousel = ({ testimonials }: { testimonials: any[] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi, onSelect]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {testimonials.map((testimonial, index) => (
+            <div key={testimonial.id} className="flex-[0_0_100%] min-w-0 px-2">
+              <TestimonialCard testimonial={testimonial} index={index} />
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Navigation Buttons */}
+      <button 
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
+        onClick={scrollPrev}
+      >
+        <FiChevronLeft className="w-5 h-5 text-gray-700" />
+      </button>
+      <button 
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
+        onClick={scrollNext}
+      >
+        <FiChevronRight className="w-5 h-5 text-gray-700" />
+      </button>
+      
+      {/* Dots */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {scrollSnaps.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => scrollTo(idx)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              idx === selectedIndex ? 'bg-[#01753f]' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const processSteps = [
+  {
+    step: '01',
+    icon: <FiSearch className="w-6 h-6" />,
+    title: 'Find Your Property',
+    description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
+    details: [
+      'Personalized recommendations',
+      'Advanced search filters',
+      'Save favorite listings',
+      'Instant alerts for new matches'
+    ]
+  },
+  {
+    step: '02',
+    icon: <FiCalendar className="w-6 h-6" />,
+    title: 'Schedule a Viewing',
+    description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
+    details: [
+      'Flexible scheduling',
+      'Expert guidance',
+      'Market insights',
+      'Investment advice'
+    ]
+  },
+  {
+    step: '03',
+    icon: <FiHome className="w-6 h-6" />,
+    title: 'Complete the Process',
+    description: 'Our team handles everything from offer to closing with expert negotiation and support.',
+    details: [
+      'Mortgage assistance',
+      'Professional negotiation',
+      'Legal support',
+      'Smooth handover'
+    ]
+  }
+];
+
+const ProcessStep = ({ item, index, totalItems }: { item: any, index: number, totalItems: number }) => (
+  <div className="relative pb-12">
+    <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-[#01753f] bg-opacity-10 flex items-center justify-center text-[#01753f] mr-4">
+          {item.icon}
+        </div>
+        <div>
+          <span className="text-sm text-gray-500">Step {item.step}</span>
+          <h4 className="font-semibold text-gray-900">{item.title}</h4>
+        </div>
+      </div>
+      <p className="text-gray-600 mb-4">{item.description}</p>
+      <ul className="space-y-2">
+        {item.details.map((detail: string, i: number) => (
+          <li key={i} className="flex items-center text-sm text-gray-600">
+            <FiCheck className="text-green-500 mr-2" />
+            {detail}
+          </li>
+        ))}
+      </ul>
+    </div>
+    {index < totalItems - 1 && (
+      <div className="absolute left-1/2 -bottom-10 -ml-4 w-8 h-8 text-gray-300">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 5v14m0 0l-7-7m7 7l7-7" />
+        </svg>
+      </div>
+    )}
+  </div>
+);
 
 export default function Home() {
   return (
