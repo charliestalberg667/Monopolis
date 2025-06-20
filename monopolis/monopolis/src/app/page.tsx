@@ -155,7 +155,7 @@ const HomeContent: React.FC = () => {
   ];
 
   // Filtering featured properties for potential future use
-  const _featuredProperties = properties.filter(property => property.featured);
+  // const featuredProperties = properties.filter(property => property.featured);
 
   return (
     <div className="min-h-screen flex flex-col" ref={mainRef}>
@@ -237,7 +237,7 @@ const HomeContent: React.FC = () => {
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about their experience with us.
+              Don&apos;t just take our word for it. Here&apos;s what our clients have to say about their experience with us.
             </p>
           </motion.div>
           {/* Mobile Carousel */}
@@ -262,7 +262,7 @@ const HomeContent: React.FC = () => {
             </h2>
             <div className="w-20 h-0.5 bg-[#01753f] mx-auto mb-8"></div>
             <p className="text-gray-500 text-lg leading-relaxed">
-              We've streamlined the property search into three clear, manageable steps
+              We&apos;ve streamlined the property search into three clear, manageable steps
             </p>
           </div>
 
