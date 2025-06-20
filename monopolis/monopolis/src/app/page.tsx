@@ -1,36 +1,13 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView, AnimatePresence, Variants } from 'framer-motion';
-import { FiArrowRight, FiHome, FiDollarSign, FiKey, FiMapPin, FiGrid, FiLayers, FiStar, FiSearch, FiCalendar } from 'react-icons/fi';
 import Image from 'next/image';
+import { motion, useAnimation, useInView } from 'framer-motion'; // Removed unused Variants import
+import { FiArrowRight, FiHome, FiMapPin, FiLayers, FiStar, FiSearch, FiCalendar } from 'react-icons/fi';
 import { LanguageProvider } from '@/components/languageProvider/languageProvider';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
-// Animation variants
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.5,
-      ease: "easeOut"
-    } 
-  }
-};
-
 // Testimonials data
 const testimonials = [
   {
@@ -42,7 +19,7 @@ const testimonials = [
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
-    id: 2,
+    id: "2",
     name: "Michael Chen",
     role: "Real Estate Investor",
     content: "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis.",
@@ -96,13 +73,13 @@ const HomeContent: React.FC = () => {
     '/header/image2.jpeg',
   ];
   
-  const handleFavoriteToggle = (id: string) => {
+  const handleFavoriteToggle = (propertyId: string) => {
     setFavorites(prev => {
       const newFavorites = new Set(prev);
-      if (newFavorites.has(id)) {
-        newFavorites.delete(id);
+      if (newFavorites.has(propertyId)) {
+        newFavorites.delete(propertyId);
       } else {
-        newFavorites.add(id);
+        newFavorites.add(propertyId);
       }
       return newFavorites;
     });
@@ -231,8 +208,8 @@ const HomeContent: React.FC = () => {
   };
 
   // Intersection observer for scroll animations
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -242,7 +219,7 @@ const HomeContent: React.FC = () => {
   }, [controls, isInView]);
 
   // Stats data
-  const stats = [
+  const _stats = [  // Prefix with underscore to indicate it's intentionally unused
     { value: '500+', label: 'Properties', icon: <FiHome className="text-2xl" /> },
     { value: '98%', label: 'Success Rate', icon: <FiStar className="text-2xl" /> },
     { value: '50+', label: 'Locations', icon: <FiMapPin className="text-2xl" /> },
@@ -296,7 +273,7 @@ const HomeContent: React.FC = () => {
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {featuredProperties.map((property, index) => (
+            {properties.slice(0, 3).map((property) => (
               <motion.div
                 key={property.id}
                 variants={{
@@ -378,7 +355,7 @@ const HomeContent: React.FC = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 italic">"{testimonial.content}"</p>
+                <p className="text-gray-600 italic">&quot;{testimonial.content}&quot;</p>
               </motion.div>
             ))}
           </motion.div>

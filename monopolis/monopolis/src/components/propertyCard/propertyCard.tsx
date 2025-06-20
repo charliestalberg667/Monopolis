@@ -20,7 +20,6 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
-  id,
   title,
   location,
   price,

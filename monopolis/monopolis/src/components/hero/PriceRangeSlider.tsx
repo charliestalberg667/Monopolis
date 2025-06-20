@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { Slider } from '@mui/material';
 
 interface PriceRangeSliderProps {
   min: number;
@@ -25,7 +24,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
   onChange,
   sliderComponent: SliderComponent,
 }) => {
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     onChange(newValue as number[]);
   };
 
