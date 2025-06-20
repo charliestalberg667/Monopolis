@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, useAnimation, useInView, AnimatePresence, Variants } from 'framer-motion';
-import { FiArrowRight, FiHome, FiDollarSign, FiKey, FiMapPin, FiGrid, FiLayers, FiStar, FiSearch, FiCalendar, FiChevronLeft, FiChevronRight, FiCheck } from 'react-icons/fi';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { FiHome, FiStar, FiSearch, FiCalendar, FiChevronLeft, FiChevronRight, FiCheck, FiArrowRight } from 'react-icons/fi';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { LanguageProvider } from '@/components/languageProvider/languageProvider';
@@ -10,28 +10,7 @@ import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
 
-// Animation variants
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
 
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.5,
-      ease: "easeOut"
-    } 
-  }
-};
 
 // Testimonials data
 const testimonials = [
@@ -85,30 +64,19 @@ interface Testimonial {
 }
 
 const HomeContent: React.FC = () => {
+  // Refs and state
+  const mainRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(mainRef, { once: true, amount: 0.1 });
+  const controls = useAnimation();
+  
   // Favorites functionality will be implemented in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [favorites, setFavorites] = useState<Set<string>>(new Set());
-  
-  // Gallery images will be used in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const galleryImages = [
-    '/header/image1.1.jpg',
-    '/header/image1.jpg',
-    '/header/image2.1.jpg',
-    '/header/image2.jpeg',
-  ];
-  
-  const handleFavoriteToggle = (id: string) => {
-    setFavorites(prev => {
-      const newFavorites = new Set(prev);
-      if (newFavorites.has(id)) {
-        newFavorites.delete(id);
-      } else {
-        newFavorites.add(id);
-      }
-      return newFavorites;
-    });
-  };
+  const [, setFavorites] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start('show');
+    }
+  }, [controls, isInView]);
 
   const properties: Property[] = [
     {
@@ -216,101 +184,76 @@ const HomeContent: React.FC = () => {
     }
   ];
 
-  // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
 
-  // Intersection observer for scroll animations
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('show');
-    }
-  }, [controls, isInView]);
-
-  // Stats data
-  const stats = [
-    { value: '500+', label: 'Properties', icon: <FiHome className="text-2xl" /> },
-    { value: '98%', label: 'Success Rate', icon: <FiStar className="text-2xl" /> },
-    { value: '50+', label: 'Locations', icon: <FiMapPin className="text-2xl" /> },
-    { value: '24/7', label: 'Support', icon: <FiLayers className="text-2xl" /> },
-  ];
+  // Stats data (commented out since not currently used)
+  // const stats = [
+  //   { value: '500+', label: 'Properties', icon: <FiHome className="text-2xl" /> },
+  //   { value: '98%', label: 'Success Rate', icon: <FiStar className="text-2xl" /> },
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" ref={mainRef}>
       <Hero />
       <main>
         {/* Stats Section */}
 
         {/* Featured Properties */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
-      >
-        {/* Decorative elements */}
-        <div className="absolute -right-40 -top-40 w-80 h-80 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
-        <div className="absolute -left-20 bottom-[-20px] w-64 h-64 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mb-16 text-center"
-          >
-            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-              Premium Listings
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Featured Properties</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Discover our exclusive selection of premium properties in the most sought-after locations</p>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
+        >
+          {/* Decorative elements */}
+          <div className="absolute -right-40 -top-40 w-80 h-80 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
+          <div className="absolute -left-20 bottom-[-20px] w-64 h-64 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mb-16 text-center"
+            >
+              <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
+                Premium Listings
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Featured Properties</h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">Discover our exclusive selection of premium properties in the most sought-after locations</p>
+            </motion.div>
+            
+            <motion.div 
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1
+                  }
                 }
-              }
-            }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {featuredProperties.map((property, index) => (
-              <motion.div
-                key={property.id}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              >
-                <PropertyCard {...property} />
-              </motion.div>
-            ))}
-          </motion.div>
+              }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {properties.filter(p => p.featured).map((property) => (
+                <PropertyCard 
+                  key={property.id}
+                  id={property.id}
+                  title={property.title}
+                  location={property.location}
+                  price={property.price}
+                  bedrooms={property.bedrooms}
+                  bathrooms={property.bathrooms}
+                  area={property.area}
+                  image={property.image}
+                  type={property.type}
+                  featured={property.featured}
+                />
+              ))}
+            </motion.div>
         </div>
       </motion.section>
 
@@ -349,9 +292,6 @@ const HomeContent: React.FC = () => {
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto">
-            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-              HOW IT WORKS
-            </span>
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
               A Simple, Transparent Process
             </h2>
@@ -505,7 +445,7 @@ const ProcessCarousel = ({ items }: { items: any[] }) => {
     <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div key={item.step} className="flex-[0_0_100%] min-w-0 px-2">
               <div className="bg-white p-6 rounded-xl shadow-sm h-full">
                 <div className="flex items-center mb-4">
@@ -697,10 +637,16 @@ const ProcessStep = ({ item, index, totalItems }: { item: any, index: number, to
   </div>
 );
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <LanguageProvider>
-      <HomeContent />
+      <main className="min-h-screen">
+        <Hero />
+        <HomeContent />
+        <Footer />
+      </main>
     </LanguageProvider>
   );
-}
+};
+
+export default Home;
