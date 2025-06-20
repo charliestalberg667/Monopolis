@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     id: "2",
     name: "Michael Chen",
     role: "Real Estate Investor",
-    content: "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis.",
+    content: "The market insights and property recommendations were spot on. I&apos;ve expanded my portfolio significantly thanks to Monopolis.",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
     id: "3",
     name: "Emily Rodriguez",
     role: "First-time Seller",
-    content: "Sold my property above asking price within a week! The team's marketing strategy was impressive.",
+    content: "Sold my property above asking price within a week! The team&apos;s marketing strategy was impressive.",
     rating: 4,
     avatar: "https://randomuser.me/api/portraits/women/68.jpg"
   }
@@ -154,11 +154,11 @@ const HomeContent: React.FC = () => {
     }
   ];
 
-  const featuredProperties: Property[] = properties.filter(property => property.featured);
+  // Filtering featured properties for potential future use
+  const _featuredProperties = properties.filter(property => property.featured);
 
   return (
     <div className="min-h-screen flex flex-col" ref={mainRef}>
-      <Hero />
       <main>
         {/* Stats Section */}
 
@@ -358,11 +358,13 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
     className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col"
   >
     <div className="flex items-center mb-4">
-      <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
-        <img 
+      <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 relative">
+        <Image 
           src={testimonial.avatar} 
           alt={`${testimonial.name}'s avatar`}
-          className="w-full h-full object-cover"
+          fill
+          sizes="48px"
+          className="object-cover"
         />
       </div>
       <div>
