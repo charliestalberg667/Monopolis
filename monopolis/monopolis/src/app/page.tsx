@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { LanguageProvider } from '@/components/languageProvider/languageProvider';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
 import { FiArrowRight, FiStar, FiHome, FiDollarSign, FiKey } from 'react-icons/fi';
-import styles from './page.module.css';
 
 interface Property {
   id: string;
@@ -164,20 +164,26 @@ const HomeContent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative z-10">
-      <Hero/>
+    <div className="w-full bg-[#f5f5f5] relative z-10">
+      <Hero />
 
       {/* Featured Properties */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-20 px-6 md:px-12 lg:px-24"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Properties</h2>
-              <p className="text-gray-600">Discover our exclusive selection of premium properties</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Featured Properties</h2>
+              <p className="text-gray-600 text-lg">Discover our exclusive selection of premium properties</p>
             </div>
             <a 
               href="#" 
-              className="mt-4 md:mt-0 inline-flex items-center text-[var(--accent)] hover:text-[var(--accent-hover)] font-medium transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center text-[#01863b] hover:text-[#00802a] font-medium transition-colors group text-lg"
             >
               View all properties
               <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -194,141 +200,113 @@ const HomeContent = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-2xl font-medium mb-3">Our Services</h2>
-            <p className="text-gray-500">Comprehensive real estate solutions tailored to your needs</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Service 1 */}
-            <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
-                <FiHome className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-lg font-medium mb-3">Property Acquisition</h3>
-              <p className="text-gray-500 text-sm">
-                Discover exceptional properties that match your unique lifestyle and investment goals.
-              </p>
-            </div>
-
-            {/* Service 2 */}
-            <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
-                <FiDollarSign className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-lg font-medium mb-3">Valuation & Advisory</h3>
-              <p className="text-gray-500 text-sm">
-                Expert market analysis and valuation services for informed real estate decisions.
-              </p>
-            </div>
-
-            {/* Service 3 */}
-            <div className="group text-center px-4">
-              <div className="w-16 h-16 rounded-sm bg-gray-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-black transition-colors">
-                <FiKey className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-lg font-medium mb-3">Legal & Transaction</h3>
-              <p className="text-gray-500 text-sm">
-                Comprehensive legal support and transaction management for secure property acquisition.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-2xl font-medium mb-3">What Our Clients Say</h2>
-            <p className="text-gray-500">Hear from our satisfied clients about their experiences</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
-                ))}
-              </div>
-              <blockquote className="text-gray-600 italic mb-6">
-                &quot;The team at Monopolis made our property search effortless. Their attention to detail and market knowledge is unmatched.&quot;
-              </blockquote>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
-                  JS
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="py-20 bg-[#f5f5f5] px-6 md:px-12 lg:px-24"
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Our Clients Say</h2>
+          <p className="text-gray-600 text-lg text-center mb-12 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what our clients have to say about their experience with us.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-sm">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
                 </div>
-                <div className="ml-4">
-                  <h4 className="font-medium">John Smith</h4>
-                  <p className="text-sm text-gray-500">Brussels, Belgium</p>
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <FiStar 
+                      key={i} 
+                      className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
+                      fill={i < testimonial.rating ? 'currentColor' : 'none'}
+                    />
+                  ))}
                 </div>
+                <p className="text-gray-600 italic">"{testimonial.content}"</p>
               </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
-                ))}
-              </div>
-              <blockquote className="text-gray-600 italic mb-6">
-                &quot;Professional, responsive, and truly understand their clients&apos; needs. Found us our dream home within a week!&quot;
-              </blockquote>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
-                  MS
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-medium">Marie Dubois</h4>
-                  <p className="text-sm text-gray-500">Antwerp, Belgium</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="inline-block w-5 h-5 fill-current" />
-                ))}
-              </div>
-              <blockquote className="text-gray-600 italic mb-6">
-                &quot;Exceptional service from start to finish. Their network and expertise in the luxury market are impressive.&quot;
-              </blockquote>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-sm bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
-                  TL
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-medium">Thomas Laurent</h4>
-                  <p className="text-sm text-gray-500">Ghent, Belgium</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* CTA Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="py-20 bg-[#01863b] text-white"
+      >
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Dream Property?</h2>
+          <p className="text-xl mb-8 text-white text-opacity-90 max-w-2xl mx-auto">
+            Let us help you find the perfect property that matches your needs and lifestyle.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a 
+              href="/properties" 
+              className="bg-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors"
+              style={{ color: '#000' }}
+            >
+              Browse Properties
+            </a>
+            <a 
+              href="/contact" 
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:bg-opacity-10 transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Newsletter */}
-      <section className={`${styles.section} ${styles.newsletter}`}>
-        <div className={styles.container}>
-          <div className={styles['newsletter-content']}>
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter for the latest properties and market insights.</p>
-            <form className={styles['newsletter-form']}>
-              <input type="email" placeholder="Your email address" required />
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="py-20 bg-white"
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+            Subscribe to our newsletter for the latest properties and market insights.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Your email address" 
+              required 
+              className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#01863b] focus:border-transparent"
+            />
+            <button 
+              type="submit" 
+              className="!bg-[#01863b] text-white px-6 py-3 rounded-md font-medium hover:bg-[#00802a] transition-colors"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <Footer />

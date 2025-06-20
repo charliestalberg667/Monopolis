@@ -253,22 +253,22 @@ const Dropdown: React.FC<DropdownProps> = ({ label, value, options, onChange, cl
 
 // Custom styled Material-UI Slider
 const CustomSlider = styled(Slider)({
-  color: '#009F32',
+  color: '#01863b',
   height: 4,
   padding: '15px 0',
   '& .MuiSlider-rail': {
     opacity: 0.3,
-    backgroundColor: '#009F32',
+    backgroundColor: '#01863b',
   },
   '& .MuiSlider-track': {
     border: 'none',
-    backgroundColor: '#009F32',
+    backgroundColor: '#01863b',
   },
   '& .MuiSlider-thumb': {
     height: 20,
     width: 20,
     backgroundColor: '#fff',
-    border: '2px solid #009F32',
+    border: '2px solid #01863b',
     '&:hover, &.Mui-focusVisible, &.Mui-active': {
       boxShadow: '0 0 0 8px rgba(0, 159, 50, 0.1)',
     },
@@ -281,7 +281,7 @@ const CustomSlider = styled(Slider)({
     fontWeight: 'normal',
     top: -24,
     backgroundColor: 'transparent',
-    color: '#009F32',
+    color: '#01863b',
     '&:before': {
       display: 'none',
     },
@@ -362,9 +362,9 @@ const Filters: React.FC = () => {
 
   const locations = [
     { value: '', label: 'Location' },
-    { value: 'paris', label: 'Paris' },
-    { value: 'berlin', label: 'Berlin' },
-    { value: 'madrid', label: 'Madrid' },
+    { value: 'Brussels', label: 'Brussels' },
+    { value: 'Flanders', label: 'Flanders' },
+    { value: 'Wallonia', label: 'Wallonia' },
   ];
 
   const handleFilterChange = (filterName: string, value: string) => {
@@ -379,7 +379,7 @@ const Filters: React.FC = () => {
       <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-4">
         {/* Property Filters Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#009F32] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#01863b] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
             <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center">
               <Dropdown
                 label="Type"
@@ -416,7 +416,7 @@ const Filters: React.FC = () => {
 
         {/* Price Range Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex items-center border border-[#009F32] rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
+          <div className="flex items-center border border-[#01863b] rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
             <div className="w-full min-w-[300px] md:min-w-[350px]">
               <PriceRangeSlider
                 min={minPrice}
