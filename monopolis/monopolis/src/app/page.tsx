@@ -1,40 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { motion, useAnimation, useInView } from 'framer-motion'; // Removed unused Variants import
-import { FiArrowRight, FiHome, FiMapPin, FiLayers, FiStar, FiSearch, FiCalendar } from 'react-icons/fi';
-import { LanguageProvider } from '@/components/languageProvider/languageProvider';
+import React, { useRef, useEffect } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { FiHome, FiMapPin, FiStar } from 'react-icons/fi';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import Footer from '@/components/footer/footer';
-// Testimonials data
-const testimonials = [
-  {
-    id: "1",
-    name: "Sarah Johnson",
-    role: "Home Buyer",
-    content: "Monopolis made finding our dream home effortless. Their team was professional and attentive to our needs throughout the entire process.",
-    rating: 5,
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
-  },
-  {
-    id: "2",
-    name: "Michael Chen",
-    role: "Real Estate Investor",
-    content: "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis.",
-    rating: 5,
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "First-time Seller",
-    content: "Sold my property above asking price within a week! The team's marketing strategy was impressive.",
-    rating: 4,
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
-  }
-];
 
 
 interface Property {
@@ -60,67 +31,42 @@ interface Testimonial {
 }
 
 const HomeContent: React.FC = () => {
-  // Favorites functionality will be implemented in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [favorites, setFavorites] = useState<Set<string>>(new Set());
-  
-  // Gallery images will be used in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const galleryImages = [
-    '/header/image1.1.jpg',
-    '/header/image1.jpg',
-    '/header/image2.1.jpg',
-    '/header/image2.jpeg',
-  ];
-  
-  const handleFavoriteToggle = (propertyId: string) => {
-    setFavorites(prev => {
-      const newFavorites = new Set(prev);
-      if (newFavorites.has(propertyId)) {
-        newFavorites.delete(propertyId);
-      } else {
-        newFavorites.add(propertyId);
-      }
-      return newFavorites;
-    });
-  };
-
   const properties: Property[] = [
     {
       id: '1',
-      title: 'Modern Apartment in Brussels',
+      title: 'Modern Apartment in Downtown',
       location: 'Brussels, Belgium',
       price: 350000,
       bedrooms: 2,
       bathrooms: 1,
       area: 85,
-      image: '/header/image1.jpg',
+      image: '/header/image1.jpeg',
       type: 'sale',
-      featured: true
+      featured: true,
     },
     {
       id: '2',
-      title: 'Luxury Villa with Pool',
+      title: 'Luxury Villa with Sea View',
       location: 'Antwerp, Belgium',
-      price: 1250000,
+      price: 1200000,
       bedrooms: 5,
       bathrooms: 4,
-      area: 185,
-      image: '/header/image2.1.jpg',
+      area: 320,
+      image: '/header/image2.jpeg',
       type: 'sale',
-      featured: true
+      featured: true,
     },
     {
       id: '3',
       title: 'Cozy Studio in City Center',
       location: 'Ghent, Belgium',
-      price: 1200,
+      price: 180000,
       bedrooms: 1,
       bathrooms: 1,
       area: 45,
-      image: '/header/image3.1.jpg',
-      type: 'rent',
-      featured: true
+      image: '/header/image1.jpeg',
+      type: 'sale',
+      featured: true,
     },
     {
       id: '4',
@@ -160,14 +106,12 @@ const HomeContent: React.FC = () => {
     }
   ];
 
-  const featuredProperties: Property[] = properties.filter(property => property.featured);
-
-  // Testimonials will be used in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const testimonials: Testimonial[] = [
-    {
-      id: '1',
-      name: 'John Smith',
+  // Commented out as not currently used
+  // const featuredProperties: Property[] = properties.filter(property => property.featured);
+  // const testimonialsData: Testimonial[] = [
+  //   {
+  //     id: '1',
+  //     name: 'John Smith',
       role: 'Home Buyer',
       content: 'The team at Monopolis made the home buying process seamless and stress-free. Highly recommended!',
       rating: 5,
@@ -191,8 +135,7 @@ const HomeContent: React.FC = () => {
     }
   ];
 
-  // Animation variants
-  const container = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -202,12 +145,11 @@ const HomeContent: React.FC = () => {
     }
   };
 
-  const item = {
+  const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  // Intersection observer for scroll animations
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true });
   const controls = useAnimation();
@@ -217,14 +159,6 @@ const HomeContent: React.FC = () => {
       controls.start('show');
     }
   }, [controls, isInView]);
-
-  // Stats data
-  const _stats = [  // Prefix with underscore to indicate it's intentionally unused
-    { value: '500+', label: 'Properties', icon: <FiHome className="text-2xl" /> },
-    { value: '98%', label: 'Success Rate', icon: <FiStar className="text-2xl" /> },
-    { value: '50+', label: 'Locations', icon: <FiMapPin className="text-2xl" /> },
-    { value: '24/7', label: 'Support', icon: <FiLayers className="text-2xl" /> },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -241,8 +175,8 @@ const HomeContent: React.FC = () => {
         className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
       >
         {/* Decorative elements */}
-        <div className="absolute -right-40 -top-40 w-80 h-80 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
-        <div className="absolute -left-20 bottom-[-20px] w-64 h-64 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
+        <div className="absolute -right-40 -top-40 w-80 h-80 rounded-full bg-gray-200 bg-opacity-10 -z-10"></div>
+        <div className="absolute -left-20 bottom-[-20px] w-64 h-64 rounded-full bg-gray-200 bg-opacity-10 -z-10"></div>
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -251,7 +185,7 @@ const HomeContent: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
+            <span className="inline-block px-3 py-1 text-sm font-medium text-gray-800 bg-gray-100 rounded-full mb-4">
               Premium Listings
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Featured Properties</h2>
@@ -335,10 +269,14 @@ const HomeContent: React.FC = () => {
               >
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
+                    <div 
+                      className="w-full h-full bg-gray-200" 
+                      style={{
+                        backgroundImage: `url(${testimonial.avatar})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                      }}
+                      aria-label={testimonial.name}
                     />
                   </div>
                   <div>
@@ -355,7 +293,7 @@ const HomeContent: React.FC = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 italic">&quot;{testimonial.content}&quot;</p>
+                <p className="text-gray-600 italic">&ldquo;{testimonial.content}&rdquo;</p>
               </motion.div>
             ))}
           </motion.div>

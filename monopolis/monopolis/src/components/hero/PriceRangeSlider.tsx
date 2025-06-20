@@ -1,12 +1,21 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
+interface SliderProps {
+  value: number[];
+  onChange: (event: Event, value: number | number[]) => void;
+  valueLabelDisplay?: string;
+  min: number;
+  max: number;
+  sx?: Record<string, unknown>;
+}
+
 interface PriceRangeSliderProps {
   min: number;
   max: number;
   value: number[];
   onChange: (value: number[]) => void;
-  sliderComponent: React.ComponentType<any>;
+  sliderComponent: React.ComponentType<SliderProps>;
 }
 
 const formatPrice = (value: number) => {
