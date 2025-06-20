@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { FiMapPin, FiHeart } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
 import { useLanguage } from "../languageProvider/languageProvider";
 
@@ -17,7 +17,6 @@ interface PropertyCardProps {
   image: string;
   type: "sale" | "rent";
   featured?: boolean;
-  onFavoriteToggle?: (id: string) => void;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -31,24 +30,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   image,
   type,
   featured = false,
-  onFavoriteToggle,
 }) => {
   const { t } = useLanguage();
-  const [isFavorite, setIsFavorite] = React.useState(false);
-
-  const handleFavoriteClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const newFavoriteState = !isFavorite;
-    setIsFavorite(newFavoriteState);
-    if (onFavoriteToggle) {
-      onFavoriteToggle(id);
-    }
-
-    if (navigator.vibrate) {
-      navigator.vibrate(50);
-    }
-  };
 
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat("en-US", {
@@ -60,7 +43,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   };
 
   return (
-    <article className="group flex flex-col bg-white rounded-sm overflow-hidden hover:shadow-md transition-all duration-300">
+    <article className="group flex flex-col bg-white rounded-sm overflow-hidden transition-all duration-300">
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={image}
@@ -73,31 +56,19 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMWYyIi8+PC9zdmc+"
         />
         
-        <div className="absolute top-3 left-3 flex flex-col gap-1">
-          {featured && (
+        {featured && (
+          <div className="absolute top-3 left-3">
             <span className="bg-black text-white text-xs px-2 py-1 rounded-sm">
               {t('featured')}
             </span>
-          )}
-          
-          <span className={`text-xs px-2 py-1 rounded-sm ${type === 'sale' ? 'bg-[var(--accent)] text-[var(--accent-foreground)]' : 'bg-black text-white'}`}>
-            {type === 'sale' ? t('forSale') : t('forRent')}
-          </span>
-        </div>
+          </div>
+        )}
         
-        <button 
-          type="button"
-          className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white transition-colors rounded-sm group"
-          onClick={handleFavoriteClick}
-          aria-label={isFavorite ? t('removeFromFavorites') : t('addToFavorites')}
-          aria-pressed={isFavorite}
-        >
-          <FiHeart className={`w-4 h-4 ${isFavorite ? 'fill-[var(--accent)] text-[var(--accent)]' : 'group-hover:text-[var(--accent)]'}`} />
-        </button>
+
       </div>
       
       <div className="p-4 flex-1 flex flex-col">
-        <h3 className="text-lg mb-1 font-medium group-hover:text-[var(--accent)] transition-colors" title={title}>
+        <h3 className="text-lg mb-1 font-medium transition-colors" title={title}>
           {title}
         </h3>
         
