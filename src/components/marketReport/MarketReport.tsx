@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { format } from 'date-fns';
 import { 
   PieChart, 
@@ -14,39 +14,16 @@ import {
   Legend, 
   LineChart, 
   Line, 
-  ReferenceLine 
+  ReferenceLine
 } from 'recharts';
-import { motion } from 'framer-motion';
-import { useLanguage } from '../languageProvider/languageProvider';
 
-type TooltipPayload = {
-  value: number;
-  name: string;
-  payload: any;
-  dataKey: string | number;
-  color?: string;
-};
+const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
 
-// Define types for our data
-type PriceTrend = {
-  year: number;
-  price: number;
-  pricePerSqm: number;
-  index: number;
-};
-
-type RegionData = {
+interface RegionData {
   name: string;
   price: number;
   change: number;
-};
-
-type PropertyType = {
-  name: string;
-  value: number;
-};
-
-const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
+}
 
 // Historical Belgian real estate price index (1944-2024, base 100 = 2015)
 // Source: National Bank of Belgium, Statbel, Eurostat, and historical estimates
@@ -147,19 +124,16 @@ const regionalData = [
   { name: 'Wallonia', price: 1950, change: 3.2 },
 ];
 
-// Average days on market (source: Immoweb 2024)
-const [, setDaysOnMarket] = useState(0);
-
 // Custom tooltip component
 const CustomTooltip = ({
   active,
   payload,
 }: {
   active?: boolean;
-  payload?: Array<{ name: string; value: number; payload: Record<string, unknown> }>;
+  payload?: Array<{ value: number; payload: { year: number; price: number; pricePerSqm: number; index: number } }>;
 }) => {
   if (active && payload && payload.length) {
-    const data = payload[0].payload as PriceTrend;
+    const data = payload[0].payload;
     return (
       <div className="bg-white p-3 border border-gray-200 rounded shadow-md">
         <p className="font-medium">Year: {data.year}</p>
@@ -204,50 +178,12 @@ const MarketReport: React.FC = () => {
   // Format tooltip for pie chart
   const formatPieTooltip = (value: number) => [`${value}%`];
   
-  // Format label for pie chart
-  const formatPieLabel = ({
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    percent,
-    index
-  }: {
-    cx: number;
-    cy: number;
-    midAngle: number;
-    innerRadius: number;
-    outerRadius: number;
-    percent: number;
-    index: number;
-  }) => {
-    return `${propertyTypes[index].name}: ${(percent * 100).toFixed(1)}%`;
-  };
-  
-  // Format region tooltip
-  const formatRegionTooltip = (value: string, name: string) => [value.toString()];
-  
   // Format region data for display
   const formatRegionData = (region: RegionData) => ({
     ...region,
     price: `€${region.price.toLocaleString()}`,
     change: formatPriceChange(region.change)
   });
-  
-  // Format property type for display
-  const formatPropertyType = (type: PropertyType) => ({
-    ...type,
-    value: Number(type.value.toFixed(1))
-  });
-  
-  // Safely format tooltip value
-  const safeFormatTooltip = (value: string, name: string) => {
-    if (typeof value === 'number') {
-      return formatTooltipValue(Number(value));
-    }
-    return String(value);
-  };
 
   return (
     <section className="py-20 bg-white">
@@ -303,7 +239,7 @@ const MarketReport: React.FC = () => {
                 <Tooltip 
                   content={<CustomTooltip />}
                   labelFormatter={(label: string) => `Year: ${label}`}
-                  formatter={(value: number, name: string, props: any) => `${formatTooltipValue(value)}`}
+                  formatter={(value: number) => formatTooltipValue(value)}
                   contentStyle={{
                     background: 'white',
                     border: '1px solid #e5e7eb',
