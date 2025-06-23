@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
                 <Link 
                   key={item.id}
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium hover:underline transition-colors duration-200"
+                  className="px-8 text-sm font-medium hover:underline transition-colors duration-200"
                   style={{ color: 'black' }}
                 >
                   {item.label}
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
       </motion.header>
 
       {/* Background Image */}
-      <div className="relative w-full h-[50vh] md:h-[75vh] mb-8 md:mb-12 py-6 px-6">
+      <div className="relative w-full h-[50vh] md:h-[75vh] mb-8 mt-4 md:mb-12 py-6 px-6">
         <Image
           src="/header/bgg.jpg"
           alt="Luxury house with pool"
