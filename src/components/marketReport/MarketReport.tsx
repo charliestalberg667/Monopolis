@@ -1,24 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { format } from 'date-fns';
-import {
-  LineChart,
-  Line,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Cell,
-  PieChart,
-  Pie,
-  ReferenceLine,
-  TooltipProps
+import { 
+  PieChart, 
+  Pie, 
+  Cell, 
+  ResponsiveContainer, 
+  Tooltip, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Legend, 
+  LineChart, 
+  Line, 
+  ReferenceLine 
 } from 'recharts';
+import { motion } from 'framer-motion';
+import { useLanguage } from '../languageProvider/languageProvider';
 
 type TooltipPayload = {
   value: number;
@@ -46,8 +45,6 @@ type PropertyType = {
   name: string;
   value: number;
 };
-
-
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
 
@@ -151,15 +148,21 @@ const regionalData = [
 ];
 
 // Average days on market (source: Immoweb 2024)
-const daysOnMarket = 62; // National average
+const [, setDaysOnMarket] = useState(0);
 
 // Custom tooltip component
-const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+const CustomTooltip = ({
+  active,
+  payload,
+}: {
+  active?: boolean;
+  payload?: Array<{ name: string; value: number; payload: Record<string, unknown> }>;
+}) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload as PriceTrend;
     return (
       <div className="bg-white p-3 border border-gray-200 rounded shadow-md">
-        <p className="font-medium">Year: {label}</p>
+        <p className="font-medium">Year: {data.year}</p>
         <p className="text-green-700">
           €{data.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
         </p>
@@ -202,12 +205,28 @@ const MarketReport: React.FC = () => {
   const formatPieTooltip = (value: number) => [`${value}%`];
   
   // Format label for pie chart
-  const formatPieLabel = (entry: { name: string; percent: number }) => {
-    return `${entry.name}: ${(entry.percent * 100).toFixed(1)}%`;
+  const formatPieLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+    index
+  }: {
+    cx: number;
+    cy: number;
+    midAngle: number;
+    innerRadius: number;
+    outerRadius: number;
+    percent: number;
+    index: number;
+  }) => {
+    return `${propertyTypes[index].name}: ${(percent * 100).toFixed(1)}%`;
   };
   
   // Format region tooltip
-  const formatRegionTooltip = (value: number) => [value.toString()];
+  const formatRegionTooltip = (value: string, name: string) => [value.toString()];
   
   // Format region data for display
   const formatRegionData = (region: RegionData) => ({
@@ -223,9 +242,9 @@ const MarketReport: React.FC = () => {
   });
   
   // Safely format tooltip value
-  const safeFormatTooltip = (value: unknown) => {
+  const safeFormatTooltip = (value: string, name: string) => {
     if (typeof value === 'number') {
-      return formatTooltipValue(value);
+      return formatTooltipValue(Number(value));
     }
     return String(value);
   };

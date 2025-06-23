@@ -5,11 +5,58 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { FiHome, FiStar, FiSearch, FiCalendar, FiChevronLeft, FiChevronRight, FiCheck, FiArrowRight } from 'react-icons/fi';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { LanguageProvider } from '@/components/languageProvider/languageProvider';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import MarketReport from '@/components/marketReport/MarketReport';
 
+
+// Process steps data
+interface ProcessStep {
+  step: string;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  details: string[];
+}
+
+const processSteps: ProcessStep[] = [
+  {
+    step: '01',
+    icon: <FiSearch className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+    title: 'Find Your Property',
+    description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
+    details: [
+      'Personalized recommendations',
+      'Advanced search filters',
+      'Save favorite listings',
+      'Instant alerts for new matches'
+    ]
+  },
+  {
+    step: '02',
+    icon: <FiCalendar className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+    title: 'Schedule a Viewing',
+    description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
+    details: [
+      'Flexible scheduling',
+      'Expert guidance',
+      'Market insights',
+      'Investment advice'
+    ]
+  },
+  {
+    step: '03',
+    icon: <FiHome className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+    title: 'Complete the Process',
+    description: 'Our team handles everything from offer to closing with expert negotiation and support.',
+    details: [
+      'Mortgage assistance',
+      'Professional negotiation',
+      'Legal support',
+      'Smooth handover'
+    ]
+  }
+];
 
 // Testimonials data
 const testimonials: Testimonial[] = [
@@ -68,16 +115,6 @@ const HomeContent: React.FC = () => {
   const isInView = useInView(mainRef, { once: true, amount: 0.1 });
   const controls = useAnimation();
   
-  // Favorites functionality will be implemented in a future update
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [, setFavorites] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('show');
-    }
-  }, [controls, isInView]);
-
   const properties: Property[] = [
     {
       id: '1',
@@ -153,8 +190,11 @@ const HomeContent: React.FC = () => {
     }
   ];
 
-  // Filtering featured properties for potential future use
-  // const featuredProperties = properties.filter(property => property.featured);
+  useEffect(() => {
+    if (isInView) {
+      controls.start('show');
+    }
+  }, [controls, isInView]);
 
   return (
     <div className="min-h-screen flex flex-col" ref={mainRef}>
@@ -386,98 +426,6 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
   </motion.div>
 );
 
-// Testimonial Carousel Component
-interface ProcessStepItem {
-  step: string;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  details: string[];
-}
-
-const ProcessCarousel = ({ items }: { items: ProcessStepItem[] }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, [emblaApi, onSelect]);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  return (
-    <div className="relative">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {items.map((item) => (
-            <div key={item.step} className="flex-[0_0_100%] min-w-0 px-2">
-              <div className="bg-white p-6 rounded-xl shadow-sm h-full">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#01753f] bg-opacity-10 flex items-center justify-center text-[#01753f] mr-4">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <span className="text-sm text-gray-500">Step {item.step}</span>
-                    <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <ul className="space-y-2">
-                  {item.details.map((detail: string, i: number) => (
-                    <li key={i} className="flex items-center text-sm text-gray-600">
-                      <FiCheck className="text-green-500 mr-2" />
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Navigation Buttons */}
-      <button 
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
-        onClick={scrollPrev}
-      >
-        <FiChevronLeft className="w-5 h-5 text-gray-700" />
-      </button>
-      <button 
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-md z-10"
-        onClick={scrollNext}
-      >
-        <FiChevronRight className="w-5 h-5 text-gray-700" />
-      </button>
-      
-      {/* Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
-        {scrollSnaps.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => scrollTo(idx)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              idx === selectedIndex ? 'bg-[#01753f]' : 'bg-gray-300'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -541,47 +489,6 @@ const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) 
     </div>
   );
 };
-
-const processSteps = [
-  {
-    step: '01',
-    icon: <FiSearch className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Find Your Property',
-    description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
-    details: [
-      'Personalized recommendations',
-      'Advanced search filters',
-      'Save favorite listings',
-      'Instant alerts for new matches'
-    ]
-  },
-  {
-    step: '02',
-    icon: <FiCalendar className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Schedule a Viewing',
-    description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
-    details: [
-      'Flexible scheduling',
-      'Expert guidance',
-      'Market insights',
-      'Investment advice'
-    ]
-  },
-  {
-    step: '03',
-    icon: <FiHome className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Complete the Process',
-    description: 'Our team handles everything from offer to closing with expert negotiation and support.',
-    details: [
-      'Mortgage assistance',
-      'Professional negotiation',
-      'Legal support',
-      'Smooth handover'
-    ]
-  }
-];
-
-// ProcessStep component removed as we're now using inline JSX in the section
 
 const Home: React.FC = () => {
   return (
