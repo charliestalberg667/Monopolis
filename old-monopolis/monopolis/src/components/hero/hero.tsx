@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
         style={{ position: 'relative', zIndex: 50 }}
       >
         <div>
-          <div className="flex justify-between items-end h-20">
+          <div className="flex justify-between items-end h-16">
             {/* Logo */}
             <div className="flex items-end">
               <motion.div 
@@ -102,12 +102,12 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
+            <nav className="hidden md:flex items-center space-x-1">
               {menuItems.map((item) => (
                 <Link 
                   key={item.id}
                   href={item.href}
-                  className="text-sm px-10 font-medium hover:underline transition-colors duration-200"
+                  className="px-3 py-2 text-sm font-medium hover:underline transition-colors duration-200"
                   style={{ color: 'black' }}
                 >
                   {item.label}
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
       </motion.header>
 
       {/* Background Image */}
-      <div className="relative w-full h-[50vh] md:h-[75vh] mt-8 mb-8 md:mb-12 py-6 px-6">
+      <div className="relative w-full h-[50vh] md:h-[75vh] mb-8 md:mb-12 py-6 px-6">
         <Image
           src="/header/bgg.jpg"
           alt="Luxury house with pool"
