@@ -42,7 +42,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   };
 
   return (
-    <article className="group flex flex-col bg-white rounded-sm overflow-hidden transition-all duration-300">
+    <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden transition-all duration-300 mx-2 sm:mx-3">
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={image}

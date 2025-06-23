@@ -8,8 +8,7 @@ import Image from 'next/image';
 import { LanguageProvider } from '@/components/languageProvider/languageProvider';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
-import Footer from '@/components/footer/footer';
-
+import MarketReport from '@/components/marketReport/MarketReport';
 
 
 // Testimonials data
@@ -171,8 +170,7 @@ const HomeContent: React.FC = () => {
           className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
         >
           {/* Decorative elements */}
-          <div className="absolute -right-40 -top-40 w-80 h-80 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
-          <div className="absolute -left-20 bottom-[-20px] w-64 h-64 rounded-full bg-[#01753f] bg-opacity-5 -z-10"></div>
+         
           <div className="max-w-7xl mx-auto">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -188,39 +186,127 @@ const HomeContent: React.FC = () => {
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">Discover our exclusive selection of premium properties in the most sought-after locations</p>
             </motion.div>
             
-            <motion.div 
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1
+            <div className="w-full">
+              {/* Single responsive grid for all screen sizes */}
+              <motion.div 
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1
+                    }
                   }
-                }
-              }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {properties.filter(p => p.featured).map((property) => (
-                <PropertyCard 
-                  key={property.id}
-                  id={property.id}
-                  title={property.title}
-                  location={property.location}
-                  price={property.price}
-                  bedrooms={property.bedrooms}
-                  bathrooms={property.bathrooms}
-                  area={property.area}
-                  image={property.image}
-                  type={property.type}
-                  featured={property.featured}
-                />
-              ))}
-            </motion.div>
+                }}
+                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8"
+              >
+                {properties.filter(p => p.featured).map((property) => (
+                  <motion.div
+                    key={property.id}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      show: { opacity: 1, y: 0 }
+                    }}
+                    className="flex justify-center"
+                  >
+                    <PropertyCard 
+                      id={property.id}
+                      title={property.title}
+                      location={property.location}
+                      price={property.price}
+                      bedrooms={property.bedrooms}
+                      bathrooms={property.bathrooms}
+                      area={property.area}
+                      image={property.image}
+                      type={property.type}
+                      featured={property.featured}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              {/* View more button for mobile */}
+              <div className="mt-10 text-center md:hidden">
+                <button className="px-6 py-3 bg-[#01753f] text-white rounded-md hover:bg-[#016030] transition-colors">
+                  View More Properties
+                </button>
+              </div>
+            </div>
         </div>
       </motion.section>
+
+      {/* Market Report */}
+      <MarketReport />
+
+      {/* Process Section - Apple Style */}
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
+              A Simple, Transparent Process
+            </h2>
+            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              We&apos;ve streamlined the property search into three clear, manageable steps
+            </p>
+          </motion.div>
+
+          {/* Process Steps Grid */}
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {processSteps.map((item, index) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group"
+              >
+                <div className="bg-white p-8 rounded-2xl h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-[#01753f] group-hover:text-white transition-colors duration-300">
+                    {item.icon}
+                  </div>
+                  <span className="inline-block text-sm font-medium text-gray-500 mb-2">Step {item.step}</span>
+                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{item.description}</p>
+                  <ul className="space-y-3">
+                    {item.details.map((detail, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs mr-3 mt-0.5">
+                          <FiCheck className="w-3 h-3" />
+                        </span>
+                        <span className="text-gray-600">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-20 text-center"
+          >
+            <button className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+              Get Started
+              <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Testimonials */}
       <section className="py-20 bg-[#f8fafc] relative overflow-hidden">
@@ -252,92 +338,7 @@ const HomeContent: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* How It Works - Minimalist Design */}
-      <section className="py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-8">
-          <div className="text-center mb-24 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              A Simple, Transparent Process
-            </h2>
-            <div className="w-20 h-0.5 bg-[#01753f] mx-auto mb-8"></div>
-            <p className="text-gray-500 text-lg leading-relaxed">
-              We&apos;ve streamlined the property search into three clear, manageable steps
-            </p>
-          </div>
-
-          {/* Process Steps */}
-          <div className="hidden md:block space-y-24">
-            {processSteps.map((item, index) => (
-              <ProcessStep 
-                key={item.step} 
-                item={item} 
-                index={index} 
-                totalItems={processSteps.length} 
-              />
-            ))}
-          </div>
-          
-          {/* Mobile Carousel */}
-          <div className="md:hidden mt-8">
-            <ProcessCarousel items={processSteps} />
-          </div>
-          
-          <div className="mt-24 text-center group">
-            <button className="inline-flex items-center px-10 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5">
-              Get Started
-              <FiArrowRight className="ml-3 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative py-20 bg-white overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-grid-[#e2e8f0] [mask-image:radial-gradient(white,transparent_70%)] -z-0"></div>
-        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-              Newsletter
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Stay Updated</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest properties and market insights.
-            </p>
-          </motion.div>
-          <motion.form 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto p-1"
-          >
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              required 
-              className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#01753f] focus:border-transparent"
-            />
-            <button 
-              type="submit" 
-              className="!bg-[#01753f] text-white px-6 py-3 rounded-md font-medium hover:bg-[#016030] transition-colors"
-            >
-              Subscribe
-            </button>
-          </motion.form>
-        </div>
-      </motion.section>
       </main>
-      <Footer />
     </div>
   );
 }
@@ -355,7 +356,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
       }
     }}
     viewport={{ once: true, margin: "-50px" }}
-    className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col"
+    className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col"
   >
     <div className="flex items-center mb-4">
       <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 relative">
@@ -544,7 +545,7 @@ const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) 
 const processSteps = [
   {
     step: '01',
-    icon: <FiSearch className="w-6 h-6" />,
+    icon: <FiSearch className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
     title: 'Find Your Property',
     description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
     details: [
@@ -556,7 +557,7 @@ const processSteps = [
   },
   {
     step: '02',
-    icon: <FiCalendar className="w-6 h-6" />,
+    icon: <FiCalendar className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
     title: 'Schedule a Viewing',
     description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
     details: [
@@ -568,7 +569,7 @@ const processSteps = [
   },
   {
     step: '03',
-    icon: <FiHome className="w-6 h-6" />,
+    icon: <FiHome className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
     title: 'Complete the Process',
     description: 'Our team handles everything from offer to closing with expert negotiation and support.',
     details: [
@@ -580,47 +581,14 @@ const processSteps = [
   }
 ];
 
-const ProcessStep = ({ item, index, totalItems }: { item: ProcessStepItem, index: number, totalItems: number }) => (
-  <div className="relative pb-12">
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <div className="flex items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-[#01753f] bg-opacity-10 flex items-center justify-center text-[#01753f] mr-4">
-          {item.icon}
-        </div>
-        <div>
-          <span className="text-sm text-gray-500">Step {item.step}</span>
-          <h4 className="font-semibold text-gray-900">{item.title}</h4>
-        </div>
-      </div>
-      <p className="text-gray-600 mb-4">{item.description}</p>
-      <ul className="space-y-2">
-        {item.details.map((detail: string, i: number) => (
-          <li key={i} className="flex items-center text-sm text-gray-600">
-            <FiCheck className="text-green-500 mr-2" />
-            {detail}
-          </li>
-        ))}
-      </ul>
-    </div>
-    {index < totalItems - 1 && (
-      <div className="absolute left-1/2 -bottom-10 -ml-4 w-8 h-8 text-gray-300">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 5v14m0 0l-7-7m7 7l7-7" />
-        </svg>
-      </div>
-    )}
-  </div>
-);
+// ProcessStep component removed as we're now using inline JSX in the section
 
 const Home: React.FC = () => {
   return (
-    <LanguageProvider>
-      <main className="min-h-screen">
-        <Hero />
-        <HomeContent />
-        <Footer />
-      </main>
-    </LanguageProvider>
+    <>
+      <Hero />
+      <HomeContent />
+    </>
   );
 };
 

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/languageProvider/languageProvider";
 import PageRevealer from "@/components/PageRevealer/PageRevealer";
+import Footer from "@/components/footer/footer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,7 +32,10 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <PageRevealer />
-          {children}
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
         style={{ position: 'relative', zIndex: 50 }}
       >
         <div>
-          <div className="flex justify-between items-end h-16">
+          <div className="flex justify-between items-end h-20">
             {/* Logo */}
             <div className="flex items-end">
               <motion.div 
@@ -102,23 +102,18 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden md:flex items-center space-x-6">
               {menuItems.map((item) => (
                 <Link 
                   key={item.id}
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium hover:underline transition-colors duration-200"
+                  className="text-sm px-10 font-medium hover:underline transition-colors duration-200"
                   style={{ color: 'black' }}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Link 
-                href="/login"
-                className="ml-2 py-2 px-3 flex items-center justify-center bg-[var(--accent)] text-sm font-medium !text-white hover:bg-[var(--accent-hover)] transition-colors duration-200 no-underline rounded-sm"
-              >
-                Log in
-              </Link>
+
             </nav>
 
             {/* Mobile menu button */}
