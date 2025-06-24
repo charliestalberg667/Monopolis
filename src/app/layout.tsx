@@ -4,8 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/languageProvider/languageProvider";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
-import dynamic from 'next/dynamic';
-
+import PageRevealerWrapper from "@/components/PageRevealer/PageRevealerWrapper";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,10 +13,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const PageRevealer = dynamic(() => import('@/components/PageRevealer/PageRevealer'), { 
-  ssr: false 
 });
 
 export const metadata: Metadata = {
@@ -36,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
-          <PageRevealer />
+          <PageRevealerWrapper />
           <Navbar />
           <main className="min-h-screen">
             {children}
