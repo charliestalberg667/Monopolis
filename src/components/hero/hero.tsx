@@ -91,9 +91,9 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Subtle background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FFCFCF]/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gray-100/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#01863b]/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#FFCFCF]/15 to-[#01863b]/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-gray-100/15 to-[#01863b]/10 rounded-full blur-3xl" />
       </div>
 
       {/* Subtle grid pattern overlay */}
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           >
             {/* Badge */}
             <motion.div variants={itemVariants} className="flex items-center space-x-2">
-              <div className="flex items-center space-x-2 bg-[#FFCFCF] border-2 border-[#01863b] rounded-full px-6 py-3">
+              <div className="flex items-center space-x-2 bg-white border-2 border-[#01863b] rounded-full px-6 py-3">
                 <FiStar className="w-5 h-5 text-[#01863b]" />
                 <span className="text-black text-lg font-semibold">Premium Real Estate</span>
               </div>
@@ -153,11 +153,11 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons - Larger and more accessible */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 pt-8">
-              <button className="group bg-[#01863b] hover:bg-[#016030] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#FFCFCF] flex items-center justify-center space-x-3 min-h-[60px]">
+              <button className="group bg-[#01863b] hover:bg-[#016030] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-200 flex items-center justify-center space-x-3 min-h-[60px]">
                 <span>Explore Properties</span>
                 <FiArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
-              <button className="group bg-[#FFCFCF] hover:bg-[#FFBFBF] text-black border-3 border-[#01863b] hover:border-black px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 min-h-[60px] shadow-lg">
+              <button className="group bg-white hover:bg-gray-50 text-black border-3 border-[#01863b] hover:border-black px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 min-h-[60px] shadow-lg">
                 <FiPlay className="w-6 h-6" />
                 <span>Watch Video</span>
               </button>
@@ -209,7 +209,7 @@ const Hero: React.FC = () => {
             {/* Floating Elements - More visible */}
             <motion.div 
               variants={floatingVariants}
-              className="absolute -top-8 -right-8 bg-white/95 backdrop-blur-lg border-2 border-[#FFCFCF] rounded-3xl p-6 shadow-xl"
+              className="absolute -top-8 -right-8 bg-white/95 backdrop-blur-lg border-2 border-gray-200 rounded-3xl p-6 shadow-xl"
             >
               <div className="flex items-center space-x-4">
                 <div className="w-14 h-14 bg-[#01863b] rounded-full flex items-center justify-center">
@@ -224,7 +224,7 @@ const Hero: React.FC = () => {
 
             <motion.div 
               variants={floatingVariants}
-              className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-lg border-2 border-[#FFCFCF] rounded-3xl p-6 shadow-xl"
+              className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-lg border-2 border-gray-200 rounded-3xl p-6 shadow-xl"
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-black">24/7</div>
