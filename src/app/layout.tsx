@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/languageProvider/languageProvider";
-import PageRevealer from "@/components/PageRevealer/PageRevealer";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import dynamic from 'next/dynamic';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +14,10 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const PageRevealer = dynamic(() => import('@/components/PageRevealer/PageRevealer'), { 
+  ssr: false 
 });
 
 export const metadata: Metadata = {
