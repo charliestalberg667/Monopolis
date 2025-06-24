@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function PageRevealer() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
+  const [showComponent, setShowComponent] = useState(true);
 
   useEffect(() => {
     // Set mounted state to true once component is mounted on client
@@ -25,20 +26,19 @@ export default function PageRevealer() {
   }, [isMounted]);
 
   // Don't render anything until component is mounted on client
-  if (!isMounted) {
+  if (!isMounted || !showComponent) {
     return null;
   }
 
   return (
     <AnimatePresence onExitComplete={() => {
-      // Remove the entire component from the DOM after exit animation
-      const revealer = document.querySelector('.page-revealer');
-      if (revealer) revealer.remove();
+      // Hide the component completely after exit animation
+      setShowComponent(false);
     }}>
       {isVisible && (
         <motion.div
           key="revealer"
-          className="fixed inset-0 z-[100000] bg-white flex items-center justify-center page-revealer"
+          className="fixed inset-0 z-[100000] bg-white flex items-center justify-center"
           initial={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{
