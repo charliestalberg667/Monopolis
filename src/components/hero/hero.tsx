@@ -34,7 +34,7 @@ const TypewriterText: React.FC<{ text: string; className?: string }> = ({ text, 
   return (
     <div className={className}>
       {displayText}
-      <span className={`inline-block w-0.5 h-8 bg-green-600 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`} />
+      <span className={`inline-block w-0.5 h-8 bg-[#01863b] ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`} />
     </div>
   );
 };
@@ -88,12 +88,12 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-green-50 overflow-hidden">
+    <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Subtle background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-green-100/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-green-50/40 to-blue-50/30 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FFCFCF]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#01863b]/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#FFCFCF]/15 to-[#01863b]/10 rounded-full blur-3xl" />
       </div>
 
       {/* Subtle grid pattern overlay */}
@@ -111,17 +111,17 @@ const Hero: React.FC = () => {
           >
             {/* Badge */}
             <motion.div variants={itemVariants} className="flex items-center space-x-2">
-              <div className="flex items-center space-x-2 bg-green-100 border-2 border-green-200 rounded-full px-6 py-3">
-                <FiStar className="w-5 h-5 text-green-600" />
-                <span className="text-green-700 text-lg font-semibold">Premium Real Estate</span>
+              <div className="flex items-center space-x-2 bg-[#FFCFCF] border-2 border-[#01863b] rounded-full px-6 py-3">
+                <FiStar className="w-5 h-5 text-[#01863b]" />
+                <span className="text-black text-lg font-semibold">Premium Real Estate</span>
               </div>
             </motion.div>
 
             {/* Main Heading - Larger and more readable */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <h1 className="text-6xl lg:text-8xl font-black text-gray-900 leading-[0.9] tracking-tight">
+              <h1 className="text-6xl lg:text-8xl font-black text-black leading-[0.9] tracking-tight">
                 Find Your
-                <span className="block bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+                <span className="block text-[#01863b]">
                   Dream Home
                 </span>
               </h1>
@@ -131,33 +131,33 @@ const Hero: React.FC = () => {
             <motion.div variants={itemVariants}>
               <TypewriterText 
                 text="Discover exceptional properties in the most sought-after locations worldwide"
-                className="text-2xl lg:text-3xl text-gray-700 font-medium leading-relaxed"
+                className="text-2xl lg:text-3xl text-black font-medium leading-relaxed"
               />
             </motion.div>
 
             {/* Stats - Larger and more prominent */}
             <motion.div variants={itemVariants} className="flex items-center space-x-12 pt-6">
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-gray-900">500+</div>
-                <div className="text-lg text-gray-600 font-medium">Properties Sold</div>
+                <div className="text-4xl lg:text-5xl font-bold text-black">500+</div>
+                <div className="text-lg text-black font-medium">Properties Sold</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-gray-900">98%</div>
-                <div className="text-lg text-gray-600 font-medium">Client Satisfaction</div>
+                <div className="text-4xl lg:text-5xl font-bold text-black">98%</div>
+                <div className="text-lg text-black font-medium">Client Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-gray-900">15+</div>
-                <div className="text-lg text-gray-600 font-medium">Years Experience</div>
+                <div className="text-4xl lg:text-5xl font-bold text-black">15+</div>
+                <div className="text-lg text-black font-medium">Years Experience</div>
               </div>
             </motion.div>
 
             {/* CTA Buttons - Larger and more accessible */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 pt-8">
-              <button className="group bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-200 flex items-center justify-center space-x-3 min-h-[60px]">
+              <button className="group bg-[#01863b] hover:bg-[#016030] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#FFCFCF] flex items-center justify-center space-x-3 min-h-[60px]">
                 <span>Explore Properties</span>
                 <FiArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
-              <button className="group bg-white hover:bg-gray-50 text-gray-900 border-3 border-gray-300 hover:border-gray-400 px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 min-h-[60px] shadow-lg">
+              <button className="group bg-[#FFCFCF] hover:bg-[#FFBFBF] text-black border-3 border-[#01863b] hover:border-black px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 min-h-[60px] shadow-lg">
                 <FiPlay className="w-6 h-6" />
                 <span>Watch Video</span>
               </button>
@@ -189,16 +189,16 @@ const Hero: React.FC = () => {
               {/* Property Info Card - More prominent */}
               <motion.div 
                 variants={floatingVariants}
-                className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-lg border-2 border-white/50 rounded-3xl p-8 shadow-2xl"
+                className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-lg border-2 border-[#01863b]/50 rounded-3xl p-8 shadow-2xl"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3 text-gray-900">
+                  <div className="flex items-center space-x-3 text-black">
                     <FiMapPin className="w-5 h-5" />
                     <span className="text-lg font-semibold">Beverly Hills, CA</span>
                   </div>
-                  <div className="text-3xl font-bold text-green-600">$2.8M</div>
+                  <div className="text-3xl font-bold text-[#01863b]">$2.8M</div>
                 </div>
-                <div className="grid grid-cols-3 gap-6 text-gray-700 text-lg font-medium">
+                <div className="grid grid-cols-3 gap-6 text-black text-lg font-medium">
                   <div>4 Beds</div>
                   <div>3 Baths</div>
                   <div>3,200 sqft</div>
@@ -209,26 +209,26 @@ const Hero: React.FC = () => {
             {/* Floating Elements - More visible */}
             <motion.div 
               variants={floatingVariants}
-              className="absolute -top-8 -right-8 bg-white/95 backdrop-blur-lg border-2 border-green-200 rounded-3xl p-6 shadow-xl"
+              className="absolute -top-8 -right-8 bg-white/95 backdrop-blur-lg border-2 border-[#FFCFCF] rounded-3xl p-6 shadow-xl"
             >
               <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#01863b] rounded-full flex items-center justify-center">
                   <FiStar className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <div className="text-gray-900 font-bold text-lg">Premium</div>
-                  <div className="text-gray-600 text-base">Verified</div>
+                  <div className="text-black font-bold text-lg">Premium</div>
+                  <div className="text-black text-base">Verified</div>
                 </div>
               </div>
             </motion.div>
 
             <motion.div 
               variants={floatingVariants}
-              className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-lg border-2 border-blue-200 rounded-3xl p-6 shadow-xl"
+              className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-lg border-2 border-[#FFCFCF] rounded-3xl p-6 shadow-xl"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">24/7</div>
-                <div className="text-gray-600 text-base font-medium">Support</div>
+                <div className="text-3xl font-bold text-black">24/7</div>
+                <div className="text-black text-base font-medium">Support</div>
               </div>
             </motion.div>
           </motion.div>
@@ -242,14 +242,14 @@ const Hero: React.FC = () => {
         transition={{ delay: 2, duration: 0.6 }}
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
       >
-        <div className="flex flex-col items-center space-y-3 text-gray-600">
+        <div className="flex flex-col items-center space-y-3 text-black">
           <span className="text-lg font-medium">Scroll to explore</span>
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-8 h-12 border-3 border-gray-400 rounded-full flex justify-center bg-white/80"
+            className="w-8 h-12 border-3 border-[#01863b] rounded-full flex justify-center bg-white/80"
           >
-            <div className="w-2 h-4 bg-gray-600 rounded-full mt-3" />
+            <div className="w-2 h-4 bg-[#01863b] rounded-full mt-3" />
           </motion.div>
         </div>
       </motion.div>

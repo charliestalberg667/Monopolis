@@ -40,15 +40,15 @@
   --foreground-secondary: #555555;
   --foreground-tertiary: #888888;
 
-  --primary: #000000;
+  --primary: #01863b;
   --primary-hover: #333333;
   --primary-inverse: #ffffff;
 
-  --secondary: #f5f5f5;
+  --secondary: #FFCFCF;
   --secondary-hover: #e5e5e5;
 
   --accent: #01863b; /* iOS blue accent */
-  --accent-hover: #14b547;
+  --accent-hover: #016030;
   --accent-foreground: #ffffff;
 
   --border: var(--accent);
