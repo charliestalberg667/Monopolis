@@ -6,15 +6,28 @@ import { useEffect, useState } from "react";
 
 export default function PageRevealer() {
   const [isVisible, setIsVisible] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Set mounted state to true once component is mounted on client
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+    
     // Start exit animation after component mounts
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 1000); // Adjust delay as needed
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isMounted]);
+
+  // Don't render anything until component is mounted on client
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <AnimatePresence onExitComplete={() => {
@@ -25,7 +38,7 @@ export default function PageRevealer() {
       {isVisible && (
         <motion.div
           key="revealer"
-          className="fixed inset-0 z-[100000] bg-white flex items-center justify-center"
+          className="fixed inset-0 z-[100000] bg-white flex items-center justify-center page-revealer"
           initial={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{
