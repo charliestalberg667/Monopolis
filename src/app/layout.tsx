@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/languageProvider/languageProvider";
 import PageRevealer from "@/components/PageRevealer/PageRevealer";
 import Footer from "@/components/footer/footer";
+import Navbar from "@/components/navbar/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
+          <Navbar />
           <PageRevealer />
           <main className="min-h-screen">
             {children}

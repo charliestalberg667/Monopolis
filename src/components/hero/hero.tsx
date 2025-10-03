@@ -3,135 +3,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useAnimation, useInView, Variants, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Slider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-// ✅ 1) Add your menuItems here as before:
-const menuItems = [
-  { id: 'properties', label: 'Properties', href: '/properties' },
-  { id: 'about', label: 'About Us', href: '/about' },
-  { id: 'services', label: 'Our Services', href: '/services' },
-  { id: 'contact', label: 'Contact', href: '/contact' },
-];
-
 const Hero: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const controls = useAnimation();
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    }
-  }, [controls, isInView]);
-
-  const logoContainerVariants: Variants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const logoItemVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: (i: number) => ({
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.2 + (i * 0.1),
-      },
-    }),
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  // Mobile menu toggle handled by isMenuOpen state
-
   return (
-    <div className="relative w-full bg-[#f5f5f5] px-6 pt-2 pb-10 md:h-[100vh] overflow-visible z-10" style={{ position: 'relative', zIndex: 50 }}>
-
-      {/* Header */}
-      <motion.header 
-        className="relative z-50"
-        variants={logoContainerVariants}
-        initial="hidden"
-        animate="visible"
-        style={{ position: 'relative', zIndex: 50 }}
-      >
-        <div>
-          <div className="flex justify-between items-end h-16">
-            {/* Logo */}
-            <div className="flex items-end">
-              <motion.div 
-                className="relative w-12 h-12"
-                variants={logoItemVariants}
-                custom={0}
-              >
-                <Image
-                  src="/logo-black.svg"
-                  alt="Monopolis Logo"
-                  width={48}
-                  height={48}
-                  priority
-                  className="h-full w-auto"
-                />
-              </motion.div>
-              <motion.div 
-                className='flex flex-col gap-1 ml-2'
-                variants={logoItemVariants}
-                custom={1}
-              >
-                <div className="text-2xl font-bold leading-none">Monopolis</div>
-                <motion.div 
-                  className="text-xs text-gray-600 leading-none"
-                  variants={logoItemVariants}
-                  custom={2}
-                >
-                  sales, rentals, domiciliation
-                </motion.div>
-              </motion.div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {menuItems.map((item) => (
-                <Link 
-                  key={item.id}
-                  href={item.href}
-                  className="px-8 text-sm font-medium hover:underline transition-colors duration-200"
-                  style={{ color: 'black' }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-            </nav>
-
-            {/* Mobile menu button */}
-            <button 
-              onClick={toggleMenu}
-              className="md:hidden group relative z-50 flex items-center justify-center p-2"
-              aria-expanded={isMenuOpen}
-              aria-label="Toggle menu"
-            >
-              <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
-                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
-                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
-                <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </motion.header>
+    <div className="relative w-full bg-[#ffffff] px-6 pt-2 pb-10 md:h-[100vh] overflow-visible z-10" style={{ position: 'relative', zIndex: 50 }}>
 
       {/* Background Image */}
       <div className="relative w-full h-[50vh] md:h-[75vh] mb-8 mt-4 md:mb-12 py-6 px-6">
@@ -248,22 +126,22 @@ const Dropdown: React.FC<DropdownProps> = ({ label, value, options, onChange, cl
 
 // Custom styled Material-UI Slider
 const CustomSlider = styled(Slider)({
-  color: '#01863b',
+  color: '#048542',
   height: 4,
   padding: '15px 0',
   '& .MuiSlider-rail': {
     opacity: 0.3,
-    backgroundColor: '#01863b',
+    backgroundColor: '#048542',
   },
   '& .MuiSlider-track': {
     border: 'none',
-    backgroundColor: '#01863b',
+    backgroundColor: '#048542',
   },
   '& .MuiSlider-thumb': {
     height: 20,
     width: 20,
     backgroundColor: '#fff',
-    border: '2px solid #01863b',
+    border: '2px solid #048542',
     '&:hover, &.Mui-focusVisible, &.Mui-active': {
       boxShadow: '0 0 0 8px rgba(0, 159, 50, 0.1)',
     },
@@ -276,7 +154,7 @@ const CustomSlider = styled(Slider)({
     fontWeight: 'normal',
     top: -24,
     backgroundColor: 'transparent',
-    color: '#01863b',
+    color: '#048542',
     '&:before': {
       display: 'none',
     },
@@ -374,7 +252,7 @@ const Filters: React.FC = () => {
       <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-4">
         {/* Property Filters Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#01863b] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#048542] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
             <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center">
               <Dropdown
                 label="Type"
@@ -411,7 +289,7 @@ const Filters: React.FC = () => {
 
         {/* Price Range Bubble */}
         <div className="w-full md:w-auto">
-          <div className="flex items-center border border-[#01863b] rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
+          <div className="flex items-center border border-[#048542] rounded-2xl md:rounded-full p-2 md:px-6 bg-white min-h-20">
             <div className="w-full min-w-[300px] md:min-w-[350px]">
               <PriceRangeSlider
                 min={minPrice}

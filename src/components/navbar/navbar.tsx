@@ -1,3 +1,107 @@
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
+import LanguageSwitcher from '../languageProvider/languageSwitcher';
+
+const menuItems = [
+  { id: 'properties', label: 'Properties', href: '/properties' },
+  { id: 'about', label: 'About Us', href: '/about' },
+  { id: 'services', label: 'Our Services', href: '/services' },
+  { id: 'contact', label: 'Contact', href: '/contact' },
+];
+
+const logoContainerVariants: Variants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { when: 'beforeChildren', staggerChildren: 0.1 },
+  },
+};
+
+const logoItemVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: { duration: 0.6, ease: 'easeOut', delay: 0.2 + i * 0.1 },
+  }),
+};
+
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  return (
+    <motion.header
+      className="relative z-50 w-full bg-white px-6 pt-2"
+      variants={logoContainerVariants}
+      initial="hidden"
+      animate="visible"
+      style={{ position: 'relative', zIndex: 50 }}
+    >
+      <div className="flex justify-between items-end h-16">
+        {/* Logo */}
+        <Link href="/" className="flex items-end" aria-label="Monopolis Home">
+          <motion.div className="relative w-12 h-12" variants={logoItemVariants} custom={0}>
+            <Image
+              src="/logo-black.svg"
+              alt="Monopolis Logo"
+              width={48}
+              height={48}
+              priority
+              className="h-full w-auto"
+            />
+          </motion.div>
+          <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
+            <div className="text-2xl font-bold leading-none">Monopolis</div>
+            <motion.div className="text-xs text-gray-600 leading-none" variants={logoItemVariants} custom={2}>
+              sales, rentals, domiciliation
+            </motion.div>
+          </motion.div>
+        </Link>
+
+        <div className="flex items-center space-x-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1">
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="px-8 text-sm font-medium hover:underline transition-colors duration-200"
+                style={{ color: 'black' }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Language Switcher */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+        </div>
+
+        {/* Mobile menu button (visual only; no dropdown implemented) */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden group relative z-50 flex items-center justify-center p-2"
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle menu"
+        >
+          <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
+            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
+            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
+            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
+          </div>
+        </button>
+      </div>
+    </motion.header>
+  );
+}
+
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import { useLanguage } from '../language-provider/LanguageProvider';

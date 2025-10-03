@@ -2,26 +2,36 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function PageRevealer() {
   const [isVisible, setIsVisible] = useState(true);
+  const pathname = usePathname();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Trigger on initial mount
   useEffect(() => {
-    // Start exit animation after component mounts
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 1000); // Adjust delay as needed
-
-    return () => clearTimeout(timer);
+    timerRef.current && clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setIsVisible(false), 1000);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
+  // Retrigger on every route change
+  useEffect(() => {
+    if (!pathname) return;
+    setIsVisible(true);
+    timerRef.current && clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setIsVisible(false), 1000);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [pathname]);
+
   return (
-    <AnimatePresence onExitComplete={() => {
-      // Remove the entire component from the DOM after exit animation
-      const revealer = document.querySelector('.page-revealer');
-      if (revealer) revealer.remove();
-    }}>
+    <AnimatePresence>
       {isVisible && (
         <motion.div
           key="revealer"
