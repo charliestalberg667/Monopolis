@@ -12,10 +12,14 @@ export default function PageRevealer() {
 
   // Trigger on initial mount
   useEffect(() => {
-    timerRef.current && clearTimeout(timerRef.current);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
     timerRef.current = setTimeout(() => setIsVisible(false), 1000);
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
     };
   }, []);
 
@@ -23,10 +27,14 @@ export default function PageRevealer() {
   useEffect(() => {
     if (!pathname) return;
     setIsVisible(true);
-    timerRef.current && clearTimeout(timerRef.current);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
     timerRef.current = setTimeout(() => setIsVisible(false), 1000);
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
     };
   }, [pathname]);
 

@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Startpagina",
+    "luxe": "Luxe",
+    "rent": "Te Huur",
+    "buy": "Te Koop",
+    "login": "Inloggen",
+    "cart": "Winkelwagen",
+    "visits": "Afspraken",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Uitgelichte Panden",
+    "title1": "Vind Uw",
+    "title2": "Droomhuis in België",
+    "description": "Ontdek uitzonderlijke vastgoedobjecten in het hart van Europa. Uw ideale woning is binnen handbereik.",
+    "searchPlaceholder": "Zoek op locatie, type of prijs...",
+    "search": "Zoeken",
+    "properties": "Panden",
+    "clients": "Tevreden Klanten",
+    "years": "Jaar Ervaring"
+  },
+  "featured": {
+    "title": "Uitgelichte Panden",
+    "subtitle": "Ontdek onze selectie van uitzonderlijke vastgoedobjecten",
+    "viewAll": "Bekijk Alle Panden",
+    "bedrooms": "Slaapkamers",
+    "bathrooms": "Badkamers",
+    "sqft": "m²",
+    "forSale": "Te Koop",
+    "forRent": "Te Huur",
+    "viewDetails": "Bekijk Details",
+    "featured": "Uitgelicht"
+  },
+  "services": {
+    "title": "Onze Diensten",
+    "subtitle": "Volledige vastgoedoplossingen op maat van uw behoeften",
+    "buy": "Een Huis Kopen",
+    "buyDesc": "Vind uw droomhuis tussen onze exclusieve aanbiedingen.",
+    "sell": "Een Huis Verkopen",
+    "sellDesc": "Haal de beste prijs voor uw eigendom met onze marketingexpertise.",
+    "rent": "Een Pand Huren",
+    "rentDesc": "Ontdek huurwoningen die bij uw levensstijl passen.",
+    "valuation": "Gratis Schatting",
+    "valuationDesc": "Krijg een nauwkeurige marktwaardebepaling van uw eigendom."
+  },
+  "testimonials": {
+    "title": "Wat Onze Klanten Zeggen",
+    "subtitle": "Succesverhalen van onze tevreden klanten"
+  },
+  "newsletter": {
+    "title": "Blijf Op De Hoogte",
+    "subtitle": "Schrijf u in op onze nieuwsbrief voor de laatste aanbiedingen en marktinzichten",
+    "placeholder": "Uw e-mailadres",
+    "subscribe": "Inschrijven",
+    "privacy": "We respecteren uw privacy. U kunt u op elk moment uitschrijven."
+  },
+  "cta": {
+    "title": "Klaar om Uw Droomhuis te Vinden?",
+    "subtitle": "Neem vandaag nog contact met ons op voor een bezichtiging of een gratis consultatie",
+    "button": "Contact Opnemen"
+  },
+  "footer": {
+    "about": "Over ons",
+    "contact": "Contact",
+    "terms": "Algemene Voorwaarden",
+    "privacy": "Privacybeleid",
+    "rights": "Alle rechten voorbehouden"
+  },
+  "auth": {
+    "login": "Inloggen",
+    "signup": "Registreren",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "confirmPassword": "Bevestig Wachtwoord",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "signIn": "Aanmelden",
+    "createAccount": "Account aanmaken",
+    "noAccount": "Nog geen account?",
+    "haveAccount": "Al een account?",
+    "signUpLink": "Registreren",
+    "signInLink": "Aanmelden"
+  },
+  "category": {
+    "luxe": "Luxueuze Panden",
+    "rent": "Panden te Huur",
+    "buy": "Panden te Koop"
+  },
+  "related": {
+    "title": "Vergelijkbare Panden"
+  },
+  "schedule": {
+    "title": "Afspraak Maken",
+    "fullName": "Volledige Naam",
+    "email": "E-mailadres",
+    "phone": "Telefoonnummer",
+    "preferredDate": "Gewenste Datum",
+    "preferredTime": "Gewenste Tijd",
+    "additionalNotes": "Bijkomende Notities",
+    "scheduleVisit": "Afspraak Maken",
+    "selectTime": "Selecteer Tijd"
+  },
+  "visits": {
+    "title": "Mijn Afspraken",
+    "noVisits": "Geen afspraken gepland",
+    "visitDate": "Datum",
+    "visitTime": "Tijdstip",
+    "visitNotes": "Notities",
+    "cancelVisit": "Afspraak Annuleren",
+    "date": "Datum",
+    "time": "Tijd",
+    "notes": "Notities",
+    "cancel": "Annuleren"
+  },
+  "language": {
+    "english": "Engels",
+    "french": "Frans",
+    "dutch": "Nederlands"
+  },
+  "common": {
+    "month": "maand"
+  }
+}

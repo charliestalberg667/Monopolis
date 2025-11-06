@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Home",
+    "luxe": "Luxury",
+    "rent": "Rent",
+    "buy": "Buy",
+    "login": "Login",
+    "cart": "Cart",
+    "visits": "Appointments",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Featured Properties",
+    "title1": "Find Your",
+    "title2": "Dream Home in Belgium",
+    "description": "Discover premium properties in the heart of Europe. Your ideal home is just a search away.",
+    "searchPlaceholder": "Search by location, type, or price...",
+    "search": "Search",
+    "properties": "Properties",
+    "clients": "Happy Clients",
+    "years": "Years Experience"
+  },
+  "featured": {
+    "title": "Featured Properties",
+    "subtitle": "Explore our handpicked selection of premium properties",
+    "viewAll": "View All Properties",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "sqft": "sq ft",
+    "forSale": "For Sale",
+    "forRent": "For Rent",
+    "viewDetails": "View Details",
+    "featured": "Featured"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive real estate solutions tailored to your needs",
+    "buy": "Buy a Home",
+    "buyDesc": "Find your dream home from our exclusive listings.",
+    "sell": "Sell a Home",
+    "sellDesc": "Get the best price for your property with our expert marketing.",
+    "rent": "Rent a Property",
+    "rentDesc": "Discover rental properties that match your lifestyle.",
+    "valuation": "Free Valuation",
+    "valuationDesc": "Get an accurate market valuation for your property."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Success stories from our happy clients"
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Subscribe to our newsletter for the latest listings and market insights",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  },
+  "cta": {
+    "title": "Ready to Find Your Dream Home?",
+    "subtitle": "Contact us today to schedule a viewing or get a free consultation",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "about": "About Us",
+    "contact": "Contact",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "rights": "All Rights Reserved"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signUpLink": "Sign up",
+    "signInLink": "Sign in"
+  },
+  "category": {
+    "luxe": "Luxury Properties",
+    "rent": "Properties for Rent",
+    "buy": "Properties for Sale"
+  },
+  "related": {
+    "title": "Related Properties"
+  },
+  "schedule": {
+    "title": "Book a Visit",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "additionalNotes": "Additional Notes",
+    "scheduleVisit": "Book Visit",
+    "selectTime": "Select Time"
+  },
+  "visits": {
+    "title": "My Visits",
+    "noVisits": "No visits planned",
+    "visitDate": "Visit Date",
+    "visitTime": "Visit Time",
+    "visitNotes": "Visit Notes",
+    "cancelVisit": "Cancel Visit",
+    "date": "Date",
+    "time": "Time",
+    "notes": "Notes",
+    "cancel": "Cancel"
+  },
+  "language": {
+    "english": "English",
+    "french": "French",
+    "dutch": "Dutch"
+  },
+  "common": {
+    "month": "month"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "luxe": "Prestige",
+    "rent": "À Louer",
+    "buy": "À Vendre",
+    "login": "Se connecter",
+    "cart": "Panier",
+    "visits": "Rendez-vous",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Biens en Vedette",
+    "title1": "Trouvez Votre",
+    "title2": "Maison de Rêve en Belgique",
+    "description": "Découvrez des biens immobiliers d'exception au cœur de l'Europe. Votre logement idéal est à portée de clic.",
+    "searchPlaceholder": "Rechercher par lieu, type ou prix...",
+    "search": "Rechercher",
+    "properties": "Biens",
+    "clients": "Clients Satisfaits",
+    "years": "Années d'Expérience"
+  },
+  "featured": {
+    "title": "Biens en Vedette",
+    "subtitle": "Découvrez notre sélection de biens immobiliers d'exception",
+    "viewAll": "Voir Tous les Biens",
+    "bedrooms": "Chambres",
+    "bathrooms": "Salles de Bain",
+    "sqft": "m²",
+    "forSale": "À Vendre",
+    "forRent": "À Louer",
+    "viewDetails": "Voir les Détails",
+    "featured": "En Vedette"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions immobilières complètes adaptées à vos besoins",
+    "buy": "Acheter un Bien",
+    "buyDesc": "Trouvez la maison de vos rêves parmi nos annonces exclusives.",
+    "sell": "Vendre un Bien",
+    "sellDesc": "Obtenez le meilleur prix pour votre bien grâce à notre expertise marketing.",
+    "rent": "Louer un Bien",
+    "rentDesc": "Découvrez des biens à louer qui correspondent à votre style de vie.",
+    "valuation": "Évaluation Gratuite",
+    "valuationDesc": "Obtenez une évaluation précise de votre bien sur le marché actuel."
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "subtitle": "Découvrez les témoignages de nos clients satisfaits"
+  },
+  "newsletter": {
+    "title": "Restez Informé",
+    "subtitle": "Abonnez-vous à notre newsletter pour les dernières annonces et actualités du marché",
+    "placeholder": "Votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "privacy": "Nous respectons votre vie privée. Désabonnez-vous à tout moment."
+  },
+  "cta": {
+    "title": "Prêt à Trouver Votre Maison de Rêve ?",
+    "subtitle": "Contactez-nous dès aujourd'hui pour organiser une visite ou obtenir une consultation gratuite",
+    "button": "Nous Contacter"
+  },
+  "footer": {
+    "about": "À propos",
+    "contact": "Contact",
+    "terms": "Conditions Générales",
+    "privacy": "Politique de Confidentialité",
+    "rights": "Tous droits réservés"
+  },
+  "auth": {
+    "login": "Connexion",
+    "signup": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "signIn": "Se connecter",
+    "createAccount": "Créer un compte",
+    "noAccount": "Pas encore de compte ?",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "signUpLink": "S'inscrire",
+    "signInLink": "Se connecter"
+  },
+  "category": {
+    "luxe": "Biens de Prestige",
+    "rent": "Biens à Louer",
+    "buy": "Biens à Vendre"
+  },
+  "related": {
+    "title": "Biens Similaires"
+  },
+  "schedule": {
+    "title": "Prendre un Rendez-vous",
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "phone": "Numéro de téléphone",
+    "preferredDate": "Date souhaitée",
+    "preferredTime": "Heure souhaitée",
+    "additionalNotes": "Notes supplémentaires",
+    "scheduleVisit": "Prendre Rendez-vous",
+    "selectTime": "Sélectionner l'heure"
+  },
+  "visits": {
+    "title": "Mes Rendez-vous",
+    "noVisits": "Aucun rendez-vous prévu",
+    "visitDate": "Date du Rendez-vous",
+    "visitTime": "Heure du Rendez-vous",
+    "visitNotes": "Notes",
+    "cancelVisit": "Annuler le Rendez-vous",
+    "date": "Date",
+    "time": "Heure",
+    "notes": "Notes",
+    "cancel": "Annuler"
+  },
+  "language": {
+    "english": "Anglais",
+    "french": "Français",
+    "dutch": "Néerlandais"
+  },
+  "common": {
+    "month": "mois"
+  }
+}

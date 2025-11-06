@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className="relative z-50 w-full bg-white px-6 pt-2"
+      className="relative z-[100000] w-full bg-white px-6 pt-2"
       variants={logoContainerVariants}
       initial="hidden"
       animate="visible"
@@ -79,7 +79,7 @@ export default function Navbar() {
           </nav>
 
           {/* Language Switcher */}
-          <div className="hidden md:block">
+          <div className="block">
             <LanguageSwitcher />
           </div>
         </div>

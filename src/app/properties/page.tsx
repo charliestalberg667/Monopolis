@@ -86,7 +86,7 @@ export default function PropertiesPage() {
         const data = await res.json();
         const estates = (data?.estates || []) as Property[];
         if (estates.length) setLoaded(estates);
-      } catch (e) {
+      } catch {
         setError('Could not load live estates. Showing sample listings.');
       } finally {
         setLoading(false);

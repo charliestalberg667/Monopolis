@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { FiMapPin } from "react-icons/fi";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
-import { useLanguage } from "../languageProvider/languageProvider";
+import { useTranslation } from "react-i18next";
 
 interface PropertyCardProps {
   id: string;
@@ -30,7 +30,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   type,
   featured = false,
 }) => {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   const formatPrice = (value: number) => {
     return new Intl.NumberFormat("en-US", {
@@ -58,7 +58,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         {featured && (
           <div className="absolute top-3 left-3">
             <span className="bg-black text-white text-xs px-2 py-1 rounded-sm">
-              {t('featured')}
+              {t('featured.featured')}
             </span>
           </div>
         )}
@@ -79,7 +79,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         <div className="text-base font-medium mb-3">
           {formatPrice(price)}
           {type === 'rent' && (
-            <span className="text-sm font-normal text-gray-600">/{t('month')}</span>
+            <span className="text-sm font-normal text-gray-600">/{t('common.month')}</span>
           )}
         </div>
         

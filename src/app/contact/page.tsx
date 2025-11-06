@@ -16,7 +16,7 @@ export default function ContactPage() {
       // No backend wired yet — simulate success after short delay
       await new Promise((resolve) => setTimeout(resolve, 800));
       setIsSubmitted(true);
-    } catch (e) {
+    } catch {
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

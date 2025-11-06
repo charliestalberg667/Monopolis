@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/languageProvider/languageProvider";
+import I18nProvider from "@/i18n/client";
 import PageRevealer from "@/components/PageRevealer/PageRevealer";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
@@ -31,14 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageProvider>
+        <I18nProvider>
           <Navbar />
           <PageRevealer />
           <main className="min-h-screen">
             {children}
           </main>
           <Footer />
-        </LanguageProvider>
+        </I18nProvider>
       </body>
     </html>
   );
