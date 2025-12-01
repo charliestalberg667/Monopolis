@@ -1,7 +1,7 @@
-"use client";
 
 import React, { useEffect, useMemo, useState } from "react";
 import PropertyCard from "@/components/propertyCard/propertyCard";
+import { fetchEstates } from '@/lib/whise-api';
 
 type Property = {
   id: string;
