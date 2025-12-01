@@ -1,7 +1,8 @@
+"use client";
 
 import React, { useEffect, useMemo, useState } from "react";
 import PropertyCard from "@/components/propertyCard/propertyCard";
-import { fetchEstates } from '@/lib/whise-api';
+import { fetchEstates } from "@/lib/whise-api";
 
 type Property = {
   id: string;
@@ -81,13 +82,13 @@ export default function PropertiesPage() {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch('/api/estates', { cache: 'no-store' });
-        if (!res.ok) throw new Error('Failed to load estates');
+        const res = await fetch("/api/estates", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to load estates");
         const data = await res.json();
         const estates = (data?.estates || []) as Property[];
         if (estates.length) setLoaded(estates);
       } catch {
-        setError('Could not load live estates. Showing sample listings.');
+        setError("Could not load live estates. Showing sample listings.");
       } finally {
         setLoading(false);
       }
@@ -101,8 +102,13 @@ export default function PropertiesPage() {
     return properties.filter((p) => {
       if (type !== "all" && p.type !== type) return false;
       if (bedrooms && p.bedrooms < Number(bedrooms)) return false;
-      if (location && !p.location.toLowerCase().includes(location.toLowerCase())) return false;
-      if (search && !p.title.toLowerCase().includes(search.toLowerCase())) return false;
+      if (
+        location &&
+        !p.location.toLowerCase().includes(location.toLowerCase())
+      )
+        return false;
+      if (search && !p.title.toLowerCase().includes(search.toLowerCase()))
+        return false;
       const price = p.price;
       if (p.type === "rent") {
         // Treat rental monthly prices on the same scale; keep numeric filter
@@ -116,15 +122,24 @@ export default function PropertiesPage() {
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 md:mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Properties</h1>
-          <p className="mt-3 text-gray-600">Browse our latest listings across Belgium.</p>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Properties
+          </h1>
+          <p className="mt-3 text-gray-600">
+            Browse our latest listings across Belgium.
+          </p>
         </header>
 
         {/* Filters */}
         <section className="mb-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
-              <label htmlFor="search" className="block text-sm font-medium text-gray-900 mb-1">Search</label>
+              <label
+                htmlFor="search"
+                className="block text-sm font-medium text-gray-900 mb-1"
+              >
+                Search
+              </label>
               <input
                 id="search"
                 type="text"
@@ -135,11 +150,18 @@ export default function PropertiesPage() {
             </div>
 
             <div>
-              <label htmlFor="type" className="block text-sm font-medium text-gray-900 mb-1">Type</label>
+              <label
+                htmlFor="type"
+                className="block text-sm font-medium text-gray-900 mb-1"
+              >
+                Type
+              </label>
               <select
                 id="type"
                 value={type}
-                onChange={(e) => setType(e.target.value as "all" | "sale" | "rent")}
+                onChange={(e) =>
+                  setType(e.target.value as "all" | "sale" | "rent")
+                }
                 className="border border-[#048542] rounded-md px-3 py-2 bg-white"
               >
                 <option value="all">All</option>
@@ -149,7 +171,12 @@ export default function PropertiesPage() {
             </div>
 
             <div>
-              <label htmlFor="beds" className="block text-sm font-medium text-gray-900 mb-1">Bedrooms</label>
+              <label
+                htmlFor="beds"
+                className="block text-sm font-medium text-gray-900 mb-1"
+              >
+                Bedrooms
+              </label>
               <select
                 id="beds"
                 value={bedrooms}
@@ -165,7 +192,12 @@ export default function PropertiesPage() {
             </div>
 
             <div className="flex-1">
-              <label htmlFor="loc" className="block text-sm font-medium text-gray-900 mb-1">Location</label>
+              <label
+                htmlFor="loc"
+                className="block text-sm font-medium text-gray-900 mb-1"
+              >
+                Location
+              </label>
               <input
                 id="loc"
                 type="text"
@@ -176,7 +208,9 @@ export default function PropertiesPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1">Price range</label>
+              <label className="block text-sm font-medium text-gray-900 mb-1">
+                Price range
+              </label>
               <div className="flex items-center gap-2">
                 <input
                   type="number"
@@ -202,12 +236,8 @@ export default function PropertiesPage() {
 
         {/* Results */}
         <section>
-          {loading && (
-            <p className="text-gray-600">Loading listings…</p>
-          )}
-          {error && (
-            <p className="text-sm text-red-600 mb-4">{error}</p>
-          )}
+          {loading && <p className="text-gray-600">Loading listings…</p>}
+          {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
           {filtered.length === 0 ? (
             <p className="text-gray-600">No properties match your filters.</p>
           ) : (
@@ -225,8 +255,8 @@ export default function PropertiesPage() {
                   image={p.image}
                   type={p.type}
                   featured={p.featured}
-                />)
-              )}
+                />
+              ))}
             </div>
           )}
         </section>
@@ -234,4 +264,3 @@ export default function PropertiesPage() {
     </main>
   );
 }
-
