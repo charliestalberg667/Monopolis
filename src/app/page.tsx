@@ -109,86 +109,110 @@ type Testimonial = {
   avatar: string;
 };
 
+const FALLBACK_PROPERTIES: Property[] = [
+  {
+    id: '1',
+    title: 'Modern Apartment in Brussels',
+    location: 'Brussels, Belgium',
+    price: 350000,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 85,
+    image: '/header/image1.jpg',
+    type: 'sale',
+    featured: true
+  },
+  {
+    id: '2',
+    title: 'Luxury Villa with Pool',
+    location: 'Antwerp, Belgium',
+    price: 1250000,
+    bedrooms: 5,
+    bathrooms: 4,
+    area: 185,
+    image: '/header/image2.1.jpg',
+    type: 'sale',
+    featured: true
+  },
+  {
+    id: '3',
+    title: 'Cozy Studio in City Center',
+    location: 'Ghent, Belgium',
+    price: 1200,
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 45,
+    image: '/header/image3.1.jpg',
+    type: 'rent',
+    featured: true
+  },
+  {
+    id: '4',
+    title: 'Modern Duplex with View',
+    location: 'Brussels, Belgium',
+    price: 780000,
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 145,
+    image: '/header/image1.1.jpg',
+    type: 'sale',
+    featured: true
+  },
+  {
+    id: '5',
+    title: 'Luxury Penthouse',
+    location: 'Antwerp, Belgium',
+    price: 1950000,
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 210,
+    image: '/header/image2.jpeg',
+    type: 'sale',
+    featured: true
+  },
+  {
+    id: '6',
+    title: 'Charming Studio',
+    location: 'Ghent, Belgium',
+    price: 850,
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 38,
+    image: '/header/image3.jpeg',
+    type: 'rent',
+    featured: true
+  }
+];
+
 const HomeContent: React.FC = () => {
-  // Refs and state
   const mainRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(mainRef, { once: true, amount: 0.1 });
   const controls = useAnimation();
   
-  const properties: Property[] = [
-    {
-      id: '1',
-      title: 'Modern Apartment in Brussels',
-      location: 'Brussels, Belgium',
-      price: 350000,
-      bedrooms: 2,
-      bathrooms: 1,
-      area: 85,
-      image: '/header/image1.jpg',
-      type: 'sale',
-      featured: true
-    },
-    {
-      id: '2',
-      title: 'Luxury Villa with Pool',
-      location: 'Antwerp, Belgium',
-      price: 1250000,
-      bedrooms: 5,
-      bathrooms: 4,
-      area: 185,
-      image: '/header/image2.1.jpg',
-      type: 'sale',
-      featured: true
-    },
-    {
-      id: '3',
-      title: 'Cozy Studio in City Center',
-      location: 'Ghent, Belgium',
-      price: 1200,
-      bedrooms: 1,
-      bathrooms: 1,
-      area: 45,
-      image: '/header/image3.1.jpg',
-      type: 'rent',
-      featured: true
-    },
-    {
-      id: '4',
-      title: 'Modern Duplex with View',
-      location: 'Brussels, Belgium',
-      price: 780000,
-      bedrooms: 3,
-      bathrooms: 2,
-      area: 145,
-      image: '/header/image1.1.jpg',
-      type: 'sale',
-      featured: true
-    },
-    {
-      id: '5',
-      title: 'Luxury Penthouse',
-      location: 'Antwerp, Belgium',
-      price: 1950000,
-      bedrooms: 4,
-      bathrooms: 3,
-      area: 210,
-      image: '/header/image2.jpeg',
-      type: 'sale',
-      featured: true
-    },
-    {
-      id: '6',
-      title: 'Charming Studio',
-      location: 'Ghent, Belgium',
-      price: 850,
-      bedrooms: 1,
-      bathrooms: 1,
-      area: 38,
-      image: '/header/image3.jpeg',
-      type: 'rent',
-      featured: true
-    }
-  ];
+  const [properties, setProperties] = useState<Property[]>(FALLBACK_PROPERTIES);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeaturedProperties = async () => {
+      try {
+        const res = await fetch('/api/estates', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to fetch');
+        const data = await res.json();
+        const apiProperties = (data?.properties || []) as Property[];
+        const featured = apiProperties.filter(p => p.featured).slice(0, 6);
+        if (featured.length > 0) {
+          setProperties(featured);
+        } else if (apiProperties.length > 0) {
+          setProperties(apiProperties.slice(0, 6).map(p => ({ ...p, featured: true })));
+        }
+      } catch {
+        // Keep fallback properties
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchFeaturedProperties();
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -227,46 +251,67 @@ const HomeContent: React.FC = () => {
             </motion.div>
             
             <div className="w-full">
-              {/* Single responsive grid for all screen sizes */}
-              <motion.div 
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={{
-                  hidden: { opacity: 0 },
-                  show: {
-                    opacity: 1,
-                    transition: {
-                      staggerChildren: 0.1
+              {loading ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8">
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="flex justify-center">
+                      <div className="w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-gray-100 rounded-sm overflow-hidden animate-pulse">
+                        <div className="w-full aspect-[4/3] bg-gray-200" />
+                        <div className="p-4 space-y-3">
+                          <div className="h-5 bg-gray-200 rounded w-3/4" />
+                          <div className="h-4 bg-gray-200 rounded w-1/2" />
+                          <div className="h-5 bg-gray-200 rounded w-1/3" />
+                          <div className="flex gap-4 pt-3 border-t border-gray-200">
+                            <div className="h-4 bg-gray-200 rounded w-12" />
+                            <div className="h-4 bg-gray-200 rounded w-12" />
+                            <div className="h-4 bg-gray-200 rounded w-16" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.1
+                      }
                     }
-                  }
-                }}
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8"
-              >
-                {properties.filter(p => p.featured).map((property) => (
-                  <motion.div
-                    key={property.id}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: { opacity: 1, y: 0 }
-                    }}
-                    className="flex justify-center"
-                  >
-                    <PropertyCard 
-                      id={property.id}
-                      title={property.title}
-                      location={property.location}
-                      price={property.price}
-                      bedrooms={property.bedrooms}
-                      bathrooms={property.bathrooms}
-                      area={property.area}
-                      image={property.image}
-                      type={property.type}
-                      featured={property.featured}
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
+                  }}
+                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8"
+                >
+                  {properties.slice(0, 6).map((property) => (
+                    <motion.div
+                      key={property.id}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0 }
+                      }}
+                      className="flex justify-center"
+                    >
+                      <PropertyCard 
+                        id={property.id}
+                        title={property.title}
+                        location={property.location}
+                        price={property.price}
+                        bedrooms={property.bedrooms}
+                        bathrooms={property.bathrooms}
+                        area={property.area}
+                        image={property.image}
+                        type={property.type}
+                        featured={property.featured}
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
               
               {/* View more button for mobile */}
               <div className="mt-10 text-center md:hidden">

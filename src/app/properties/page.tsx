@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import PropertyCard from "@/components/propertyCard/propertyCard";
-import { fetchEstates } from "@/lib/whise-api";
 
 type Property = {
   id: string;
@@ -78,22 +77,22 @@ export default function PropertiesPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchEstates = async () => {
+    const loadProperties = async () => {
       try {
         setLoading(true);
         setError(null);
         const res = await fetch("/api/estates", { cache: "no-store" });
         if (!res.ok) throw new Error("Failed to load estates");
         const data = await res.json();
-        const estates = (data?.estates || []) as Property[];
-        if (estates.length) setLoaded(estates);
+        const properties = (data?.properties || []) as Property[];
+        if (properties.length) setLoaded(properties);
       } catch {
         setError("Could not load live estates. Showing sample listings.");
       } finally {
         setLoading(false);
       }
     };
-    fetchEstates();
+    loadProperties();
   }, []);
 
   const properties = loaded ?? MOCK_PROPERTIES;
