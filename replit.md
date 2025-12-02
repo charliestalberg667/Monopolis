@@ -10,6 +10,18 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**December 2, 2025 - Dynamic Property Detail Pages**:
+- Created dynamic route `src/app/property/[id]/page.tsx` for individual property details
+- Implemented image gallery with thumbnail navigation for properties
+- Updated PropertyCard component to link to detail pages using Next.js Link
+- Enhanced API response to include all property pictures (urlLarge, urlSmall, urlXXL)
+- Added comprehensive property detail layout with specifications, pricing, and contact section
+- Property cards now clickable and navigate to `/property/[id]` on click
+
+**December 2, 2025 - Image Domain Configuration**:
+- Added `r2.storagewhise.eu` to next.config.ts remotePatterns for Whise image loading
+- Fixed image loading errors for all Whise-hosted property images
+
 **November 19, 2025 - Migrated from Vercel to Replit**:
 - Updated package.json scripts to bind to 0.0.0.0:5000 for Replit networking
 - Modernized next.config.ts to use remotePatterns instead of deprecated domains configuration
@@ -61,8 +73,10 @@ Preferred communication style: Simple, everyday language.
 **Routing Structure**:
 - File-based routing with Next.js App Router
 - Main pages: home, properties, about, services, contact
+- Dynamic route: `property/[id]` for individual property detail pages
 - Placeholder pages: buy, rent, sell, valuation, team, careers
 - Each route has dedicated page.tsx file
+- Property cards link to detail pages using Next.js Link component
 
 **State Management**:
 - React hooks (useState, useEffect) for local component state
@@ -107,9 +121,13 @@ Preferred communication style: Simple, everyday language.
 - Production builds use Next.js build system
 - Package manager: npm (uses package-lock.json)
 
+**Integration Points**:
+- ✅ **Whise API Integration**: Fetches real property data with images and specifications
+- **Image Hosting**: Properties hosted on whisestorageprod.blob.core.windows.net and r2.storagewhise.eu
+- **Data Transformation**: Backend transforms Whise API responses to consistent PropertyCard format
+
 **Future Integration Points** (based on roadmap):
 - User authentication system needed
-- Database for property data (currently using mock data)
 - Map integration for property locations
 - Search and filtering backend
 - Favorites/bookmarks persistence

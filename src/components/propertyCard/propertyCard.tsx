@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FiMapPin } from "react-icons/fi";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -20,6 +21,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
+  id,
   title,
   location,
   price,
@@ -42,7 +44,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   };
 
   return (
-    <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden transition-all duration-300 mx-2 sm:mx-3">
+    <Link href={`/property/${id}`}>
+      <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden transition-all duration-300 mx-2 sm:mx-3 hover:shadow-lg cursor-pointer">
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={image}
@@ -98,7 +101,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           </div>
         </div>
       </div>
-    </article>
+      </article>
+    </Link>
   );
 };
 

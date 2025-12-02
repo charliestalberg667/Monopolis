@@ -35,6 +35,12 @@ interface TransformedProperty {
   image: string;
   type: 'sale' | 'rent';
   featured: boolean;
+  pictures?: Array<{
+    urlLarge: string;
+    urlSmall: string;
+    urlXXL: string;
+    order: number;
+  }>;
 }
 
 function getFirstImageUrl(pictures?: WhisePicture[]): string {
@@ -57,6 +63,12 @@ function transformEstate(estate: WhiseEstate): TransformedProperty {
     image: getFirstImageUrl(estate.pictures),
     type: estate.purpose?.id === 2 ? 'rent' : 'sale',
     featured: estate.displayStatusId === 1,
+    pictures: estate.pictures ? estate.pictures.map(pic => ({
+      urlLarge: pic.urlLarge,
+      urlSmall: pic.urlSmall,
+      urlXXL: pic.urlXXL,
+      order: pic.order,
+    })) : undefined,
   };
 }
 

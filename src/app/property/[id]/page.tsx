@@ -1,0 +1,278 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { FiArrowLeft, FiMapPin } from "react-icons/fi";
+import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
+
+interface Property {
+  id: string;
+  title: string;
+  location: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  area: number;
+  image: string;
+  type: "sale" | "rent";
+  featured?: boolean;
+  pictures?: Array<{
+    urlLarge: string;
+    urlSmall: string;
+    urlXXL: string;
+    order: number;
+  }>;
+}
+
+export default function PropertyDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
+
+  const [property, setProperty] = useState<Property | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  useEffect(() => {
+    const loadProperty = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetch("/api/estates", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to load property");
+        const data = await res.json();
+        const properties = (data?.properties || []) as Property[];
+        const found = properties.find((p) => p.id === id);
+        if (!found) {
+          throw new Error("Property not found");
+        }
+        setProperty(found);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load property");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      loadProperty();
+    }
+  }, [id]);
+
+  const formatPrice = (value: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+      currencyDisplay: "narrowSymbol",
+    }).format(value);
+  };
+
+  if (loading) {
+    return (
+      <main className="min-h-screen px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="animate-pulse space-y-8">
+            <div className="h-96 bg-gray-200 rounded-lg"></div>
+            <div className="h-10 bg-gray-200 rounded w-2/3"></div>
+            <div className="h-20 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (error || !property) {
+    return (
+      <main className="min-h-screen px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <Link
+            href="/properties"
+            className="inline-flex items-center text-[#048542] hover:text-[#036b33] transition-colors mb-6"
+          >
+            <FiArrowLeft className="mr-2" />
+            Back to Properties
+          </Link>
+          <div className="text-center py-16">
+            <p className="text-lg text-gray-600 mb-4">
+              {error || "Property not found"}
+            </p>
+            <Link
+              href="/properties"
+              className="inline-block px-6 py-3 bg-[#048542] text-white rounded-md hover:bg-[#036b33] transition-colors"
+            >
+              View All Properties
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Get all available images
+  const images = property.pictures && property.pictures.length > 0
+    ? property.pictures
+        .sort((a, b) => a.order - b.order)
+        .map((pic) => pic.urlLarge || pic.urlXXL)
+    : [property.image];
+
+  const currentImage = images[selectedImageIndex] || property.image;
+
+  return (
+    <main className="min-h-screen px-6 py-16 md:py-20">
+      <div className="max-w-5xl mx-auto">
+        {/* Back Button */}
+        <Link
+          href="/properties"
+          className="inline-flex items-center text-[#048542] hover:text-[#036b33] transition-colors mb-8"
+        >
+          <FiArrowLeft className="mr-2" />
+          Back to Properties
+        </Link>
+
+        {/* Image Gallery */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+          {/* Main Image */}
+          <div className="lg:col-span-2">
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100">
+              <Image
+                src={currentImage}
+                alt={property.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Thumbnail Gallery */}
+            {images.length > 1 && (
+              <div className="flex gap-3 mt-4 overflow-x-auto">
+                {images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImageIndex(idx)}
+                    className={`relative w-20 h-20 flex-shrink-0 rounded-md overflow-hidden transition-all ${
+                      selectedImageIndex === idx
+                        ? "ring-2 ring-[#048542]"
+                        : "opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${property.title} ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Price and Quick Info */}
+          <div className="bg-[#f8fafc] p-6 rounded-lg">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4">
+              {property.title}
+            </h1>
+
+            <div className="flex items-center text-gray-600 mb-4">
+              <FiMapPin className="mr-2" />
+              <span>{property.location}</span>
+            </div>
+
+            <div className="border-t border-b border-gray-200 py-4 mb-6">
+              <div className="text-3xl font-bold mb-2">
+                {formatPrice(property.price)}
+              </div>
+              {property.type === "rent" && (
+                <span className="text-sm text-gray-600">per month</span>
+              )}
+              <div className="inline-block mt-3 px-3 py-1 rounded-md text-sm font-medium bg-gray-100 text-gray-700">
+                {property.type === "sale" ? "For Sale" : "For Rent"}
+              </div>
+            </div>
+
+            {/* Specifications Grid */}
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center p-3 bg-white rounded-md">
+                <FaBed className="mx-auto mb-2 text-[#048542]" />
+                <div className="text-lg font-semibold">{property.bedrooms}</div>
+                <div className="text-xs text-gray-600">Bedrooms</div>
+              </div>
+              <div className="text-center p-3 bg-white rounded-md">
+                <FaBath className="mx-auto mb-2 text-[#048542]" />
+                <div className="text-lg font-semibold">{property.bathrooms}</div>
+                <div className="text-xs text-gray-600">Bathrooms</div>
+              </div>
+              <div className="text-center p-3 bg-white rounded-md">
+                <FaRulerCombined className="mx-auto mb-2 text-[#048542]" />
+                <div className="text-lg font-semibold">{property.area}</div>
+                <div className="text-xs text-gray-600">m²</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Full Specifications */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Property Details</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#f8fafc] p-8 rounded-lg">
+            <div className="border-b md:border-b-0 md:border-r border-gray-200 md:pr-6 pb-6 md:pb-0">
+              <h3 className="text-lg font-semibold mb-4">Quick Facts</h3>
+              <dl className="space-y-3">
+                <div>
+                  <dt className="text-sm text-gray-600">Property Type</dt>
+                  <dd className="font-medium">
+                    {property.type === "sale" ? "For Sale" : "For Rent"}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-600">Location</dt>
+                  <dd className="font-medium">{property.location}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-600">Price</dt>
+                  <dd className="font-medium">{formatPrice(property.price)}</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Specifications</h3>
+              <dl className="space-y-3">
+                <div>
+                  <dt className="text-sm text-gray-600">Bedrooms</dt>
+                  <dd className="font-medium">{property.bedrooms}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-600">Bathrooms</dt>
+                  <dd className="font-medium">{property.bathrooms}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-600">Total Area</dt>
+                  <dd className="font-medium">{property.area} m²</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="bg-[#048542] text-white p-8 rounded-lg text-center">
+          <h2 className="text-2xl font-bold mb-4">Interested in this property?</h2>
+          <p className="mb-6 text-green-50">
+            Contact our team to schedule a viewing or get more information.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3 bg-white text-[#048542] font-semibold rounded-md hover:bg-gray-100 transition-colors"
+          >
+            Contact Us
+          </Link>
+        </section>
+      </div>
+    </main>
+  );
+}
