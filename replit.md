@@ -12,7 +12,7 @@ Preferred communication style: Simple, everyday language.
 
 **December 2, 2025 - Clean Hover Animations**:
 - Added simple underline animation to navigation links (Properties, About Us, Our Services, Contact)
-- Enhanced property card links with subtle scale (1.02) and shadow enhancement on hover
+- Property card links have NO hover effects (clean, minimal design)
 - Added simple underline animation to all footer links (Company, Services, Contact sections)
 - Implemented smooth opacity transition (0.8) to logo links on hover
 - All animations use consistent 200ms transitions with ease-in-out timing

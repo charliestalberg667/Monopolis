@@ -159,16 +159,6 @@ button.inline-flex.items-center.px-10.py-4:hover {
   opacity: 0.8;
 }
 
-/* Card links - scale and shadow */
-.card-link {
-  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
-}
-
-.card-link:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-}
-
 /* Footer links - simple underline on hover */
 .footer-link {
   transition: text-decoration 200ms ease-in-out;
