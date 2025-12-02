@@ -4,13 +4,14 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../languageProvider/languageSwitcher';
 
-const menuItems = [
-  { id: 'properties', label: 'Properties', href: '/properties' },
-  { id: 'about', label: 'About Us', href: '/about' },
-  { id: 'services', label: 'Our Services', href: '/services' },
-  { id: 'contact', label: 'Contact', href: '/contact' },
+const menuItemsConfig = [
+  { id: 'properties', labelKey: 'navbar.properties', href: '/properties' },
+  { id: 'about', labelKey: 'navbar.about', href: '/about' },
+  { id: 'services', labelKey: 'navbar.services', href: '/services' },
+  { id: 'contact', labelKey: 'navbar.contact', href: '/contact' },
 ];
 
 const logoContainerVariants: Variants = {
@@ -30,7 +31,12 @@ const logoItemVariants: Variants = {
 };
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = menuItemsConfig.map(item => ({
+    ...item,
+    label: t(item.labelKey)
+  }));
 
   const toggleMenu = () => setIsMenuOpen((v) => !v);
 

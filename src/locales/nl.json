@@ -7,7 +7,10 @@
     "login": "Inloggen",
     "cart": "Winkelwagen",
     "visits": "Afspraken",
-    "contact": "Contact"
+    "contact": "Contact",
+    "properties": "Panden",
+    "about": "Over Ons",
+    "services": "Onze Diensten"
   },
   "hero": {
     "badge": "Uitgelichte Panden",

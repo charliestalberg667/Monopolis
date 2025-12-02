@@ -10,6 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**December 2, 2025 - Fixed i18n Language Switching**:
+- Updated navbar to use `useTranslation()` hook for menu items
+- Navigation labels now translate when language is changed (Properties, About Us, Our Services, Contact)
+- Added missing translation keys to English, French, and Dutch locale files
+- Language switcher (EN/FR/NL) now properly changes page content
+- LocalStorage persistence of language preference working correctly
+- Translations dynamically update when language is selected from navbar dropdown
+
 **December 2, 2025 - Company Info Updated**:
 - Updated footer with boutique agency description: "A boutique real estate agency with 4-5 dedicated agents"
 - Changed address to: Brusselsesteenweg 10, 1652 Alsemberg
