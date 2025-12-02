@@ -17,33 +17,18 @@ const resources = {
 };
 
 // Initialize i18n with SSR-safe defaults
-// Language detection will happen on the client side
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', // Default language, will be overridden on client
+    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false, // React already escapes values
+      escapeValue: false,
     },
     react: {
-      useSuspense: false, // Disable suspense for SSR compatibility
+      useSuspense: false,
     },
   });
-
-// Detect and set language on client side
-if (typeof window !== 'undefined') {
-  const saved = localStorage.getItem('i18nextLng');
-  if (saved && ['en', 'fr', 'nl'].includes(saved)) {
-    i18n.changeLanguage(saved);
-  } else {
-    // Try to detect from browser
-    const browserLang = navigator.language.split('-')[0];
-    if (['en', 'fr', 'nl'].includes(browserLang)) {
-      i18n.changeLanguage(browserLang);
-    }
-  }
-}
 
 export default i18n;

@@ -24,8 +24,9 @@ const LanguageSwitcher: React.FC = () => {
   const toggleDropdown = () => setIsOpen(!isOpen);
   const closeDropdown = () => setIsOpen(false);
 
-  const handleLanguageChange = async (lang: Language) => {
-    await i18n.changeLanguage(lang);
+  const handleLanguageChange = (lang: Language) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('i18nextLng', lang);
     closeDropdown();
   };
 
