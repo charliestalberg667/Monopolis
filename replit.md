@@ -10,14 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**December 2, 2025 - Elegant Hover Animations**:
-- Added smooth underline animations to navigation links (slides in from left)
-- Enhanced property card links with scale (1.02) and shadow effects
-- Added smooth underline animations to footer links with color transition
-- Implemented opacity transitions on logo links
-- Added elevation effects to button links with scale and shadow
-- All animations use smooth 350ms transitions with ease-in-out timing
-- CSS animations added to globals.css for consistent, premium aesthetic
+**December 2, 2025 - Clean Hover Animations**:
+- Added simple underline animation to navigation links (Properties, About Us, Our Services, Contact)
+- Enhanced property card links with subtle scale (1.02) and shadow enhancement on hover
+- Added simple underline animation to all footer links (Company, Services, Contact sections)
+- Implemented smooth opacity transition (0.8) to logo links on hover
+- All animations use consistent 200ms transitions with ease-in-out timing
+- Removed complex CSS animations, replaced with clean, simple, and performant styles
+- CSS animations added to globals.css matching premium real estate aesthetic
 
 **December 2, 2025 - Dynamic Property Detail Pages**:
 - Created dynamic route `src/app/property/[id]/page.tsx` for individual property details

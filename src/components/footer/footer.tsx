@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-900 mb-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <Link href="/" aria-label="Monopolis Home" className="block logo-link transition-opacity">
+            <Link href="/" aria-label="Monopolis Home" className="block logo-link">
               <div className="relative w-32 h-10">
                 <Image 
                   src="/logo-black.svg" 
