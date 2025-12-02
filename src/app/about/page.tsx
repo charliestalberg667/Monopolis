@@ -29,8 +29,7 @@ export default function AboutPage() {
           <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
             <h3 className="text-xl font-semibold">Our Mission</h3>
             <p className="mt-3 text-gray-600">
-              To make premium real estate accessible through transparent advice, curated listings, and
-              end‑to‑end guidance tailored to every client.
+              A boutique agency with 4-5 dedicated agents committed to finding the perfect property for every client. We combine deep local expertise with personalized service.
             </p>
           </div>
           <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
@@ -43,7 +42,7 @@ export default function AboutPage() {
           <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
             <h3 className="text-xl font-semibold">How We Work</h3>
             <p className="mt-3 text-gray-600">
-              Data‑driven market insight paired with human expertise—from first viewing to signed deed
+              Personal attention from our expert agents paired with market insight—from first viewing to signed deed
               and beyond.
             </p>
           </div>
@@ -55,20 +54,20 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 py-14 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>750+</div>
-              <p className="text-gray-600 mt-1">Properties sold</p>
+              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>4-5</div>
+              <p className="text-gray-600 mt-1">Dedicated agents</p>
             </div>
             <div>
               <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>98%</div>
               <p className="text-gray-600 mt-1">Client satisfaction</p>
             </div>
             <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>15</div>
+              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>15+</div>
               <p className="text-gray-600 mt-1">Years in market</p>
             </div>
             <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>3</div>
-              <p className="text-gray-600 mt-1">Offices in Belgium</p>
+              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>1</div>
+              <p className="text-gray-600 mt-1">Office in Alsemberg</p>
             </div>
           </div>
         </div>
@@ -108,8 +107,7 @@ export default function AboutPage() {
           <div>
             <h3 className="text-xl md:text-2xl font-semibold">Meet the team behind Monopolis</h3>
             <p className="text-gray-600 mt-2 max-w-2xl">
-              Our multilingual advisors are here to guide you—whether you are buying, selling, or
-              renting.
+              Our 4-5 dedicated agents bring expertise, discretion, and a personal touch to every transaction.
             </p>
           </div>
           <a

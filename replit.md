@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**December 2, 2025 - Company Info Updated**:
+- Updated footer with boutique agency description: "A boutique real estate agency with 4-5 dedicated agents"
+- Changed address to: Brusselsesteenweg 10, 1652 Alsemberg
+- Updated About Us page mission to reflect boutique agency model with 4-5 agents and personalized service
+- Updated About Us stats: 4-5 Dedicated agents, 98% Client satisfaction, 15+ Years in market, 1 Office in Alsemberg
+- Updated About Us CTA description to mention "4-5 dedicated agents"
+- Updated Contact page with boutique team description and new address
+- Updated Google Maps embed to show Alsemberg location
+- Property data remains unchanged
+
 **December 2, 2025 - Clean Hover Animations**:
 - Added simple underline animation to navigation links (Properties, About Us, Our Services, Contact)
 - Property card links have NO hover effects (clean, minimal design)

@@ -101,14 +101,14 @@ export default function ContactPage() {
             <div className="rounded-lg border border-[#048542]/70) bg-white p-6 md:p-8 shadow-sm space-y-6">
               <div>
                 <h3 className="text-lg font-semibold">Contact details</h3>
-                <p className="mt-2 text-gray-600">Our team is available Monday to Friday, 9:00–18:00.</p>
+                <p className="mt-2 text-gray-600">Our boutique team is available Monday to Friday, 9:00–18:00.</p>
               </div>
               <div className="space-y-4 text-gray-700">
                 <div className="flex items-start gap-3">
                   <span className="text-gray-900">📍</span>
                   <div>
-                    <div>Avenue Louise 500</div>
-                    <div>1050 Brussels, Belgium</div>
+                    <div>Brusselsesteenweg 10</div>
+                    <div>1652 Alsemberg, Belgium</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -133,7 +133,7 @@ export default function ContactPage() {
           <div className="rounded-lg overflow-hidden border border-[#048542]/30 shadow-sm">
             <iframe
               title="Monopolis office location"
-              src="https://www.google.com/maps?q=Avenue%20Louise%20500%2C%201050%20Brussels&output=embed"
+              src="https://www.google.com/maps?q=Brusselsesteenweg%2010%2C%201652%20Alsemberg&output=embed"
               width="100%"
               height="380"
               style={{ border: 0 }}

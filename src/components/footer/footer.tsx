@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                 />
               </div>
             </Link>
-            <p className="text-gray-600 text-sm">Your trusted partner in Belgian real estate.</p>
+            <p className="text-gray-600 text-sm">A boutique real estate agency with 4-5 dedicated agents committed to finding your perfect property in Belgium.</p>
           </div>
 
           {/* Company Links */}
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-gray-700 mr-3">📍</span>
-                <span className="text-gray-700">Avenue Louise 500, 1050 Brussels</span>
+                <span className="text-gray-700">Brusselsesteenweg 10, 1652 Alsemberg</span>
               </li>
             </ul>
           </div>
