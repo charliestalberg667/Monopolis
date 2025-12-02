@@ -145,6 +145,7 @@ export default function PropertiesPage() {
                 placeholder="e.g. townhouse, loft, villa"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               />
             </div>
 
@@ -161,7 +162,7 @@ export default function PropertiesPage() {
                 onChange={(e) =>
                   setType(e.target.value as "all" | "sale" | "rent")
                 }
-                className="border border-[#048542] rounded-md px-3 py-2 bg-white"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
                 <option value="all">All</option>
                 <option value="sale">For Sale</option>
@@ -180,7 +181,7 @@ export default function PropertiesPage() {
                 id="beds"
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
-                className="border border-[#048542] rounded-md px-3 py-2 bg-white"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
                 <option value="">Any</option>
                 <option value="1">1+</option>
@@ -203,6 +204,7 @@ export default function PropertiesPage() {
                 placeholder="City, area, or region"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               />
             </div>
 
@@ -217,7 +219,7 @@ export default function PropertiesPage() {
                   value={minPrice}
                   onChange={(e) => setMinPrice(Number(e.target.value || 0))}
                   placeholder="Min"
-                  className="w-32"
+                  className="w-32 border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
                 />
                 <span className="text-gray-500">–</span>
                 <input
@@ -226,7 +228,7 @@ export default function PropertiesPage() {
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(Number(e.target.value || 0))}
                   placeholder="Max"
-                  className="w-32"
+                  className="w-32 border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
                 />
               </div>
             </div>
