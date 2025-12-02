@@ -1,40 +1,74 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Globe, ChevronDown } from 'lucide-react';
 
 type Language = 'en' | 'fr' | 'nl';
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const languages: { code: Language; label: string; flag: string }[] = [
+    { code: 'en', label: 'English', flag: '🇬🇧' },
+    { code: 'fr', label: 'French', flag: '🇫🇷' },
+    { code: 'nl', label: 'Dutch', flag: '🇳🇱' },
+  ];
 
   const handleLanguageChange = (lang: Language) => {
     i18n.changeLanguage(lang);
     localStorage.setItem('i18nextLng', lang);
+    setIsOpen(false);
   };
 
-  const languages: { code: Language; label: string }[] = [
-    { code: 'en', label: 'EN' },
-    { code: 'fr', label: 'FR' },
-    { code: 'nl', label: 'NL' },
-  ];
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isOpen]);
+
+  const currentLanguage = languages.find(lang => lang.code === (i18n.language as Language)) || languages[0];
 
   return (
-    <div className="flex items-center gap-2 border-l border-gray-200 pl-4 ml-4">
-      {languages.map((lang) => (
-        <button
-          key={lang.code}
-          onClick={() => handleLanguageChange(lang.code)}
-          className={`px-2 py-1 text-xs font-semibold rounded transition-colors ${
-            i18n.language === lang.code
-              ? 'bg-black text-white'
-              : 'text-gray-700 hover:bg-gray-100'
-          }`}
-          title={`Switch to ${lang.code.toUpperCase()}`}
-        >
-          {lang.label}
-        </button>
-      ))}
+    <div className="relative" ref={containerRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors border border-gray-200"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+      >
+        <Globe className="w-4 h-4" />
+        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLanguageChange(lang.code)}
+              className={`w-full flex items-center gap-3 px-4 py-2 text-left text-sm transition-colors ${
+                i18n.language === lang.code
+                  ? 'bg-gray-100 text-gray-900 font-medium'
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              <span className="text-lg">{lang.flag}</span>
+              <span>{lang.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

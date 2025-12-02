@@ -10,16 +10,17 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**December 2, 2025 - Rebuilt Language Switcher from Scratch**:
-- Deleted broken Portal-based language switcher with complex positioning logic
-- Created new simple inline language switcher with EN/FR/NL buttons
-- Language buttons display directly in navbar with clean styling
-- Click handlers now work properly - calls i18n.changeLanguage() directly
+**December 2, 2025 - Language Switcher: Dropdown Menu**:
+- Converted inline EN/FR/NL buttons to dropdown menu
+- Shows globe icon + chevron in navbar (chevron rotates when menu opens)
+- Dropdown displays 🇬🇧 English, 🇫🇷 French, 🇳🇱 Dutch with names
+- Click handlers work properly - calls i18n.changeLanguage() directly
 - LocalStorage persistence saves language preference to i18nextLng
-- All translation keys properly set in English, French, and Dutch locale files
-- Navigation labels translate instantly when EN/FR/NL buttons clicked
+- Clicking outside dropdown closes menu
+- Active language highlighted with gray background
+- Navigation labels translate instantly when language selected
 - Components using useTranslation() re-render immediately on language change
-- Simple, clean implementation - no complexity, fully functional
+- Clean, functional dropdown implementation in navbar
 
 **December 2, 2025 - Company Info Updated**:
 - Updated footer with boutique agency description: "A boutique real estate agency with 4-5 dedicated agents"
