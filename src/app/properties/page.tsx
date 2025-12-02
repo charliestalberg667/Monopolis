@@ -162,7 +162,7 @@ export default function PropertiesPage() {
                 onChange={(e) =>
                   setType(e.target.value as "all" | "sale" | "rent")
                 }
-                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
+                className="w-full h-10 border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
                 <option value="all">All</option>
                 <option value="sale">For Sale</option>
@@ -181,7 +181,7 @@ export default function PropertiesPage() {
                 id="beds"
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
+                className="w-full h-10 border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
                 <option value="">Any</option>
                 <option value="1">1+</option>
