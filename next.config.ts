@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'whisestorageprod.blob.core.windows.net',
       },
+      {
+        protocol: 'https',
+        hostname: 'r2.storagewhise.eu',
+      },
     ],
   },
 };
