@@ -10,15 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**December 2, 2025 - Fixed i18n Language Switching**:
-- Moved language detection from module-level to I18nProvider useEffect hook (client-side only)
-- Language switcher now properly calls i18n.changeLanguage() and saves to localStorage
-- Navigation labels translate dynamically when language is changed (Properties, About Us, Our Services, Contact)
+**December 2, 2025 - Rebuilt Language Switcher from Scratch**:
+- Deleted broken Portal-based language switcher with complex positioning logic
+- Created new simple inline language switcher with EN/FR/NL buttons
+- Language buttons display directly in navbar with clean styling
+- Click handlers now work properly - calls i18n.changeLanguage() directly
+- LocalStorage persistence saves language preference to i18nextLng
 - All translation keys properly set in English, French, and Dutch locale files
-- LocalStorage persistence of language preference working correctly (i18nextLng)
-- Translations update immediately when user clicks EN/FR/NL selector in navbar
-- Fixed async/await in handleLanguageChange - now synchronous for immediate updates
-- Components using useTranslation() re-render instantly on language change
+- Navigation labels translate instantly when EN/FR/NL buttons clicked
+- Components using useTranslation() re-render immediately on language change
+- Simple, clean implementation - no complexity, fully functional
 
 **December 2, 2025 - Company Info Updated**:
 - Updated footer with boutique agency description: "A boutique real estate agency with 4-5 dedicated agents"
