@@ -44,7 +44,7 @@ export default function Navbar() {
     >
       <div className="flex justify-between items-end h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-end" aria-label="Monopolis Home">
+        <Link href="/" className="flex items-end logo-link" aria-label="Monopolis Home">
           <motion.div className="relative w-12 h-12" variants={logoItemVariants} custom={0}>
             <Image
               src="/logo-black.svg"
@@ -70,7 +70,7 @@ export default function Navbar() {
               <Link
                 key={item.id}
                 href={item.href}
-                className="px-8 text-sm font-medium hover:underline transition-colors duration-200"
+                className="nav-link px-8 text-sm font-medium"
                 style={{ color: 'black' }}
               >
                 {item.label}

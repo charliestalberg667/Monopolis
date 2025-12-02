@@ -144,4 +144,82 @@ button.inline-flex.items-center.px-10.py-4:hover {
   background-color: #016030 !important;
 }
 
+/* === Link & Button Hover Animations === */
+
+/* Smooth underline animation sliding from left */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Logo smooth opacity transition */
+.logo-link {
+  transition: opacity 0.35s ease-in-out;
+}
+
+.logo-link:hover {
+  opacity: 0.75;
+}
+
+/* Card link scale and shadow enhancement */
+.card-link {
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+}
+
+.card-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Footer link smooth underline with color transition */
+.footer-link {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #048542;
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-link:hover {
+  color: #048542;
+}
+
+/* Subtle elevation effect for button links */
+.button-link {
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-link:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Optional: Dark mode */

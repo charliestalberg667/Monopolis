@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-900 mb-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <Link href="/" aria-label="Monopolis Home" className="block">
+            <Link href="/" aria-label="Monopolis Home" className="block logo-link transition-opacity">
               <div className="relative w-32 h-10">
                 <Image 
                   src="/logo-black.svg" 
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-gray-900 font-medium text-lg mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">About Us</Link></li>
-              <li><Link href="/team" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Our Team</Link></li>
-              <li><Link href="/careers" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="footer-link text-gray-700">About Us</Link></li>
+              <li><Link href="/team" className="footer-link text-gray-700">Our Team</Link></li>
+              <li><Link href="/careers" className="footer-link text-gray-700">Careers</Link></li>
+              <li><Link href="/contact" className="footer-link text-gray-700">Contact</Link></li>
             </ul>
           </div>
 
@@ -39,10 +39,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-gray-900 font-medium text-lg mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/buy" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Buy Property</Link></li>
-              <li><Link href="/sell" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Sell Property</Link></li>
-              <li><Link href="/rent" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Rent</Link></li>
-              <li><Link href="/valuation" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">Valuation</Link></li>
+              <li><Link href="/buy" className="footer-link text-gray-700">Buy Property</Link></li>
+              <li><Link href="/sell" className="footer-link text-gray-700">Sell Property</Link></li>
+              <li><Link href="/rent" className="footer-link text-gray-700">Rent</Link></li>
+              <li><Link href="/valuation" className="footer-link text-gray-700">Valuation</Link></li>
             </ul>
           </div>
 
@@ -52,11 +52,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <span className="text-gray-700 mr-3">✉️</span>
-                <a href="mailto:info@monopolis.be" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">info@monopolis.be</a>
+                <a href="mailto:info@monopolis.be" className="footer-link text-gray-700">info@monopolis.be</a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-700 mr-3">📞</span>
-                <a href="tel:+3221234567" className="text-gray-700 hover:text-[#048542] hover:underline transition-colors">+32 2 123 45 67</a>
+                <a href="tel:+3221234567" className="footer-link text-gray-700">+32 2 123 45 67</a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-700 mr-3">📍</span>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
               href="https://facebook.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-[#048542] transition-colors text-lg"
+              className="footer-link text-gray-700 text-lg"
               aria-label="Facebook"
             >
               <span>f</span>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-[#048542] transition-colors text-lg"
+              className="footer-link text-gray-700 text-lg"
               aria-label="Instagram"
             >
               <span>ig</span>
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-[#048542] transition-colors text-lg"
+              className="footer-link text-gray-700 text-lg"
               aria-label="LinkedIn"
             >
               <span>in</span>
