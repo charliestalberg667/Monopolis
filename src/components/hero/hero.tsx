@@ -29,10 +29,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Filters Section — LEFT ALIGNED */}
-      <div className="w-full">
-        <Filters />
-      </div>
     </div>
   );
 };
