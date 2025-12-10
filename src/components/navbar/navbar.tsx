@@ -46,7 +46,6 @@ export default function Navbar() {
       variants={logoContainerVariants}
       initial="hidden"
       animate="visible"
-      style={{ position: 'relative', zIndex: 50 }}
     >
       <div className="flex justify-between items-end h-16">
         {/* Logo */}

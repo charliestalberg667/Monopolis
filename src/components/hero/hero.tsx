@@ -8,7 +8,7 @@ import { styled } from '@mui/material/styles';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative w-full bg-[#ffffff] px-6 pt-2 pb-10 md:h-screen overflow-visible z-10" style={{ position: 'relative', zIndex: 50 }}>
+    <div className="relative w-full bg-[#ffffff] px-6 pt-2 pb-10 md:h-screen overflow-visible z-10">
 
       {/* Background Image */}
       <div className="relative w-full h-[calc(100vh-120px)] md:h-[calc(100vh-100px)] mb-0 mt-0 md:mb-0 py-6 px-6">

@@ -17,7 +17,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  allowedDevOrigins: ['*'],
+  allowedDevOrigins: [
+    '*.replit.dev',
+    '*.kirk.replit.dev',
+  ],
 };
 
 export default nextConfig;

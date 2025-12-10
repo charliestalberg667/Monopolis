@@ -25,18 +25,23 @@ const LanguageSwitcher: React.FC = () => {
 
   // Close dropdown when clicking outside
   useEffect(() => {
+    if (!isOpen) return;
+    
     function handleClickOutside(event: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
+    
+    // Add a small delay to prevent the click that opened the dropdown from immediately closing it
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 10);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, [isOpen]);
 
   return (
@@ -54,7 +59,7 @@ const LanguageSwitcher: React.FC = () => {
 
       {isOpen && (
         <div 
-          className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-[9999]"
+          className="fixed top-16 right-6 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-[999999] pointer-events-auto"
         >
           {languages.map((lang) => (
             <button
