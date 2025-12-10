@@ -204,7 +204,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
   );
 };
 
-function Filters(): JSX.Element {
+function Filters(): React.ReactElement {
   const [filters, setFilters] = useState({
     type: '',
     bedrooms: '',
