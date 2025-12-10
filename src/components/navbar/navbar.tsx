@@ -85,8 +85,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Language Switcher - Hidden on mobile, visible on md+ */}
-          <div className="hidden md:block">
+          {/* Language Switcher */}
+          <div>
             <LanguageSwitcher />
           </div>
 
