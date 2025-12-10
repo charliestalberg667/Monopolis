@@ -26,6 +26,9 @@ const Hero: React.FC = () => {
             text="EXCEPTIONAL PROPERTIES IN THE MOST SOUGHT-AFTER LOCATIONS"
             className="pt-6 text-lg md:text-lg font-black text-white leading-tight"
           />
+          <div className="mt-6">
+            <Filters />
+          </div>
         </div>
       </div>
 
@@ -201,7 +204,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
   );
 };
 
-const Filters: React.FC = () => {
+function Filters(): JSX.Element {
   const [filters, setFilters] = useState({
     type: '',
     bedrooms: '',
