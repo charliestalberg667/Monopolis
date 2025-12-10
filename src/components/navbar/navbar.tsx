@@ -62,7 +62,7 @@ export default function Navbar() {
               className="h-full w-auto"
             />
           </motion.div>
-          <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
+          <motion.div className="hidden sm:flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
             <div className="text-2xl font-bold leading-none">Monopolis</div>
             <motion.div className="text-xs text-gray-600 leading-none" variants={logoItemVariants} custom={2}>
               sales, rentals, domiciliation
@@ -70,7 +70,7 @@ export default function Navbar() {
           </motion.div>
         </Link>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-2 md:gap-4 ml-auto">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
@@ -85,25 +85,25 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Language Switcher */}
-          <div className="block">
+          {/* Language Switcher - Hidden on mobile, visible on md+ */}
+          <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
-        </div>
 
-        {/* Mobile menu button (visual only; no dropdown implemented) */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden group relative z-50 flex items-center justify-center p-2"
-          aria-expanded={isMenuOpen}
-          aria-label="Toggle menu"
-        >
-          <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
-            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
-            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
-            <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
-          </div>
-        </button>
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden group relative z-50 flex items-center justify-center p-2 -mr-2"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle menu"
+          >
+            <div className={`flex flex-col items-center justify-center space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
+              <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : 'group-hover:w-5'}`}></span>
+              <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'group-hover:w-5'}`}></span>
+              <span className={`block h-0.5 w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : 'group-hover:w-5'}`}></span>
+            </div>
+          </button>
+        </div>
       </div>
     </motion.header>
   );
