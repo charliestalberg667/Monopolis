@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, ChevronDown } from 'lucide-react';
 
@@ -9,6 +9,7 @@ type Language = 'en' | 'fr' | 'nl';
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const languages: { code: Language; label: string; flag: string }[] = [
     { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -22,11 +23,30 @@ const LanguageSwitcher: React.FC = () => {
     setIsOpen(false);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [isOpen]);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors border border-gray-200"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
       >
         <Globe className="w-4 h-4" />
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -35,7 +55,6 @@ const LanguageSwitcher: React.FC = () => {
       {isOpen && (
         <div 
           className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-[9999]"
-          onClick={(e) => e.stopPropagation()}
         >
           {languages.map((lang) => (
             <button
@@ -46,19 +65,13 @@ const LanguageSwitcher: React.FC = () => {
                   ? 'bg-gray-100 text-gray-900 font-medium'
                   : 'text-gray-700 hover:bg-gray-50'
               }`}
+              type="button"
             >
               <span className="text-lg">{lang.flag}</span>
               <span>{lang.label}</span>
             </button>
           ))}
         </div>
-      )}
-
-      {isOpen && (
-        <div 
-          className="fixed inset-0 z-40"
-          onClick={() => setIsOpen(false)}
-        />
       )}
     </div>
   );
