@@ -43,7 +43,7 @@ export default function PageRevealer() {
       {isVisible && (
         <motion.div
           key="revealer"
-          className="fixed inset-0 z-[100000] bg-white flex items-center justify-center"
+          className="fixed inset-0 z-40 bg-white flex items-center justify-center pointer-events-none"
           initial={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{
