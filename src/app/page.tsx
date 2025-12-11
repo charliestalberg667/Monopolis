@@ -231,11 +231,11 @@ const HomeContent: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
+          className="relative py-20 overflow-hidden"
         >
           {/* Decorative elements */}
          
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto px-6">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -252,7 +252,7 @@ const HomeContent: React.FC = () => {
             
             <div className="w-full">
               {loading ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                   {[...Array(6)].map((_, i) => (
                     <div key={i} className="flex justify-center">
                       <div className="w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-gray-100 rounded-sm overflow-hidden animate-pulse">
@@ -285,7 +285,7 @@ const HomeContent: React.FC = () => {
                       }
                     }
                   }}
-                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 px-4 sm:px-6 lg:px-8"
+                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12"
                 >
                   {properties.slice(0, 6).map((property) => (
                     <motion.div
