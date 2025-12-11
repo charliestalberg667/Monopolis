@@ -21,12 +21,26 @@
     "search": "Search",
     "properties": "Properties",
     "clients": "Happy Clients",
-    "years": "Years Experience"
+    "years": "Years Experience",
+    "typewriter": "EXCEPTIONAL PROPERTIES IN THE MOST SOUGHT-AFTER LOCATIONS"
+  },
+  "filters": {
+    "type": "Type",
+    "bedrooms": "Bedrooms",
+    "location": "Location",
+    "apartment": "Apartment",
+    "villa": "Villa",
+    "townhouse": "Townhouse",
+    "brussels": "Brussels",
+    "flanders": "Flanders",
+    "wallonia": "Wallonia"
   },
   "featured": {
+    "badge": "Premium Listings",
     "title": "Featured Properties",
-    "subtitle": "Explore our handpicked selection of premium properties",
+    "subtitle": "Discover our exclusive selection of premium properties in the most sought-after locations",
     "viewAll": "View All Properties",
+    "viewMore": "View More Properties",
     "bedrooms": "Bedrooms",
     "bathrooms": "Bathrooms",
     "sqft": "sq ft",
@@ -34,6 +48,36 @@
     "forRent": "For Rent",
     "viewDetails": "View Details",
     "featured": "Featured"
+  },
+  "process": {
+    "title": "A Simple, Transparent Process",
+    "subtitle": "We've streamlined the property search into three clear, manageable steps",
+    "step": "Step",
+    "getStarted": "Get Started",
+    "step1": {
+      "title": "Find Your Property",
+      "description": "Browse our curated selection of premium properties that match your criteria and preferences.",
+      "detail1": "Personalized recommendations",
+      "detail2": "Advanced search filters",
+      "detail3": "Save favorite listings",
+      "detail4": "Instant alerts for new matches"
+    },
+    "step2": {
+      "title": "Schedule a Viewing",
+      "description": "Book a visit with one of our expert agents who will provide in-depth property analysis.",
+      "detail1": "Flexible scheduling",
+      "detail2": "Expert guidance",
+      "detail3": "Market insights",
+      "detail4": "Investment advice"
+    },
+    "step3": {
+      "title": "Complete the Process",
+      "description": "Our team handles everything from offer to closing with expert negotiation and support.",
+      "detail1": "Mortgage assistance",
+      "detail2": "Professional negotiation",
+      "detail3": "Legal support",
+      "detail4": "Smooth handover"
+    }
   },
   "services": {
     "title": "Our Services",
@@ -48,8 +92,14 @@
     "valuationDesc": "Get an accurate market valuation for your property."
   },
   "testimonials": {
+    "badge": "Testimonials",
     "title": "What Our Clients Say",
-    "subtitle": "Success stories from our happy clients"
+    "subtitle": "Don't just take our word for it. Here's what our clients have to say about their experience with us.",
+    "roles": {
+      "homeBuyer": "Home Buyer",
+      "investor": "Real Estate Investor",
+      "seller": "First-time Seller"
+    }
   },
   "newsletter": {
     "title": "Stay Updated",
@@ -64,11 +114,21 @@
     "button": "Get in Touch"
   },
   "footer": {
+    "description": "A boutique real estate agency with 4-5 dedicated agents committed to finding your perfect property in Belgium.",
+    "company": "Company",
     "about": "About Us",
+    "team": "Our Team",
+    "careers": "Careers",
     "contact": "Contact",
+    "servicesTitle": "Services",
+    "buyProperty": "Buy Property",
+    "sellProperty": "Sell Property",
+    "rent": "Rent",
+    "valuation": "Valuation",
+    "contactTitle": "Contact",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
-    "rights": "All Rights Reserved"
+    "rights": "All rights reserved"
   },
   "auth": {
     "login": "Login",

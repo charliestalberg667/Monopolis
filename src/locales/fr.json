@@ -21,12 +21,26 @@
     "search": "Rechercher",
     "properties": "Biens",
     "clients": "Clients Satisfaits",
-    "years": "Années d'Expérience"
+    "years": "Années d'Expérience",
+    "typewriter": "DES PROPRIÉTÉS D'EXCEPTION DANS LES EMPLACEMENTS LES PLUS RECHERCHÉS"
+  },
+  "filters": {
+    "type": "Type",
+    "bedrooms": "Chambres",
+    "location": "Localisation",
+    "apartment": "Appartement",
+    "villa": "Villa",
+    "townhouse": "Maison de ville",
+    "brussels": "Bruxelles",
+    "flanders": "Flandres",
+    "wallonia": "Wallonie"
   },
   "featured": {
+    "badge": "Annonces Premium",
     "title": "Biens en Vedette",
-    "subtitle": "Découvrez notre sélection de biens immobiliers d'exception",
+    "subtitle": "Découvrez notre sélection exclusive de biens d'exception dans les emplacements les plus recherchés",
     "viewAll": "Voir Tous les Biens",
+    "viewMore": "Voir Plus de Biens",
     "bedrooms": "Chambres",
     "bathrooms": "Salles de Bain",
     "sqft": "m²",
@@ -34,6 +48,36 @@
     "forRent": "À Louer",
     "viewDetails": "Voir les Détails",
     "featured": "En Vedette"
+  },
+  "process": {
+    "title": "Un Processus Simple et Transparent",
+    "subtitle": "Nous avons simplifié la recherche immobilière en trois étapes claires et gérables",
+    "step": "Étape",
+    "getStarted": "Commencer",
+    "step1": {
+      "title": "Trouvez Votre Bien",
+      "description": "Parcourez notre sélection de biens premium qui correspondent à vos critères et préférences.",
+      "detail1": "Recommandations personnalisées",
+      "detail2": "Filtres de recherche avancés",
+      "detail3": "Enregistrer vos favoris",
+      "detail4": "Alertes instantanées pour les nouveaux biens"
+    },
+    "step2": {
+      "title": "Planifiez une Visite",
+      "description": "Réservez une visite avec l'un de nos agents experts qui vous fournira une analyse approfondie du bien.",
+      "detail1": "Planification flexible",
+      "detail2": "Conseils d'experts",
+      "detail3": "Aperçu du marché",
+      "detail4": "Conseils en investissement"
+    },
+    "step3": {
+      "title": "Finalisez le Processus",
+      "description": "Notre équipe gère tout, de l'offre à la signature, avec une négociation experte et un soutien complet.",
+      "detail1": "Aide au financement",
+      "detail2": "Négociation professionnelle",
+      "detail3": "Assistance juridique",
+      "detail4": "Remise des clés en douceur"
+    }
   },
   "services": {
     "title": "Nos Services",
@@ -48,8 +92,14 @@
     "valuationDesc": "Obtenez une évaluation précise de votre bien sur le marché actuel."
   },
   "testimonials": {
-    "title": "Témoignages",
-    "subtitle": "Découvrez les témoignages de nos clients satisfaits"
+    "badge": "Témoignages",
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "Ne nous croyez pas sur parole. Voici ce que nos clients disent de leur expérience avec nous.",
+    "roles": {
+      "homeBuyer": "Acheteur",
+      "investor": "Investisseur Immobilier",
+      "seller": "Premier Vendeur"
+    }
   },
   "newsletter": {
     "title": "Restez Informé",
@@ -64,8 +114,18 @@
     "button": "Nous Contacter"
   },
   "footer": {
+    "description": "Une agence immobilière boutique avec 4-5 agents dévoués engagés à trouver votre propriété parfaite en Belgique.",
+    "company": "Société",
     "about": "À propos",
+    "team": "Notre Équipe",
+    "careers": "Carrières",
     "contact": "Contact",
+    "servicesTitle": "Services",
+    "buyProperty": "Acheter un Bien",
+    "sellProperty": "Vendre un Bien",
+    "rent": "Location",
+    "valuation": "Évaluation",
+    "contactTitle": "Contact",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité",
     "rights": "Tous droits réservés"
