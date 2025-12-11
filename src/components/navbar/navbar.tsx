@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../languageProvider/languageSwitcher';
 
@@ -30,6 +30,20 @@ const logoItemVariants: Variants = {
   }),
 };
 
+const mobileMenuVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.25, ease: 'easeOut', when: 'beforeChildren', staggerChildren: 0.08 },
+  },
+};
+
+const mobileMenuItemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } },
+};
+
 export default function Navbar() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,6 +53,14 @@ export default function Navbar() {
   }));
 
   const toggleMenu = () => setIsMenuOpen((v) => !v);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <motion.header
@@ -104,6 +126,39 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="mobile-menu"
+            className="fixed inset-0 z-[90000] bg-white/95 backdrop-blur-sm md:hidden"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={mobileMenuVariants}
+          >
+            <nav className="flex flex-col items-center gap-8 pt-24 px-6 text-lg font-medium">
+              {menuItems.map((item) => (
+                <motion.div key={item.id} variants={mobileMenuItemVariants}>
+                  <Link
+                    href={item.href}
+                    className="nav-link px-4 py-2 block text-center"
+                    onClick={closeMenu}
+                    style={{ color: 'black' }}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div variants={mobileMenuItemVariants} className="mt-4">
+                <LanguageSwitcher />
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

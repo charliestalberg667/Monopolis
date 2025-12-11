@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { format } from 'date-fns';
 import { 
   PieChart, 
   Pie, 
@@ -16,13 +15,19 @@ import {
   Line, 
   ReferenceLine
 } from 'recharts';
+import { useTranslation } from 'react-i18next';
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
 
 interface RegionData {
-  name: string;
+  key: 'brussels' | 'flanders' | 'wallonia';
   price: number;
   change: number;
+}
+
+interface PropertyTypeData {
+  key: 'houses' | 'apartments' | 'plots' | 'others';
+  value: number;
 }
 
 // Historical Belgian real estate price index (1944-2024, base 100 = 2015)
@@ -110,38 +115,42 @@ const priceTrends = generatePriceTrends();
 const averagePrice = priceTrends[priceTrends.length - 1].price;
 
 // Source: Statbel 2024 Q1
-const propertyTypes = [
-  { name: 'Houses', value: 68 },
-  { name: 'Apartments', value: 28 },
-  { name: 'Building Plots', value: 3 },
-  { name: 'Others', value: 1 },
+const propertyTypes: PropertyTypeData[] = [
+  { key: 'houses', value: 68 },
+  { key: 'apartments', value: 28 },
+  { key: 'plots', value: 3 },
+  { key: 'others', value: 1 },
 ];
 
 // Regional data (average prices per m²)
-const regionalData = [
-  { name: 'Brussels', price: 3800, change: 3.8 },
-  { name: 'Flanders', price: 2900, change: 4.5 },
-  { name: 'Wallonia', price: 1950, change: 3.2 },
+const regionalData: RegionData[] = [
+  { key: 'brussels', price: 3800, change: 3.8 },
+  { key: 'flanders', price: 2900, change: 4.5 },
+  { key: 'wallonia', price: 1950, change: 3.2 },
 ];
 
 // Custom tooltip component
 const CustomTooltip = ({
   active,
   payload,
+  yearLabel,
+  pricePerSqmLabel,
 }: {
   active?: boolean;
   payload?: Array<{ value: number; payload: { year: number; price: number; pricePerSqm: number; index: number } }>;
+  yearLabel: string;
+  pricePerSqmLabel: string;
 }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
       <div className="bg-white p-3 border border-gray-200 rounded shadow-md">
-        <p className="font-medium">Year: {data.year}</p>
+        <p className="font-medium">{yearLabel}: {data.year}</p>
         <p className="text-green-700">
           €{data.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
         </p>
         <p className="text-xs text-gray-500">
-          {data.pricePerSqm.toFixed(2)} €/m²
+          {pricePerSqmLabel}: {data.pricePerSqm.toFixed(2)} €/m²
         </p>
       </div>
     );
@@ -150,6 +159,21 @@ const CustomTooltip = ({
 };
 
 const MarketReport: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const translatedPropertyTypes = propertyTypes.map((type) => ({
+    ...type,
+    name: t(`marketReport.propertyTypes.${type.key}`),
+  }));
+  const translatedRegionalData = regionalData.map((region) => ({
+    ...region,
+    name: t(`marketReport.regions.${region.key}`),
+  }));
+  const formattedLastUpdated = new Date('2024-06-23').toLocaleDateString(i18n.language, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   // Get current year data
   const currentYearData = priceTrends[priceTrends.length - 1];
   const previousYearData = priceTrends[priceTrends.length - 2];
@@ -179,7 +203,7 @@ const MarketReport: React.FC = () => {
   const formatPieTooltip = (value: number) => [`${value}%`];
   
   // Format region data for display
-  const formatRegionData = (region: RegionData) => ({
+  const formatRegionData = (region: RegionData & { name: string }) => ({
     ...region,
     price: `€${region.price.toLocaleString()}`,
     change: formatPriceChange(region.change)
@@ -190,11 +214,11 @@ const MarketReport: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-            Market Insights
+            {t('marketReport.badge')}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Belgian Real Estate Market Report</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('marketReport.title')}</h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Latest trends and analysis for the Belgian real estate market (Q2 2024)
+            {t('marketReport.subtitle')}
           </p>
         </div>
 
@@ -203,13 +227,13 @@ const MarketReport: React.FC = () => {
         {/* 80-Year Price Trend Chart */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 border border-[#048542]/30">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-            <h2 className="text-3xl font-bold text-center mb-4">80 Years of Belgian Real Estate Prices</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">{t('marketReport.chartTitle')}</h2>
             <div className="flex items-center mt-2 md:mt-0">
               <span className="text-sm text-gray-500 mr-4">
-                Average Price: <span className="font-medium text-gray-900">€{averagePrice.toLocaleString()}</span>
+                {t('marketReport.labels.averagePrice')}: <span className="font-medium text-gray-900">€{averagePrice.toLocaleString()}</span>
               </span>
               <span className="text-sm px-2 py-1 rounded-md bg-blue-50 text-blue-700">
-                {formatPriceChange(priceChange)} from last year
+                {formatPriceChange(priceChange)} {t('marketReport.labels.priceChange')}
               </span>
             </div>
           </div>
@@ -237,8 +261,8 @@ const MarketReport: React.FC = () => {
                   domain={[0, 'dataMax + 100000']}
                 />
                 <Tooltip 
-                  content={<CustomTooltip />}
-                  labelFormatter={(label: string) => `Year: ${label}`}
+                  content={<CustomTooltip yearLabel={t('marketReport.labels.year')} pricePerSqmLabel={t('marketReport.labels.pricePerSqm')} />}
+                  labelFormatter={(label: string) => `${t('marketReport.labels.year')}: ${label}`}
                   formatter={(value: number) => formatTooltipValue(value)}
                   contentStyle={{
                     background: 'white',
@@ -251,7 +275,7 @@ const MarketReport: React.FC = () => {
                 <Line 
                   type="monotone" 
                   dataKey="price" 
-                  name="Average Price"
+                  name={t('marketReport.labels.averagePrice')}
                   stroke="#3b82f6" 
                   strokeWidth={3}
                   dot={false}
@@ -268,7 +292,7 @@ const MarketReport: React.FC = () => {
                   stroke="#ef4444" 
                   strokeDasharray="3 3" 
                   label={{
-                    value: 'Financial Crisis',
+                    value: t('marketReport.references.financialCrisis'),
                     position: 'top',
                     fill: '#ef4444',
                     fontSize: 12,
@@ -281,7 +305,7 @@ const MarketReport: React.FC = () => {
                   stroke="#f59e0b" 
                   strokeDasharray="3 3" 
                   label={{
-                    value: 'Pandemic',
+                    value: t('marketReport.references.pandemic'),
                     position: 'top',
                     fill: '#f59e0b',
                     fontSize: 12,
@@ -292,14 +316,14 @@ const MarketReport: React.FC = () => {
             </ResponsiveContainer>
           </div>
           <p className="text-xs text-blue-600 mt-2 text-right">
-            Source: National Bank of Belgium, Statbel, Eurostat (2024)
+            {t('marketReport.chartSource')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Price per m² Trend */}
           <div className="hidden md:block bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-            <h3 className="text-xl font-semibold mb-6">Price per m² Trend</h3>
+            <h3 className="text-xl font-semibold mb-6">{t('marketReport.pricePerSqmTrend')}</h3>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={priceTrends}>
@@ -319,11 +343,11 @@ const MarketReport: React.FC = () => {
                     width={80}
                     tickFormatter={(value: number) => `€${value.toLocaleString()}`}
                   />
-                  <Tooltip content={<CustomTooltip />} />
+                  <Tooltip content={<CustomTooltip yearLabel={t('marketReport.labels.year')} pricePerSqmLabel={t('marketReport.labels.pricePerSqm')} />} />
                   <Line 
                     type="monotone" 
                     dataKey="pricePerSqm" 
-                    name="Price per m²"
+                    name={t('marketReport.labels.pricePerSqm')}
                     stroke="#01753f" 
                     strokeWidth={2}
                     dot={false}
@@ -341,13 +365,13 @@ const MarketReport: React.FC = () => {
 
           {/* Property Types */}
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-            <h3 className="text-xl font-semibold mb-6">Property Types</h3>
+            <h3 className="text-xl font-semibold mb-6">{t('marketReport.propertyTypesTitle')}</h3>
             <div className="h-80 flex flex-col">
               <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
-                      data={propertyTypes}
+                      data={translatedPropertyTypes}
                       cx="50%"
                       cy="50%"
                       innerRadius={60}
@@ -358,7 +382,7 @@ const MarketReport: React.FC = () => {
                       label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                       labelLine={false}
                     >
-                      {propertyTypes.map((entry, index) => (
+                      {translatedPropertyTypes.map((entry, index) => (
                         <Cell 
                           key={`cell-${index}`} 
                           fill={COLORS[index % COLORS.length]}
@@ -384,8 +408,8 @@ const MarketReport: React.FC = () => {
                 </ResponsiveContainer>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-6">
-                {propertyTypes.map((type, index) => (
-                  <div key={type.name} className="flex items-center">
+                {translatedPropertyTypes.map((type, index) => (
+                  <div key={type.key} className="flex items-center">
                     <div 
                       className="w-4 h-4 rounded-sm mr-2 flex-shrink-0" 
                       style={{ 
@@ -405,16 +429,16 @@ const MarketReport: React.FC = () => {
 
         {/* Regional Price Comparison */}
         <div className="mt-12 bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-          <h3 className="text-xl font-semibold mb-6">Average Price per m² by Region</h3>
+          <h3 className="text-xl font-semibold mb-6">{t('marketReport.regionalTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {regionalData.map((region) => {
+            {translatedRegionalData.map((region) => {
               const formattedRegion = formatRegionData(region);
               return (
-                <div key={region.name} className="border border-[#048542]/30 bg-white rounded-lg p-4">
+                <div key={region.key} className="border border-[#048542]/30 bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-900">{formattedRegion.name}</h4>
                   <p className="text-2xl font-bold mt-2">{formattedRegion.price}</p>
                   <p className={`text-sm mt-1 ${region.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                    {formattedRegion.change} from last year
+                    {formattedRegion.change} {t('marketReport.labels.priceChange')}
                   </p>
                 </div>
               );
@@ -424,9 +448,9 @@ const MarketReport: React.FC = () => {
 
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
-            Data sources: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb
+            {t('marketReport.meta.sources')}
             <br />
-            Last updated: {format(new Date('2024-06-23'), 'MMMM d, yyyy')}
+            {t('marketReport.meta.lastUpdated', { date: formattedLastUpdated })}
           </p>
         </div>
       </div>

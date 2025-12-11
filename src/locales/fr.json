@@ -194,5 +194,125 @@
   },
   "common": {
     "month": "mois"
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Nos services",
+      "title": "Un accompagnement expert, de bout en bout, pour chaque projet immobilier",
+      "description": "Nous combinons expertise terrain, partenaires fiables et reporting clair pour acheter, segmenter, louer, vendre ou vous relocaliser sans friction.",
+      "ctaPrimary": "Parler à un conseiller",
+      "ctaSecondary": "Voir les biens disponibles",
+      "highlights": [
+        { "label": "Gain moyen à la vente", "value": "+8,4%" },
+        { "label": "Temps sur le marché", "value": "21 jours" },
+        { "label": "Villes couvertes", "value": "12" },
+        { "label": "Satisfaction propriétaire", "value": "4,8/5" }
+      ]
+    },
+    "whatWeDeliver": {
+      "title": "Ce que nous livrons",
+      "subtitle": "Quatre offres ciblées, un seul responsable. Choisissez une piste ou combinez-les dans un plan unique.",
+      "ribbon": "Equipe fondatrice, service complet"
+    },
+    "services": {
+      "segmentation": {
+        "label": "Segmentation immobilière",
+        "summary": "Diviser un bien en unités conformes et rentables avec support architectural et réglementaire.",
+        "bullets": [
+          "Modélisation ROI et faisabilité",
+          "Plans, permis et coordination des entrepreneurs",
+          "Guide conformité par commune"
+        ]
+      },
+      "sales": {
+        "label": "Vente de biens",
+        "summary": "De l'estimation à l'acte: mise en scène, marketing et négociation pour trouver le bon acheteur au meilleur prix.",
+        "bullets": [
+          "Prix et estimation pilotés par la donnée",
+          "Photos, home staging et portée internationale",
+          "Gestion des offres et accompagnement juridique"
+        ]
+      },
+      "rentals": {
+        "label": "Locations",
+        "summary": "Service locatif clé en main pour propriétaires et locataires avec screening, contrats et onboarding soigné.",
+        "bullets": [
+          "Sourcing et sélection des locataires",
+          "Contrats, remise des clés et états des lieux",
+          "Options de gestion continue"
+        ]
+      },
+      "relocation": {
+        "label": "Délocalisation",
+        "summary": "Partenaire de relocation pour personnes et équipes: découverte des quartiers, logement et démarches administratives.",
+        "bullets": [
+          "Conseil quartier, écoles et trajets",
+          "Recherche logement court et long terme",
+          "Enregistrement, services publics et installation"
+        ]
+      }
+    },
+    "flow": {
+      "chip": "Parcours",
+      "title": "Notre méthode",
+      "subtitle": "Des étapes claires, une équipe responsable du début à la fin.",
+      "steps": [
+        { "title": "Découvrir", "detail": "On aligne objectifs, délais et contraintes." },
+        { "title": "Concevoir", "detail": "On trace le plan: prix, agencement et stratégie marketing." },
+        { "title": "Exécuter", "detail": "Des partenaires validés livrent; on gère permis et paperasse." },
+        { "title": "Reporter", "detail": "Mises à jour, métriques et décisions au même endroit." }
+      ]
+    },
+    "audience": {
+      "title": "Pour propriétaires et personnes en mouvement",
+      "description": "Investisseur, famille qui déménage ou équipe qui relocalise des talents: on adapte le plan à votre profil et votre rythme.",
+      "items": [
+        { "title": "Reporting transparent", "body": "Un tableau de bord, un point hebdo, pas de surprises." },
+        { "title": "Spécialistes locaux", "body": "Permis, utilities et règles communales gérés par ceux qui les connaissent." },
+        { "title": "Partenaires validés", "body": "Architectes, entrepreneurs et juristes éprouvés sur chaque mission." }
+      ],
+      "cta": "Planifier mon projet"
+    },
+    "closing": {
+      "title": "Prêt pour la prochaine étape ?",
+      "description": "Dites-nous où vous en êtes et nous concevrons un plan simple et mesurable. Sans pression, juste des options claires.",
+      "primary": "Réserver un appel",
+      "secondary": "Rencontrer l'équipe"
+    }
+  },
+  "marketReport": {
+    "badge": "Analyses du marché",
+    "title": "Rapport sur le marché immobilier belge",
+    "subtitle": "Dernières tendances et analyses du marché immobilier belge (T2 2024)",
+    "chartTitle": "80 ans de prix de l'immobilier en Belgique",
+    "pricePerSqmTrend": "Évolution du prix au m²",
+    "propertyTypesTitle": "Types de biens",
+    "regionalTitle": "Prix moyen au m² par région",
+    "chartSource": "Source : Banque nationale de Belgique, Statbel, Eurostat (2024)",
+    "references": {
+      "financialCrisis": "Crise financière",
+      "pandemic": "Pandémie"
+    },
+    "labels": {
+      "year": "Année",
+      "averagePrice": "Prix moyen",
+      "pricePerSqm": "Prix au m²",
+      "priceChange": "par rapport à l'année dernière"
+    },
+    "propertyTypes": {
+      "houses": "Maisons",
+      "apartments": "Appartements",
+      "plots": "Terrains à bâtir",
+      "others": "Autres"
+    },
+    "regions": {
+      "brussels": "Bruxelles",
+      "flanders": "Flandre",
+      "wallonia": "Wallonie"
+    },
+    "meta": {
+      "sources": "Sources de données : Statbel, Notaris.be, Baromètre immobilier BNP Paribas Fortis, Immoweb",
+      "lastUpdated": "Dernière mise à jour : {{date}}"
+    }
   }
 }

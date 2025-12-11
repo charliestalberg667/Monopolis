@@ -16,54 +16,6 @@ type Property = {
   featured?: boolean;
 };
 
-const MOCK_PROPERTIES: Property[] = [
-  {
-    id: "1",
-    title: "Elegant Townhouse in Ixelles",
-    location: "Ixelles, Brussels",
-    price: 795000,
-    bedrooms: 4,
-    bathrooms: 2,
-    area: 210,
-    image: "/properties/immage1.jpeg",
-    type: "sale",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Modern Apartment near EU Quarter",
-    location: "European Quarter, Brussels",
-    price: 1850,
-    bedrooms: 2,
-    bathrooms: 1,
-    area: 92,
-    image: "/header/image1.jpg",
-    type: "rent",
-  },
-  {
-    id: "3",
-    title: "Spacious Family Home",
-    location: "Uccle, Brussels",
-    price: 1245000,
-    bedrooms: 5,
-    bathrooms: 3,
-    area: 320,
-    image: "/header/image2.jpeg",
-    type: "sale",
-  },
-  {
-    id: "4",
-    title: "City Loft with Skyline Views",
-    location: "Antwerp Center",
-    price: 1450,
-    bedrooms: 1,
-    bathrooms: 1,
-    area: 68,
-    image: "/header/image3.jpeg",
-    type: "rent",
-  },
-];
-
 export default function PropertiesPage() {
   const [search, setSearch] = useState("");
   const [type, setType] = useState<"all" | "sale" | "rent">("all");
@@ -95,7 +47,7 @@ export default function PropertiesPage() {
     loadProperties();
   }, []);
 
-  const properties = loaded ?? MOCK_PROPERTIES;
+  const properties = loaded ?? [];
 
   const filtered = useMemo(() => {
     return properties.filter((p) => {

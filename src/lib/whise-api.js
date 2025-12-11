@@ -3,7 +3,7 @@
 // Authentication flow: Get authorization token -> Get client token -> Access data
 
 const WHISE_API_BASE = "https://api.whise.eu";
-const CLIENT_ID = 13273; // MPH Monopolis Real Estate
+const CLIENT_ID = Number(process.env.WHISE_CLIENT_ID) || 13273; // overridable via env
 
 let authToken = null;
 let clientToken = null;
@@ -105,56 +105,101 @@ async function getValidClientToken() {
   return clientToken;
 }
 
-// Step 3: Fetch Estates
+// Step 3: Fetch Estates with pagination
 export async function fetchEstates(params = {}) {
   try {
     const token = await getValidClientToken();
+    let allEstates = [];
+    const seenIds = new Set();
+    let offset = 0;
+    const limit = 50; // Fetch in pages of 50
+    let hasMore = true;
 
-    // Build query string if params provided
-    const queryParams = new URLSearchParams();
-    if (params.status) queryParams.append("status", params.status);
-    if (params.limit) queryParams.append("limit", params.limit);
+    // Single-page mode: if caller provides Page.Limit, perform a single request and return it
+    if (params && params.Page && typeof params.Page.Limit === 'number') {
+      const limit = params.Page.Limit;
+      const offsetSingle = (params.Page.Offset ?? 0);
+      const { Page, Sort, OrderBy, ...rest } = params;
+      const sort = Sort || OrderBy;
+      const singleBody = { ...rest, ...(sort ? { Sort: sort } : {}), Page: { Limit: limit, Offset: offsetSingle } };
+      const singleUrl = `${WHISE_API_BASE}/v1/estates/list`;
 
-    const queryString = queryParams.toString();
-    const url = `${WHISE_API_BASE}/v1/estates/list${queryString ? `?${queryString}` : ""}`;
+      const doSingleRequest = async (bearer) => {
+        const resp = await fetch(singleUrl, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${bearer}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(singleBody),
+        });
+        return resp;
+      };
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params),
-    });
-
-    if (!response.ok) {
-      // If token expired (401), reset and try once more
-      if (response.status === 401) {
+      let response = await doSingleRequest(token);
+      if (!response.ok && response.status === 401) {
+        // refresh tokens once and retry
         authToken = null;
         clientToken = null;
         const newToken = await getValidClientToken();
-
-        const retryResponse = await fetch(url, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${newToken}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(params),
-        });
-
-        if (!retryResponse.ok) {
-          throw new Error(`Failed to fetch estates: ${retryResponse.status}`);
-        }
-
-        return await retryResponse.json();
+        response = await doSingleRequest(newToken);
       }
-
-      throw new Error(`Failed to fetch estates: ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch estates: ${response.status}`);
+      }
+      const data = await response.json();
+      return { estates: data.estates || [], totalCount: data.totalCount || 0 };
     }
 
-    const data = await response.json();
-    return data;
+    while (hasMore) {
+      const { Page: _Page, Sort: _Sort, OrderBy: _OrderBy, ...rest } = params;
+      const requestParams = { ...rest, Page: { Limit: limit, Offset: offset } };
+      const url = `${WHISE_API_BASE}/v1/estates/list`;
+
+      const doRequest = async (bearer) => {
+        return await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${bearer}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestParams),
+        });
+      };
+
+      let response = await doRequest(token);
+      if (!response.ok && response.status === 401) {
+        // Refresh tokens and retry once
+        authToken = null;
+        clientToken = null;
+        const newToken = await getValidClientToken();
+        response = await doRequest(newToken);
+      }
+      if (!response.ok) {
+        throw new Error(`Failed to fetch estates: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const newEstates = data.estates || [];
+
+      if (newEstates.length === 0) {
+        hasMore = false;
+      } else {
+        const uniqueNewEstates = newEstates.filter(estate => !seenIds.has(estate.id));
+        uniqueNewEstates.forEach(estate => seenIds.add(estate.id));
+        allEstates.push(...uniqueNewEstates);
+        offset += limit;
+      }
+
+      // Stop if the total fetched meets or exceeds the total count from the API
+      if (data.totalCount && allEstates.length >= data.totalCount) {
+        hasMore = false;
+      }
+    }
+
+    console.log(`Fetched a total of ${allEstates.length} unique properties.`);
+    return { estates: allEstates, totalCount: allEstates.length };
+
   } catch (error) {
     console.error("Whise API fetch estates error:", error);
     throw error;

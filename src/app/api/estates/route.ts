@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchEstates } from '@/lib/whise-api';
+import { fetchEstates, getValidClientToken } from '@/lib/whise-api';
 
 interface WhisePicture {
   id: number;
@@ -72,21 +72,42 @@ function transformEstate(estate: WhiseEstate): TransformedProperty {
   };
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const data = await fetchEstates();
-    const estates = data.estates || [];
+    const url = new URL(request.url);
+    const limitParam = url.searchParams.get('limit');
+    const target = Math.max(1, Math.min(50, Number(limitParam) || 8));
+    let estates: WhiseEstate[] = [];
+
+    // Try direct Whise call using LIMIT/OFFSET as query parameters
+    try {
+      const bearer = await getValidClientToken();
+      const directUrl = `https://api.whise.eu/v1/estates/list?limit=${target}&offset=0`;
+      const resp = await fetch(directUrl, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${bearer}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        estates = (json?.estates || []).slice(0, target);
+      }
+    } catch {}
+
+    // Fallback to wrapper call without params
+    if (!estates.length) {
+      const data = await fetchEstates();
+      estates = (data?.estates || []).slice(0, target);
+    }
+
     const properties = estates.map(transformEstate);
-    
     return NextResponse.json({ properties });
   } catch (error) {
     console.error('API route error:', error);
-    
     const message = error instanceof Error ? error.message : 'Failed to fetch estates';
-    
-    return NextResponse.json(
-      { error: message },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

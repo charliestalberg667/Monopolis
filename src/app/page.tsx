@@ -69,88 +69,13 @@ interface Property {
   featured?: boolean;
 }
 
-const FALLBACK_PROPERTIES: Property[] = [
-  {
-    id: '1',
-    title: 'Modern Apartment in Brussels',
-    location: 'Brussels, Belgium',
-    price: 350000,
-    bedrooms: 2,
-    bathrooms: 1,
-    area: 85,
-    image: '/header/image1.jpg',
-    type: 'sale',
-    featured: true
-  },
-  {
-    id: '2',
-    title: 'Luxury Villa with Pool',
-    location: 'Antwerp, Belgium',
-    price: 1250000,
-    bedrooms: 5,
-    bathrooms: 4,
-    area: 185,
-    image: '/header/image2.1.jpg',
-    type: 'sale',
-    featured: true
-  },
-  {
-    id: '3',
-    title: 'Cozy Studio in City Center',
-    location: 'Ghent, Belgium',
-    price: 1200,
-    bedrooms: 1,
-    bathrooms: 1,
-    area: 45,
-    image: '/header/image3.1.jpg',
-    type: 'rent',
-    featured: true
-  },
-  {
-    id: '4',
-    title: 'Modern Duplex with View',
-    location: 'Brussels, Belgium',
-    price: 780000,
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 145,
-    image: '/header/image1.1.jpg',
-    type: 'sale',
-    featured: true
-  },
-  {
-    id: '5',
-    title: 'Luxury Penthouse',
-    location: 'Antwerp, Belgium',
-    price: 1950000,
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 210,
-    image: '/header/image2.jpeg',
-    type: 'sale',
-    featured: true
-  },
-  {
-    id: '6',
-    title: 'Charming Studio',
-    location: 'Ghent, Belgium',
-    price: 850,
-    bedrooms: 1,
-    bathrooms: 1,
-    area: 38,
-    image: '/header/image3.jpeg',
-    type: 'rent',
-    featured: true
-  }
-];
-
 const HomeContent: React.FC = () => {
   const { t } = useTranslation();
   const mainRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(mainRef, { once: true, amount: 0.1 });
   const controls = useAnimation();
   
-  const [properties, setProperties] = useState<Property[]>(FALLBACK_PROPERTIES);
+  const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
 
   const processSteps: ProcessStep[] = [
@@ -180,18 +105,22 @@ const HomeContent: React.FC = () => {
   useEffect(() => {
     const fetchFeaturedProperties = async () => {
       try {
-        const res = await fetch('/api/estates', { cache: 'no-store' });
+        const res = await fetch('/api/estates?limit=8', { cache: 'no-store' });
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         const apiProperties = (data?.properties || []) as Property[];
-        const featured = apiProperties.filter(p => p.featured).slice(0, 6);
-        if (featured.length > 0) {
-          setProperties(featured);
-        } else if (apiProperties.length > 0) {
-          setProperties(apiProperties.slice(0, 6).map(p => ({ ...p, featured: true })));
-        }
-      } catch {
-        // Keep fallback properties
+        
+        // Mark first 3 properties as featured if not already
+        const propertiesToShow = apiProperties.map((p, index) => ({
+          ...p,
+          featured: p.featured !== undefined ? p.featured : index < 3 // First 3 are featured if not specified
+        }));
+        
+        setProperties(propertiesToShow);
+      } catch (error) {
+        console.error('Error fetching properties:', error);
+        // Set empty array if API fails
+        setProperties([]);
       } finally {
         setLoading(false);
       }
@@ -238,7 +167,7 @@ const HomeContent: React.FC = () => {
             <div className="w-full">
               {loading ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
-                  {[...Array(6)].map((_, i) => (
+                  {[...Array(8)].map((_, i) => (
                     <div key={i} className="flex justify-center">
                       <div className="w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-gray-100 rounded-sm overflow-hidden animate-pulse">
                         <div className="w-full aspect-[4/3] bg-gray-200" />
@@ -272,7 +201,7 @@ const HomeContent: React.FC = () => {
                   }}
                   className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12"
                 >
-                  {properties.slice(0, 6).map((property) => (
+                  {properties.slice(0, 8).map((property) => (
                     <motion.div
                       key={property.id}
                       variants={{

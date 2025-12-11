@@ -194,5 +194,125 @@
   },
   "common": {
     "month": "maand"
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Onze diensten",
+      "title": "Expertise van A tot Z voor elke vastgoedstap",
+      "description": "We combineren lokale expertise, betrouwbare partners en helder rapporteren zodat u vlot kunt kopen, segmenteren, verhuren, verkopen of verhuizen.",
+      "ctaPrimary": "Praat met een adviseur",
+      "ctaSecondary": "Bekijk beschikbare panden",
+      "highlights": [
+        { "label": "Gemiddelde meerwaarde bij verkoop", "value": "+8,4%" },
+        { "label": "Tijd op de markt", "value": "21 dagen" },
+        { "label": "Steden gedekt", "value": "12" },
+        { "label": "Tevredenheid eigenaar", "value": "4,8/5" }
+      ]
+    },
+    "whatWeDeliver": {
+      "title": "Wat we leveren",
+      "subtitle": "Vier gerichte trajecten, één verantwoordelijke partner. Kies één traject of combineer ze in één plan.",
+      "ribbon": "Founders-team, full-service"
+    },
+    "services": {
+      "segmentation": {
+        "label": "Woningsegmentatie",
+        "summary": "Maak van één pand conforme, renderende units met architecturale en regelgevende begeleiding.",
+        "bullets": [
+          "ROI- en haalbaarheidsmodellering",
+          "Plannen, vergunningen en aannemerscoördinatie",
+          "Compliance per gemeente"
+        ]
+      },
+      "sales": {
+        "label": "Verkoop",
+        "summary": "Van waardering tot akte: staging, marketing en onderhandelen om de juiste koper aan de beste prijs te vinden.",
+        "bullets": [
+          "Data-gedreven prijszetting en waardering",
+          "Fotografie, staging en internationale zichtbaarheid",
+          "Offertebeheer en juridisch advies"
+        ]
+      },
+      "rentals": {
+        "label": "Verhuur",
+        "summary": "Turnkey verhuur voor eigenaars en huurders met screening, contracten en zorgvuldige onboarding.",
+        "bullets": [
+          "Sourcing en screening van huurders",
+          "Contracten, sleuteloverdracht en plaatsbeschrijving",
+          "Opties voor doorlopende beheer"
+        ]
+      },
+      "relocation": {
+        "label": "Delokalisatie",
+        "summary": "Relocatiepartner voor mensen en teams: wijkkennis, huisvesting en administratie geregeld.",
+        "bullets": [
+          "Advies over wijken, scholen en woon-werk",
+          "Zoektocht kort- en langetermijnhuur",
+          "Inschrijving, nutsvoorzieningen en onboarding"
+        ]
+      }
+    },
+    "flow": {
+      "chip": "Aanpak",
+      "title": "Hoe we werken",
+      "subtitle": "Duidelijke stappen, één team dat verantwoordelijk blijft.",
+      "steps": [
+        { "title": "Ontdekken", "detail": "We stemmen doelen, timing en randvoorwaarden af." },
+        { "title": "Ontwerpen", "detail": "We tekenen het pad uit: prijs, indeling en marketingstrategie." },
+        { "title": "Uitvoeren", "detail": "Geselecteerde partners leveren; wij regelen vergunningen en papierwerk." },
+        { "title": "Rapporteren", "detail": "Heldere updates, metrics en beslissingen op één plaats." }
+      ]
+    },
+    "audience": {
+      "title": "Voor eigenaars en verhuizers",
+      "description": "Investeerder met een portefeuille, gezin dat verhuist of team dat talent verplaatst: we passen het plan aan uw risico en tempo aan.",
+      "items": [
+        { "title": "Transparant rapporteren", "body": "Eén dashboard, wekelijkse check-ins, geen verrassingen." },
+        { "title": "Lokale specialisten", "body": "Vergunningen, nutsvoorzieningen en regels door mensen die ze kennen." },
+        { "title": "Geselecteerde partners", "body": "Enkel bewezen architecten, aannemers en juristen op het werk." }
+      ],
+      "cta": "Plan mijn project"
+    },
+    "closing": {
+      "title": "Klaar voor de volgende stap?",
+      "description": "Vertel waar u staat en we maken een eenvoudig, meetbaar plan. Geen druk, wel duidelijkheid.",
+      "primary": "Plan een gesprek",
+      "secondary": "Ontmoet het team"
+    }
+  },
+  "marketReport": {
+    "badge": "Marktinzichten",
+    "title": "Belgisch vastgoedmarktrapport",
+    "subtitle": "Recente trends en analyses voor de Belgische vastgoedmarkt (Q2 2024)",
+    "chartTitle": "80 jaar Belgische vastgoedprijzen",
+    "pricePerSqmTrend": "Evolutie prijs per m²",
+    "propertyTypesTitle": "Type panden",
+    "regionalTitle": "Gemiddelde prijs per m² per regio",
+    "chartSource": "Bron: Nationale Bank van België, Statbel, Eurostat (2024)",
+    "references": {
+      "financialCrisis": "Financiële crisis",
+      "pandemic": "Pandemie"
+    },
+    "labels": {
+      "year": "Jaar",
+      "averagePrice": "Gemiddelde prijs",
+      "pricePerSqm": "Prijs per m²",
+      "priceChange": "t.o.v. vorig jaar"
+    },
+    "propertyTypes": {
+      "houses": "Huizen",
+      "apartments": "Appartementen",
+      "plots": "Bouwgronden",
+      "others": "Andere"
+    },
+    "regions": {
+      "brussels": "Brussel",
+      "flanders": "Vlaanderen",
+      "wallonia": "Wallonië"
+    },
+    "meta": {
+      "sources": "Databronnen: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb",
+      "lastUpdated": "Laatst bijgewerkt: {{date}}"
+    }
   }
 }
