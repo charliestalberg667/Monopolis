@@ -5,8 +5,11 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Slider } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="relative w-full bg-[#ffffff] px-6 pt-2 pb-10 md:h-screen overflow-visible z-10">
 
@@ -23,7 +26,7 @@ const Hero: React.FC = () => {
         />
         <div className="relative max-w-md md:max-w-xl">
           <TypewriterText 
-            text="EXCEPTIONAL PROPERTIES IN THE MOST SOUGHT-AFTER LOCATIONS"
+            text={t('hero.typewriter')}
             className="pt-6 text-lg md:text-lg font-black text-white leading-tight"
           />
         </div>
@@ -202,6 +205,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
 };
 
 const Filters: React.FC = () => {
+  const { t } = useTranslation();
   const [filters, setFilters] = useState({
     type: '',
     bedrooms: '',
@@ -214,14 +218,14 @@ const Filters: React.FC = () => {
   const step = 1000;
 
   const propertyTypes = [
-    { value: '', label: 'Type' },
-    { value: 'apartment', label: 'Apartment' },
-    { value: 'villa', label: 'Villa' },
-    { value: 'townhouse', label: 'Townhouse' },
+    { value: '', label: t('filters.type') },
+    { value: 'apartment', label: t('filters.apartment') },
+    { value: 'villa', label: t('filters.villa') },
+    { value: 'townhouse', label: t('filters.townhouse') },
   ];
 
   const bedroomOptions = [
-    { value: '', label: 'Bedrooms' },
+    { value: '', label: t('filters.bedrooms') },
     { value: '1', label: '1+' },
     { value: '2', label: '2+' },
     { value: '3', label: '3+' },
@@ -229,10 +233,10 @@ const Filters: React.FC = () => {
   ];
 
   const locations = [
-    { value: '', label: 'Location' },
-    { value: 'Brussels', label: 'Brussels' },
-    { value: 'Flanders', label: 'Flanders' },
-    { value: 'Wallonia', label: 'Wallonia' },
+    { value: '', label: t('filters.location') },
+    { value: 'Brussels', label: t('filters.brussels') },
+    { value: 'Flanders', label: t('filters.flanders') },
+    { value: 'Wallonia', label: t('filters.wallonia') },
   ];
 
   const handleFilterChange = (filterName: string, value: string) => {
@@ -250,7 +254,7 @@ const Filters: React.FC = () => {
           <div className="flex flex-col md:flex-row items-stretch md:items-center border border-[#048542] rounded-2xl md:rounded-full p-2 md:px-4 bg-white min-h-20">
             <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center">
               <Dropdown
-                label="Type"
+                label={t('filters.type')}
                 value={filters.type}
                 options={propertyTypes}
                 onChange={(value) => handleFilterChange('type', value)}
@@ -261,7 +265,7 @@ const Filters: React.FC = () => {
               </div>
               <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
               <Dropdown
-                label="Bedrooms"
+                label={t('filters.bedrooms')}
                 value={filters.bedrooms}
                 options={bedroomOptions}
                 onChange={(value) => handleFilterChange('bedrooms', value)}
@@ -272,7 +276,7 @@ const Filters: React.FC = () => {
               </div>
               <div className="md:hidden w-full h-px bg-gray-200 my-2"></div>
               <Dropdown
-                label="Location"
+                label={t('filters.location')}
                 value={filters.location}
                 options={locations}
                 onChange={(value) => handleFilterChange('location', value)}
@@ -302,10 +306,14 @@ const Filters: React.FC = () => {
   );
 };
 
-// ✅ Typewriter effect stays the same:
 const TypewriterText: React.FC<{ text: string; className?: string }> = ({ text, className }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setDisplayText('');
+    setCurrentIndex(0);
+  }, [text]);
 
   useEffect(() => {
     if (currentIndex < text.length) {

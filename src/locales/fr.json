@@ -99,6 +99,17 @@
       "homeBuyer": "Acheteur",
       "investor": "Investisseur Immobilier",
       "seller": "Premier Vendeur"
+    },
+    "items": {
+      "1": {
+        "content": "Monopolis a rendu la recherche de notre maison de rêve sans effort. Leur équipe a été professionnelle et attentive à nos besoins tout au long du processus."
+      },
+      "2": {
+        "content": "Les analyses de marché et les recommandations de biens étaient parfaites. J'ai considérablement agrandi mon portefeuille grâce à Monopolis."
+      },
+      "3": {
+        "content": "J'ai vendu mon bien au-dessus du prix demandé en une semaine ! La stratégie marketing de l'équipe était impressionnante."
+      }
     }
   },
   "newsletter": {

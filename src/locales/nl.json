@@ -99,6 +99,17 @@
       "homeBuyer": "Huizenkoper",
       "investor": "Vastgoedinvesteerder",
       "seller": "Eerste Verkoper"
+    },
+    "items": {
+      "1": {
+        "content": "Monopolis heeft het vinden van ons droomhuis moeiteloos gemaakt. Hun team was professioneel en attent voor onze behoeften gedurende het hele proces."
+      },
+      "2": {
+        "content": "De marktinzichten en vastgoedaanbevelingen waren perfect. Ik heb mijn portefeuille aanzienlijk uitgebreid dankzij Monopolis."
+      },
+      "3": {
+        "content": "Mijn eigendom verkocht boven de vraagprijs binnen een week! De marketingstrategie van het team was indrukwekkend."
+      }
     }
   },
   "newsletter": {

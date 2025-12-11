@@ -99,6 +99,17 @@
       "homeBuyer": "Home Buyer",
       "investor": "Real Estate Investor",
       "seller": "First-time Seller"
+    },
+    "items": {
+      "1": {
+        "content": "Monopolis made finding our dream home effortless. Their team was professional and attentive to our needs throughout the entire process."
+      },
+      "2": {
+        "content": "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis."
+      },
+      "3": {
+        "content": "Sold my property above asking price within a week! The team's marketing strategy was impressive."
+      }
     }
   },
   "newsletter": {

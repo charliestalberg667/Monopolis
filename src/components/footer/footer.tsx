@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -21,34 +25,34 @@ const Footer: React.FC = () => {
                 />
               </div>
             </Link>
-            <p className="text-gray-600 text-sm">A boutique real estate agency with 4-5 dedicated agents committed to finding your perfect property in Belgium.</p>
+            <p className="text-gray-600 text-sm">{t('footer.description')}</p>
           </div>
 
           {/* Company Links */}
           <div>
-            <h4 className="text-gray-900 font-medium text-lg mb-4">Company</h4>
+            <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.company')}</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="footer-link text-gray-700">About Us</Link></li>
-              <li><Link href="/team" className="footer-link text-gray-700">Our Team</Link></li>
-              <li><Link href="/careers" className="footer-link text-gray-700">Careers</Link></li>
-              <li><Link href="/contact" className="footer-link text-gray-700">Contact</Link></li>
+              <li><Link href="/about" className="footer-link text-gray-700">{t('footer.about')}</Link></li>
+              <li><Link href="/team" className="footer-link text-gray-700">{t('footer.team')}</Link></li>
+              <li><Link href="/careers" className="footer-link text-gray-700">{t('footer.careers')}</Link></li>
+              <li><Link href="/contact" className="footer-link text-gray-700">{t('footer.contact')}</Link></li>
             </ul>
           </div>
 
           {/* Services Links */}
           <div>
-            <h4 className="text-gray-900 font-medium text-lg mb-4">Services</h4>
+            <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.servicesTitle')}</h4>
             <ul className="space-y-2">
-              <li><Link href="/buy" className="footer-link text-gray-700">Buy Property</Link></li>
-              <li><Link href="/sell" className="footer-link text-gray-700">Sell Property</Link></li>
-              <li><Link href="/rent" className="footer-link text-gray-700">Rent</Link></li>
-              <li><Link href="/valuation" className="footer-link text-gray-700">Valuation</Link></li>
+              <li><Link href="/buy" className="footer-link text-gray-700">{t('footer.buyProperty')}</Link></li>
+              <li><Link href="/sell" className="footer-link text-gray-700">{t('footer.sellProperty')}</Link></li>
+              <li><Link href="/rent" className="footer-link text-gray-700">{t('footer.rent')}</Link></li>
+              <li><Link href="/valuation" className="footer-link text-gray-700">{t('footer.valuation')}</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-gray-900 font-medium text-lg mb-4">Contact</h4>
+            <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.contactTitle')}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <span className="text-gray-700 mr-3">✉️</span>
@@ -69,7 +73,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#048542]/20 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 text-sm mb-4 md:mb-0">
-            <span className="text-gray-600">© {currentYear} Monopolis. All rights reserved.</span>
+            <span className="text-gray-600">© {currentYear} Monopolis. {t('footer.rights')}.</span>
           </p>
           <div className="flex space-x-5">
             <a 

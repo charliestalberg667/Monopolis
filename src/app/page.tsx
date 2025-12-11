@@ -5,82 +5,51 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { FiHome, FiStar, FiSearch, FiCalendar, FiChevronLeft, FiChevronRight, FiCheck, FiArrowRight } from 'react-icons/fi';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import MarketReport from '@/components/marketReport/MarketReport';
 
 
-// Process steps data
 interface ProcessStep {
   step: string;
   icon: React.ReactNode;
-  title: string;
-  description: string;
-  details: string[];
+  titleKey: string;
+  descriptionKey: string;
+  detailKeys: string[];
 }
 
-const processSteps: ProcessStep[] = [
-  {
-    step: '01',
-    icon: <FiSearch className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Find Your Property',
-    description: 'Browse our curated selection of premium properties that match your criteria and preferences.',
-    details: [
-      'Personalized recommendations',
-      'Advanced search filters',
-      'Save favorite listings',
-      'Instant alerts for new matches'
-    ]
-  },
-  {
-    step: '02',
-    icon: <FiCalendar className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Schedule a Viewing',
-    description: 'Book a visit with one of our expert agents who will provide in-depth property analysis.',
-    details: [
-      'Flexible scheduling',
-      'Expert guidance',
-      'Market insights',
-      'Investment advice'
-    ]
-  },
-  {
-    step: '03',
-    icon: <FiHome className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
-    title: 'Complete the Process',
-    description: 'Our team handles everything from offer to closing with expert negotiation and support.',
-    details: [
-      'Mortgage assistance',
-      'Professional negotiation',
-      'Legal support',
-      'Smooth handover'
-    ]
-  }
-];
+type Testimonial = {
+  id: string;
+  name: string;
+  roleKey: string;
+  contentKey: string;
+  rating: number;
+  avatar: string;
+};
 
-// Testimonials data
 const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Sarah Johnson",
-    role: "Home Buyer",
-    content: "Monopolis made finding our dream home effortless. Their team was professional and attentive to our needs throughout the entire process.",
+    roleKey: "testimonials.roles.homeBuyer",
+    contentKey: "testimonials.items.1.content",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
     id: "2",
     name: "Michael Chen",
-    role: "Real Estate Investor",
-    content: "The market insights and property recommendations were spot on. I&apos;ve expanded my portfolio significantly thanks to Monopolis.",
+    roleKey: "testimonials.roles.investor",
+    contentKey: "testimonials.items.2.content",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     id: "3",
     name: "Emily Rodriguez",
-    role: "First-time Seller",
-    content: "Sold my property above asking price within a week! The team&apos;s marketing strategy was impressive.",
+    roleKey: "testimonials.roles.seller",
+    contentKey: "testimonials.items.3.content",
     rating: 4,
     avatar: "https://randomuser.me/api/portraits/women/68.jpg"
   }
@@ -99,15 +68,6 @@ interface Property {
   type: 'sale' | 'rent';
   featured?: boolean;
 }
-
-type Testimonial = {
-  id: string;
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-  avatar: string;
-};
 
 const FALLBACK_PROPERTIES: Property[] = [
   {
@@ -185,12 +145,37 @@ const FALLBACK_PROPERTIES: Property[] = [
 ];
 
 const HomeContent: React.FC = () => {
+  const { t } = useTranslation();
   const mainRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(mainRef, { once: true, amount: 0.1 });
   const controls = useAnimation();
   
   const [properties, setProperties] = useState<Property[]>(FALLBACK_PROPERTIES);
   const [loading, setLoading] = useState(true);
+
+  const processSteps: ProcessStep[] = [
+    {
+      step: '01',
+      icon: <FiSearch className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+      titleKey: 'process.step1.title',
+      descriptionKey: 'process.step1.description',
+      detailKeys: ['process.step1.detail1', 'process.step1.detail2', 'process.step1.detail3', 'process.step1.detail4']
+    },
+    {
+      step: '02',
+      icon: <FiCalendar className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+      titleKey: 'process.step2.title',
+      descriptionKey: 'process.step2.description',
+      detailKeys: ['process.step2.detail1', 'process.step2.detail2', 'process.step2.detail3', 'process.step2.detail4']
+    },
+    {
+      step: '03',
+      icon: <FiHome className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />,
+      titleKey: 'process.step3.title',
+      descriptionKey: 'process.step3.description',
+      detailKeys: ['process.step3.detail1', 'process.step3.detail2', 'process.step3.detail3', 'process.step3.detail4']
+    }
+  ];
 
   useEffect(() => {
     const fetchFeaturedProperties = async () => {
@@ -244,10 +229,10 @@ const HomeContent: React.FC = () => {
               className="mb-16 text-center"
             >
               <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-                Premium Listings
+                {t('featured.badge')}
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Featured Properties</h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">Discover our exclusive selection of premium properties in the most sought-after locations</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('featured.title')}</h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('featured.subtitle')}</p>
             </motion.div>
             
             <div className="w-full">
@@ -316,7 +301,7 @@ const HomeContent: React.FC = () => {
               {/* View more button for mobile */}
               <div className="mt-10 text-center md:hidden">
                 <button className="px-6 py-3 bg-[#01753f] text-white rounded-md hover:bg-[#016030] transition-colors">
-                  View More Properties
+                  {t('featured.viewMore')}
                 </button>
               </div>
             </div>
@@ -337,10 +322,10 @@ const HomeContent: React.FC = () => {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
-              A Simple, Transparent Process
+              {t('process.title')}
             </h2>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              We&apos;ve streamlined the property search into three clear, manageable steps
+              {t('process.subtitle')}
             </p>
           </motion.div>
 
@@ -359,16 +344,16 @@ const HomeContent: React.FC = () => {
                   <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-[#01753f] group-hover:text-white transition-colors duration-300">
                     {item.icon}
                   </div>
-                  <span className="inline-block text-sm font-medium text-gray-500 mb-2">Step {item.step}</span>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{item.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{item.description}</p>
+                  <span className="inline-block text-sm font-medium text-gray-500 mb-2">{t('process.step')} {item.step}</span>
+                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{t(item.titleKey)}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{t(item.descriptionKey)}</p>
                   <ul className="space-y-3">
-                    {item.details.map((detail, i) => (
+                    {item.detailKeys.map((detailKey, i) => (
                       <li key={i} className="flex items-start">
                         <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs mr-3 mt-0.5">
                           <FiCheck className="w-3 h-3" />
                         </span>
-                        <span className="text-gray-600">{detail}</span>
+                        <span className="text-gray-600">{t(detailKey)}</span>
                       </li>
                     ))}
                   </ul>
@@ -385,7 +370,7 @@ const HomeContent: React.FC = () => {
             className="mt-20 text-center"
           >
             <button className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-              Get Started
+              {t('process.getStarted')}
               <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </motion.div>
@@ -404,11 +389,11 @@ const HomeContent: React.FC = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-              Testimonials
+              {t('testimonials.badge')}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('testimonials.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Don&apos;t just take our word for it. Here&apos;s what our clients have to say about their experience with us.
+              {t('testimonials.subtitle')}
             </p>
           </motion.div>
           {/* Mobile Carousel */}
@@ -429,47 +414,50 @@ const HomeContent: React.FC = () => {
 }
 
 // Testimonial Card Component
-const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, index: number }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        delay: index * 0.1,
-        duration: 0.5
-      }
-    }}
-    viewport={{ once: true, margin: "-50px" }}
-    className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col"
-  >
-    <div className="flex items-center mb-4">
-      <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 relative">
-        <Image 
-          src={testimonial.avatar} 
-          alt={`${testimonial.name}'s avatar`}
-          fill
-          sizes="48px"
-          className="object-cover"
-        />
+const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, index: number }) => {
+  const { t } = useTranslation();
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ 
+        opacity: 1, 
+        y: 0,
+        transition: { 
+          delay: index * 0.1,
+          duration: 0.5
+        }
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col"
+    >
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 relative">
+          <Image 
+            src={testimonial.avatar} 
+            alt={`${testimonial.name}'s avatar`}
+            fill
+            sizes="48px"
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+          <p className="text-sm text-gray-500">{t(testimonial.roleKey)}</p>
+        </div>
       </div>
-      <div>
-        <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-        <p className="text-sm text-gray-500">{testimonial.role}</p>
+      <div className="flex mb-3">
+        {[...Array(5)].map((_, i) => (
+          <FiStar 
+            key={i} 
+            className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
+            fill={i < testimonial.rating ? 'currentColor' : 'none'}
+          />
+        ))}
       </div>
-    </div>
-    <div className="flex mb-3">
-      {[...Array(5)].map((_, i) => (
-        <FiStar 
-          key={i} 
-          className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
-          fill={i < testimonial.rating ? 'currentColor' : 'none'}
-        />
-      ))}
-    </div>
-    <p className="text-gray-600 italic flex-grow">&ldquo;{testimonial.content}&rdquo;</p>
-  </motion.div>
-);
+      <p className="text-gray-600 italic flex-grow">&ldquo;{t(testimonial.contentKey)}&rdquo;</p>
+    </motion.div>
+  );
+};
 
 const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
