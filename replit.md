@@ -10,6 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**December 11, 2025 - Complete i18n Translation Coverage**:
+- Added translation keys for all frontpage sections (Hero, Featured Properties, Process Steps, Testimonials, Footer)
+- Implemented full translation support for testimonial content in all 3 languages (EN/FR/NL)
+- Updated page.tsx to use translation keys via useTranslation hook for all hardcoded text
+- Added translation keys for service cards (Buy, Sell, Rent, Valuation) with descriptions
+- Consistent padding structure applied across all frontpage sections
+- All visible text on homepage now responds to language switching
+
 **December 2, 2025 - Language Switcher: Dropdown Menu**:
 - Converted inline EN/FR/NL buttons to dropdown menu
 - Shows globe icon + chevron in navbar (chevron rotates when menu opens)
