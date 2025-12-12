@@ -76,7 +76,7 @@ export async function GET(_request: Request) {
   try {
     const pageSize = 50; // Fetch 50 properties at a time
     let allEstates: WhiseEstate[] = [];
-    let offset = 4;
+    let offset = 0;
     let hasMore = true;
 
     // Try direct Whise call using LIMIT/OFFSET as query parameters
@@ -93,11 +93,11 @@ export async function GET(_request: Request) {
             Authorization: `Bearer ${bearer}`,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify{
-        Filter: {
-          DisplayStatusIds: [1, 2, 3, 4]
-        }
-      }
+          body: JSON.stringify({
+            Filter: {
+              DisplayStatusIds: [1, 2, 3, 4]
+            }
+          }),
         });
 
         if (!resp.ok) {
