@@ -95,7 +95,7 @@ export async function GET(_request: Request) {
           },
           body: JSON.stringify({
             Filter: {
-              DisplayStatusIds: [1, 2, 3, 4]
+              DisplayStatusIds: [3, 4]
             }
           }),
         });
