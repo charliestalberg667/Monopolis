@@ -93,7 +93,11 @@ export async function GET(_request: Request) {
             Authorization: `Bearer ${bearer}`,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify{
+        Filter: {
+          DisplayStatusIds: [1, 2, 3, 4]
+        }
+      }
         });
 
         if (!resp.ok) {
