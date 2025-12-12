@@ -84,7 +84,7 @@ export default function Navbar() {
             />
           </motion.div>
           <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
-            <div className="text-xl sm:text-2xl font-bold leading-none">Monopolis</div>
+            <div className="text-3xl sm:text-2xl font-bold leading-none">Monopolis</div>
           </motion.div>
         </Link>
 
