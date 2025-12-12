@@ -261,6 +261,24 @@ export default function PropertyDetailPage() {
           </div>
         </section>
 
+        {/* Map Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">{t('property.exactLocation')}</h2>
+          {property.location ? (
+            <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden">
+              <iframe
+                src={`https://www.google.com/maps?q=${encodeURIComponent(property.location)}&z=15&output=embed`}
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                aria-label={property.location}
+              />
+            </div>
+          ) : (
+            <p className="text-sm text-gray-600">{t('property.location')}</p>
+          )}
+        </section>
+
         {/* Contact Section */}
         <section className="bg-[#048542] text-white p-8 rounded-lg text-center">
           <h2 className="text-2xl font-bold mb-4">{t('property.interested')}</h2>
