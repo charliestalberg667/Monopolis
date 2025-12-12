@@ -165,73 +165,22 @@ const HomeContent: React.FC = () => {
             </motion.div>
             
             <div className="w-full">
-              {loading ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="flex justify-center">
-                      <div className="w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-gray-100 rounded-sm overflow-hidden animate-pulse">
-                        <div className="w-full aspect-[4/3] bg-gray-200" />
-                        <div className="p-4 space-y-3">
-                          <div className="h-5 bg-gray-200 rounded w-3/4" />
-                          <div className="h-4 bg-gray-200 rounded w-1/2" />
-                          <div className="h-5 bg-gray-200 rounded w-1/3" />
-                          <div className="flex gap-4 pt-3 border-t border-gray-200">
-                            <div className="h-4 bg-gray-200 rounded w-12" />
-                            <div className="h-4 bg-gray-200 rounded w-12" />
-                            <div className="h-4 bg-gray-200 rounded w-16" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <motion.div 
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, margin: "-100px" }}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    show: {
-                      opacity: 1,
-                      transition: {
-                        staggerChildren: 0.1
-                      }
-                    }
-                  }}
-                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12"
-                >
-                  {properties.slice(0, 8).map((property) => (
-                    <motion.div
-                      key={property.id}
-                      variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        show: { opacity: 1, y: 0 }
-                      }}
-                      className="flex justify-center"
-                    >
-                      <PropertyCard 
-                        id={property.id}
-                        title={property.title}
-                        location={property.location}
-                        price={property.price}
-                        bedrooms={property.bedrooms}
-                        bathrooms={property.bathrooms}
-                        area={property.area}
-                        image={property.image}
-                        type={property.type}
-                        featured={property.featured}
-                      />
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
-              
-              {/* View more button for mobile */}
-              <div className="mt-10 text-center md:hidden">
-                <button className="px-6 py-3 bg-[#01753f] text-white rounded-md hover:bg-[#016030] transition-colors">
-                  {t('featured.viewMore')}
-                </button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                {properties.slice(0, 8).map((property) => (
+                  <PropertyCard
+                    key={property.id}
+                    id={property.id}
+                    title={property.title}
+                    location={property.location}
+                    price={property.price}
+                    bedrooms={property.bedrooms}
+                    bathrooms={property.bathrooms}
+                    area={property.area}
+                    image={property.image}
+                    type={property.type}
+                    featured={property.featured}
+                  />
+                ))}
               </div>
             </div>
         </div>
