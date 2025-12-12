@@ -47,7 +47,7 @@ export default function PropertiesPage() {
     loadProperties();
   }, []);
 
-  const properties = loaded ?? [];
+  const properties = useMemo(() => (loaded ?? []), [loaded]);
 
   const filtered = useMemo(() => {
     return properties.filter((p) => {

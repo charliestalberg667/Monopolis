@@ -119,7 +119,7 @@ export async function fetchEstates(params = {}) {
     if (params && params.Page && typeof params.Page.Limit === 'number') {
       const limit = params.Page.Limit;
       const offsetSingle = (params.Page.Offset ?? 0);
-      const { Page, Sort, OrderBy, ...rest } = params;
+      const { Sort, OrderBy, ...rest } = params;
       const sort = Sort || OrderBy;
       const singleBody = { ...rest, ...(sort ? { Sort: sort } : {}), Page: { Limit: limit, Offset: offsetSingle } };
       const singleUrl = `${WHISE_API_BASE}/v1/estates/list`;
@@ -152,8 +152,7 @@ export async function fetchEstates(params = {}) {
     }
 
     while (hasMore) {
-      const { Page: _Page, Sort: _Sort, OrderBy: _OrderBy, ...rest } = params;
-      const requestParams = { ...rest, Page: { Limit: limit, Offset: offset } };
+      const requestParams = { ...params, Page: { Limit: limit, Offset: offset } };
       const url = `${WHISE_API_BASE}/v1/estates/list`;
 
       const doRequest = async (bearer) => {

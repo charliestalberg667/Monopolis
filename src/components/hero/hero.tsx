@@ -32,6 +32,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
+      <Filters />
+
     </div>
   );
 };
