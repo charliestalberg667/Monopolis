@@ -74,7 +74,6 @@ function transformEstate(estate: WhiseEstate): TransformedProperty {
 
 export async function GET(request: Request) {
   try {
-    const url = new URL(request.url);
     const pageSize = 50; // Fetch 50 properties at a time
     let allEstates: WhiseEstate[] = [];
     let offset = 0;
