@@ -82,39 +82,46 @@ export async function GET(_request: Request) {
     // Try direct Whise call using LIMIT/OFFSET as query parameters
     try {
       const bearer = await getValidClientToken();
-      const directUrl = `https://api.whise.eu/v1/estates/list?limit=${pageSize}&offs${offset}t=0`;
 
-            // Loop through all pages until we get all properties
+      // Loop through all pages until we get all properties
       while (hasMore) {
-      const resp = await fetch(directUrl, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${bearer}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}),
-      });
-      if (resp.ok) {
+        const directUrl = `https://api.whise.eu/v1/estates/list?limit=${pageSize}&offset=${offset}`;
+
+        const resp = await fetch(directUrl, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${bearer}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({}),
+        });
+
+        if (!resp.ok) {
+          console.error('Whise direct fetch failed with status', resp.status);
+          // Stop trying direct fetch on HTTP error and fall back to wrapper
+          break;
+        }
+
         const json = await resp.json();
-const pageEstates = (json?.estates || []);
-          
-          if (pageEstates.length > 0) {
-            allEstates = [...allEstates, ...pageEstates];
-            offset += pageSize;
-            
-            // If we got fewer properties than pageSize, we've reached the end
-            if (pageEstates.length < pageSize) {
-              hasMore = false;
-            }
-          } else {
-            hasMore = false;
-          }
-        } else {
+        const pageEstates: WhiseEstate[] = (json?.estates || []);
+
+        if (pageEstates.length === 0) {
+          // No more estates
           hasMore = false;
-        
+          break;
+        }
+
+        allEstates.push(...pageEstates);
+        offset += pageSize;
+
+        // If we got fewer properties than pageSize, we've reached the end
+        if (pageEstates.length < pageSize) {
+          hasMore = false;
+        }
       }
-            }
-    } catch {}
+    } catch (err) {
+      console.error('Direct Whise fetch failed:', err);
+    }
 
     // Fallback to wrapper call without params
     if (!allEstates.length) {
