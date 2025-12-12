@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FiArrowLeft, FiMapPin } from "react-icons/fi";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 
 interface Property {
   id: string;
@@ -29,6 +30,7 @@ interface Property {
 export default function PropertyDetailPage() {
   const params = useParams();
   const id = params.id as string;
+  const { t } = useTranslation();
 
   const [property, setProperty] = useState<Property | null>(null);
   const [loading, setLoading] = useState(true);
@@ -93,7 +95,7 @@ export default function PropertyDetailPage() {
             className="inline-flex items-center text-[#048542] hover:text-[#036b33] transition-colors mb-6"
           >
             <FiArrowLeft className="mr-2" />
-            Back to Properties
+            {t('property.backToProperties')}
           </Link>
           <div className="text-center py-16">
             <p className="text-lg text-gray-600 mb-4">
@@ -103,7 +105,7 @@ export default function PropertyDetailPage() {
               href="/properties"
               className="inline-block px-6 py-3 bg-[#048542] text-white rounded-md hover:bg-[#036b33] transition-colors"
             >
-              View All Properties
+              {t('property.viewAllProperties')}
             </Link>
           </div>
         </div>
@@ -129,7 +131,7 @@ export default function PropertyDetailPage() {
           className="inline-flex items-center text-[#048542] hover:text-[#036b33] transition-colors mb-8"
         >
           <FiArrowLeft className="mr-2" />
-          Back to Properties
+          {t('property.backToProperties')}
         </Link>
 
         {/* Image Gallery */}
@@ -199,17 +201,17 @@ export default function PropertyDetailPage() {
               <div className="text-center p-3 bg-white rounded-md">
                 <FaBed className="mx-auto mb-2 text-[#048542]" />
                 <div className="text-lg font-semibold">{property.bedrooms}</div>
-                <div className="text-xs text-gray-600">Bedrooms</div>
+                <div className="text-xs text-gray-600">{t('property.bedrooms')}</div>
               </div>
               <div className="text-center p-3 bg-white rounded-md">
                 <FaBath className="mx-auto mb-2 text-[#048542]" />
                 <div className="text-lg font-semibold">{property.bathrooms}</div>
-                <div className="text-xs text-gray-600">Bathrooms</div>
+                <div className="text-xs text-gray-600">{t('property.bathrooms')}</div>
               </div>
               <div className="text-center p-3 bg-white rounded-md">
                 <FaRulerCombined className="mx-auto mb-2 text-[#048542]" />
                 <div className="text-lg font-semibold">{property.area}</div>
-                <div className="text-xs text-gray-600">m²</div>
+                <div className="text-xs text-gray-600">{t('property.sqm')}</div>
               </div>
             </div>
           </div>
@@ -217,42 +219,42 @@ export default function PropertyDetailPage() {
 
         {/* Full Specifications */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Property Details</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('property.propertyDetails')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#f8fafc] p-8 rounded-lg">
             <div className="border-b md:border-b-0 md:border-r border-gray-200 md:pr-6 pb-6 md:pb-0">
-              <h3 className="text-lg font-semibold mb-4">Quick Facts</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('property.quickFacts')}</h3>
               <dl className="space-y-3">
                 <div>
-                  <dt className="text-sm text-gray-600">Property Type</dt>
+                  <dt className="text-sm text-gray-600">{t('property.propertyType')}</dt>
                   <dd className="font-medium">
-                    {property.type === "sale" ? "For Sale" : "For Rent"}
+                    {property.type === "sale" ? t('property.forSale') : t('property.forRent')}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sm text-gray-600">Location</dt>
+                  <dt className="text-sm text-gray-600">{t('property.location')}</dt>
                   <dd className="font-medium">{property.location}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm text-gray-600">Price</dt>
+                  <dt className="text-sm text-gray-600">{t('property.price')}</dt>
                   <dd className="font-medium">{formatPrice(property.price)}</dd>
                 </div>
               </dl>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Specifications</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('property.specifications')}</h3>
               <dl className="space-y-3">
                 <div>
-                  <dt className="text-sm text-gray-600">Bedrooms</dt>
+                  <dt className="text-sm text-gray-600">{t('property.bedrooms')}</dt>
                   <dd className="font-medium">{property.bedrooms}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm text-gray-600">Bathrooms</dt>
+                  <dt className="text-sm text-gray-600">{t('property.bathrooms')}</dt>
                   <dd className="font-medium">{property.bathrooms}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm text-gray-600">Total Area</dt>
-                  <dd className="font-medium">{property.area} m²</dd>
+                  <dt className="text-sm text-gray-600">{t('property.totalArea')}</dt>
+                  <dd className="font-medium">{property.area} {t('property.sqm')}</dd>
                 </div>
               </dl>
             </div>
@@ -261,15 +263,15 @@ export default function PropertyDetailPage() {
 
         {/* Contact Section */}
         <section className="bg-[#048542] text-white p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-bold mb-4">Interested in this property?</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('property.interested')}</h2>
           <p className="mb-6 text-green-50">
-            Contact our team to schedule a viewing or get more information.
+            {t('property.contactPrompt')}
           </p>
           <Link
             href="/contact"
             className="inline-block px-8 py-3 bg-white text-[#048542] font-semibold rounded-md hover:bg-gray-100 transition-colors"
           >
-            Contact Us
+            {t('property.contactUs')}
           </Link>
         </section>
       </div>

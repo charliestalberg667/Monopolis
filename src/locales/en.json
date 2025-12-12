@@ -164,6 +164,26 @@
   "related": {
     "title": "Related Properties"
   },
+  "property": {
+    "backToProperties": "Back to Properties",
+    "viewAllProperties": "View All Properties",
+    "forSale": "For Sale",
+    "forRent": "For Rent",
+    "perMonth": "per month",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "sqm": "m²",
+    "propertyDetails": "Property Details",
+    "quickFacts": "Quick Facts",
+    "propertyType": "Property Type",
+    "location": "Location",
+    "price": "Price",
+    "specifications": "Specifications",
+    "totalArea": "Total Area",
+    "interested": "Interested in this property?",
+    "contactPrompt": "Contact our team to schedule a viewing or get more information.",
+    "contactUs": "Contact Us"
+  },
   "schedule": {
     "title": "Book a Visit",
     "fullName": "Full Name",

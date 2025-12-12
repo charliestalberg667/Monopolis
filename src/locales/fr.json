@@ -164,6 +164,26 @@
   "related": {
     "title": "Biens Similaires"
   },
+  "property": {
+    "backToProperties": "Retour aux Biens",
+    "viewAllProperties": "Voir Tous les Biens",
+    "forSale": "À Vendre",
+    "forRent": "À Louer",
+    "perMonth": "par mois",
+    "bedrooms": "Chambres",
+    "bathrooms": "Salles de Bain",
+    "sqm": "m²",
+    "propertyDetails": "Détails du Bien",
+    "quickFacts": "Informations clés",
+    "propertyType": "Type de bien",
+    "location": "Localisation",
+    "price": "Prix",
+    "specifications": "Caractéristiques",
+    "totalArea": "Surface Totale",
+    "interested": "Intéressé par ce bien ?",
+    "contactPrompt": "Contactez notre équipe pour organiser une visite ou obtenir plus d'informations.",
+    "contactUs": "Nous Contacter"
+  },
   "schedule": {
     "title": "Prendre un Rendez-vous",
     "fullName": "Nom complet",
