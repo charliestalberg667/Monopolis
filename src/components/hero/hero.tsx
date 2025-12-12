@@ -32,7 +32,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <Filters />
 
     </div>
   );
@@ -206,7 +205,7 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({
   );
 };
 
-const Filters: React.FC = () => {
+export const Filters: React.FC = () => {
   const { t } = useTranslation();
   const [filters, setFilters] = useState({
     type: '',
