@@ -76,13 +76,18 @@ export async function GET(request: Request) {
   try {
     const url = new URL(request.url);
     const limitParam = url.searchParams.get('limit');
-    const target = Math.max(1, Math.min(50, Number(limitParam) || 8));
-    let estates: WhiseEstate[] = [];
+    const pageSize = 50; // Fetch 50 properties at a time
+    let allEstates: WhiseEstate[] = [];
+    let offset = 0;
+    let hasMore = true;
 
     // Try direct Whise call using LIMIT/OFFSET as query parameters
     try {
       const bearer = await getValidClientToken();
-      const directUrl = `https://api.whise.eu/v1/estates/list?limit=${target}&offset=0`;
+      const directUrl = `https://api.whise.eu/v1/estates/list?limit=${pageSize}&offs${offset}t=0`;
+
+            // Loop through all pages until we get all properties
+      while (hasMore) {
       const resp = await fetch(directUrl, {
         method: 'POST',
         headers: {
@@ -93,17 +98,33 @@ export async function GET(request: Request) {
       });
       if (resp.ok) {
         const json = await resp.json();
-        estates = (json?.estates || []).slice(0, target);
+const pageEstates = (json?.estates || []);
+          
+          if (pageEstates.length > 0) {
+            allEstates = [...allEstates, ...pageEstates];
+            offset += pageSize;
+            
+            // If we got fewer properties than pageSize, we've reached the end
+            if (pageEstates.length < pageSize) {
+              hasMore = false;
+            }
+          } else {
+            hasMore = false;
+          }
+        } else {
+          hasMore = false;
+        
       }
+            }
     } catch {}
 
     // Fallback to wrapper call without params
-    if (!estates.length) {
+    if (!allEstates.length) {
       const data = await fetchEstates();
-      estates = (data?.estates || []).slice(0, target);
+      allEstates = (data?.estates || [])
     }
 
-    const properties = estates.map(transformEstate);
+    const properties = allEstates.map(transformEstate);
     return NextResponse.json({ properties });
   } catch (error) {
     console.error('API route error:', error);
