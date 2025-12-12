@@ -13,4 +13,11 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
+// Ignore unused function parameters that start with an underscore (e.g. `_request`)
+eslintConfig.push({
+  rules: {
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+  },
+});
+
 export default eslintConfig;
