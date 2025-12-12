@@ -76,7 +76,6 @@ const HomeContent: React.FC = () => {
   const controls = useAnimation();
   
   const [properties, setProperties] = useState<Property[]>([]);
-  const [loading, setLoading] = useState(true);
 
   const processSteps: ProcessStep[] = [
     {
@@ -121,8 +120,6 @@ const HomeContent: React.FC = () => {
         console.error('Error fetching properties:', error);
         // Set empty array if API fails
         setProperties([]);
-      } finally {
-        setLoading(false);
       }
     };
     fetchFeaturedProperties();
