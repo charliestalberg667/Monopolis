@@ -83,11 +83,8 @@ export default function Navbar() {
               className="h-full w-auto"
             />
           </motion.div>
-          <motion.div className="hidden sm:flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
-            <div className="text-2xl font-bold leading-none">Monopolis</div>
-            <motion.div className="text-xs text-gray-600 leading-none" variants={logoItemVariants} custom={2}>
-              sales, rentals, domiciliation
-            </motion.div>
+          <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
+            <div className="text-lg sm:text-2xl font-bold leading-none">Monopolis</div>
           </motion.div>
         </Link>
 
