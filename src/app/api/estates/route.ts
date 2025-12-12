@@ -76,7 +76,7 @@ export async function GET(_request: Request) {
   try {
     const pageSize = 50; // Fetch 50 properties at a time
     let allEstates: WhiseEstate[] = [];
-    let offset = 0;
+    let offset = 4;
     let hasMore = true;
 
     // Try direct Whise call using LIMIT/OFFSET as query parameters
@@ -105,7 +105,10 @@ export async function GET(_request: Request) {
         const json = await resp.json();
         const pageEstates: WhiseEstate[] = (json?.estates || []);
 
+        console.log(`Whise fetch: fetched ${pageEstates.length} estates for offset ${offset}`);
+
         if (pageEstates.length === 0) {
+          console.log('Whise pagination: no estates returned for this page; stopping');
           // No more estates
           hasMore = false;
           break;
@@ -114,9 +117,14 @@ export async function GET(_request: Request) {
         allEstates.push(...pageEstates);
         offset += pageSize;
 
+        console.log(`Whise pagination: offset now ${offset}; total accumulated ${allEstates.length}`);
+
         // If we got fewer properties than pageSize, we've reached the end
         if (pageEstates.length < pageSize) {
+          console.log('Whise pagination: received fewer than pageSize; stopping');
           hasMore = false;
+        } else {
+          console.log('Whise pagination: received full page; continuing to next page');
         }
       }
     } catch (err) {
