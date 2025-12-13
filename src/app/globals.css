@@ -165,6 +165,17 @@ button.inline-flex.items-center.px-10.py-4:hover {
   font-weight: 500;
 }
 
+/* Contact button: green on white, hover inverts */
+.btn-contact {
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-contact:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 /* Footer links - simple underline on hover */
 .footer-link {
   transition: text-decoration 200ms ease-in-out;

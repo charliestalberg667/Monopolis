@@ -63,8 +63,7 @@ export default function ServicesPage() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-white shadow-lg shadow-[#01753f33]"
-                  style={{ backgroundColor: serviceAccent }}
+                  className="inline-flex items-center gap-2 rounded-full px-5 py-3 btn-contact shadow-sm"
                 >
                   {t('servicesPage.hero.ctaPrimary')}
                   <span aria-hidden>→</span>
@@ -186,8 +185,7 @@ export default function ServicesPage() {
             </div>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full px-4 py-3 text-white font-medium shadow-lg shadow-[#01753f33] w-full"
-              style={{ backgroundColor: serviceAccent }}
+              className="inline-flex items-center justify-center rounded-full px-4 py-3 btn-contact font-medium shadow-sm w-full"
             >
               {t('servicesPage.audience.cta')}
             </a>
@@ -202,8 +200,7 @@ export default function ServicesPage() {
           <div className="flex flex-wrap gap-3">
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-white shadow-lg shadow-[#01753f33]"
-              style={{ backgroundColor: serviceAccent }}
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 btn-contact shadow-sm"
             >
               {t('servicesPage.closing.primary')}
             </a>

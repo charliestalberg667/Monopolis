@@ -286,7 +286,7 @@ export default function PropertyDetailPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-white text-[#048542] font-semibold rounded-md hover:bg-gray-100 transition-colors"
+            className="inline-block px-8 py-3 btn-contact font-semibold rounded-md hover:shadow-md transition-colors"
           >
             {t('property.contactUs')}
           </Link>
