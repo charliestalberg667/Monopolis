@@ -34,7 +34,6 @@ interface TransformedProperty {
   area: number;
   image: string;
   type: 'sale' | 'rent';
-  featured: boolean;
   pictures?: Array<{
     urlLarge: string;
     urlSmall: string;
@@ -62,7 +61,7 @@ function transformEstate(estate: WhiseEstate): TransformedProperty {
     area: estate.area || 0,
     image: getFirstImageUrl(estate.pictures),
     type: estate.purpose?.id === 2 ? 'rent' : 'sale',
-    featured: estate.displayStatusId === 1,
+    // 'featured' flag removed — do not synthesize on the API level
     pictures: estate.pictures ? estate.pictures.map(pic => ({
       urlLarge: pic.urlLarge,
       urlSmall: pic.urlSmall,

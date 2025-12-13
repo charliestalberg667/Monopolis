@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import Hero from '@/components/hero/hero';
 import PropertyCard from '@/components/propertyCard/propertyCard';
 import MarketReport from '@/components/marketReport/MarketReport';
+import Link from 'next/link';
 
 
 interface ProcessStep {
@@ -66,7 +67,6 @@ interface Property {
   area: number;
   image: string;
   type: 'sale' | 'rent';
-  featured?: boolean;
 }
 
 const HomeContent: React.FC = () => {
@@ -109,13 +109,8 @@ const HomeContent: React.FC = () => {
         const data = await res.json();
         const apiProperties = (data?.properties || []) as Property[];
         
-        // Mark first 3 properties as featured if not already
-        const propertiesToShow = apiProperties.map((p, index) => ({
-          ...p,
-          featured: p.featured !== undefined ? p.featured : index < 3 // First 3 are featured if not specified
-        }));
-        
-        setProperties(propertiesToShow);
+        // Use API-provided data as-is; do not synthesize a "featured" flag client-side
+        setProperties(apiProperties);
       } catch (error) {
         console.error('Error fetching properties:', error);
         // Set empty array if API fails
@@ -175,7 +170,7 @@ const HomeContent: React.FC = () => {
                     area={property.area}
                     image={property.image}
                     type={property.type}
-                    featured={property.featured}
+                    
                   />
                 ))}
               </div>
@@ -244,10 +239,10 @@ const HomeContent: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mt-20 text-center"
           >
-            <button className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            <Link href="/properties" className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
               {t('process.getStarted')}
               <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>

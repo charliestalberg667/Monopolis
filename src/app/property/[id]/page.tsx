@@ -18,7 +18,6 @@ interface Property {
   area: number;
   image: string;
   type: "sale" | "rent";
-  featured?: boolean;
   pictures?: Array<{
     urlLarge: string;
     urlSmall: string;

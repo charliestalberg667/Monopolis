@@ -17,7 +17,6 @@ interface PropertyCardProps {
   area: number;
   image: string;
   type: "sale" | "rent";
-  featured?: boolean;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -30,7 +29,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   area,
   image,
   type,
-  featured = false,
+  
 }) => {
   const { t } = useTranslation();
 
@@ -58,13 +57,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMWYyIi8+PC9zdmc+"
         />
         
-        {featured && (
-          <div className="absolute top-3 left-3">
-            <span className="bg-black text-white text-xs px-2 py-1 rounded-sm">
-              {t('featured.featured')}
-            </span>
-          </div>
-        )}
+        
         
 
       </div>

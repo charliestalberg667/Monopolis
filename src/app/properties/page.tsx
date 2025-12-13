@@ -13,7 +13,6 @@ type Property = {
   area: number;
   image: string;
   type: "sale" | "rent";
-  featured?: boolean;
 };
 
 export default function PropertiesPage() {
@@ -207,7 +206,6 @@ export default function PropertiesPage() {
                   area={p.area}
                   image={p.image}
                   type={p.type}
-                  featured={p.featured}
                 />
               ))}
             </div>
