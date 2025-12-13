@@ -146,7 +146,7 @@ export default function PropertyDetailPage() {
   }
 
   const hasImages = images.length > 0;
-  const currentImage = hasImages ? images[selectedImageIndex] : null;
+  const currentImage = hasImages ? images[selectedImageIndex] : '';
 
   return (
     <main className="min-h-screen px-6 py-16 md:py-20">
@@ -165,7 +165,7 @@ export default function PropertyDetailPage() {
           {/* Main Image */}
           <div className="lg:col-span-2">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100">
-              {hasImages ? (
+              {hasImages && currentImage ? (
                 <Image
                   src={currentImage}
                   alt={property.title}
