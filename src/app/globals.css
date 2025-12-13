@@ -159,6 +159,12 @@ button.inline-flex.items-center.px-10.py-4:hover {
   opacity: 0.8;
 }
 
+/* Logo font (Josefin Sans) */
+.logo-font {
+  font-family: 'Josefin Sans', var(--font-sans);
+  font-weight: 500;
+}
+
 /* Footer links - simple underline on hover */
 .footer-link {
   transition: text-decoration 200ms ease-in-out;
