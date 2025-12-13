@@ -69,9 +69,9 @@ export default function Navbar() {
       initial="hidden"
       animate="visible"
     >
-      <div className="flex justify-between items-end h-16">
+      <div className="flex justify-between items-center h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-end logo-link" aria-label="Monopolis Home">
+        <Link href="/" className="flex items-center logo-link" aria-label="Monopolis Home">
 
           <motion.div className="relative w-12 h-12" variants={logoItemVariants} custom={0}>
             <Image
@@ -84,7 +84,7 @@ export default function Navbar() {
             />
           </motion.div>
           <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
-            <div className="logo-font text-4xl sm:text-4xl font-bold leading-none">Monopolis</div>
+            <div className="logo-font text-2xl sm:text-4xl font-bold leading-none">Monopolis</div>
           </motion.div>
         </Link>
 
