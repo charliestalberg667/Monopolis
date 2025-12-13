@@ -104,7 +104,7 @@ const HomeContent: React.FC = () => {
   useEffect(() => {
     const fetchFeaturedProperties = async () => {
       try {
-        const res = await fetch('/api/estates?limit=8', { cache: 'no-store' });
+        const res = await fetch('/api/estates?limit=6', { cache: 'no-store' });
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         const apiProperties = (data?.properties || []) as Property[];
