@@ -241,7 +241,7 @@ const HomeContent: React.FC = () => {
           >
             <Link href="/properties" className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
               {t('process.getStarted')}
-              <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+              <FiArrowRight className="ml-3 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </div>
