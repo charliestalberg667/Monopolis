@@ -7,9 +7,6 @@ import { FiMapPin, FiLayers, FiImage } from "react-icons/fi";
 import { FaBed, FaBath } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-// Default placeholder image
-const DEFAULT_PROPERTY_IMAGE = "/images/placeholder-property.jpg";
-
 interface PropertyCardProps {
   id: string;
   title: string;
