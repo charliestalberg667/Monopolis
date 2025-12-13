@@ -193,7 +193,47 @@
     "dutch": "Nederlands"
   },
   "common": {
-    "month": "maand"
+    "month": "maand",
+    "loading": "Bezig met laden...",
+    "error": "Er is een fout opgetreden",
+    "noResults": "Geen resultaten gevonden",
+    "applyFilters": "Filters toepassen",
+    "clearFilters": "Alles wissen",
+    "any": "Alle",
+    "min": "Min",
+    "max": "Max"
+  },
+  "properties": {
+    "title": "Panden",
+    "subtitle": "Bekijk onze nieuwste aanbiedingen in heel België.",
+    "search": {
+      "placeholder": "bijv. stadswoning, loft, villa",
+      "label": "Zoeken"
+    },
+    "filters": {
+      "type": "Type",
+      "bedrooms": "Slaapkamers",
+      "location": "Locatie",
+      "priceRange": "Prijsbereik",
+      "locationPlaceholder": "Stad, regio of wijk"
+    },
+    "types": {
+      "all": "Alle",
+      "sale": "Te Koop",
+      "rent": "Te Huur"
+    },
+    "bedrooms": {
+      "any": "Alle",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+"
+    },
+    "results": {
+      "loading": "Panden worden geladen...",
+      "noMatches": "Geen panden gevonden die aan uw criteria voldoen.",
+      "error": "Kon de actuele panden niet laden. Toon voorbeeldaanbiedingen."
+    }
   },
   "servicesPage": {
     "hero": {

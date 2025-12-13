@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import PropertyCard from "@/components/propertyCard/propertyCard";
 
 type Property = {
@@ -68,15 +69,17 @@ export default function PropertiesPage() {
     });
   }, [properties, type, bedrooms, location, search, minPrice, maxPrice]);
 
+  const { t } = useTranslation();
+
   return (
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 md:mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Properties
+            {t('properties.title')}
           </h1>
           <p className="mt-3 text-gray-600">
-            Browse our latest listings across Belgium.
+            {t('properties.subtitle')}
           </p>
         </header>
 
@@ -88,12 +91,12 @@ export default function PropertiesPage() {
                 htmlFor="search"
                 className="block text-sm font-medium text-gray-900 mb-1"
               >
-                Search
+                {t('properties.search.label')}
               </label>
               <input
                 id="search"
                 type="text"
-                placeholder="e.g. townhouse, loft, villa"
+                placeholder={t('properties.search.placeholder')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
@@ -105,7 +108,7 @@ export default function PropertiesPage() {
                 htmlFor="type"
                 className="block text-sm font-medium text-gray-900 mb-1"
               >
-                Type
+                {t('properties.filters.type')}
               </label>
               <select
                 id="type"
@@ -115,9 +118,9 @@ export default function PropertiesPage() {
                 }
                 className="w-full h-10 border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
-                <option value="all">All</option>
-                <option value="sale">For Sale</option>
-                <option value="rent">For Rent</option>
+                <option value="all">{t('properties.types.all')}</option>
+                <option value="sale">{t('properties.types.sale')}</option>
+                <option value="rent">{t('properties.types.rent')}</option>
               </select>
             </div>
 
@@ -126,7 +129,7 @@ export default function PropertiesPage() {
                 htmlFor="beds"
                 className="block text-sm font-medium text-gray-900 mb-1"
               >
-                Bedrooms
+                {t('properties.filters.bedrooms')}
               </label>
               <select
                 id="beds"
@@ -134,11 +137,11 @@ export default function PropertiesPage() {
                 onChange={(e) => setBedrooms(e.target.value)}
                 className="w-full h-10 border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
               >
-                <option value="">Any</option>
-                <option value="1">1+</option>
-                <option value="2">2+</option>
-                <option value="3">3+</option>
-                <option value="4">4+</option>
+                <option value="">{t('properties.bedrooms.any')}</option>
+                <option value="1">{t('properties.bedrooms.onePlus')}</option>
+                <option value="2">{t('properties.bedrooms.twoPlus')}</option>
+                <option value="3">{t('properties.bedrooms.threePlus')}</option>
+                <option value="4">{t('properties.bedrooms.fourPlus')}</option>
               </select>
             </div>
 
@@ -147,12 +150,12 @@ export default function PropertiesPage() {
                 htmlFor="loc"
                 className="block text-sm font-medium text-gray-900 mb-1"
               >
-                Location
+                {t('properties.filters.location')}
               </label>
               <input
                 id="loc"
                 type="text"
-                placeholder="City, area, or region"
+                placeholder={t('properties.filters.locationPlaceholder')}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
@@ -161,7 +164,7 @@ export default function PropertiesPage() {
 
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                Price range
+                {t('properties.filters.priceRange')}
               </label>
               <div className="flex items-center gap-2">
                 <input
@@ -169,7 +172,7 @@ export default function PropertiesPage() {
                   min={0}
                   value={minPrice}
                   onChange={(e) => setMinPrice(Number(e.target.value || 0))}
-                  placeholder="Min"
+                  placeholder={t('common.min')}
                   className="w-32 border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
                 />
                 <span className="text-gray-500">–</span>
@@ -178,7 +181,7 @@ export default function PropertiesPage() {
                   min={0}
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(Number(e.target.value || 0))}
-                  placeholder="Max"
+                  placeholder={t('common.max')}
                   className="w-32 border border-gray-300 rounded-md px-3 py-2 bg-white text-sm transition-colors hover:border-gray-400 focus:outline-none focus:border-[#048542] focus:ring-1 focus:ring-[#048542]"
                 />
               </div>
@@ -188,10 +191,10 @@ export default function PropertiesPage() {
 
         {/* Results */}
         <section>
-          {loading && <p className="text-gray-600">Loading listings…</p>}
-          {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
+          {loading && <p className="text-gray-600">{t('properties.results.loading')}</p>}
+          {error && <p className="text-sm text-red-600 mb-4">{t('properties.results.error')}</p>}
           {filtered.length === 0 ? (
-            <p className="text-gray-600">No properties match your filters.</p>
+            <p className="text-gray-600">{t('properties.results.noMatches')}</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {filtered.map((p) => (

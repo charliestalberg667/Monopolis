@@ -3,9 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiMapPin } from "react-icons/fi";
-import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
+import { FiMapPin, FiLayers, FiImage } from "react-icons/fi";
+import { FaBed, FaBath } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+
+// Default placeholder image
+const DEFAULT_PROPERTY_IMAGE = "/images/placeholder-property.jpg";
 
 interface PropertyCardProps {
   id: string;
@@ -45,21 +48,22 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   return (
     <Link href={`/property/${id}`} className="card-link block">
       <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden mx-2 sm:mx-3 cursor-pointer">
-      <div className="relative w-full aspect-[4/3] overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMWYyIi8+PC9zdmc+"
-        />
-        
-        
-        
-
+      <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 flex items-center justify-center">
+        {image && !image.includes('placeholder') ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center p-6 text-center text-gray-400">
+            <FiImage className="w-12 h-12 mb-2" />
+            <span className="text-sm">No image available</span>
+          </div>
+        )}
       </div>
       
       <div className="p-4 flex-1 flex flex-col">
@@ -80,16 +84,20 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         </div>
         
         <div className="mt-auto flex gap-4 text-sm text-gray-600 pt-3 border-t border-gray-100">
+          {bedrooms > 0 && (
+            <div className="flex items-center">
+              <FaBed className="mr-1" aria-hidden="true" />
+              <span>{bedrooms}</span>
+            </div>
+          )}
+          {bathrooms > 0 && (
+            <div className="flex items-center">
+              <FaBath className="mr-1" aria-hidden="true" />
+              <span>{bathrooms}</span>
+            </div>
+          )}
           <div className="flex items-center">
-            <FaBed className="mr-1" aria-hidden="true" />
-            <span>{bedrooms}</span>
-          </div>
-          <div className="flex items-center">
-            <FaBath className="mr-1" aria-hidden="true" />
-            <span>{bathrooms}</span>
-          </div>
-          <div className="flex items-center">
-            <FaRulerCombined className="mr-1" aria-hidden="true" />
+            <FiLayers className="mr-1" aria-hidden="true" />
             <span>{area} m²</span>
           </div>
         </div>

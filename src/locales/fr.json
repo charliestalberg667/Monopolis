@@ -214,7 +214,47 @@
     "dutch": "Néerlandais"
   },
   "common": {
-    "month": "mois"
+    "month": "mois",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "noResults": "Aucun résultat trouvé",
+    "applyFilters": "Appliquer les filtres",
+    "clearFilters": "Tout effacer",
+    "any": "Tous",
+    "min": "Min",
+    "max": "Max"
+  },
+  "properties": {
+    "title": "Biens immobiliers",
+    "subtitle": "Parcourez nos dernières annonces à travers la Belgique.",
+    "search": {
+      "placeholder": "ex: maison de ville, loft, villa",
+      "label": "Rechercher"
+    },
+    "filters": {
+      "type": "Type",
+      "bedrooms": "Chambres",
+      "location": "Localisation",
+      "priceRange": "Tranche de prix",
+      "locationPlaceholder": "Ville, région ou quartier"
+    },
+    "types": {
+      "all": "Tous",
+      "sale": "À Vendre",
+      "rent": "À Louer"
+    },
+    "bedrooms": {
+      "any": "Tous",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+"
+    },
+    "results": {
+      "loading": "Chargement des annonces...",
+      "noMatches": "Aucun bien ne correspond à vos critères.",
+      "error": "Impossible de charger les biens. Affichage d'annonces exemple."
+    }
   },
   "servicesPage": {
     "hero": {

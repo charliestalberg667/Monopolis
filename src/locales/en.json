@@ -214,7 +214,47 @@
     "dutch": "Dutch"
   },
   "common": {
-    "month": "month"
+    "month": "month",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found",
+    "applyFilters": "Apply Filters",
+    "clearFilters": "Clear All",
+    "any": "Any",
+    "min": "Min",
+    "max": "Max"
+  },
+  "properties": {
+    "title": "Properties",
+    "subtitle": "Browse our latest listings across Belgium.",
+    "search": {
+      "placeholder": "e.g. townhouse, loft, villa",
+      "label": "Search"
+    },
+    "filters": {
+      "type": "Type",
+      "bedrooms": "Bedrooms",
+      "location": "Location",
+      "priceRange": "Price range",
+      "locationPlaceholder": "City, area, or region"
+    },
+    "types": {
+      "all": "All",
+      "sale": "For Sale",
+      "rent": "For Rent"
+    },
+    "bedrooms": {
+      "any": "Any",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+"
+    },
+    "results": {
+      "loading": "Loading listings...",
+      "noMatches": "No properties match your filters.",
+      "error": "Could not load live estates. Showing sample listings."
+    }
   },
   "servicesPage": {
     "hero": {

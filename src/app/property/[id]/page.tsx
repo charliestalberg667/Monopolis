@@ -4,9 +4,17 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { FiArrowLeft, FiMapPin } from "react-icons/fi";
+import { FiArrowLeft, FiMapPin, FiImage } from "react-icons/fi";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+
+// Default placeholder component
+const ImagePlaceholder = () => (
+  <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100 text-gray-400">
+    <FiImage className="w-16 h-16 mb-2" />
+    <span className="text-sm">No image available</span>
+  </div>
+);
 
 interface Property {
   id: string;
@@ -112,14 +120,33 @@ export default function PropertyDetailPage() {
     );
   }
 
-  // Get all available images
-  const images = property.pictures && property.pictures.length > 0
-    ? property.pictures
-        .sort((a, b) => a.order - b.order)
-        .map((pic) => pic.urlLarge || pic.urlXXL)
-    : [property.image];
+  // Check if the image is a placeholder or invalid
+  const isValidImage = (url: string) => {
+    if (!url) return false;
+    // Check for common placeholder patterns or the specific problematic image
+    const placeholderPatterns = ['placeholder', 'ipublic/images/placeholder-property.jpg'];
+    return !placeholderPatterns.some(pattern => url.includes(pattern));
+  };
 
-  const currentImage = images[selectedImageIndex] || property.image;
+  // Get all valid images
+  const validPictures = property.pictures?.filter(pic => 
+    isValidImage(pic.urlLarge) || isValidImage(pic.urlXXL)
+  ) || [];
+
+  // Get all available images, filtering out placeholders
+  const images = validPictures.length > 0
+    ? validPictures
+        .sort((a, b) => a.order - b.order)
+        .map(pic => isValidImage(pic.urlLarge) ? pic.urlLarge : pic.urlXXL)
+    : [];
+
+  // If no valid images, use the main property image if it's valid
+  if (images.length === 0 && property.image && isValidImage(property.image)) {
+    images.push(property.image);
+  }
+
+  const hasImages = images.length > 0;
+  const currentImage = hasImages ? images[selectedImageIndex] : null;
 
   return (
     <main className="min-h-screen px-6 py-16 md:py-20">
@@ -138,17 +165,21 @@ export default function PropertyDetailPage() {
           {/* Main Image */}
           <div className="lg:col-span-2">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100">
-              <Image
-                src={currentImage}
-                alt={property.title}
-                fill
-                className="object-cover"
-                priority
-              />
+              {hasImages ? (
+                <Image
+                  src={currentImage}
+                  alt={property.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              ) : (
+                <ImagePlaceholder />
+              )}
             </div>
 
             {/* Thumbnail Gallery */}
-            {images.length > 1 && (
+            {hasImages && images.length > 1 && (
               <div className="flex gap-3 mt-4 overflow-x-auto">
                 {images.map((img, idx) => (
                   <button
@@ -160,12 +191,18 @@ export default function PropertyDetailPage() {
                         : "opacity-60 hover:opacity-100"
                     }`}
                   >
-                    <Image
-                      src={img}
-                      alt={`${property.title} ${idx + 1}`}
-                      fill
-                      className="object-cover"
-                    />
+                    {isValidImage(img) ? (
+                      <Image
+                        src={img}
+                        alt={`${property.title} ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <FiImage className="text-gray-400" />
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
@@ -266,7 +303,7 @@ export default function PropertyDetailPage() {
           {property.location ? (
             <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden">
               <iframe
-                src={`https://www.google.com/maps?q=${encodeURIComponent(property.location)}&z=15&output=embed`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(property.location)}&z=15&t=k&output=embed`}
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
