@@ -161,7 +161,7 @@ button.inline-flex.items-center.px-10.py-4:hover {
 
 /* Logo font (Josefin Sans) */
 .logo-font {
-  font-family: 'Monsieur La Doulaise', 'Josefin Sans', var(--font-sans);
+  font-family: 'Major Mono Display', 'Monsieur La Doulaise', 'Josefin Sans', var(--font-sans);
   font-weight: 500;
 }
 
