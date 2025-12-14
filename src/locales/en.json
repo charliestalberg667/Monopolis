@@ -232,6 +232,7 @@
       "label": "Search"
     },
     "filters": {
+      "title": "Filters",
       "type": "Type",
       "bedrooms": "Bedrooms",
       "location": "Location",
@@ -346,6 +347,7 @@
     "title": "Belgian Real Estate Market Report",
     "subtitle": "Latest trends and analysis for the Belgian real estate market (Q2 2024)",
     "chartTitle": "80 Years of Belgian Real Estate Prices",
+    "chartTitle20Years": "20 Years of Belgian Real Estate Prices",
     "pricePerSqmTrend": "Price per m² Trend",
     "propertyTypesTitle": "Property Types",
     "regionalTitle": "Average Price per m² by Region",
@@ -374,6 +376,43 @@
     "meta": {
       "sources": "Data sources: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb",
       "lastUpdated": "Last updated: {{date}}"
+    }
+  },
+  "about": {
+    "title": "ABOUT MONOPOLIS",
+    "description": "We help people buy, sell, and rent exceptional properties across Belgium, combining deep local expertise with world-class service.",
+    "mission": {
+      "title": "Our Mission & Values",
+      "subtitle": "Discover what drives us and how we deliver exceptional service",
+      "missionTitle": "Our Mission",
+      "missionDescription": "A boutique agency with 4-5 dedicated agents committed to finding the perfect property for every client. We combine deep local expertise with personalized service.",
+      "valuesTitle": "What We Value",
+      "valuesDescription": "Integrity, discretion, and long-term relationships. We prioritize your goals over quick wins—always.",
+      "howWorkTitle": "How We Work",
+      "howWorkDescription": "Personal attention from our expert agents paired with market insight—from first viewing to signed deed and beyond."
+    },
+    "impact": {
+      "title": "Our Impact",
+      "subtitle": "Numbers that reflect our commitment to excellence",
+      "agents": "Dedicated agents",
+      "satisfaction": "Client satisfaction",
+      "years": "Years in market",
+      "office": "Office in Alsemberg"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "The story of our growth and evolution",
+      "founded": "Founded",
+      "foundedDescription": "Monopolis opens its first office in Brussels.",
+      "rental": "Rental Division",
+      "rentalDescription": "Expanded to full-service residential rentals.",
+      "digital": "Digital First",
+      "digitalDescription": "Launched a new platform with virtual tours and instant valuations."
+    },
+    "cta": {
+      "title": "Meet the team behind Monopolis",
+      "description": "Our 4-5 dedicated agents bring expertise, discretion, and a personal touch to every transaction.",
+      "button": "Explore our team"
     }
   }
 }

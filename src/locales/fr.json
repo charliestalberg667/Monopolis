@@ -232,6 +232,7 @@
       "label": "Rechercher"
     },
     "filters": {
+      "title": "Filtres",
       "type": "Type",
       "bedrooms": "Chambres",
       "location": "Localisation",
@@ -346,6 +347,7 @@
     "title": "Rapport sur le marché immobilier belge",
     "subtitle": "Dernières tendances et analyses du marché immobilier belge (T2 2024)",
     "chartTitle": "80 ans de prix de l'immobilier en Belgique",
+    "chartTitle20Years": "20 ans de prix de l'immobilier en Belgique",
     "pricePerSqmTrend": "Évolution du prix au m²",
     "propertyTypesTitle": "Types de biens",
     "regionalTitle": "Prix moyen au m² par région",
@@ -374,6 +376,43 @@
     "meta": {
       "sources": "Sources de données : Statbel, Notaris.be, Baromètre immobilier BNP Paribas Fortis, Immoweb",
       "lastUpdated": "Dernière mise à jour : {{date}}"
+    }
+  },
+  "about": {
+    "title": "À PROPOS DE MONOPOLIS",
+    "description": "Nous aidons les personnes à acheter, vendre et louer des propriétés exceptionnelles à travers la Belgique, en combinant une expertise locale approfondie avec un service de classe mondiale.",
+    "mission": {
+      "title": "Notre Mission & Nos Valeurs",
+      "subtitle": "Découvrez ce qui nous motive et comment nous offrons un service exceptionnel",
+      "missionTitle": "Notre Mission",
+      "missionDescription": "Une agence boutique avec 4-5 agents dédiés engagés à trouver la propriété parfaite pour chaque client. Nous combinons une expertise locale approfondie avec un service personnalisé.",
+      "valuesTitle": "Ce Que Nous Valorisons",
+      "valuesDescription": "Intégrité, discrétion et relations à long terme. Nous privilégions vos objectifs par rapport aux gains rapides—toujours.",
+      "howWorkTitle": "Comment Nous Travaillons",
+      "howWorkDescription": "Attention personnelle de nos agents experts associée à une perspicacité du marché—de la première visite à l'acte signé et au-delà."
+    },
+    "impact": {
+      "title": "Notre Impact",
+      "subtitle": "Des chiffres qui reflètent notre engagement envers l'excellence",
+      "agents": "Agents dédiés",
+      "satisfaction": "Satisfaction client",
+      "years": "Années d'expérience",
+      "office": "Bureau à Alsemberg"
+    },
+    "journey": {
+      "title": "Notre Parcours",
+      "subtitle": "L'histoire de notre croissance et évolution",
+      "founded": "Fondation",
+      "foundedDescription": "Monopolis ouvre son premier bureau à Bruxelles.",
+      "rental": "Division Location",
+      "rentalDescription": "Expansion vers les locations résidentielles complet.",
+      "digital": "Digital D'Abord",
+      "digitalDescription": "Lancement d'une nouvelle plateforme avec visites virtuelles et estimations instantanées."
+    },
+    "cta": {
+      "title": "Rencontrez l'équipe derrière Monopolis",
+      "description": "Nos 4-5 agents dédiés apportent expertise, discrétion et une touche personnelle à chaque transaction.",
+      "button": "Explorer notre équipe"
     }
   }
 }

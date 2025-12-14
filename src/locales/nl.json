@@ -211,6 +211,7 @@
       "label": "Zoeken"
     },
     "filters": {
+      "title": "Filters",
       "type": "Type",
       "bedrooms": "Slaapkamers",
       "location": "Locatie",
@@ -325,6 +326,7 @@
     "title": "Belgisch vastgoedmarktrapport",
     "subtitle": "Recente trends en analyses voor de Belgische vastgoedmarkt (Q2 2024)",
     "chartTitle": "80 jaar Belgische vastgoedprijzen",
+    "chartTitle20Years": "20 jaar Belgische vastgoedprijzen",
     "pricePerSqmTrend": "Evolutie prijs per m²",
     "propertyTypesTitle": "Type panden",
     "regionalTitle": "Gemiddelde prijs per m² per regio",
@@ -353,6 +355,43 @@
     "meta": {
       "sources": "Databronnen: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb",
       "lastUpdated": "Laatst bijgewerkt: {{date}}"
+    }
+  },
+  "about": {
+    "title": "OVER MONOPOLIS",
+    "description": "We helpen mensen bij het kopen, verkopen en verhuren van uitzonderlijke woningen in heel België, waarbij we diepgaande lokale expertise combineren met wereldklasse service.",
+    "mission": {
+      "title": "Onze Missie & Waarden",
+      "subtitle": "Ontdek wat ons drijft en hoe we uitzonderlijke service leveren",
+      "missionTitle": "Onze Missie",
+      "missionDescription": "Een boutique-agentschap met 4-5 toegewijde agenten die zich inzetten voor het vinden van de perfecte woning voor elke klant. We combineren diepgaande lokale expertise met gepersonaliseerde service.",
+      "valuesTitle": "Wat We Waarderen",
+      "valuesDescription": "Integriteit, discretie en langetermijnrelaties. We stellen uw doelen voorop boven snelle winsten—altijd.",
+      "howWorkTitle": "Hoe We Werken",
+      "howWorkDescription": "Persoonlijke aandacht van onze expertagenten gecombineerd met marktinzicht—van eerste bezichtiging tot ondertekende akte en verder."
+    },
+    "impact": {
+      "title": "Onze Impact",
+      "subtitle": "Cijfers die onze toewijding aan excellentie weerspiegelen",
+      "agents": "Toegewijde agenten",
+      "satisfaction": "Klanttevredenheid",
+      "years": "Jaren in de markt",
+      "office": "Kantoor in Alsemberg"
+    },
+    "journey": {
+      "title": "Onze Reis",
+      "subtitle": "Het verhaal van onze groei en evolutie",
+      "founded": "Oprichting",
+      "foundedDescription": "Monopolis opent zijn eerste kantoor in Brussel.",
+      "rental": "Verhuurdivisie",
+      "rentalDescription": "Uitbreiding naar volledige residentiële verhuurdiensten.",
+      "digital": "Digital Eerst",
+      "digitalDescription": "Lancering van een nieuw platform met virtuele tours en directe taxaties."
+    },
+    "cta": {
+      "title": "Ontmoet het team achter Monopolis",
+      "description": "Onze 4-5 toegewijde agenten brengen expertise, discretie en een persoonlijke touch naar elke transactie.",
+      "button": "Ons team verkennen"
     }
   }
 }

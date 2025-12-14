@@ -27,7 +27,7 @@ export default function ContactPage() {
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-10 md:mb-14">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Contact</h1>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight logo-font">Contact</h1>
           <p className="mt-3 text-gray-600 max-w-2xl">
             We’d love to hear from you. Send us a message and we’ll respond within one business day.
           </p>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                     <p className="text-sm text-red-600">{error}</p>
                   )}
 
-                  <div className="pt-2">
+                  <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
           {/* Details */}
           <aside className="lg:col-span-1">
-            <div className="rounded-lg border border-[#048542]/70) bg-white p-6 md:p-8 shadow-sm space-y-6">
+            <div className="rounded-lg border border-[#048542]/30 bg-white p-6 md:p-8 shadow-sm space-y-6">
               <div>
                 <h3 className="text-lg font-semibold">Contact details</h3>
                 <p className="mt-2 text-gray-600">Our boutique team is available Monday to Friday, 9:00–18:00.</p>

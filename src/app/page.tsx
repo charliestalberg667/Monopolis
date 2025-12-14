@@ -149,10 +149,7 @@ const HomeContent: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="mb-16 text-center"
             >
-              <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-                {t('featured.badge')}
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('featured.title')}</h2>
+              <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('featured.title')}</h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('featured.subtitle')}</p>
             </motion.div>
             
@@ -170,16 +167,12 @@ const HomeContent: React.FC = () => {
                     area={property.area}
                     image={property.image}
                     type={property.type}
-                    
                   />
                 ))}
               </div>
             </div>
         </div>
       </motion.section>
-
-      {/* Market Report */}
-      <MarketReport />
 
       {/* Process Section - Apple Style */}
       <section className="py-32 bg-gray-50">
@@ -191,7 +184,7 @@ const HomeContent: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
+            <h2 className="logo-font text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
               {t('process.title')}
             </h2>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -237,7 +230,7 @@ const HomeContent: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-20 text-center"
+            className="mt-20 text-center text-white"
           >
             <Link href="/properties" className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
               {t('process.getStarted')}
@@ -246,6 +239,9 @@ const HomeContent: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Market Report */}
+      <MarketReport />
 
 
       {/* Testimonials */}
@@ -258,10 +254,7 @@ const HomeContent: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-              {t('testimonials.badge')}
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('testimonials.title')}</h2>
+            <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('testimonials.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('testimonials.subtitle')}
             </p>

@@ -17,7 +17,20 @@ import {
 } from 'recharts';
 import { useTranslation } from 'react-i18next';
 
-const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
+// Green color palette for charts
+const GREEN_PALETTE = [
+  '#004d40', // Dark Green
+  '#00796b',
+  '#009688',
+  '#4db6ac',
+  '#80cbc4',
+  '#b2dfdb',
+  '#e0f2f1',
+  '#f1f8e9'  // Lightest Green
+];
+
+// Primary green for main chart line
+const PRIMARY_GREEN = '#01753f';
 
 interface RegionData {
   key: 'brussels' | 'flanders' | 'wallonia';
@@ -100,9 +113,15 @@ const indexToPrice = (index: number) => {
   return Math.round(210000 * (index / 100));
 };
 
-// Generate 80 years of price data (1944-2024)
+// Generate price data for the last 20 years
 const generatePriceTrends = () => {
-  const historicalData = getHistoricalPriceIndex();
+  const currentYear = new Date().getFullYear();
+  const startYear = currentYear - 20;
+  
+  const historicalData = getHistoricalPriceIndex().filter(
+    item => item.year >= startYear
+  );
+  
   return historicalData.map(item => ({
     year: item.year,
     index: item.index,
@@ -146,7 +165,7 @@ const CustomTooltip = ({
     return (
       <div className="bg-white p-3 border border-gray-200 rounded shadow-md">
         <p className="font-medium">{yearLabel}: {data.year}</p>
-        <p className="text-green-700">
+        <p className="font-bold">
           €{data.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
         </p>
         <p className="text-xs text-gray-500">
@@ -213,10 +232,7 @@ const MarketReport: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-[#01753f] bg-opacity-10 rounded-full mb-4">
-            {t('marketReport.badge')}
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('marketReport.title')}</h2>
+          <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('marketReport.title')}</h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             {t('marketReport.subtitle')}
           </p>
@@ -227,12 +243,12 @@ const MarketReport: React.FC = () => {
         {/* 80-Year Price Trend Chart */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 border border-[#048542]/30">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-            <h2 className="text-3xl font-bold text-center mb-4">{t('marketReport.chartTitle')}</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">{t('marketReport.chartTitle20Years')}</h2>
             <div className="flex items-center mt-2 md:mt-0">
               <span className="text-sm text-gray-500 mr-4">
                 {t('marketReport.labels.averagePrice')}: <span className="font-medium text-gray-900">€{averagePrice.toLocaleString()}</span>
               </span>
-              <span className="text-sm px-2 py-1 rounded-md bg-blue-50 text-blue-700">
+              <span className="text-sm px-2 py-1 rounded-md bg-gray-100 text-gray-900 border border-gray-300">
                 {formatPriceChange(priceChange)} {t('marketReport.labels.priceChange')}
               </span>
             </div>
@@ -258,7 +274,7 @@ const MarketReport: React.FC = () => {
                   tick={{ fill: '#1f2937' }}  // Keep tick labels black
                   width={80}
                   tickFormatter={formatYAxis}
-                  domain={[0, 'dataMax + 100000']}
+                  domain={['dataMin * 0.8', 'dataMax * 1.2']}
                 />
                 <Tooltip 
                   content={<CustomTooltip yearLabel={t('marketReport.labels.year')} pricePerSqmLabel={t('marketReport.labels.pricePerSqm')} />}
@@ -276,25 +292,25 @@ const MarketReport: React.FC = () => {
                   type="monotone" 
                   dataKey="price" 
                   name={t('marketReport.labels.averagePrice')}
-                  stroke="#3b82f6" 
-                  strokeWidth={3}
+                  stroke={PRIMARY_GREEN}
+                  strokeWidth={1.5}
                   dot={false}
                   activeDot={{ 
-                    r: 6, 
+                    r: 3, 
                     stroke: '#fff', 
-                    strokeWidth: 2,
-                    fill: '#3b82f6'
+                    strokeWidth: 1,
+                    fill: PRIMARY_GREEN
                   }}
                 />
                 {/* Add a reference line for the 2008 financial crisis */}
                 <ReferenceLine 
                   x="2008" 
-                  stroke="#ef4444" 
+                  stroke="#9e9e9e" 
                   strokeDasharray="3 3" 
                   label={{
                     value: t('marketReport.references.financialCrisis'),
                     position: 'top',
-                    fill: '#ef4444',
+                    fill: '#757575',
                     fontSize: 12,
                     offset: 10
                   }}
@@ -302,12 +318,12 @@ const MarketReport: React.FC = () => {
                 {/* Add a reference line for the COVID-19 pandemic */}
                 <ReferenceLine 
                   x="2020" 
-                  stroke="#f59e0b" 
+                  stroke="#bdbdbd" 
                   strokeDasharray="3 3" 
                   label={{
                     value: t('marketReport.references.pandemic'),
                     position: 'top',
-                    fill: '#f59e0b',
+                    fill: '#9e9e9e',
                     fontSize: 12,
                     offset: 10
                   }}
@@ -315,7 +331,7 @@ const MarketReport: React.FC = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <p className="text-xs text-blue-600 mt-2 text-right">
+          <p className="text-xs text-gray-500 mt-2 text-right">
             {t('marketReport.chartSource')}
           </p>
         </div>
@@ -339,23 +355,35 @@ const MarketReport: React.FC = () => {
                   <YAxis 
                     axisLine={false}
                     tickLine={false}
-                    tick={{ fill: '#1f2937' }}  // Keep tick labels black
+                    tick={{ fill: '#1f2937' }}
                     width={80}
                     tickFormatter={(value: number) => `€${value.toLocaleString()}`}
+                    domain={['dataMin * 0.9', 'dataMax * 1.1']}
                   />
-                  <Tooltip content={<CustomTooltip yearLabel={t('marketReport.labels.year')} pricePerSqmLabel={t('marketReport.labels.pricePerSqm')} />} />
+                  <Tooltip 
+                    content={<CustomTooltip yearLabel={t('marketReport.labels.year')} pricePerSqmLabel={t('marketReport.labels.pricePerSqm')} />}
+                    labelFormatter={(label: string) => `${t('marketReport.labels.year')}: ${label}`}
+                    formatter={(value: number) => formatTooltipValue(value)}
+                    contentStyle={{
+                      background: 'white',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '0.5rem',
+                      padding: '0.75rem',
+                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                    }}
+                  />
                   <Line 
                     type="monotone" 
-                    dataKey="pricePerSqm" 
+                    dataKey="pricePerSqm"
                     name={t('marketReport.labels.pricePerSqm')}
-                    stroke="#01753f" 
-                    strokeWidth={2}
+                    stroke={PRIMARY_GREEN}
+                    strokeWidth={1.5}
                     dot={false}
                     activeDot={{ 
-                      r: 6, 
+                      r: 4, 
                       stroke: '#fff', 
-                      strokeWidth: 2,
-                      fill: '#01753f'
+                      strokeWidth: 1.5,
+                      fill: PRIMARY_GREEN
                     }}
                   />
                 </LineChart>
@@ -385,7 +413,7 @@ const MarketReport: React.FC = () => {
                       {translatedPropertyTypes.map((entry, index) => (
                         <Cell 
                           key={`cell-${index}`} 
-                          fill={COLORS[index % COLORS.length]}
+                          fill={GREEN_PALETTE[index % GREEN_PALETTE.length]}
                           stroke="#fff"
                           strokeWidth={1}
                         />
@@ -411,9 +439,9 @@ const MarketReport: React.FC = () => {
                 {translatedPropertyTypes.map((type, index) => (
                   <div key={type.key} className="flex items-center">
                     <div 
-                      className="w-4 h-4 rounded-sm mr-2 flex-shrink-0" 
+                      className="w-4 h-4 rounded-sm mr-2 flex-shrink-0 border border-gray-300" 
                       style={{ 
-                        backgroundColor: COLORS[index % COLORS.length],
+                        backgroundColor: GREEN_PALETTE[index % GREEN_PALETTE.length],
                         boxShadow: '0 1px 2px rgba(0,0,0,0.1)'
                       }}
                     />
@@ -437,7 +465,7 @@ const MarketReport: React.FC = () => {
                 <div key={region.key} className="border border-[#048542]/30 bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-900">{formattedRegion.name}</h4>
                   <p className="text-2xl font-bold mt-2">{formattedRegion.price}</p>
-                  <p className={`text-sm mt-1 ${region.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <p className={`text-sm mt-1 font-medium`}>
                     {formattedRegion.change} {t('marketReport.labels.priceChange')}
                   </p>
                 </div>

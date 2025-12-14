@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="relative w-full h-[calc(100vh-120px)] md:h-[calc(100vh-100px)] mb-0 mt-0 md:mb-0 py-6 px-6">
         <Image
-          src="/header/bgg.jpg"
+          src="/images/bg--.jpg"
           alt="Luxury house with pool"
           layout="fill"
           quality={100}
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         <div className="relative max-w-md md:max-w-xl">
           <TypewriterText 
             text={t('hero.typewriter')}
-            className="pt-6 text-lg md:text-lg font-black text-white leading-tight"
+            className="pt-6 text-lg md:text-lg font-black text-black leading-tight"
           />
         </div>
       </div>

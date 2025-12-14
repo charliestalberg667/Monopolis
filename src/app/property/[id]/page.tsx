@@ -165,7 +165,7 @@ export default function PropertyDetailPage() {
           {/* Main Image */}
           <div className="lg:col-span-2">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100">
-              {hasImages && currentImage ? (
+              {hasImages ? (
                 <Image
                   src={currentImage}
                   alt={property.title}

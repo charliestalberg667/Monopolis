@@ -27,6 +27,7 @@ export default function PropertiesPage() {
   const [loaded, setLoaded] = useState<Property[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const loadProperties = async () => {
@@ -69,13 +70,11 @@ export default function PropertiesPage() {
     });
   }, [properties, type, bedrooms, location, search, minPrice, maxPrice]);
 
-  const { t } = useTranslation();
-
   return (
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 md:mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <h1 className="logo-font text-3xl md:text-4xl font-bold tracking-tight">
             {t('properties.title')}
           </h1>
           <p className="mt-3 text-gray-600">
@@ -193,6 +192,7 @@ export default function PropertiesPage() {
         <section>
           {loading && <p className="text-gray-600">{t('properties.results.loading')}</p>}
           {error && <p className="text-sm text-red-600 mb-4">{t('properties.results.error')}</p>}
+          <h2 className="text-2xl font-semibold mb-4">{t('properties.filters.title')}</h2>
           {filtered.length === 0 ? (
             <p className="text-gray-600">{t('properties.results.noMatches')}</p>
           ) : (

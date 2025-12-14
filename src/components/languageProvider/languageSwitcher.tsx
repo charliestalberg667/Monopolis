@@ -12,9 +12,9 @@ const LanguageSwitcher: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const languages: { code: Language; label: string; flag: string }[] = [
-    { code: 'en', label: 'English', flag: '🇬🇧' },
-    { code: 'fr', label: 'French', flag: '🇫🇷' },
-    { code: 'nl', label: 'Dutch', flag: '🇳🇱' },
+    { code: 'en', label: 'English', flag: '' },
+    { code: 'fr', label: 'French', flag: '' },
+    { code: 'nl', label: 'Dutch', flag: '' },
   ];
 
   const handleLanguageChange = (lang: Language) => {
@@ -48,32 +48,37 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors border border-gray-200"
+        className="flex items-center gap-1.5 px-2 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200"
         type="button"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
         <Globe className="w-4 h-4" />
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="font-mono text-xs">
+          {languages.find(lang => lang.code === i18n.language)?.code.toUpperCase() || 'EN'}
+        </span>
+        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div 
-          className="fixed top-16 right-6 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-[999999] pointer-events-auto"
-        >
+        <div className="absolute right-0 mt-1 w-44 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-gray-100/50 py-1.5 z-[999999]">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full flex items-center gap-3 px-4 py-2 text-left text-sm transition-colors ${
+              className={`w-full flex items-center justify-between px-3 py-2 text-left text-sm transition-all duration-150 ${
                 i18n.language === lang.code
-                  ? 'bg-gray-100 text-gray-900 font-medium'
-                  : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-gray-900 font-medium bg-gray-50'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50/50'
               }`}
               type="button"
             >
-              <span className="text-lg">{lang.flag}</span>
               <span>{lang.label}</span>
+              <span className={`font-mono text-xs ${
+                i18n.language === lang.code ? 'text-gray-900' : 'text-gray-400'
+              }`}>
+                {lang.code.toUpperCase()}
+              </span>
             </button>
           ))}
         </div>

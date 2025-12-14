@@ -1,125 +1,221 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FiArrowRight } from 'react-icons/fi';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutPage() {
+  const { t } = useTranslation();
   return (
-    <main className="min-h-screen w-full">
-      {/* Hero (aligned with home) */}
-      <section className="relative w-full h-[50vh] md:h-[75vh] mb-8 mt-4 md:mb-12 py-6 px-6">
-        <Image
-          src="/header/bggg.jpg"
-          alt="About Monopolis hero"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="relative max-w-md md:max-w-xl">
-          <h1 className="pt-6 text-lg md:text-lg font-black text-white leading-tight">
-            ABOUT MONOPOLIS
-          </h1>
-          <p className="mt-2 text-white/90 max-w-2xl">
-            We help people buy, sell, and rent exceptional properties across Belgium,
-            combining deep local expertise with world‑class service.
-          </p>
+    <div className="min-h-screen flex flex-col">
+      {/* Hero Section - matching front page style */}
+      <section className="relative w-full bg-[#ffffff] px-6 pt-2 pb-10 md:h-screen overflow-visible z-10">
+        <div className="relative w-full h-[calc(100vh-120px)] md:h-[calc(100vh-100px)] mb-0 mt-0 md:mb-0 py-6 px-6">
+          <Image
+            src="/header/bggg.jpg"
+            alt="About Monopolis hero"
+            fill
+            priority
+            className="object-cover rounded-sm"
+          />
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative max-w-md md:max-w-xl mx-auto text-center"
+          >
+            <h1 className="pt-6 text-lg md:text-lg font-black text-white leading-tight">
+              {t('about.title')}
+            </h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-2 text-white/90 max-w-2xl mx-auto"
+            >
+              {t('about.description')}
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Mission & Values */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
-            <h3 className="text-xl font-semibold">Our Mission</h3>
-            <p className="mt-3 text-gray-600">
-              A boutique agency with 4-5 dedicated agents committed to finding the perfect property for every client. We combine deep local expertise with personalized service.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
-            <h3 className="text-xl font-semibold">What We Value</h3>
-            <p className="mt-3 text-gray-600">
-              Integrity, discretion, and long‑term relationships. We prioritize your goals over quick
-              wins—always.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-[#048542]/30 p-6 bg-white shadow-sm">
-            <h3 className="text-xl font-semibold">How We Work</h3>
-            <p className="mt-3 text-gray-600">
-              Personal attention from our expert agents paired with market insight—from first viewing to signed deed
-              and beyond.
-            </p>
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="py-20 overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('about.mission.title')}</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.mission.subtitle')}</p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                title: t('about.mission.missionTitle'),
+                description: t('about.mission.missionDescription')
+              },
+              {
+                title: t('about.mission.valuesTitle'),
+                description: t('about.mission.valuesDescription')
+              },
+              {
+                title: t('about.mission.howWorkTitle'),
+                description: t('about.mission.howWorkDescription')
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group"
+              >
+                <div className="bg-white p-8 rounded-2xl h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-[#048542]/30">
+                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats */}
-      <section className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 py-14 md:py-16">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="bg-gray-50 py-20"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('about.impact.title')}</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.impact.subtitle')}</p>
+          </motion.div>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>4-5</div>
-              <p className="text-gray-600 mt-1">Dedicated agents</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>98%</div>
-              <p className="text-gray-600 mt-1">Client satisfaction</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>15+</div>
-              <p className="text-gray-600 mt-1">Years in market</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--accent)' }}>1</div>
-              <p className="text-gray-600 mt-1">Office in Alsemberg</p>
-            </div>
+            {[
+              { value: "4-5", label: t('about.impact.agents') },
+              { value: "98%", label: t('about.impact.satisfaction') },
+              { value: "15+", label: t('about.impact.years') },
+              { value: "1", label: t('about.impact.office') }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--accent)' }}>{stat.value}</div>
+                <p className="text-gray-600 mt-2">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Timeline */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold">Our Journey</h2>
-        <div className="mt-8 space-y-6">
-          <div className="flex items-start gap-4">
-            <div className="h-6 w-6 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-            <div>
-              <h4 className="font-semibold">2010 — Founded</h4>
-              <p className="text-gray-600 mt-1">Monopolis opens its first office in Brussels.</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="h-6 w-6 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-            <div>
-              <h4 className="font-semibold">2015 — Rental Division</h4>
-              <p className="text-gray-600 mt-1">Expanded to full‑service residential rentals.</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="h-6 w-6 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-            <div>
-              <h4 className="font-semibold">2021 — Digital First</h4>
-              <p className="text-gray-600 mt-1">Launched a new platform with virtual tours and instant valuations.</p>
-            </div>
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="py-20"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('about.journey.title')}</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.journey.subtitle')}</p>
+          </motion.div>
+          
+          <div className="space-y-8 max-w-4xl mx-auto">
+            {[
+              { year: "2010", title: t('about.journey.founded'), description: t('about.journey.foundedDescription') },
+              { year: "2015", title: t('about.journey.rental'), description: t('about.journey.rentalDescription') },
+              { year: "2021", title: t('about.journey.digital'), description: t('about.journey.digitalDescription') }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="flex items-start gap-6"
+              >
+                <div className="h-8 w-8 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--accent)' }} />
+                <div className="bg-white p-6 rounded-2xl border border-[#048542]/30 flex-1">
+                  <h4 className="font-semibold text-xl text-gray-900">{item.year} — {item.title}</h4>
+                  <p className="text-gray-600 mt-2">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="rounded-2xl border border-[#048542]/30 p-8 md:p-10 bg-white shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl md:text-2xl font-semibold">Meet the team behind Monopolis</h3>
-            <p className="text-gray-600 mt-2 max-w-2xl">
-              Our 4-5 dedicated agents bring expertise, discretion, and a personal touch to every transaction.
-            </p>
-          </div>
-          <a
-            href="/team"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full text-white"
-            style={{ backgroundColor: '#01753f' }}
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="py-20"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white p-8 md:p-12 rounded-2xl border border-[#048542]/30 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
           >
-            Explore our team
-          </a>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">{t('cta.title')}</h3>
+              <p className="text-gray-600 text-lg max-w-2xl">
+                {t('cta.subtitle')}
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center px-8 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              style={{ color: '#ffffff' }}
+            >
+              {t('cta.button')}
+              <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#ffffff' }} />
+            </Link>
+          </motion.div>
         </div>
-      </section>
-    </main>
+      </motion.section>
+    </div>
   );
 }
 
