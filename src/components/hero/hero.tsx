@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-end z-20 px-6 pt-[133px] pb-[133px] gap-[106px]">
           <TypewriterText 
             text={t('hero.typewriter')}
-            className="dm-serif-text text-2xl md:text-5xl lg:text-5xl font-normal text-white leading-tight text-center mb-20 max-w-[100px]"
+            className="dm-serif-text text-2xl md:text-5xl lg:text-5xl font-normal text-white leading-tight text-center mb-20 max-w-[1000px]"
           />
           <button className="px-[30px] py-2 rounded-lg bg-gray-500/30 backdrop-blur-sm text-white text-sm font-medium hover:bg-gray-500/40 transition-colors" style={{ backgroundColor: 'rgba(255, 255, 255, 0.18)' }}>
             {t('hero.discoverMore')}
