@@ -194,7 +194,7 @@ const HomeContent: React.FC = () => {
           </motion.div>
 
           {/* Process Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {processSteps.map((item, index) => (
               <motion.div
                 key={item.step}
@@ -204,20 +204,22 @@ const HomeContent: React.FC = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group"
               >
-                <div className="bg-white p-8 rounded-2xl h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-[#01753f] group-hover:text-white transition-colors duration-300">
-                    {item.icon}
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-[#01753f] group-hover:text-white transition-all duration-300">
+                      {item.icon}
+                    </div>
+                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('process.step')} {item.step}</span>
                   </div>
-                  <span className="inline-block text-sm font-medium text-gray-500 mb-2">{t('process.step')} {item.step}</span>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{t(item.titleKey)}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{t(item.descriptionKey)}</p>
-                  <ul className="space-y-3">
+                  <h3 className="dm-serif-text text-3xl font-normal text-gray-900 mb-5 leading-tight">{t(item.titleKey)}</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed text-base">{t(item.descriptionKey)}</p>
+                  <ul className="space-y-4">
                     {item.detailKeys.map((detailKey, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs mr-3 mt-0.5">
-                          <FiCheck className="w-3 h-3" />
+                        <span className="flex-shrink-0 w-6 h-6 rounded-md bg-green-50 text-[#01753f] flex items-center justify-center text-xs mr-4 mt-0.5 group-hover:bg-[#01753f] group-hover:text-white transition-colors duration-300">
+                          <FiCheck className="w-4 h-4" />
                         </span>
-                        <span className="text-gray-600">{t(detailKey)}</span>
+                        <span className="text-gray-600 text-sm leading-relaxed">{t(detailKey)}</span>
                       </li>
                     ))}
                   </ul>
