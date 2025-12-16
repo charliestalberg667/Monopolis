@@ -32,7 +32,16 @@ const Hero: React.FC = () => {
             text={t('hero.typewriter')}
             className="dm-serif-text text-2xl md:text-5xl lg:text-5xl font-normal text-white leading-tight text-center mb-20 max-w-[1000px]"
           />
-          <button className="px-[30px] py-2 rounded-lg bg-gray-500/30 backdrop-blur-sm text-white text-sm font-medium hover:bg-gray-500/40 transition-colors" style={{ backgroundColor: 'rgba(255, 255, 255, 0.18)' }}>
+          <button 
+            onClick={() => {
+              const featuredSection = document.getElementById('featured-properties');
+              if (featuredSection) {
+                featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="px-[30px] py-2 rounded-lg bg-gray-500/30 backdrop-blur-sm text-white text-sm font-medium hover:bg-gray-500/40 transition-colors" 
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.18)' }}
+          >
             {t('hero.discoverMore')}
           </button>
         </div>

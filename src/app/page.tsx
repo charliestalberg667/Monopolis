@@ -133,6 +133,7 @@ const HomeContent: React.FC = () => {
 
         {/* Featured Properties */}
         <motion.section 
+          id="featured-properties"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
