@@ -379,15 +379,36 @@
       "years": "Jaren in de markt",
       "office": "Kantoor in Alsemberg"
     },
-    "journey": {
-      "title": "Onze Reis",
-      "subtitle": "Het verhaal van onze groei en evolutie",
-      "founded": "Oprichting",
-      "foundedDescription": "Monopolis opent zijn eerste kantoor in Brussel.",
-      "rental": "Verhuurdivisie",
-      "rentalDescription": "Uitbreiding naar volledige residentiële verhuurdiensten.",
-      "digital": "Digital Eerst",
-      "digitalDescription": "Lancering van een nieuw platform met virtuele tours en directe taxaties."
+    "team": {
+      "title": "Ons Team",
+      "subtitle": "Ontmoet de toegewijde professionals achter Monopolis",
+      "members": {
+        "1": {
+          "name": "Jean-Pierre Dubois",
+          "role": "Senior Vastgoedmakelaar",
+          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
+        },
+        "2": {
+          "name": "Sophie Martin",
+          "role": "Luxe Panden Specialist",
+          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
+        },
+        "3": {
+          "name": "Thomas Verstraeten",
+          "role": "Verhuurdivisie Manager",
+          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
+        },
+        "4": {
+          "name": "Emma De Vries",
+          "role": "Klantrelaties Manager",
+          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
+        },
+        "5": {
+          "name": "Lucas Janssens",
+          "role": "Pand Taxatie Expert",
+          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
+        }
+      }
     },
     "cta": {
       "title": "Ontmoet het team achter Monopolis",

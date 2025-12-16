@@ -5,6 +5,7 @@ import I18nProvider from "@/i18n/client";
 import PageRevealer from "@/components/PageRevealer/PageRevealer";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import PortalCleanup from "@/components/PortalCleanup/PortalCleanup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <I18nProvider>
+          <PortalCleanup />
           <Navbar />
           <PageRevealer />
           <main className="min-h-screen">

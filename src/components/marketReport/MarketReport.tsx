@@ -232,7 +232,7 @@ const MarketReport: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('marketReport.title')}</h2>
+          <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('marketReport.title')}</h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             {t('marketReport.subtitle')}
           </p>
@@ -243,7 +243,7 @@ const MarketReport: React.FC = () => {
         {/* 80-Year Price Trend Chart */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 border border-[#048542]/30">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-            <h2 className="text-3xl font-bold text-center mb-4">{t('marketReport.chartTitle20Years')}</h2>
+            <h2 className="text-3xl font-normal text-center mb-4">{t('marketReport.chartTitle20Years')}</h2>
             <div className="flex items-center mt-2 md:mt-0">
               <span className="text-sm text-gray-500 mr-4">
                 {t('marketReport.labels.averagePrice')}: <span className="font-medium text-gray-900">€{averagePrice.toLocaleString()}</span>
@@ -339,7 +339,7 @@ const MarketReport: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Price per m² Trend */}
           <div className="hidden md:block bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-            <h3 className="text-xl font-semibold mb-6">{t('marketReport.pricePerSqmTrend')}</h3>
+            <h3 className="text-xl font-normal mb-6">{t('marketReport.pricePerSqmTrend')}</h3>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={priceTrends}>
@@ -393,7 +393,7 @@ const MarketReport: React.FC = () => {
 
           {/* Property Types */}
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-            <h3 className="text-xl font-semibold mb-6">{t('marketReport.propertyTypesTitle')}</h3>
+            <h3 className="text-xl font-normal mb-6">{t('marketReport.propertyTypesTitle')}</h3>
             <div className="h-80 flex flex-col">
               <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
@@ -457,7 +457,7 @@ const MarketReport: React.FC = () => {
 
         {/* Regional Price Comparison */}
         <div className="mt-12 bg-white p-6 rounded-2xl shadow-sm border border-[#048542]/30">
-          <h3 className="text-xl font-semibold mb-6">{t('marketReport.regionalTitle')}</h3>
+          <h3 className=" text-xl font-normal mb-6">{t('marketReport.regionalTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {translatedRegionalData.map((region) => {
               const formattedRegion = formatRegionData(region);

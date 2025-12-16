@@ -27,7 +27,7 @@ export default function ContactPage() {
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-10 md:mb-14">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight logo-font">Contact</h1>
+          <h1 className="text-2xl md:text-5xl font-normal tracking-tight dm-serif-text">Contact us</h1>
           <p className="mt-3 text-gray-600 max-w-2xl">
             We’d love to hear from you. Send us a message and we’ll respond within one business day.
           </p>

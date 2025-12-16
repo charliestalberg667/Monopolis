@@ -150,7 +150,7 @@ const HomeContent: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="mb-16 text-center"
             >
-              <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('featured.title')}</h2>
+              <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('featured.title')}</h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('featured.subtitle')}</p>
             </motion.div>
             
@@ -185,7 +185,7 @@ const HomeContent: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="logo-font text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
+            <h2 className="dm-serif-text text-4xl md:text-5xl font-normal text-gray-900 mb-6 leading-tight tracking-tight">
               {t('process.title')}
             </h2>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -194,7 +194,7 @@ const HomeContent: React.FC = () => {
           </motion.div>
 
           {/* Process Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
             {processSteps.map((item, index) => (
               <motion.div
                 key={item.step}
@@ -211,7 +211,7 @@ const HomeContent: React.FC = () => {
                     </div>
                     <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('process.step')} {item.step}</span>
                   </div>
-                  <h3 className="dm-serif-text text-3xl font-normal text-gray-900 mb-5 leading-tight">{t(item.titleKey)}</h3>
+                  <h3 className="dm-serif-text text-3xl font-normal text-gray-900 mb-5 leading-tight text-center">{t(item.titleKey)}</h3>
                   <p className="text-gray-600 mb-8 leading-relaxed text-base">{t(item.descriptionKey)}</p>
                   <ul className="space-y-4">
                     {item.detailKeys.map((detailKey, i) => (
@@ -257,7 +257,7 @@ const HomeContent: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16"
           >
-            <h2 className="logo-font text-3xl md:text-5xl font-bold text-gray-900 mb-4">{t('testimonials.title')}</h2>
+            <h2 className="dm-serif-text text-2xl md:text-5xl font-normal text-gray-900 mb-4">{t('testimonials.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('testimonials.subtitle')}
             </p>

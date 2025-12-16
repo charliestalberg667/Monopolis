@@ -74,7 +74,7 @@ export default function PropertiesPage() {
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 md:mb-10">
-          <h1 className="logo-font text-3xl md:text-4xl font-bold tracking-tight">
+          <h1 className="dm-serif-text text-3xl md:text-4xl font-normal tracking-tight">
             {t('properties.title')}
           </h1>
           <p className="mt-3 text-gray-600">

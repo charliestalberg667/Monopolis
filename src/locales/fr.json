@@ -400,15 +400,36 @@
       "years": "Années d'expérience",
       "office": "Bureau à Alsemberg"
     },
-    "journey": {
-      "title": "Notre Parcours",
-      "subtitle": "L'histoire de notre croissance et évolution",
-      "founded": "Fondation",
-      "foundedDescription": "Monopolis ouvre son premier bureau à Bruxelles.",
-      "rental": "Division Location",
-      "rentalDescription": "Expansion vers les locations résidentielles complet.",
-      "digital": "Digital D'Abord",
-      "digitalDescription": "Lancement d'une nouvelle plateforme avec visites virtuelles et estimations instantanées."
+    "team": {
+      "title": "Notre Équipe",
+      "subtitle": "Rencontrez les professionnels dédiés derrière Monopolis",
+      "members": {
+        "1": {
+          "name": "Jean-Pierre Dubois",
+          "role": "Agent Immobilier Senior",
+          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
+        },
+        "2": {
+          "name": "Sophie Martin",
+          "role": "Spécialiste Propriétés de Luxe",
+          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
+        },
+        "3": {
+          "name": "Thomas Verstraeten",
+          "role": "Directeur Division Location",
+          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
+        },
+        "4": {
+          "name": "Emma De Vries",
+          "role": "Responsable Relations Clients",
+          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
+        },
+        "5": {
+          "name": "Lucas Janssens",
+          "role": "Expert Évaluation Immobilière",
+          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
+        }
+      }
     },
     "cta": {
       "title": "Rencontrez l'équipe derrière Monopolis",
