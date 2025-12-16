@@ -165,6 +165,12 @@ button.inline-flex.items-center.px-10.py-4:hover {
   font-weight: 500;
 }
 
+/* DM Serif Text font */
+.dm-serif-text {
+  font-family: 'DM Serif Text', serif;
+  font-style: italic;
+}
+
 /* Contact button: green on white, hover inverts */
 .btn-contact {
   background: #ffffff;

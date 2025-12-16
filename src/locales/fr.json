@@ -22,7 +22,8 @@
     "properties": "Biens",
     "clients": "Clients Satisfaits",
     "years": "Années d'Expérience",
-    "typewriter": "DES PROPRIÉTÉS D'EXCEPTION DANS LES EMPLACEMENTS LES PLUS RECHERCHÉS"
+    "typewriter": "Des propriétés d'exception dans les emplacements les plus recherchés",
+    "discoverMore": "Découvrir plus"
   },
   "filters": {
     "type": "Type",

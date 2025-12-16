@@ -24,11 +24,17 @@ const Hero: React.FC = () => {
           className="rounded-sm"
           priority
         />
-        <div className="relative max-w-md md:max-w-xl">
+        {/* Black overlay with 40% opacity */}
+        <div className="absolute inset-0 bg-black opacity-40 rounded-sm z-10" />
+        {/* Centered content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-end z-20 px-6 pt-[133px] pb-[133px] gap-[106px]">
           <TypewriterText 
             text={t('hero.typewriter')}
-            className="pt-6 text-lg md:text-lg font-black text-black leading-tight"
+            className="dm-serif-text text-2xl md:text-4xl lg:text-5xl font-normal text-white leading-tight text-center mb-20 max-w-[500px]"
           />
+          <button className="px-[30px] py-2 rounded-lg bg-gray-500/30 backdrop-blur-sm text-white text-sm font-medium hover:bg-gray-500/40 transition-colors" style={{ backgroundColor: 'rgba(255, 255, 255, 0.18)' }}>
+            {t('hero.discoverMore')}
+          </button>
         </div>
       </div>
 

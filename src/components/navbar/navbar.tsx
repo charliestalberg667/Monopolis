@@ -90,7 +90,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 md:gap-4 ml-auto">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden min-[1000px]:flex items-center space-x-1">
             {menuItems.map((item) => (
               <Link
                 key={item.id}
@@ -111,7 +111,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden group relative z-50 flex items-center justify-center p-2 -mr-2"
+            className="min-[1000px]:hidden group relative z-50 flex items-center justify-center p-2 -mr-2"
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
           >
@@ -129,7 +129,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <motion.div
             key="mobile-menu"
-            className="fixed inset-0 z-[90000] bg-white/95 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-[90000] bg-white/95 backdrop-blur-sm min-[1000px]:hidden"
             initial="hidden"
             animate="visible"
             exit="hidden"

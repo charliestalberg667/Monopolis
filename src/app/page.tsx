@@ -232,7 +232,7 @@ const HomeContent: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mt-20 text-center text-white"
           >
-            <Link href="/properties" className="group inline-flex items-center px-10 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-lg font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            <Link href="/properties" className="group inline-flex items-center px-6 py-2 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium rounded-lg transition-colors">
               {t('process.getStarted')}
               <FiArrowRight className="ml-3 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
