@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           priority
         />
         {/* Black overlay with 40% opacity */}
-        <div className="absolute inset-0 bg-black opacity-40 rounded-sm z-10" />
+        <div className="absolute inset-0 bg-black opacity-25 rounded-sm z-10" />
         {/* Centered content */}
         <div className="absolute inset-0 flex flex-col items-center justify-end z-20 px-6 pt-[133px] pb-[133px] gap-[106px]">
           <TypewriterText 
