@@ -211,7 +211,7 @@ export default function PropertyDetailPage() {
 
           {/* Price and Quick Info */}
           <div className="bg-[#f8fafc] p-6 rounded-lg">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
+            <h1 className="dm-serif-text text-2xl md:text-3xl font-bold mb-4">
               {property.title}
             </h1>
 
@@ -221,7 +221,7 @@ export default function PropertyDetailPage() {
             </div>
 
             <div className="border-t border-b border-gray-200 py-4 mb-6">
-              <div className="text-3xl font-bold mb-2">
+              <div className="dm-serif-text text-3xl font-bold mb-2">
                 {formatPrice(property.price)}
               </div>
               {property.type === "rent" && (
