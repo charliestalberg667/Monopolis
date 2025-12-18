@@ -37,6 +37,10 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Services Links */}
+          <div>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.contactTitle')}</h4>
