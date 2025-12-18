@@ -436,5 +436,30 @@
       "description": "Onze 4-5 toegewijde agenten brengen expertise, discretie en een persoonlijke touch naar elke transactie.",
       "button": "Ons team verkennen"
     }
+  },
+  "contactPage": {
+    "title": "Neem contact op",
+    "description": "We horen graag van u. Stuur ons een bericht en we antwoorden binnen één werkdag.",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "email": "E-mailadres",
+    "phone": "Telefoon",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "firstNamePlaceholder": "Jane",
+    "lastNamePlaceholder": "Doe",
+    "emailPlaceholder": "jane@example.com",
+    "phonePlaceholder": "+32 2 123 45 67",
+    "subjectPlaceholder": "Hoe kunnen we u helpen?",
+    "messagePlaceholder": "Schrijf uw bericht hier...",
+    "sendButton": "Bericht versturen",
+    "sendingButton": "Verzenden…",
+    "error": "Er is iets misgegaan. Probeer het alstublieft opnieuw.",
+    "successTitle": "Dank u wel!",
+    "successMessage": "Uw bericht is verzonden. We nemen binnenkort contact met u op.",
+    "contactDetails": "Contactgegevens",
+    "availability": "Ons boutique-team is maandag tot vrijdag beschikbaar, 9:00–18:00.",
+    "hours": "Ma–Vr: 9:00–18:00",
+    "mapTitle": "Locatie kantoor Monopolis"
   }
 }

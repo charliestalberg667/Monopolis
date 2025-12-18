@@ -436,5 +436,30 @@
       "description": "Our 4-5 dedicated agents bring expertise, discretion, and a personal touch to every transaction.",
       "button": "Explore our team"
     }
+  },
+  "contactPage": {
+    "title": "Contact us",
+    "description": "We'd love to hear from you. Send us a message and we'll respond within one business day.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "firstNamePlaceholder": "Jane",
+    "lastNamePlaceholder": "Doe",
+    "emailPlaceholder": "jane@example.com",
+    "phonePlaceholder": "+32 2 123 45 67",
+    "subjectPlaceholder": "How can we help?",
+    "messagePlaceholder": "Write your message here...",
+    "sendButton": "Send message",
+    "sendingButton": "Sending…",
+    "error": "Something went wrong. Please try again.",
+    "successTitle": "Thank you!",
+    "successMessage": "Your message has been sent. We'll get back to you shortly.",
+    "contactDetails": "Contact details",
+    "availability": "Our boutique team is available Monday to Friday, 9:00–18:00.",
+    "hours": "Mon–Fri: 9:00–18:00",
+    "mapTitle": "Monopolis office location"
   }
 }

@@ -436,5 +436,30 @@
       "description": "Nos 4-5 agents dédiés apportent expertise, discrétion et une touche personnelle à chaque transaction.",
       "button": "Explorer notre équipe"
     }
+  },
+  "contactPage": {
+    "title": "Nous contacter",
+    "description": "Nous serions ravis de vous entendre. Envoyez-nous un message et nous vous répondrons dans un délai d'un jour ouvrable.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Message",
+    "firstNamePlaceholder": "Jane",
+    "lastNamePlaceholder": "Doe",
+    "emailPlaceholder": "jane@example.com",
+    "phonePlaceholder": "+32 2 123 45 67",
+    "subjectPlaceholder": "Comment pouvons-nous vous aider?",
+    "messagePlaceholder": "Écrivez votre message ici...",
+    "sendButton": "Envoyer",
+    "sendingButton": "Envoi en cours…",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "successTitle": "Merci!",
+    "successMessage": "Votre message a été envoyé. Nous vous recontacterons bientôt.",
+    "contactDetails": "Coordonnées",
+    "availability": "Notre équipe boutique est disponible du lundi au vendredi, de 9h00 à 18h00.",
+    "hours": "Lun–Ven: 9h00–18h00",
+    "mapTitle": "Localisation du bureau Monopolis"
   }
 }
