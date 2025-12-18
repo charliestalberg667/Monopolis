@@ -1,0 +1,51 @@
+ModuleParseError: Module parse failed: Cannot parse JSON: Unexpected non-whitespace character after JSON at position 16004 while parsing '{
+  "navbar": {
+    "home": "Home",
+    '
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+Error: Cannot parse JSON: Unexpected non-whitespace character after JSON at position 16004 while parsing '{
+  "navbar": {
+    "home": "Home",
+    '
+    at JsonParser.parse (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:1049723)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:411930
+    at processResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:407884)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408906
+    at /home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:8727
+    at iterateNormalLoaders (/home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5565)
+    at /home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5426
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408396
+    at eval (eval at create (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:14:1)
+    at Array.<anonymous> (/home/runner/workspace/node_modules/next/dist/build/webpack/plugins/profiling-plugin.js:177:29)
+    at runCallbacks (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:166322)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:168449
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:267828
+    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read/context:68:3)
+    at JsonParser.parse (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:1049723)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:411930)
+    at processResult (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:407884)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408906)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:8727)
+    at iterateNormalLoaders (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5565)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5426)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408396)
+    at eval (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224)
+    at Array.<anonymous> (file:///home/runner/workspace/node_modules/next/dist/build/webpack/plugins/profiling-plugin.js:177:29)
+    at runCallbacks (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:166322)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:168449)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:267828)
+    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read/context:68:3)
+    at handleParseError (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:410403)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:412019)
+    at processResult (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:407884)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408906)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:8727)
+    at iterateNormalLoaders (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5565)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5426)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:29:408396)
+    at eval (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224)
+    at Array.<anonymous> (file:///home/runner/workspace/node_modules/next/dist/build/webpack/plugins/profiling-plugin.js:177:29)
+    at runCallbacks (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:166322)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:168449)
+    at <unknown> (file:///home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:1:267828)
+    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read/context:68:3)
