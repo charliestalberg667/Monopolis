@@ -34,7 +34,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><Link href="/about" className="footer-link text-gray-700">{t('footer.about')}</Link></li>
               <li><Link href="/team" className="footer-link text-gray-700">{t('footer.team')}</Link></li>
-              <li><Link href="/careers" className="footer-link text-gray-700">{t('footer.careers')}</Link></li>
               <li><Link href="/contact" className="footer-link text-gray-700">{t('footer.contact')}</Link></li>
             </ul>
           </div>
