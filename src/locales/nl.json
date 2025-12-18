@@ -358,6 +358,27 @@
       "lastUpdated": "Laatst bijgewerkt: {{date}}"
     }
   },
+  "property": {
+    "backToProperties": "Terug naar Panden",
+    "viewAllProperties": "Bekijk Alle Panden",
+    "forSale": "Te Koop",
+    "forRent": "Te Huur",
+    "perMonth": "per maand",
+    "bedrooms": "Slaapkamers",
+    "bathrooms": "Badkamers",
+    "sqm": "m²",
+    "propertyDetails": "Details van het Pand",
+    "quickFacts": "Snelle Feiten",
+    "propertyType": "Type Pand",
+    "location": "Locatie",
+    "price": "Prijs",
+    "specifications": "Specificaties",
+    "totalArea": "Totale Oppervlakte",
+    "interested": "Geïnteresseerd in dit pand?",
+    "contactPrompt": "Neem contact op met ons team om een bezichtiging in te plannen of meer informatie te krijgen.",
+    "contactUs": "Neem Contact Op",
+    "exactLocation": "Exacte Locatie"
+  },
   "about": {
     "title": "OVER MONOPOLIS",
     "description": "We helpen mensen bij het kopen, verkopen en verhuren van uitzonderlijke woningen in heel België, waarbij we diepgaande lokale expertise combineren met wereldklasse service.",
