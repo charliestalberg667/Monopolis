@@ -129,7 +129,6 @@
     "description": "Une agence immobilière boutique avec 5 agents dévoués engagés à trouver votre propriété parfaite en Belgique.",
     "company": "Société",
     "about": "À propos",
-    "team": "Notre Équipe",
     "contact": "Contact",
     "servicesTitle": "Services",
     "buyProperty": "Acheter un Bien",
@@ -399,7 +398,6 @@
       "years": "Années d'expérience",
       "office": "Bureau à Alsemberg"
     },
-    "team": {
       "title": "Notre Équipe",
       "subtitle": "Rencontrez les professionnels dédiés derrière Monopolis",
       "members": {

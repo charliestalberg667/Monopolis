@@ -33,7 +33,6 @@ const Footer: React.FC = () => {
             <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.company')}</h4>
             <ul className="space-y-2">
               <li><Link href="/about" className="footer-link text-gray-700">{t('footer.about')}</Link></li>
-              <li><Link href="/team" className="footer-link text-gray-700">{t('footer.team')}</Link></li>
               <li><Link href="/contact" className="footer-link text-gray-700">{t('footer.contact')}</Link></li>
             </ul>
           </div>

@@ -129,7 +129,6 @@
     "description": "Een boutique vastgoedkantoor met 5 toegewijde makelaars die zich inzetten om uw perfecte woning in België te vinden.",
     "company": "Bedrijf",
     "about": "Over ons",
-    "team": "Ons Team",
     "contact": "Contact",
     "servicesTitle": "Diensten",
     "buyProperty": "Pand Kopen",
@@ -399,7 +398,6 @@
       "years": "Jaren in de markt",
       "office": "Kantoor in Alsemberg"
     },
-    "team": {
       "title": "Ons Team",
       "subtitle": "Ontmoet de toegewijde professionals achter Monopolis",
       "members": {

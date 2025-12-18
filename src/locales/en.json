@@ -129,7 +129,6 @@
     "description": "A boutique real estate agency with 5 dedicated agents committed to finding your perfect property in Belgium.",
     "company": "Company",
     "about": "About Us",
-    "team": "Our Team",
     "contact": "Contact",
     "servicesTitle": "Services",
     "buyProperty": "Buy Property",
@@ -399,7 +398,6 @@
       "years": "Years in market",
       "office": "Office in Alsemberg"
     },
-    "team": {
       "title": "Our Team",
       "subtitle": "Meet the dedicated professionals behind Monopolis",
       "members": {
