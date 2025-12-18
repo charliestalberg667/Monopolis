@@ -37,17 +37,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Services Links */}
-          <div>
-            <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.servicesTitle')}</h4>
-            <ul className="space-y-2">
-              <li><Link href="/buy" className="footer-link text-gray-700">{t('footer.buyProperty')}</Link></li>
-              <li><Link href="/sell" className="footer-link text-gray-700">{t('footer.sellProperty')}</Link></li>
-              <li><Link href="/rent" className="footer-link text-gray-700">{t('footer.rent')}</Link></li>
-              <li><Link href="/valuation" className="footer-link text-gray-700">{t('footer.valuation')}</Link></li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="text-gray-900 font-medium text-lg mb-4">{t('footer.contactTitle')}</h4>
