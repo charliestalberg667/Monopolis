@@ -225,10 +225,10 @@ export default function PropertyDetailPage() {
                 {formatPrice(property.price)}
               </div>
               {property.type === "rent" && (
-                <span className="text-sm text-gray-600">per month</span>
+                <span className="text-sm text-gray-600">{t('property.perMonth')}</span>
               )}
               <div className="inline-block mt-3 px-3 py-1 rounded-md text-sm font-medium bg-gray-100 text-gray-700">
-                {property.type === "sale" ? "For Sale" : "For Rent"}
+                {property.type === "sale" ? t('property.forSale') : t('property.forRent')}
               </div>
             </div>
 
