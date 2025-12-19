@@ -142,7 +142,7 @@ export default function ServicesPage() {
                 className="group"
               >
                 <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
-                  <h3 className="dm-serif-text text-3xl font-normal mb-4 leading-tight" style={{ color: '#EC9FA3' }}>
+                  <h3 className="dm-serif-text text-3xl font-normal mb-4 leading-tight text-gray-900">
                     {service.label}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">

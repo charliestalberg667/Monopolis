@@ -91,7 +91,7 @@ export default function AboutPage() {
                 className="group"
               >
                 <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
-                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center" style={{ color: '#EC9FA3' }}>{item.title}</h3>
+                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center text-gray-900">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-base text-center">{item.description}</p>
                 </div>
               </motion.div>
