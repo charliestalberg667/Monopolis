@@ -82,20 +82,20 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         
         <div className="mt-auto flex gap-4 text-sm text-gray-600 pt-3 border-t border-gray-100">
           {bedrooms > 0 && (
-            <div className="flex items-center group">
-              <FaBed className="mr-1 aria-hidden='true' group-hover:text-[#027B3B] transition-colors" aria-hidden="true" />
-              <span className="group-hover:text-[#027B3B] transition-colors">{bedrooms}</span>
+            <div className="flex items-center">
+              <FaBed className="mr-1" aria-hidden="true" />
+              <span>{bedrooms}</span>
             </div>
           )}
           {bathrooms > 0 && (
-            <div className="flex items-center group">
-              <FaBath className="mr-1 group-hover:text-[#027B3B] transition-colors" aria-hidden="true" />
-              <span className="group-hover:text-[#027B3B] transition-colors">{bathrooms}</span>
+            <div className="flex items-center">
+              <FaBath className="mr-1" aria-hidden="true" />
+              <span>{bathrooms}</span>
             </div>
           )}
-          <div className="flex items-center group">
-            <FiLayers className="mr-1 group-hover:text-[#027B3B] transition-colors" aria-hidden="true" />
-            <span className="group-hover:text-[#027B3B] transition-colors">{area} m²</span>
+          <div className="flex items-center">
+            <FiLayers className="mr-1" aria-hidden="true" />
+            <span>{area} m²</span>
           </div>
         </div>
       </div>

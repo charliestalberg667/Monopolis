@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#027B3B]/30 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-[#048542]/20 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 text-sm mb-4 md:mb-0">
             <span className="text-gray-600">© {currentYear} Monopolis. {t('footer.rights')}.</span>
           </p>
