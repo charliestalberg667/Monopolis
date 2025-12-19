@@ -150,7 +150,7 @@ const HomeContent: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="mb-16 text-center"
             >
-              <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('featured.title')}</h2>
+              <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('featured.title')}</h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('featured.subtitle')}</p>
             </motion.div>
             
@@ -185,7 +185,7 @@ const HomeContent: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="dm-serif-text text-4xl md:text-5xl font-normal text-gray-900 mb-6 leading-tight tracking-tight">
+            <h2 className="dm-serif-text text-4xl md:text-5xl font-normal mb-6 leading-tight tracking-tight" style={{ color: '#EC9FA3' }}>
               {t('process.title')}
             </h2>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -257,7 +257,7 @@ const HomeContent: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16"
           >
-            <h2 className="dm-serif-text text-2xl md:text-5xl font-normal text-gray-900 mb-4">{t('testimonials.title')}</h2>
+            <h2 className="dm-serif-text text-2xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('testimonials.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('testimonials.subtitle')}
             </p>
