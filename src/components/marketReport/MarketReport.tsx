@@ -241,7 +241,7 @@ const MarketReport: React.FC = () => {
         {/* Market Overview Cards Removed */}
 
         {/* 80-Year Price Trend Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 border-t-4 border-[#048542] border-l-4 border-r border-b border-[#048542]/20 hover:shadow-[0_12px_32px_rgba(4,133,66,0.15)] transition-all duration-300">
+        <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 border border-[#048542]/30">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
             <h2 className="text-3xl font-normal text-center mb-4">{t('marketReport.chartTitle20Years')}</h2>
             <div className="flex items-center mt-2 md:mt-0">
