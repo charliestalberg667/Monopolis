@@ -150,7 +150,9 @@ const HomeContent: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="mb-16 text-center"
             >
-              <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('featured.title')}</h2>
+              <div className="inline-block">
+                <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4 pb-3 border-b-2 border-[#027B3B] inline">{t('featured.title')}</h2>
+              </div>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('featured.subtitle')}</p>
             </motion.div>
             
@@ -185,9 +187,11 @@ const HomeContent: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="dm-serif-text text-4xl md:text-5xl font-normal text-gray-900 mb-6 leading-tight tracking-tight">
-              {t('process.title')}
-            </h2>
+            <div className="inline-block mb-6">
+              <h2 className="dm-serif-text text-4xl md:text-5xl font-normal text-gray-900 leading-tight tracking-tight pb-3 border-b-2 border-[#027B3B]">
+                {t('process.title')}
+              </h2>
+            </div>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
               {t('process.subtitle')}
             </p>
@@ -257,7 +261,9 @@ const HomeContent: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16"
           >
-            <h2 className="dm-serif-text text-2xl md:text-5xl font-normal text-gray-900 mb-4">{t('testimonials.title')}</h2>
+            <div className="inline-block">
+              <h2 className="dm-serif-text text-2xl md:text-5xl font-normal text-gray-900 mb-4 pb-3 border-b-2 border-[#027B3B]">{t('testimonials.title')}</h2>
+            </div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('testimonials.subtitle')}
             </p>

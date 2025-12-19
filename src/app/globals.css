@@ -141,13 +141,15 @@ button.inline-flex.items-center.px-10.py-4:hover {
 
 /* Nav links - simple underline on hover */
 .nav-link {
-  transition: text-decoration 200ms ease-in-out;
+  transition: text-decoration 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .nav-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #027B3B;
+  color: #027B3B;
 }
 
 /* Logo - opacity on hover */
@@ -184,13 +186,15 @@ button.inline-flex.items-center.px-10.py-4:hover {
 
 /* Footer links - simple underline on hover */
 .footer-link {
-  transition: text-decoration 200ms ease-in-out;
+  transition: text-decoration 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .footer-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #027B3B;
+  color: #027B3B;
 }
 
 /* Hide empty or zero-sized Next.js portal elements */
