@@ -156,6 +156,8 @@ const HomeContent: React.FC = () => {
             
             <div className="w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                {/* Green accent line above cards */}
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-transparent via-[#048542] to-transparent rounded-full"></div>
                 {properties.slice(0, 6).map((property) => (
                   <PropertyCard
                     key={property.id}
@@ -204,7 +206,7 @@ const HomeContent: React.FC = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group"
               >
-                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#048542]/30 hover:bg-white">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-[#01753f] group-hover:text-white transition-all duration-300">
                       {item.icon}
@@ -235,7 +237,7 @@ const HomeContent: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mt-20 text-center text-white"
           >
-            <Link href="/properties" className="group inline-flex items-center px-6 py-2 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium rounded-lg transition-colors">
+            <Link href="/properties" className="group inline-flex items-center px-8 py-3 bg-[#048542] hover:bg-[#036b33] text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-[0_12px_24px_rgba(4,133,66,0.3)]">
               {t('process.getStarted')}
               <FiArrowRight className="ml-3 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
@@ -294,10 +296,10 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
         }
       }}
       viewport={{ once: true, margin: "-50px" }}
-      className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col"
+      className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col border-l-4 border-[#048542]/40 hover:border-[#048542] hover:shadow-[0_8px_20px_rgba(4,133,66,0.15)]"
     >
       <div className="flex items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 relative">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#048542]/10 to-[#01753f]/10 ring-2 ring-[#048542]/30 overflow-hidden mr-4 relative">
           <Image 
             src={testimonial.avatar} 
             alt={`${testimonial.name}'s avatar`}
@@ -315,7 +317,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
         {[...Array(5)].map((_, i) => (
           <FiStar 
             key={i} 
-            className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
+            className={`${i < testimonial.rating ? 'text-[#048542]' : 'text-gray-300'} w-5 h-5`} 
             fill={i < testimonial.rating ? 'currentColor' : 'none'}
           />
         ))}

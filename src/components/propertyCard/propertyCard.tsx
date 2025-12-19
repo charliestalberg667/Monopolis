@@ -44,7 +44,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
   return (
     <Link href={`/property/${id}`} className="card-link block">
-      <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden mx-2 sm:mx-3 cursor-pointer">
+      <article className="group flex flex-col w-full sm:w-[320px] lg:w-[350px] xl:w-[380px] bg-[#f8fafc] rounded-sm overflow-hidden mx-2 sm:mx-3 cursor-pointer border border-transparent hover:border-[#048542]/40 shadow-sm hover:shadow-[0_8px_16px_rgba(4,133,66,0.12)] transition-all duration-300">
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 flex items-center justify-center">
         {image && !image.includes('placeholder') ? (
           <Image
