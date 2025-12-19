@@ -211,7 +211,7 @@ const HomeContent: React.FC = () => {
                     </div>
                     <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('process.step')} {item.step}</span>
                   </div>
-                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center" style={{ color: '#EC9FA3' }}>{t(item.titleKey)}</h3>
+                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center text-gray-900">{t(item.titleKey)}</h3>
                   <p className="text-gray-600 mb-8 leading-relaxed text-base">{t(item.descriptionKey)}</p>
                   <ul className="space-y-4">
                     {item.detailKeys.map((detailKey, i) => (
