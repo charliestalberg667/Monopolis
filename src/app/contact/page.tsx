@@ -29,7 +29,7 @@ export default function ContactPage() {
     <main className="min-h-screen px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <header className="mb-10 md:mb-14">
-          <h1 className="text-2xl md:text-5xl font-normal tracking-tight dm-serif-text">{t('contactPage.title')}</h1>
+          <h1 className="text-2xl md:text-5xl font-normal tracking-tight dm-serif-text" style={{ color: '#EC9FA3' }}>{t('contactPage.title')}</h1>
           <p className="mt-3 text-gray-600 max-w-2xl">
             {t('contactPage.description')}
           </p>

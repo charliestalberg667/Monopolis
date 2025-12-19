@@ -63,7 +63,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('about.mission.title')}</h2>
+            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.mission.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.mission.subtitle')}</p>
           </motion.div>
           
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 className="group"
               >
                 <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
-                  <h3 className="dm-serif-text text-3xl font-normal text-gray-900 mb-5 leading-tight text-center">{item.title}</h3>
+                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center" style={{ color: '#EC9FA3' }}>{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-base text-center">{item.description}</p>
                 </div>
               </motion.div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('about.impact.title')}</h2>
+            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.impact.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.impact.subtitle')}</p>
           </motion.div>
           
@@ -159,7 +159,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">{t('about.team.title')}</h2>
+            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.team.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.team.subtitle')}</p>
           </motion.div>
           
@@ -210,7 +210,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="p-6 text-center">
-                    <h3 className="dm-serif-text text-2xl font-normal text-gray-900 mb-2">{member.name}</h3>
+                    <h3 className="dm-serif-text text-2xl font-normal mb-2" style={{ color: '#EC9FA3' }}>{member.name}</h3>
                     <p className="text-gray-600 text-base">{member.role}</p>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function AboutPage() {
             }} />
             
             <div className="relative z-10 flex-1">
-              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal text-gray-900 mb-3 leading-tight">{t('cta.title')}</h3>
+              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal mb-3 leading-tight" style={{ color: '#EC9FA3' }}>{t('cta.title')}</h3>
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
                 {t('cta.subtitle')}
               </p>

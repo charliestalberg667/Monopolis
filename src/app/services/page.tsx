@@ -63,7 +63,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h1 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">
+            <h1 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>
               {t('servicesPage.hero.title')}
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -123,7 +123,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">
+            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>
               {t('servicesPage.whatWeDeliver.title')}
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                 className="group"
               >
                 <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
-                  <h3 className="dm-serif-text text-3xl font-normal text-gray-900 mb-4 leading-tight">
+                  <h3 className="dm-serif-text text-3xl font-normal mb-4 leading-tight" style={{ color: '#EC9FA3' }}>
                     {service.label}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
@@ -179,7 +179,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="mb-16 text-center"
           >
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal text-gray-900 mb-4">
+            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>
               {t('servicesPage.flow.title')}
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -226,7 +226,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="dm-serif-text text-3xl md:text-4xl font-normal text-gray-900 mb-4">
+              <h2 className="dm-serif-text text-3xl md:text-4xl font-normal mb-4" style={{ color: '#EC9FA3' }}>
                 {t('servicesPage.audience.title')}
               </h2>
               <p className="text-gray-600 text-lg mb-8">
@@ -255,7 +255,7 @@ export default function ServicesPage() {
               transition={{ delay: 0.4 }}
               className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100"
             >
-              <h3 className="dm-serif-text text-2xl font-normal text-gray-900 mb-6">
+              <h3 className="dm-serif-text text-2xl font-normal mb-6" style={{ color: '#EC9FA3' }}>
                 {t('servicesPage.audience.title')}
               </h3>
               <p className="text-gray-600 mb-8">
@@ -290,7 +290,7 @@ export default function ServicesPage() {
             className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8fffe] to-white p-8 md:p-14 rounded-3xl border border-[#048542]/20 shadow-[0_10px_40px_rgba(4,133,66,0.08)] hover:shadow-[0_20px_60px_rgba(4,133,66,0.12)] transition-all duration-500 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12 group"
           >
             <div className="relative z-10 flex-1">
-              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal text-gray-900 mb-3 leading-tight">
+              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal mb-3 leading-tight" style={{ color: '#EC9FA3' }}>
                 {t('servicesPage.closing.title')}
               </h3>
               <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
