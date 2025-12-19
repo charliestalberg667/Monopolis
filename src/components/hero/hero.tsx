@@ -26,12 +26,16 @@ const Hero: React.FC = () => {
         />
         {/* Black overlay with 40% opacity */}
         <div className="absolute inset-0 bg-black opacity-25 rounded-sm z-10" />
-        {/* Centered content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-end z-20 px-6 pt-[133px] pb-[133px] gap-[106px]">
+        {/* Centered typewriter text - absolute positioned */}
+        <div className="absolute inset-0 flex items-center justify-center z-20">
           <TypewriterText 
             text={t('hero.typewriter')}
-            className="dm-serif-text text-2xl md:text-5xl lg:text-5xl font-normal text-white leading-tight text-center mb-20 max-w-[1000px]"
+            className="dm-serif-text text-2xl md:text-5xl lg:text-5xl font-normal text-white leading-tight text-center max-w-[1000px]"
           />
+        </div>
+        
+        {/* Discover button */}
+        <div className="absolute inset-0 flex items-end justify-center z-20 px-6 pb-[133px]">
           <button 
             onClick={() => {
               const featuredSection = document.getElementById('featured-properties');
