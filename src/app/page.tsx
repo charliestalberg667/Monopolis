@@ -296,7 +296,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
         }
       }}
       viewport={{ once: true, margin: "-50px" }}
-      className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col border-l-4 border-[#048542]/40 hover:border-[#048542] hover:shadow-[0_8px_20px_rgba(4,133,66,0.15)]"
+      className="bg-white p-8 rounded-xl transition-all duration-300 h-full flex flex-col border-l-4 border-[#048542]/40 hover:border-[#048542]"
     >
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#048542]/10 to-[#01753f]/10 ring-2 ring-[#048542]/30 overflow-hidden mr-4 relative">
