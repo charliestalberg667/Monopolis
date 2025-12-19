@@ -315,7 +315,8 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial, ind
         {[...Array(5)].map((_, i) => (
           <FiStar 
             key={i} 
-            className={`${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} w-5 h-5`} 
+            className={`${i < testimonial.rating ? 'w-5 h-5' : 'text-gray-300 w-5 h-5'}`}
+            style={{ color: i < testimonial.rating ? '#01753f' : undefined }}
             fill={i < testimonial.rating ? 'currentColor' : 'none'}
           />
         ))}
