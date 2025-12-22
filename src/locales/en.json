@@ -1,3 +1,4 @@
+
 {
   "navbar": {
     "home": "Home",
@@ -272,7 +273,7 @@
     },
     "whatWeDeliver": {
       "title": "What we deliver",
-      "subtitle": "Four focused tracks, one accountable partner. Pick the track or combine them for a single plan.",
+      "subtitle": "Six focused tracks, one accountable partner. Pick the track or combine them for a single plan.",
       "ribbon": "Full-service, founder-led team"
     },
     "services": {
@@ -313,21 +314,21 @@
         ]
       },
       "assetManagement": {
-        "label": "Real Estate Asset Management",
-        "summary": "Comprehensive management of your property portfolio to maximize returns and ensure smooth operations.",
+        "label": "Asset Management",
+        "summary": "Strategic oversight of your real estate portfolio to maximize value, ensure maintenance, and optimize tax efficiency.",
         "bullets": [
-          "Tenant management and leasing",
-          "Maintenance and repairs",
-          "Financial reporting and optimization"
+          "Portfolio performance analysis",
+          "Maintenance planning and vendor oversight",
+          "Financial reporting and tax optimization"
         ]
       },
-      "newProjects": {
-        "label": "New Property Projects",
-        "summary": "Guidance and support for developing new real estate projects from planning to execution.",
+      "newDevelopments": {
+        "label": "New Developments",
+        "summary": "Expert guidance for off-plan purchases and new construction projects from initial design to final delivery.",
         "bullets": [
-          "Feasibility studies and planning",
-          "Project coordination and permits",
-          "Marketing and sales support"
+          "Off-plan investment analysis",
+          "Technical specifications and material selection",
+          "Construction monitoring and snagging lists"
         ]
       }
     },
@@ -358,5 +359,124 @@
       "primary": "Book a call",
       "secondary": "Meet the team"
     }
+  },
+  "marketReport": {
+    "badge": "Market Insights",
+    "title": "Belgian Real Estate Market Report",
+    "subtitle": "Latest trends and analysis for the Belgian real estate market (Q2 2024)",
+    "chartTitle": "80 Years of Belgian Real Estate Prices",
+    "chartTitle20Years": "20 Years of Belgian Real Estate Prices",
+    "pricePerSqmTrend": "Price per m² Trend",
+    "propertyTypesTitle": "Property Types",
+    "regionalTitle": "Average Price per m² by Region",
+    "chartSource": "Source: National Bank of Belgium, Statbel, Eurostat (2024)",
+    "references": {
+      "financialCrisis": "Financial Crisis",
+      "pandemic": "Pandemic"
+    },
+    "labels": {
+      "year": "Year",
+      "averagePrice": "Average Price",
+      "pricePerSqm": "Price per m²",
+      "priceChange": "from last year"
+    },
+    "propertyTypes": {
+      "houses": "Houses",
+      "apartments": "Apartments",
+      "plots": "Building Plots",
+      "others": "Others"
+    },
+    "regions": {
+      "brussels": "Brussels",
+      "flanders": "Flanders",
+      "wallonia": "Wallonia"
+    },
+    "meta": {
+      "sources": "Data sources: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb",
+      "lastUpdated": "Last updated: {{date}}"
+    }
+  },
+  "about": {
+    "title": "ABOUT MONOPOLIS",
+    "description": "We help people buy, sell, and rent exceptional properties across Belgium, combining deep local expertise with world-class service.",
+    "mission": {
+      "title": "Our Mission & Values",
+      "subtitle": "Discover what drives us and how we deliver exceptional service",
+      "missionTitle": "Our Mission",
+      "missionDescription": "A boutique agency with 4-5 dedicated agents committed to finding the perfect property for every client. We combine deep local expertise with personalized service.",
+      "valuesTitle": "What We Value",
+      "valuesDescription": "Integrity, discretion, and long-term relationships. We prioritize your goals over quick wins—always.",
+      "howWorkTitle": "How We Work",
+      "howWorkDescription": "Personal attention from our expert agents paired with market insight—from first viewing to signed deed and beyond."
+    },
+    "impact": {
+      "title": "Our Impact",
+      "subtitle": "Numbers that reflect our commitment to excellence",
+      "agents": "Dedicated agents",
+      "satisfaction": "Client satisfaction",
+      "years": "Years in market",
+      "office": "Office in Alsemberg"
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Meet the dedicated professionals behind Monopolis",
+      "members": {
+        "1": {
+          "name": "Jean-Pierre Dubois",
+          "role": "Senior Real Estate Agent",
+          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
+        },
+        "2": {
+          "name": "Sophie Martin",
+          "role": "Luxury Properties Specialist",
+          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
+        },
+        "3": {
+          "name": "Thomas Verstraeten",
+          "role": "Rental Division Manager",
+          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
+        },
+        "4": {
+          "name": "Emma De Vries",
+          "role": "Client Relations Manager",
+          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
+        },
+        "5": {
+          "name": "Lucas Janssens",
+          "role": "Property Valuation Expert",
+          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
+        }
+      }
+    },
+    "cta": {
+      "title": "Meet the team behind Monopolis",
+      "description": "Our 4-5 dedicated agents bring expertise, discretion, and a personal touch to every transaction.",
+      "button": "Explore our team"
+    }
+  },
+  "contactPage": {
+    "title": "Contact us",
+    "description": "We'd love to hear from you. Send us a message and we'll respond within one business day.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "firstNamePlaceholder": "Jane",
+    "lastNamePlaceholder": "Doe",
+    "emailPlaceholder": "jane@example.com",
+    "phonePlaceholder": "+32 0495 22 33 76",
+    "subjectPlaceholder": "How can we help?",
+    "messagePlaceholder": "Write your message here...",
+    "sendButton": "Send message",
+    "sendingButton": "Sending…",
+    "error": "Something went wrong. Please try again.",
+    "successTitle": "Thank you!",
+    "successMessage": "Your message has been sent. We'll get back to you shortly.",
+    "contactDetails": "Contact details",
+    "availability": "Our boutique team is available Monday to Friday, 9:00–18:00.",
+    "hours": "Mon–Fri: 9:00–18:00",
+    "mapTitle": "Monopolis office location"
   }
 }
