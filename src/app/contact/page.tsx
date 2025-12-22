@@ -116,16 +116,13 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* Details */}
+          {/* Contact Details */}
           <aside className="lg:col-span-1">
             <div className="rounded-lg border border-[#048542]/30 bg-white p-6 md:p-8 shadow-sm space-y-6">
               <div>
                 <h3 className="text-lg font-semibold">
                   {t("contactPage.contactDetails")}
                 </h3>
-                <p className="mt-2 text-gray-600">
-                  {t("contactPage.availability")}
-                </p>
               </div>
 
               <div className="space-y-4 text-gray-700">
@@ -155,11 +152,6 @@ export default function ContactPage() {
                   >
                     contact@monopolis.be
                   </a>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <span>🕒</span>
-                  <span>{t("contactPage.hours")}</span>
                 </div>
               </div>
             </div>
