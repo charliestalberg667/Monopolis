@@ -1,61 +1,65 @@
-"services": {
-  "segmentation": {
-    "label": "House Segmentation",
-    "summary": "Divide a property into compliant, high-yield units with architectural support and regulatory guidance.",
-    "bullets": [
-      "ROI and feasibility modelling",
-      "Layouts, permits, and contractor coordination",
-      "Compliance playbook for each municipality"
-    ]
-  },
-
-  "sales": {
-    "label": "For Sale",
-    "summary": "From valuation to closing, we manage the entire sales process to secure the best outcome for your property.",
-    "bullets": [
-      "Accurate pricing and market valuation",
-      "Targeted marketing and buyer qualification",
-      "Negotiation and transaction support"
-    ]
-  },
-
-  "rentals": {
-    "label": "Rentals",
-    "summary": "End-to-end rental services for landlords and tenants, ensuring smooth and secure leasing.",
-    "bullets": [
-      "Tenant sourcing and screening",
-      "Lease contracts and handover",
-      "Optional ongoing rental management"
-    ]
-  },
-
-  "assetManagement": {
-    "label": "Real Estate Asset Management",
-    "summary": "Professional management of real estate portfolios to preserve value and optimize long-term returns.",
-    "bullets": [
-      "Portfolio analysis and performance tracking",
-      "Operational and financial optimization",
-      "Strategic advisory for long-term ownership"
-    ]
-  },
-
-  "newProjects": {
-    "label": "New Property Developments",
-    "summary": "Support for new-build and off-plan real estate projects, from early concept to market launch.",
-    "bullets": [
-      "Feasibility studies and project positioning",
-      "Coordination with developers and partners",
-      "Sales strategy and commercialization support"
-    ]
-  },
-
-  "relocation": {
-    "label": "Domiciliation",
-    "summary": "Administrative domiciliation services for individuals and companies seeking a reliable registered address.",
-    "bullets": [
-      "Registered address for private or corporate use",
-      "Mail handling and administrative follow-up",
-      "Compliance with Belgian regulations"
-    ]
+{
+  "servicesPage": {
+    "whatWeDeliver": {
+      "title": "What we deliver",
+      "subtitle": "Four focused tracks, one accountable partner. Pick the track or combine them for a single plan.",
+      "ribbon": "Full-service, founder-led team"
+    },
+    "services": {
+      "segmentation": {
+        "label": "House Segmentation",
+        "summary": "Divide a property into compliant, high-yield units with architectural support and regulatory guidance.",
+        "bullets": [
+          "ROI and feasibility modelling",
+          "Layouts, permits, and contractor coordination",
+          "Compliance playbook for each municipality"
+        ]
+      },
+      "sales": {
+        "label": "For Sale",
+        "summary": "From valuation to closing, we manage the entire sales process to secure the best outcome for your property.",
+        "bullets": [
+          "Accurate pricing and market valuation",
+          "Targeted marketing and buyer qualification",
+          "Negotiation and transaction support"
+        ]
+      },
+      "rentals": {
+        "label": "Rentals",
+        "summary": "End-to-end rental services for landlords and tenants, ensuring smooth and secure leasing.",
+        "bullets": [
+          "Tenant sourcing and screening",
+          "Lease contracts and handover",
+          "Optional ongoing rental management"
+        ]
+      },
+      "assetManagement": {
+        "label": "Real Estate Asset Management",
+        "summary": "Professional management of real estate portfolios to preserve value and optimize long-term returns.",
+        "bullets": [
+          "Portfolio analysis and performance tracking",
+          "Operational and financial optimization",
+          "Strategic advisory for long-term ownership"
+        ]
+      },
+      "newProjects": {
+        "label": "New Property Developments",
+        "summary": "Support for new-build and off-plan real estate projects, from early concept to market launch.",
+        "bullets": [
+          "Feasibility studies and project positioning",
+          "Coordination with developers and partners",
+          "Sales strategy and commercialization support"
+        ]
+      },
+      "relocation": {
+        "label": "Domiciliation",
+        "summary": "Administrative domiciliation services for individuals and companies seeking a reliable registered address.",
+        "bullets": [
+          "Registered address for private or corporate use",
+          "Mail handling and administrative follow-up",
+          "Compliance with Belgian regulations"
+        ]
+      }
+    }
   }
 }
