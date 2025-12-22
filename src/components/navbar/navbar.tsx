@@ -84,7 +84,7 @@ export default function Navbar() {
             />
           </motion.div>
           <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
-            <div className="text-xl sm:text-4xl font-bold leading-none" dm-serif-text>Monopolis</div>
+            <div className="text-xl sm:text-[60px] pt-1 leading-none font-osp-din" style={{fontFamily: "'OSP-DIN', 'OSP DIN', sans-serif"}}>MONOPOLIS</div>
           </motion.div>
         </Link>
 

@@ -12,6 +12,7 @@
   /* Typography — San Francisco / system UI */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-osp-din: 'OSP-DIN', 'OSP DIN', sans-serif;
 
   /* Font sizes */
   --text-xs: 0.75rem;   /* 12px */
@@ -169,6 +170,12 @@ button.inline-flex.items-center.px-10.py-4:hover {
 .dm-serif-text {
   font-family: 'DM Serif Text', serif;
   font-style: italic;
+}
+
+/* OSP-DIN font */
+.font-osp-din {
+  font-family: 'OSP-DIN', 'OSP DIN', sans-serif !important;
+  font-display: swap;
 }
 
 /* Contact button: green on white, hover inverts */
