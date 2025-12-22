@@ -3,6 +3,7 @@
 Monopolis is a modern real estate platform built with Next.js, designed to help users browse, search, and discover properties with an intuitive user interface. The application features property listings, filtering options, and a responsive design that works across all devices.
 
 ## Development Roadmap
+state
 
 ### Phase 1: Core Functionality (In Progress)
 - [x] Project setup with Next.js and TypeScript
