@@ -290,6 +290,24 @@
           "Zoektocht kort- en langetermijnhuur",
           "Inschrijving, nutsvoorzieningen en onboarding"
         ]
+      },
+      "assetManagement": {
+        "label": "Portefeuillbeheer",
+        "summary": "Strategisch toezicht op uw vastgoedportefeuille om waarde te maximaliseren, onderhoud te waarborgen en belastingefficiëntie te optimaliseren.",
+        "bullets": [
+          "Analyse portefeuille prestaties",
+          "Planning onderhoud en leveranciertoezicht",
+          "Financiële verslaggeving en belastingoptimalisatie"
+        ]
+      },
+      "newDevelopments": {
+        "label": "Nieuwe Ontwikkelingen",
+        "summary": "Deskundig advies voor off-plan aankopen en nieuwbouwprojecten van initiële ontwerp tot uiteindelijke oplevering.",
+        "bullets": [
+          "Analyse off-plan beleggingen",
+          "Technische specificaties en materialenkeuze",
+          "Bouwtoezicht en snagging lijsten"
+        ]
       }
     },
     "flow": {

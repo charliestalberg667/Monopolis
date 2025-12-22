@@ -40,6 +40,18 @@ export default function ServicesPage() {
       summary: t('servicesPage.services.relocation.summary'),
       bullets: t('servicesPage.services.relocation.bullets', { returnObjects: true }) as string[],
     },
+    {
+      key: 'assetManagement',
+      label: t('servicesPage.services.assetManagement.label'),
+      summary: t('servicesPage.services.assetManagement.summary'),
+      bullets: t('servicesPage.services.assetManagement.bullets', { returnObjects: true }) as string[],
+    },
+    {
+      key: 'newDevelopments',
+      label: t('servicesPage.services.newDevelopments.label'),
+      summary: t('servicesPage.services.newDevelopments.summary'),
+      bullets: t('servicesPage.services.newDevelopments.bullets', { returnObjects: true }) as string[],
+    },
   ];
 
   const steps = t('servicesPage.flow.steps', { returnObjects: true }) as Step[];
@@ -131,7 +143,7 @@ export default function ServicesPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.key}

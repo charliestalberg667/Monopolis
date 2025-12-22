@@ -50,6 +50,109 @@
     "rights": "Tous droits réservés"
   },
 
+  "servicesPage": {
+    "hero": {
+      "badge": "Nos services",
+      "title": "Assistance complète d'un bout à l'autre pour chaque projet immobilier",
+      "description": "Nous combinons expertise locale, partenaires vérifiés et rapports clairs pour que vous puissiez acheter, segmenter, louer, vendre ou vous relocaliser sans frictions.",
+      "ctaPrimary": "Parlons avec un conseiller",
+      "ctaSecondary": "Voir les propriétés disponibles",
+      "highlights": [
+        { "label": "Augmentation moyenne à la vente", "value": "+8.4%" },
+        { "label": "Temps sur le marché", "value": "21 jours" },
+        { "label": "Villes couvertes", "value": "12" },
+        { "label": "Satisfaction propriétaire", "value": "4.8/5" }
+      ]
+    },
+    "whatWeDeliver": {
+      "title": "Ce que nous livrons",
+      "subtitle": "Six pistes focalisées, un partenaire responsable. Choisissez une piste ou combinez-les pour un seul plan.",
+      "ribbon": "Équipe full-service dirigée par des fondateurs"
+    },
+    "services": {
+      "segmentation": {
+        "label": "Segmentation Immobilière",
+        "summary": "Divisez une propriété en unités conformes et rentables avec soutien architectural et conseils réglementaires.",
+        "bullets": [
+          "Modélisation du ROI et de la faisabilité",
+          "Plans, permis et coordination des entrepreneurs",
+          "Guide de conformité par commune"
+        ]
+      },
+      "sales": {
+        "label": "Ventes",
+        "summary": "De l'évaluation à la signature : nous mettons en scène, commercialisons et négocions pour trouver le bon acheteur au meilleur prix.",
+        "bullets": [
+          "Évaluation et tarification basées sur les données",
+          "Photographie, mise en scène et portée internationale",
+          "Gestion des offres et conseils juridiques"
+        ]
+      },
+      "rentals": {
+        "label": "Location",
+        "summary": "Soutien locatif clés en main pour propriétaires et locataires avec vérification, contrats et onboarding soigné.",
+        "bullets": [
+          "Sourcing et vérification des locataires",
+          "Contrats, remise et inspections",
+          "Options de gestion continue"
+        ]
+      },
+      "relocation": {
+        "label": "Délocalisation",
+        "summary": "Partenaire de relocalisation pour les personnes et les équipes : orientation quartier, logement et administratif réglés.",
+        "bullets": [
+          "Conseils quartier, école et trajet",
+          "Recherche de logement court et long terme",
+          "Enregistrement, services et support d'installation"
+        ]
+      },
+      "assetManagement": {
+        "label": "Gestion de Portefeuille",
+        "summary": "Suivi stratégique de votre portefeuille immobilier pour maximiser la valeur, assurer la maintenance et optimiser l'efficacité fiscale.",
+        "bullets": [
+          "Analyse des performances du portefeuille",
+          "Planification de maintenance et supervision des fournisseurs",
+          "Rapports financiers et optimisation fiscale"
+        ]
+      },
+      "newDevelopments": {
+        "label": "Nouveaux Développements",
+        "summary": "Conseils d'experts pour les achats sur plans et les projets de nouvelle construction de la conception initiale à la livraison finale.",
+        "bullets": [
+          "Analyse d'investissement sur plan",
+          "Spécifications techniques et sélection des matériaux",
+          "Suivi de construction et listes de défauts"
+        ]
+      }
+    },
+    "flow": {
+      "chip": "Processus",
+      "title": "Comment nous travaillons",
+      "subtitle": "Étapes claires, une équipe responsable du début à la fin.",
+      "steps": [
+        { "title": "Découvrir", "detail": "Nous alignons les objectifs, délais et contraintes." },
+        { "title": "Concevoir", "detail": "Nous traçons le chemin : tarification, disposition et stratégie marketing." },
+        { "title": "Exécuter", "detail": "Les partenaires vérifiés livrent ; nous gérons les permis et documents." },
+        { "title": "Rapporter", "detail": "Mises à jour claires, métriques et décisions en un seul endroit." }
+      ]
+    },
+    "audience": {
+      "title": "Conçu pour les propriétaires et les relocaliseurs",
+      "description": "Investisseur avec un portefeuille, famille qui déménage, ou équipe qui relocalise le talent : nous adaptons le plan à votre risque et votre rythme.",
+      "items": [
+        { "title": "Rapports transparents", "body": "Un tableau de bord, des points de contact hebdomadaires, aucune surprise." },
+        { "title": "Spécialistes locaux", "body": "Permis, services et règles gérés par des gens qui les connaissent." },
+        { "title": "Partenaires vérifiés", "body": "Seulement des architectes, entrepreneurs et juristes éprouvés sur le travail." }
+      ],
+      "cta": "Planifier mon projet"
+    },
+    "closing": {
+      "title": "Prêt pour le prochain mouvement ?",
+      "description": "Dites-nous où vous en êtes dans votre parcours et nous concevrons un plan simple et mesurable. Aucune pression, juste de la clarté sur les options.",
+      "primary": "Réserver un appel",
+      "secondary": "Rencontrer l'équipe"
+    }
+  },
   "contactPage": {
     "title": "Nous contacter",
     "description": "Nous serions ravis de vous entendre. Envoyez-nous un message et nous vous répondrons dans un délai d'un jour ouvrable.",
