@@ -182,7 +182,7 @@ const HomeContent: React.FC = () => {
               >
                 <Link href="/properties" className="group inline-flex items-center px-8 py-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium rounded-lg transition-colors">
                   {t('featured.viewAll')}
-                  <FiArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+                  <FiArrowRight className="ml-3 text-white transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </motion.div>
             </div>
