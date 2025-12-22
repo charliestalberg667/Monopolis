@@ -1,4 +1,9 @@
 {
+  "agency": {
+    "phone": "+32 0495 22 33 76",
+    "address": "Pastoor Bolsstraat 5"
+  },
+
   "navbar": {
     "home": "Accueil",
     "luxe": "Prestige",
@@ -12,6 +17,7 @@
     "about": "À propos",
     "services": "Nos Services"
   },
+
   "hero": {
     "badge": "Biens en Vedette",
     "title1": "Trouvez Votre",
@@ -25,106 +31,7 @@
     "typewriter": "Des propriétés d'exception dans les emplacements les plus recherchés",
     "discoverMore": "Découvrir plus"
   },
-  "filters": {
-    "type": "Type",
-    "bedrooms": "Chambres",
-    "location": "Localisation",
-    "apartment": "Appartement",
-    "villa": "Villa",
-    "townhouse": "Maison de ville",
-    "brussels": "Bruxelles",
-    "flanders": "Flandres",
-    "wallonia": "Wallonie"
-  },
-  "featured": {
-    "badge": "Annonces Premium",
-    "title": "Biens en Vedette",
-    "subtitle": "Découvrez notre sélection exclusive de biens d'exception dans les emplacements les plus recherchés",
-    "viewAll": "Voir Tous les Biens",
-    "viewMore": "Voir Plus de Biens",
-    "bedrooms": "Chambres",
-    "bathrooms": "Salles de Bain",
-    "sqft": "m²",
-    "forSale": "À Vendre",
-    "forRent": "À Louer",
-    "viewDetails": "Voir les Détails",
-    "featured": "En Vedette"
-  },
-  "process": {
-    "title": "Un Processus Simple et Transparent",
-    "subtitle": "Nous avons simplifié la recherche immobilière en trois étapes claires et gérables",
-    "step": "Étape",
-    "getStarted": "Commencer",
-    "step1": {
-      "title": "Trouvez Votre Bien",
-      "description": "Parcourez notre sélection de biens premium qui correspondent à vos critères et préférences.",
-      "detail1": "Recommandations personnalisées",
-      "detail2": "Filtres de recherche avancés",
-      "detail3": "Enregistrer vos favoris",
-      "detail4": "Alertes instantanées pour les nouveaux biens"
-    },
-    "step2": {
-      "title": "Planifiez une Visite",
-      "description": "Réservez une visite avec l'un de nos agents experts qui vous fournira une analyse approfondie du bien.",
-      "detail1": "Planification flexible",
-      "detail2": "Conseils d'experts",
-      "detail3": "Aperçu du marché",
-      "detail4": "Conseils en investissement"
-    },
-    "step3": {
-      "title": "Finalisez le Processus",
-      "description": "Notre équipe gère tout, de l'offre à la signature, avec une négociation experte et un soutien complet.",
-      "detail1": "Aide au financement",
-      "detail2": "Négociation professionnelle",
-      "detail3": "Assistance juridique",
-      "detail4": "Remise des clés en douceur"
-    }
-  },
-  "services": {
-    "title": "Nos Services",
-    "subtitle": "Des solutions immobilières complètes adaptées à vos besoins",
-    "buy": "Acheter un Bien",
-    "buyDesc": "Trouvez la maison de vos rêves parmi nos annonces exclusives.",
-    "sell": "Vendre un Bien",
-    "sellDesc": "Obtenez le meilleur prix pour votre bien grâce à notre expertise marketing.",
-    "rent": "Louer un Bien",
-    "rentDesc": "Découvrez des biens à louer qui correspondent à votre style de vie.",
-    "valuation": "Évaluation Gratuite",
-    "valuationDesc": "Obtenez une évaluation précise de votre bien sur le marché actuel."
-  },
-  "testimonials": {
-    "badge": "Témoignages",
-    "title": "Ce Que Disent Nos Clients",
-    "subtitle": "Ne nous croyez pas sur parole. Voici ce que nos clients disent de leur expérience avec nous.",
-    "roles": {
-      "homeBuyer": "Acheteur",
-      "investor": "Investisseur Immobilier",
-      "seller": "Premier Vendeur"
-    },
-    "items": {
-      "1": {
-        "content": "Monopolis a rendu la recherche de notre maison de rêve sans effort. Leur équipe a été professionnelle et attentive à nos besoins tout au long du processus."
-      },
-      "2": {
-        "content": "Les analyses de marché et les recommandations de biens étaient parfaites. J'ai considérablement agrandi mon portefeuille grâce à Monopolis."
-      },
-      "3": {
-        "content": "J'ai vendu mon bien au-dessus du prix demandé en une semaine ! La stratégie marketing de l'équipe était impressionnante."
-      }
-    }
-  },
-  "newsletter": {
-    "title": "Restez Informé",
-    "subtitle": "Abonnez-vous à notre newsletter pour les dernières annonces et actualités du marché",
-    "placeholder": "Votre adresse e-mail",
-    "subscribe": "S'abonner",
-    "privacy": "Nous respectons votre vie privée. Désabonnez-vous à tout moment."
-  },
-  "cta": {
-    "title": "Prêt à Trouver Votre Maison de Rêve ?",
-    "subtitle": "Contactez-nous dès aujourd'hui pour organiser une visite ou obtenir une consultation gratuite",
-    "button": "Nous Contacter"
-  },
+
   "footer": {
     "description": "Une agence immobilière boutique avec 5 agents dévoués engagés à trouver votre propriété parfaite en Belgique.",
     "company": "Société",
@@ -136,305 +43,13 @@
     "rent": "Location",
     "valuation": "Évaluation",
     "contactTitle": "Contact",
+    "phone": "+32 0495 22 33 76",
+    "address": "Pastoor Bolsstraat 5",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité",
     "rights": "Tous droits réservés"
   },
-  "auth": {
-    "login": "Connexion",
-    "signup": "Créer un compte",
-    "email": "E-mail",
-    "password": "Mot de passe",
-    "confirmPassword": "Confirmer le mot de passe",
-    "firstName": "Prénom",
-    "lastName": "Nom",
-    "signIn": "Se connecter",
-    "createAccount": "Créer un compte",
-    "noAccount": "Pas encore de compte ?",
-    "haveAccount": "Vous avez déjà un compte ?",
-    "signUpLink": "S'inscrire",
-    "signInLink": "Se connecter"
-  },
-  "category": {
-    "luxe": "Biens de Prestige",
-    "rent": "Biens à Louer",
-    "buy": "Biens à Vendre"
-  },
-  "related": {
-    "title": "Biens Similaires"
-  },
-  "property": {
-    "backToProperties": "Retour aux Biens",
-    "viewAllProperties": "Voir Tous les Biens",
-    "forSale": "À Vendre",
-    "forRent": "À Louer",
-    "perMonth": "par mois",
-    "bedrooms": "Chambres",
-    "bathrooms": "Salles de Bain",
-    "sqm": "m²",
-    "propertyDetails": "Détails du Bien",
-    "quickFacts": "Informations clés",
-    "propertyType": "Type de bien",
-    "location": "Localisation",
-    "price": "Prix",
-    "specifications": "Caractéristiques",
-    "totalArea": "Surface Totale",
-    "interested": "Intéressé par ce bien ?",
-    "contactPrompt": "Contactez notre équipe pour organiser une visite ou obtenir plus d'informations.",
-    "contactUs": "Nous Contacter"
-    ,"exactLocation": "Localisation exacte"
-  },
-  "schedule": {
-    "title": "Prendre un Rendez-vous",
-    "fullName": "Nom complet",
-    "email": "E-mail",
-    "phone": "Numéro de téléphone",
-    "preferredDate": "Date souhaitée",
-    "preferredTime": "Heure souhaitée",
-    "additionalNotes": "Notes supplémentaires",
-    "scheduleVisit": "Prendre Rendez-vous",
-    "selectTime": "Sélectionner l'heure"
-  },
-  "visits": {
-    "title": "Mes Rendez-vous",
-    "noVisits": "Aucun rendez-vous prévu",
-    "visitDate": "Date du Rendez-vous",
-    "visitTime": "Heure du Rendez-vous",
-    "visitNotes": "Notes",
-    "cancelVisit": "Annuler le Rendez-vous",
-    "date": "Date",
-    "time": "Heure",
-    "notes": "Notes",
-    "cancel": "Annuler"
-  },
-  "language": {
-    "english": "Anglais",
-    "french": "Français",
-    "dutch": "Néerlandais"
-  },
-  "common": {
-    "month": "mois",
-    "loading": "Chargement...",
-    "error": "Une erreur est survenue",
-    "noResults": "Aucun résultat trouvé",
-    "applyFilters": "Appliquer les filtres",
-    "clearFilters": "Tout effacer",
-    "any": "Tous",
-    "min": "Min",
-    "max": "Max"
-  },
-  "properties": {
-    "title": "Biens immobiliers",
-    "subtitle": "Parcourez nos dernières annonces à travers la Belgique.",
-    "search": {
-      "placeholder": "ex: maison de ville, loft, villa",
-      "label": "Rechercher"
-    },
-    "filters": {
-      "title": "Filtres",
-      "type": "Type",
-      "bedrooms": "Chambres",
-      "location": "Localisation",
-      "priceRange": "Tranche de prix",
-      "locationPlaceholder": "Ville, région ou quartier"
-    },
-    "types": {
-      "all": "Tous",
-      "sale": "À Vendre",
-      "rent": "À Louer"
-    },
-    "bedrooms": {
-      "any": "Tous",
-      "onePlus": "1+",
-      "twoPlus": "2+",
-      "threePlus": "3+",
-      "fourPlus": "4+"
-    },
-    "results": {
-      "loading": "Chargement des annonces...",
-      "noMatches": "Aucun bien ne correspond à vos critères.",
-      "error": "Impossible de charger les biens. Affichage d'annonces exemple."
-    }
-  },
-  "servicesPage": {
-    "hero": {
-      "badge": "Nos services",
-      "title": "Un accompagnement expert, de bout en bout, pour chaque projet immobilier",
-      "description": "Nous combinons expertise terrain, partenaires fiables et reporting clair pour acheter, segmenter, louer, vendre ou vous relocaliser sans friction.",
-      "ctaPrimary": "Parler à un conseiller",
-      "ctaSecondary": "Voir les biens disponibles",
-      "highlights": [
-        { "label": "Gain moyen à la vente", "value": "+8,4%" },
-        { "label": "Temps sur le marché", "value": "21 jours" },
-        { "label": "Villes couvertes", "value": "12" },
-        { "label": "Satisfaction propriétaire", "value": "4,8/5" }
-      ]
-    },
-    "whatWeDeliver": {
-      "title": "Ce que nous livrons",
-      "subtitle": "Quatre offres ciblées, un seul responsable. Choisissez une piste ou combinez-les dans un plan unique.",
-      "ribbon": "Equipe fondatrice, service complet"
-    },
-    "services": {
-      "segmentation": {
-        "label": "Segmentation immobilière",
-        "summary": "Diviser un bien en unités conformes et rentables avec support architectural et réglementaire.",
-        "bullets": [
-          "Modélisation ROI et faisabilité",
-          "Plans, permis et coordination des entrepreneurs",
-          "Guide conformité par commune"
-        ]
-      },
-      "sales": {
-        "label": "Vente de biens",
-        "summary": "De l'estimation à l'acte: mise en scène, marketing et négociation pour trouver le bon acheteur au meilleur prix.",
-        "bullets": [
-          "Prix et estimation pilotés par la donnée",
-          "Photos, home staging et portée internationale",
-          "Gestion des offres et accompagnement juridique"
-        ]
-      },
-      "rentals": {
-        "label": "Locations",
-        "summary": "Service locatif clé en main pour propriétaires et locataires avec screening, contrats et onboarding soigné.",
-        "bullets": [
-          "Sourcing et sélection des locataires",
-          "Contrats, remise des clés et états des lieux",
-          "Options de gestion continue"
-        ]
-      },
-      "relocation": {
-        "label": "Délocalisation",
-        "summary": "Partenaire de relocation pour personnes et équipes: découverte des quartiers, logement et démarches administratives.",
-        "bullets": [
-          "Conseil quartier, écoles et trajets",
-          "Recherche logement court et long terme",
-          "Enregistrement, services publics et installation"
-        ]
-      }
-    },
-    "flow": {
-      "chip": "Parcours",
-      "title": "Notre méthode",
-      "subtitle": "Des étapes claires, une équipe responsable du début à la fin.",
-      "steps": [
-        { "title": "Découvrir", "detail": "On aligne objectifs, délais et contraintes." },
-        { "title": "Concevoir", "detail": "On trace le plan: prix, agencement et stratégie marketing." },
-        { "title": "Exécuter", "detail": "Des partenaires validés livrent; on gère permis et paperasse." },
-        { "title": "Reporter", "detail": "Mises à jour, métriques et décisions au même endroit." }
-      ]
-    },
-    "audience": {
-      "title": "Pour propriétaires et personnes en mouvement",
-      "description": "Investisseur, famille qui déménage ou équipe qui relocalise des talents: on adapte le plan à votre profil et votre rythme.",
-      "items": [
-        { "title": "Reporting transparent", "body": "Un tableau de bord, un point hebdo, pas de surprises." },
-        { "title": "Spécialistes locaux", "body": "Permis, utilities et règles communales gérés par ceux qui les connaissent." },
-        { "title": "Partenaires validés", "body": "Architectes, entrepreneurs et juristes éprouvés sur chaque mission." }
-      ],
-      "cta": "Planifier mon projet"
-    },
-    "closing": {
-      "title": "Prêt pour la prochaine étape ?",
-      "description": "Dites-nous où vous en êtes et nous concevrons un plan simple et mesurable. Sans pression, juste des options claires.",
-      "primary": "Réserver un appel",
-      "secondary": "Rencontrer l'équipe"
-    }
-  },
-  "marketReport": {
-    "badge": "Analyses du marché",
-    "title": "Rapport sur le marché immobilier belge",
-    "subtitle": "Dernières tendances et analyses du marché immobilier belge (T2 2024)",
-    "chartTitle": "80 ans de prix de l'immobilier en Belgique",
-    "chartTitle20Years": "20 ans de prix de l'immobilier en Belgique",
-    "pricePerSqmTrend": "Évolution du prix au m²",
-    "propertyTypesTitle": "Types de biens",
-    "regionalTitle": "Prix moyen au m² par région",
-    "chartSource": "Source : Banque nationale de Belgique, Statbel, Eurostat (2024)",
-    "references": {
-      "financialCrisis": "Crise financière",
-      "pandemic": "Pandémie"
-    },
-    "labels": {
-      "year": "Année",
-      "averagePrice": "Prix moyen",
-      "pricePerSqm": "Prix au m²",
-      "priceChange": "par rapport à l'année dernière"
-    },
-    "propertyTypes": {
-      "houses": "Maisons",
-      "apartments": "Appartements",
-      "plots": "Terrains à bâtir",
-      "others": "Autres"
-    },
-    "regions": {
-      "brussels": "Bruxelles",
-      "flanders": "Flandre",
-      "wallonia": "Wallonie"
-    },
-    "meta": {
-      "sources": "Sources de données : Statbel, Notaris.be, Baromètre immobilier BNP Paribas Fortis, Immoweb",
-      "lastUpdated": "Dernière mise à jour : {{date}}"
-    }
-  },
-  "about": {
-    "title": "À PROPOS DE MONOPOLIS",
-    "description": "Nous aidons les personnes à acheter, vendre et louer des propriétés exceptionnelles à travers la Belgique, en combinant une expertise locale approfondie avec un service de classe mondiale.",
-    "mission": {
-      "title": "Notre Mission & Nos Valeurs",
-      "subtitle": "Découvrez ce qui nous motive et comment nous offrons un service exceptionnel",
-      "missionTitle": "Notre Mission",
-      "missionDescription": "Une agence boutique avec 4-5 agents dédiés engagés à trouver la propriété parfaite pour chaque client. Nous combinons une expertise locale approfondie avec un service personnalisé.",
-      "valuesTitle": "Ce Que Nous Valorisons",
-      "valuesDescription": "Intégrité, discrétion et relations à long terme. Nous privilégions vos objectifs par rapport aux gains rapides—toujours.",
-      "howWorkTitle": "Comment Nous Travaillons",
-      "howWorkDescription": "Attention personnelle de nos agents experts associée à une perspicacité du marché—de la première visite à l'acte signé et au-delà."
-    },
-    "impact": {
-      "title": "Notre Impact",
-      "subtitle": "Des chiffres qui reflètent notre engagement envers l'excellence",
-      "agents": "Agents dédiés",
-      "satisfaction": "Satisfaction client",
-      "years": "Années d'expérience",
-      "office": "Bureau à Alsemberg"
-    },
-    "team": {
-      "title": "Notre Équipe",
-      "subtitle": "Rencontrez les professionnels dédiés derrière Monopolis",
-      "members": {
-        "1": {
-          "name": "Jean-Pierre Dubois",
-          "role": "Agent Immobilier Senior",
-          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
-        },
-        "2": {
-          "name": "Sophie Martin",
-          "role": "Spécialiste Propriétés de Luxe",
-          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
-        },
-        "3": {
-          "name": "Thomas Verstraeten",
-          "role": "Directeur Division Location",
-          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
-        },
-        "4": {
-          "name": "Emma De Vries",
-          "role": "Responsable Relations Clients",
-          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
-        },
-        "5": {
-          "name": "Lucas Janssens",
-          "role": "Expert Évaluation Immobilière",
-          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
-        }
-      }
-    },
-    "cta": {
-      "title": "Rencontrez l'équipe derrière Monopolis",
-      "description": "Nos 4-5 agents dédiés apportent expertise, discrétion et une touche personnelle à chaque transaction.",
-      "button": "Explorer notre équipe"
-    }
-  },
+
   "contactPage": {
     "title": "Nous contacter",
     "description": "Nous serions ravis de vous entendre. Envoyez-nous un message et nous vous répondrons dans un délai d'un jour ouvrable.",
@@ -447,7 +62,7 @@
     "firstNamePlaceholder": "Jane",
     "lastNamePlaceholder": "Doe",
     "emailPlaceholder": "jane@example.com",
-    "phonePlaceholder": "+32 2 123 45 67",
+    "phonePlaceholder": "+32 0495 22 33 76",
     "subjectPlaceholder": "Comment pouvons-nous vous aider?",
     "messagePlaceholder": "Écrivez votre message ici...",
     "sendButton": "Envoyer",
@@ -458,6 +73,8 @@
     "contactDetails": "Coordonnées",
     "availability": "Notre équipe boutique est disponible du lundi au vendredi, de 9h00 à 18h00.",
     "hours": "Lun–Ven: 9h00–18h00",
+    "phoneValue": "+32 0495 22 33 76",
+    "address": "Pastoor Bolsstraat 5",
     "mapTitle": "Localisation du bureau Monopolis"
   }
 }
