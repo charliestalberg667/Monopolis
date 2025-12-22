@@ -32,6 +32,33 @@
     "discoverMore": "Découvrir plus"
   },
 
+  "featured": {
+    "badge": "Offres Premium",
+    "title": "Biens en Vedette",
+    "subtitle": "Découvrez notre sélection exclusive de biens premium dans les emplacements les plus recherchés",
+    "viewAll": "Voir Tous les Biens",
+    "viewMore": "Voir Plus de Biens",
+    "bedrooms": "Chambres",
+    "bathrooms": "Salles de Bain",
+    "sqft": "m²",
+    "forSale": "À Vendre",
+    "forRent": "À Louer",
+    "viewDetails": "Voir Détails",
+    "featured": "En Vedette"
+  },
+
+  "filters": {
+    "type": "Type",
+    "bedrooms": "Chambres",
+    "location": "Localisation",
+    "apartment": "Appartement",
+    "villa": "Villa",
+    "townhouse": "Maison de Ville",
+    "brussels": "Bruxelles",
+    "flanders": "Flandre",
+    "wallonia": "Wallonie"
+  },
+
   "footer": {
     "description": "Une agence immobilière boutique avec 5 agents dévoués engagés à trouver votre propriété parfaite en Belgique.",
     "company": "Société",
