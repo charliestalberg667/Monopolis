@@ -16,48 +16,48 @@
         ]
       },
       "sales": {
-        "label": "For Sale",
-        "summary": "From valuation to closing, we manage the entire sales process to secure the best outcome for your property.",
+        "label": "For Sales",
+        "summary": "From valuation to closing: we stage, market, and negotiate to secure the right buyer at the best price.",
         "bullets": [
-          "Accurate pricing and market valuation",
-          "Targeted marketing and buyer qualification",
-          "Negotiation and transaction support"
+          "Data-led pricing and valuation",
+          "Photography, staging, and international reach",
+          "Offer management and legal guidance"
         ]
       },
       "rentals": {
         "label": "Rentals",
-        "summary": "End-to-end rental services for landlords and tenants, ensuring smooth and secure leasing.",
+        "summary": "Turn-key rental support for owners and tenants with screening, contracts, and white-glove onboarding.",
         "bullets": [
           "Tenant sourcing and screening",
-          "Lease contracts and handover",
-          "Optional ongoing rental management"
-        ]
-      },
-      "assetManagement": {
-        "label": "Real Estate Asset Management",
-        "summary": "Professional management of real estate portfolios to preserve value and optimize long-term returns.",
-        "bullets": [
-          "Portfolio analysis and performance tracking",
-          "Operational and financial optimization",
-          "Strategic advisory for long-term ownership"
-        ]
-      },
-      "newProjects": {
-        "label": "New Property Developments",
-        "summary": "Support for new-build and off-plan real estate projects, from early concept to market launch.",
-        "bullets": [
-          "Feasibility studies and project positioning",
-          "Coordination with developers and partners",
-          "Sales strategy and commercialization support"
+          "Contracts, handover, and inspections",
+          "Ongoing management options"
         ]
       },
       "relocation": {
         "label": "Domiciliation",
-        "summary": "Administrative domiciliation services for individuals and companies seeking a reliable registered address.",
+        "summary": "Relocation partner for people and teams: neighborhood orientation, housing, and admin done for you.",
         "bullets": [
-          "Registered address for private or corporate use",
-          "Mail handling and administrative follow-up",
-          "Compliance with Belgian regulations"
+          "Area, school, and commute guidance",
+          "Short- and long-term housing search",
+          "Registration, utilities, and move-in support"
+        ]
+      },
+      "assetManagement": {
+        "label": "Real Estate Asset Management",
+        "summary": "Comprehensive management of your property portfolio to maximize returns and ensure smooth operations.",
+        "bullets": [
+          "Tenant management and leasing",
+          "Maintenance and repairs",
+          "Financial reporting and optimization"
+        ]
+      },
+      "newProjects": {
+        "label": "New Property Projects",
+        "summary": "Guidance and support for developing new real estate projects from planning to execution.",
+        "bullets": [
+          "Feasibility studies and planning",
+          "Project coordination and permits",
+          "Marketing and sales support"
         ]
       }
     }
