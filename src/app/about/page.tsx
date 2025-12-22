@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FiArrowRight, FiPieChart, FiHome, FiLayers, FiMapPin, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
+// Suppression des imports inutilisés : FiPieChart, FiHome, FiMapPin, FiCheckCircle
+import { FiArrowRight, FiLayers, FiTrendingUp } from 'react-icons/fi';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
@@ -17,9 +18,9 @@ export default function AboutPage() {
           <Image
             src="/header/bggg.jpg"
             alt="About Monopolis hero"
-            layout="fill"
+            fill
+            style={{ objectFit: 'cover' }}
             quality={100}
-            objectFit="cover"
             className="rounded-sm"
             priority
           />
@@ -45,7 +46,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy Section (Mission/Values) */}
+      {/* Mission & Values */}
       <motion.section 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,18 +55,12 @@ export default function AboutPage() {
         className="py-20 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mb-16 text-center"
-          >
+          <div className="mb-16 text-center">
             <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.mission.title')}</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.mission.subtitle')}</p>
-          </motion.div>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: t('about.mission.missionTitle'), description: t('about.mission.missionDescription') },
               { title: t('about.mission.valuesTitle'), description: t('about.mission.valuesDescription') },
@@ -73,12 +68,15 @@ export default function AboutPage() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200">
-                  <h3 className="dm-serif-text text-3xl font-normal mb-5 leading-tight text-center text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-base text-center">{item.description}</p>
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                  <h3 className="dm-serif-text text-3xl font-normal mb-5 text-center text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-center">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -86,27 +84,21 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* New Section: Core Competencies (Where Asset Management & New Projects live) */}
+      {/* Strategic Capabilities (Asset Management & New Projects) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <div className="space-y-8">
               <h2 className="dm-serif-text text-4xl md:text-5xl leading-tight text-gray-900">
                 Beyond Brokerage: <br/>
                 <span style={{ color: '#EC9FA3' }}>Strategic Real Estate</span>
               </h2>
               <p className="text-gray-600 text-lg">
-                Monopolis has evolved into a full-service partner. We don&apos;t just find keys; we build legacies through specialized management and development.
+                Monopolis has evolved into a full-service partner. We build legacies through specialized management and development.
               </p>
               
               <div className="space-y-6">
-                {/* Asset Management Highlight */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100 transition-colors hover:bg-[#f8fffe]">
+                <div className="flex gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
                   <div className="w-12 h-12 rounded-full bg-[#EC9FA3]/10 flex items-center justify-center flex-shrink-0">
                     <FiTrendingUp className="w-6 h-6" style={{ color: '#EC9FA3' }} />
                   </div>
@@ -116,8 +108,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* New Developments Highlight */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100 transition-colors hover:bg-[#f8fffe]">
+                <div className="flex gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
                   <div className="w-12 h-12 rounded-full bg-[#048542]/10 flex items-center justify-center flex-shrink-0">
                     <FiLayers className="w-6 h-6 text-[#048542]" />
                   </div>
@@ -127,37 +118,24 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl"
-            >
+            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
-                alt="Modern Belgian Architecture"
+                alt="Architecture"
                 fill
-                className="object-cover"
+                style={{ objectFit: 'cover' }}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="bg-gray-50 py-20"
-      >
+      <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.impact.title')}</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-16">{t('about.impact.subtitle')}</p>
-          
+          <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-16" style={{ color: '#EC9FA3' }}>{t('about.impact.title')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "4-5", label: t('about.impact.agents') },
@@ -165,67 +143,59 @@ export default function AboutPage() {
               { value: "15+", label: t('about.impact.years') },
               { value: "1", label: t('about.impact.office') }
             ].map((stat, index) => (
-              <motion.div key={index} transition={{ delay: index * 0.1, duration: 0.5 }}>
-                <div className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--accent)' }}>{stat.value}</div>
+              <div key={index}>
+                <div className="text-3xl md:text-4xl font-bold" style={{ color: '#048542' }}>{stat.value}</div>
                 <p className="text-gray-600 mt-2">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.team.title')}</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t('about.team.subtitle')}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Logic for team members mapping stays the same as your previous code */}
-            {[1,2,3,4,5].map((id) => (
-              <motion.div key={id} className="group">
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-gray-200 overflow-hidden">
-                  <div className="relative w-full h-80 bg-gray-100">
-                    <Image
-                      src={t(`about.team.members.${id}.photo`)}
-                      alt={t(`about.team.members.${id}.name`)}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="dm-serif-text text-2xl font-normal mb-2" style={{ color: '#EC9FA3' }}>{t(`about.team.members.${id}.name`)}</h3>
-                    <p className="text-gray-600 text-base">{t(`about.team.members.${id}.role`)}</p>
-                  </div>
-                </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Team */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
+          <h2 className="dm-serif-text text-3xl md:text-5xl font-normal mb-4" style={{ color: '#EC9FA3' }}>{t('about.team.title')}</h2>
+          <p className="text-gray-600 text-lg">{t('about.team.subtitle')}</p>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3, 4, 5].map((id) => (
+              <div key={id} className="bg-white rounded-lg border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-80 bg-gray-100">
+                  <Image
+                    src={t(`about.team.members.${id}.photo`)}
+                    alt={t(`about.team.members.${id}.name`)}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="dm-serif-text text-2xl font-normal mb-2" style={{ color: '#EC9FA3' }}>{t(`about.team.members.${id}.name`)}</h3>
+                  <p className="text-gray-600">{t(`about.team.members.${id}.role`)}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <motion.section className="py-20">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8fffe] to-white p-8 md:p-14 rounded-3xl border border-[#048542]/20 shadow-[0_10px_40px_rgba(4,133,66,0.08)] flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12 group">
-            <div className="relative z-10 flex-1">
-              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal mb-3 leading-tight" style={{ color: '#EC9FA3' }}>{t('cta.title')}</h3>
-              <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
-                {t('cta.subtitle')}
-              </p>
+          <div className="bg-gradient-to-br from-white to-[#f8fffe] p-10 rounded-3xl border border-[#048542]/20 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1">
+              <h3 className="dm-serif-text text-3xl md:text-4xl font-normal mb-3" style={{ color: '#EC9FA3' }}>{t('cta.title')}</h3>
+              <p className="text-gray-600 text-lg">{t('cta.subtitle')}</p>
             </div>
             <Link
               href="/contact"
-              className="group/btn relative z-10 inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-base font-medium rounded-lg transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#048542] text-white rounded-lg hover:bg-[#037038] transition-colors"
             >
               <span>{t('cta.button')}</span>
-              <FiArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+              <FiArrowRight />
             </Link>
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }
