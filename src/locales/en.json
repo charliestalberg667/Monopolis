@@ -1,5 +1,275 @@
 {
+  "navbar": {
+    "home": "Home",
+    "luxe": "Luxury",
+    "rent": "Rent",
+    "buy": "Buy",
+    "login": "Login",
+    "cart": "Cart",
+    "visits": "Appointments",
+    "contact": "Contact",
+    "properties": "Properties",
+    "about": "About Us",
+    "services": "Our Services"
+  },
+  "hero": {
+    "badge": "Featured Properties",
+    "title1": "Find Your",
+    "title2": "Dream Home in Belgium",
+    "description": "Discover premium properties in the heart of Europe. Your ideal home is just a search away.",
+    "searchPlaceholder": "Search by location, type, or price...",
+    "search": "Search",
+    "properties": "Properties",
+    "clients": "Happy Clients",
+    "years": "Years Experience",
+    "typewriter": "Exceptional properties in the most sought-after locations",
+    "discoverMore": "Discover more"
+  },
+  "filters": {
+    "type": "Type",
+    "bedrooms": "Bedrooms",
+    "location": "Location",
+    "apartment": "Apartment",
+    "villa": "Villa",
+    "townhouse": "Townhouse",
+    "brussels": "Brussels",
+    "flanders": "Flanders",
+    "wallonia": "Wallonia"
+  },
+  "featured": {
+    "badge": "Premium Listings",
+    "title": "Featured Properties",
+    "subtitle": "Discover our exclusive selection of premium properties in the most sought-after locations",
+    "viewAll": "View All Properties",
+    "viewMore": "View More Properties",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "sqft": "sq ft",
+    "forSale": "For Sale",
+    "forRent": "For Rent",
+    "viewDetails": "View Details",
+    "featured": "Featured"
+  },
+  "process": {
+    "title": "A Simple, Transparent Process",
+    "subtitle": "We've streamlined the property search into three clear, manageable steps",
+    "step": "Step",
+    "getStarted": "Get Started",
+    "step1": {
+      "title": "Find Your Property",
+      "description": "Browse our curated selection of premium properties that match your criteria and preferences.",
+      "detail1": "Personalized recommendations",
+      "detail2": "Advanced search filters",
+      "detail3": "Save favorite listings",
+      "detail4": "Instant alerts for new matches"
+    },
+    "step2": {
+      "title": "Schedule a Viewing",
+      "description": "Book a visit with one of our expert agents who will provide in-depth property analysis.",
+      "detail1": "Flexible scheduling",
+      "detail2": "Expert guidance",
+      "detail3": "Market insights",
+      "detail4": "Investment advice"
+    },
+    "step3": {
+      "title": "Complete the Process",
+      "description": "Our team handles everything from offer to closing with expert negotiation and support.",
+      "detail1": "Mortgage assistance",
+      "detail2": "Professional negotiation",
+      "detail3": "Legal support",
+      "detail4": "Smooth handover"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive real estate solutions tailored to your needs",
+    "buy": "Buy a Home",
+    "buyDesc": "Find your dream home from our exclusive listings.",
+    "sell": "Sell a Home",
+    "sellDesc": "Get the best price for your property with our expert marketing.",
+    "rent": "Rent a Property",
+    "rentDesc": "Discover rental properties that match your lifestyle.",
+    "valuation": "Free Valuation",
+    "valuationDesc": "Get an accurate market valuation for your property."
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What Our Clients Say",
+    "subtitle": "Don't just take our word for it. Here's what our clients have to say about their experience with us.",
+    "roles": {
+      "homeBuyer": "Home Buyer",
+      "investor": "Real Estate Investor",
+      "seller": "First-time Seller"
+    },
+    "items": {
+      "1": {
+        "content": "Monopolis made finding our dream home effortless. Their team was professional and attentive to our needs throughout the entire process."
+      },
+      "2": {
+        "content": "The market insights and property recommendations were spot on. I've expanded my portfolio significantly thanks to Monopolis."
+      },
+      "3": {
+        "content": "Sold my property above asking price within a week! The team's marketing strategy was impressive."
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Subscribe to our newsletter for the latest listings and market insights",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  },
+  "cta": {
+    "title": "Ready to Find Your Dream Home?",
+    "subtitle": "Contact us today to schedule a viewing or get a free consultation",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "description": "A boutique real estate agency with 5 dedicated agents committed to finding your perfect property in Belgium.",
+    "company": "Company",
+    "about": "About Us",
+    "contact": "Contact",
+    "servicesTitle": "Services",
+    "buyProperty": "Buy Property",
+    "sellProperty": "Sell Property",
+    "rent": "Rent",
+    "valuation": "Valuation",
+    "contactTitle": "Contact",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signUpLink": "Sign up",
+    "signInLink": "Sign in"
+  },
+  "category": {
+    "luxe": "Luxury Properties",
+    "rent": "Properties for Rent",
+    "buy": "Properties for Sale"
+  },
+  "related": {
+    "title": "Related Properties"
+  },
+  "property": {
+    "backToProperties": "Back to Properties",
+    "viewAllProperties": "View All Properties",
+    "forSale": "For Sale",
+    "forRent": "For Rent",
+    "perMonth": "per month",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "sqm": "m²",
+    "propertyDetails": "Property Details",
+    "quickFacts": "Quick Facts",
+    "propertyType": "Property Type",
+    "location": "Location",
+    "price": "Price",
+    "specifications": "Specifications",
+    "totalArea": "Total Area",
+    "interested": "Interested in this property?",
+    "contactPrompt": "Contact our team to schedule a viewing or get more information.",
+    "contactUs": "Contact Us",
+    "exactLocation": "Exact Location"
+  },
+  "schedule": {
+    "title": "Book a Visit",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "additionalNotes": "Additional Notes",
+    "scheduleVisit": "Book Visit",
+    "selectTime": "Select Time"
+  },
+  "visits": {
+    "title": "My Visits",
+    "noVisits": "No visits planned",
+    "visitDate": "Visit Date",
+    "visitTime": "Visit Time",
+    "visitNotes": "Visit Notes",
+    "cancelVisit": "Cancel Visit",
+    "date": "Date",
+    "time": "Time",
+    "notes": "Notes",
+    "cancel": "Cancel"
+  },
+  "language": {
+    "english": "English",
+    "french": "French",
+    "dutch": "Dutch"
+  },
+  "common": {
+    "month": "month",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found",
+    "applyFilters": "Apply Filters",
+    "clearFilters": "Clear All",
+    "any": "Any",
+    "min": "Min",
+    "max": "Max"
+  },
+  "properties": {
+    "title": "Properties",
+    "subtitle": "Browse our latest listings across Belgium.",
+    "search": {
+      "placeholder": "e.g. townhouse, loft, villa",
+      "label": "Search"
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "Type",
+      "bedrooms": "Bedrooms",
+      "location": "Location",
+      "priceRange": "Price range",
+      "locationPlaceholder": "City, area, or region"
+    },
+    "types": {
+      "all": "All",
+      "sale": "For Sale",
+      "rent": "For Rent"
+    },
+    "bedrooms": {
+      "any": "Any",
+      "onePlus": "1+",
+      "twoPlus": "2+",
+      "threePlus": "3+",
+      "fourPlus": "4+"
+    },
+    "results": {
+      "loading": "Loading listings...",
+      "noMatches": "No properties match your filters.",
+      "error": "Could not load live estates. Showing sample listings."
+    }
+  },
   "servicesPage": {
+    "hero": {
+      "badge": "Our services",
+      "title": "Expert, end-to-end support for every property move",
+      "description": "We combine on-the-ground expertise, vetted partners, and clear reporting so you can buy, segment, rent, sell, or relocate without friction.",
+      "ctaPrimary": "Talk with an advisor",
+      "ctaSecondary": "View available properties",
+      "highlights": [
+        { "label": "Avg. sale uplift", "value": "+8.4%" },
+        { "label": "On-market time", "value": "21 days" },
+        { "label": "Cities covered", "value": "12" },
+        { "label": "Owner satisfaction", "value": "4.8/5" }
+      ]
+    },
     "whatWeDeliver": {
       "title": "What we deliver",
       "subtitle": "Four focused tracks, one accountable partner. Pick the track or combine them for a single plan.",
@@ -60,6 +330,33 @@
           "Marketing and sales support"
         ]
       }
+    },
+    "flow": {
+      "chip": "Flow",
+      "title": "How we work",
+      "subtitle": "Clear steps, one accountable team from start to finish.",
+      "steps": [
+        { "title": "Discover", "detail": "We align on goals, timelines, and constraints." },
+        { "title": "Design", "detail": "We map the path: pricing, layout, and marketing strategy." },
+        { "title": "Execute", "detail": "Vetted partners deliver; we handle permits and paperwork." },
+        { "title": "Report", "detail": "Clear updates, metrics, and decisions in one place." }
+      ]
+    },
+    "audience": {
+      "title": "Built for owners and movers",
+      "description": "Investor with a portfolio, family making a move, or team relocating talent: we tailor the plan to your risk and pace.",
+      "items": [
+        { "title": "Transparent reporting", "body": "One dashboard, weekly check-ins, no surprises." },
+        { "title": "Local specialists", "body": "Permits, utilities, and city rules handled by people who know them." },
+        { "title": "Vetted partners", "body": "Only proven architects, contractors, and legal partners on the work." }
+      ],
+      "cta": "Plan my project"
+    },
+    "closing": {
+      "title": "Ready for the next move?",
+      "description": "Tell us where you are in your journey and we will design a simple, measurable plan. No pressure, just clarity on options.",
+      "primary": "Book a call",
+      "secondary": "Meet the team"
     }
   }
 }
