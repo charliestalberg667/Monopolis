@@ -248,22 +248,22 @@
       "members": {
         "1": {
           "name": "Jeremy Hecht",
-          "role": "Reponsable d'agence ippi",
+          "role": "Reponsable d'agence ipi",
           "photo": "/images/team/jeremy.png"
         },
         "2": {
-          "name": "Sharon mullender",
-          "role": "conseillère immobilier",
+          "name": "Sharon Mullender",
+          "role": "Conseillère immobilier",
           "photo": "/images/team/sharon.jpg"
         },
         "3": {
           "name": "Bernard",
-          "role": "spécialiste de la région Bruxelloise",
+          "role": "Spécialiste de la région Bruxelloise",
           "photo": "/images/team/bernard.png"
         },
         "4": {
-          "name": "Dorian gillebertus",
-          "role": "spécialiste de la région Brabant Wallon",
+          "name": "Dorian Gillebertus",
+          "role": "Spécialiste de la région Brabant Wallon",
           "photo": "/images/team/dorian.png"
         },
         "5": {
