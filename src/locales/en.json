@@ -267,7 +267,7 @@
       "highlights": [
         { "label": "Avg. sale uplift", "value": "+8.4%" },
         { "label": "On-market time", "value": "21 days" },
-        { "label": "+40 communes covered", "value": "" },
+        { "label": "communes covered", "value": "+40" },
         { "label": "Owner satisfaction", "value": "4.8/5" }
       ]
     },
@@ -399,6 +399,11 @@
   "about": {
     "title": "ABOUT MONOPOLIS",
     "description": "We help people buy, sell, and rent exceptional properties across Belgium, combining deep local expertise with world-class service.",
+    "strategicPillars": {
+      "title": "Beyond Brokerage:",
+      "titleHighlight": "6 Strategic Pillars",
+      "subtitle": "Our boutique agency provides end-to-end expertise across the entire real estate lifecycle in Belgium."
+    },
     "mission": {
       "title": "Our Mission & Values",
       "subtitle": "Discover what drives us and how we deliver exceptional service",
@@ -446,6 +451,32 @@
           "role": "Property Valuation Expert",
           "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
         }
+      }
+    },
+    "pillars": {
+      "segmentation": {
+        "title": "House Segmentation",
+        "description": "Maximizing property value by dividing large estates into compliant, high-yield residential units."
+      },
+      "sales": {
+        "title": "Premium Sales",
+        "description": "Tailored marketing and expert negotiation to sell your property at the best market price."
+      },
+      "rentals": {
+        "title": "Rental Management",
+        "description": "Full-service tenant sourcing and administrative management for a worry-free investment."
+      },
+      "relocation": {
+        "title": "Relocation & Admin",
+        "description": "Comprehensive support for moving to Belgium, including neighborhood search and registration."
+      },
+      "assetManagement": {
+        "title": "Asset Management",
+        "description": "Strategic oversight of your real estate portfolio to maximize long-term ROI and tax efficiency."
+      },
+      "newDevelopments": {
+        "title": "New Projects",
+        "description": "Expert guidance for off-plan purchases and managing large-scale new construction developments."
       }
     },
     "cta": {

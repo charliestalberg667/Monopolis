@@ -17,43 +17,43 @@ import { useTranslation } from 'react-i18next';
 export default function AboutPage() {
   const { t } = useTranslation();
 
-  // Définition des 6 piliers avec les textes descriptifs intégrés
+  // Strategic services with translations
   const strategicServices = [
     { 
       key: 'segmentation', 
       icon: <FiScissors className="w-6 h-6" />,
-      title: "House Segmentation",
-      desc: "Maximizing property value by dividing large estates into compliant, high-yield residential units."
+      title: t('about.pillars.segmentation.title'),
+      desc: t('about.pillars.segmentation.description')
     },
     { 
       key: 'sales', 
       icon: <FiDollarSign className="w-6 h-6" />,
-      title: "Premium Sales",
-      desc: "Tailored marketing and expert negotiation to sell your property at the best market price."
+      title: t('about.pillars.sales.title'),
+      desc: t('about.pillars.sales.description')
     },
     { 
       key: 'rentals', 
       icon: <FiKey className="w-6 h-6" />,
-      title: "Rental Management",
-      desc: "Full-service tenant sourcing and administrative management for a worry-free investment."
+      title: t('about.pillars.rentals.title'),
+      desc: t('about.pillars.rentals.description')
     },
     { 
       key: 'relocation', 
       icon: <FiMapPin className="w-6 h-6" />,
-      title: "Relocation & Admin",
-      desc: "Comprehensive support for moving to Belgium, including neighborhood search and registration."
+      title: t('about.pillars.relocation.title'),
+      desc: t('about.pillars.relocation.description')
     },
     { 
       key: 'assetManagement', 
       icon: <FiTrendingUp className="w-6 h-6" />,
-      title: "Asset Management",
-      desc: "Strategic oversight of your real estate portfolio to maximize long-term ROI and tax efficiency."
+      title: t('about.pillars.assetManagement.title'),
+      desc: t('about.pillars.assetManagement.description')
     },
     { 
       key: 'newDevelopments', 
       icon: <FiLayers className="w-6 h-6" />,
-      title: "New Projects",
-      desc: "Expert guidance for off-plan purchases and managing large-scale new construction developments."
+      title: t('about.pillars.newDevelopments.title'),
+      desc: t('about.pillars.newDevelopments.description')
     },
   ];
 
@@ -89,10 +89,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="dm-serif-text text-4xl md:text-5xl mb-6 text-gray-900">
-              Beyond Brokerage: <span style={{ color: '#EC9FA3' }}>6 Strategic Pillars</span>
+              {t('about.strategicPillars.title')} <span style={{ color: '#EC9FA3' }}>{t('about.strategicPillars.titleHighlight')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Our boutique agency provides end-to-end expertise across the entire real estate lifecycle in Belgium.
+              {t('about.strategicPillars.subtitle')}
             </p>
           </div>
 

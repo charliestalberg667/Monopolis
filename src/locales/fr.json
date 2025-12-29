@@ -58,6 +58,11 @@
     "flanders": "Flandre",
     "wallonia": "Wallonie"
   },
+  "cta": {
+    "title": "Prêt à trouver la maison de vos rêves ?",
+    "subtitle": "Contactez-nous dès aujourd'hui pour organiser une visite ou obtenir une consultation gratuite",
+    "button": "Prendre contact"
+  },
 
   "footer": {
     "description": "Une agence immobilière boutique avec 5 agents dévoués engagés à trouver votre propriété parfaite en Belgique.",
@@ -87,7 +92,7 @@
       "highlights": [
         { "label": "Augmentation moyenne à la vente", "value": "+8.4%" },
         { "label": "Temps sur le marché", "value": "21 jours" },
-        { "label": "+40 communes couvertes", "value": "" },
+        { "label": "communes couvertes", "value": "+40" },
         { "label": "Satisfaction propriétaire", "value": "4.8/5" }
       ]
     },
@@ -182,23 +187,43 @@
   },
   "about": {
     "title": "À PROPOS DE MONOPOLIS",
-    "description": "Nous aidons les particuliers à acheter, vendre et louer des biens d'exception dans toute la Belgique, en alliant une expertise locale approfondie à un service de classe mondiale.",
-    "mission": {
-      "title": "Notre Mission & Valeurs",
-      "subtitle": "Découvrez ce qui nous motive et comment nous offrons un service exceptionnel",
-      "missionTitle": "Notre Mission",
-      "missionDescription": "Une agence immobilière boutique avec 4 à 5 agents dévoués qui s'engagent à trouver le bien idéal pour chaque client. Nous combinons une expertise locale approfondie avec un service personnalisé.",
-      "valuesTitle": "Ce que nous valorisons",
-      "valuesDescription": "Intégrité, discrétion et relations à long terme. Nous privilégions toujours vos objectifs aux profits rapides.",
-      "howWorkTitle": "Notre Fonctionnement",
-      "howWorkDescription": "Une attention personnalisée de nos experts immobiliers alliée à une connaissance approfondie du marché - de la première visite jusqu'à la signature de l'acte et au-delà."
+    "subtitle": "Au-delà du Courtage : 6 Piliers Stratégiques",
+    "description": "Notre agence boutique offre une expertise complète couvrant tout le cycle de vie immobilier en Belgique.",
+    "strategicPillars": {
+      "title": "Au-delà du Courtage :",
+      "titleHighlight": "6 Piliers Stratégiques",
+      "subtitle": "Notre agence boutique offre une expertise complète couvrant tout le cycle de vie immobilier en Belgique."
     },
-    "impact": {
-      "title": "Notre Impact",
-      "subtitle": "Des chiffres qui reflètent notre engagement envers l'excellence",
+    "pillars": {
+      "segmentation": {
+        "title": "Découpe Immobilière",
+        "description": "Maximisation de la valeur des biens en divisant les grands domaines en unités résidentielles conformes et à haut rendement."
+      },
+      "sales": {
+        "title": "Ventes Premium",
+        "description": "Marketing personnalisé et négociation d'expert pour vendre votre bien au meilleur prix du marché."
+      },
+      "rentals": {
+        "title": "Gestion Locative",
+        "description": "Service complet de recherche de locataires et de gestion administrative pour un investissement sans soucis."
+      },
+      "relocation": {
+        "title": "Relocalisation & Administration",
+        "description": "Soutien complet pour s'installer en Belgique, y compris la recherche de quartier et les démarches administratives."
+      },
+      "assetManagement": {
+        "title": "Gestion de Patrimoine",
+        "description": "Supervision stratégique de votre portefeuille immobilier pour maximiser le retour sur investissement et l'efficacité fiscale à long terme."
+      },
+      "newDevelopments": {
+        "title": "Projets Neufs",
+        "description": "Conseils d'experts pour les achats sur plan et la gestion de grands projets de construction neuve."
+      }
+    },
+    "stats": {
       "agents": "Agents dévoués",
       "satisfaction": "Satisfaction client",
-      "years": "Années d'expérience",
+      "experience": "Années d'expérience",
       "office": "Bureau à Alsemberg"
     },
     "team": {
@@ -233,8 +258,8 @@
       }
     },
     "cta": {
-      "title": "Prêt à faire le premier pas ?",
-      "description": "Que vous cherchiez à acheter, vendre ou simplement à en savoir plus sur le marché immobilier belge, notre équipe est là pour vous guider à chaque étape.",
+      "title": "Prêt à trouver la maison de vos rêves ?",
+      "description": "Contactez-nous dès aujourd'hui pour organiser une visite ou obtenir une consultation gratuite",
       "button": "Prendre rendez-vous"
     }
   },

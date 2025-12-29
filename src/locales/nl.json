@@ -245,7 +245,7 @@
       "highlights": [
         { "label": "Gemiddelde meerwaarde bij verkoop", "value": "+8,4%" },
         { "label": "Tijd op de markt", "value": "21 dagen" },
-        { "label": "+40 gemeenten gedekt", "value": "" },
+        { "label": "gemeenten gedekt", "value": "+40" },
         { "label": "Tevredenheid eigenaar", "value": "4,8/5" }
       ]
     },
@@ -398,6 +398,11 @@
   "about": {
     "title": "OVER MONOPOLIS",
     "description": "We helpen mensen bij het kopen, verkopen en verhuren van uitzonderlijke woningen in heel België, waarbij we diepgaande lokale expertise combineren met wereldklasse service.",
+    "strategicPillars": {
+      "title": "Verder dan Makelardij:",
+      "titleHighlight": "6 Strategische Pijlers",
+      "subtitle": "Ons boutique-agentschap biedt end-to-end expertise over de gehele vastgoedlevenscyclus in België."
+    },
     "mission": {
       "title": "Onze Missie & Waarden",
       "subtitle": "Ontdek wat ons drijft en hoe we uitzonderlijke service leveren",
@@ -445,6 +450,32 @@
           "role": "Pand Taxatie Expert",
           "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
         }
+      }
+    },
+    "pillars": {
+      "segmentation": {
+        "title": "Vastgoedverdeling",
+        "description": "Waarde maximaliseren door grote panden te verdelen in conforme, renderende wooneenheden."
+      },
+      "sales": {
+        "title": "Premium Verkoop",
+        "description": "Op maat gemaakte marketing en deskundige onderhandeling om uw pand aan de beste marktprijs te verkopen."
+      },
+      "rentals": {
+        "title": "Verhuurbeheer",
+        "description": "Volledige service voor het zoeken van huurders en administratief beheer voor een zorgeloze investering."
+      },
+      "relocation": {
+        "title": "Verhuizing & Administratie",
+        "description": "Uitgebreide ondersteuning voor verhuizen naar België, inclusief wijkonderzoek en inschrijving."
+      },
+      "assetManagement": {
+        "title": "Vermogensbeheer",
+        "description": "Strategisch toezicht op uw vastgoedportefeuille om langetermijn ROI en belastingefficiëntie te maximaliseren."
+      },
+      "newDevelopments": {
+        "title": "Nieuwbouwprojecten",
+        "description": "Deskundig advies voor off-plan aankopen en het beheren van grootschalige nieuwbouwontwikkelingen."
       }
     },
     "cta": {

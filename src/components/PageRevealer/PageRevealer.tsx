@@ -61,7 +61,7 @@ export default function PageRevealer() {
             }}
           >
             <Image
-              src="/logo-black.svg"
+              src="/logo-green.png"
               alt="Monopolis Logo"
               fill
               className="object-contain"
