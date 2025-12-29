@@ -136,10 +136,22 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             {[
-              { value: "4-5", label: t('about.impact.agents') },
-              { value: "98%", label: t('about.impact.satisfaction') },
-              { value: "15+", label: t('about.impact.years') },
-              { value: "1", label: t('about.impact.office') }
+              { 
+                value: t('about.impact.stats.agents.value'), 
+                label: t('about.impact.stats.agents.label') 
+              },
+              { 
+                value: t('about.impact.stats.satisfaction.value'), 
+                label: t('about.impact.stats.satisfaction.label') 
+              },
+              { 
+                value: t('about.impact.stats.years.value'), 
+                label: t('about.impact.stats.years.label') 
+              },
+              { 
+                value: t('about.impact.stats.office.value'), 
+                label: t('about.impact.stats.office.label') 
+              }
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-4xl font-bold mb-2" style={{ color: '#048542' }}>{stat.value}</div>

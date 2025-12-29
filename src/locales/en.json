@@ -417,39 +417,53 @@
     "impact": {
       "title": "Our Impact",
       "subtitle": "Numbers that reflect our commitment to excellence",
-      "agents": "Dedicated agents",
-      "satisfaction": "Client satisfaction",
-      "years": "Years in market",
-      "office": "Office in Alsemberg"
+      "stats": {
+        "agents": {
+          "value": "4-5",
+          "label": "Dedicated agents"
+        },
+        "satisfaction": {
+          "value": "98%",
+          "label": "Client satisfaction"
+        },
+        "years": {
+          "value": "15+",
+          "label": "Years in market"
+        },
+        "office": {
+          "value": "1",
+          "label": "Office in Alsemberg"
+        }
+      }
     },
     "team": {
       "title": "Our Team",
       "subtitle": "Meet the dedicated professionals behind Monopolis",
       "members": {
         "1": {
-          "name": "Jean-Pierre Dubois",
-          "role": "Senior Real Estate Agent",
-          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
+          "name": "Jeremy Hecht",
+          "role": "Ippi Agency Manager",
+          "photo": "/images/team/jeremy.png"
         },
         "2": {
-          "name": "Sophie Martin",
-          "role": "Luxury Properties Specialist",
-          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
+          "name": "Sharon Mullender",
+          "role": "Real Estate Advisor",
+          "photo": "/images/team/sharon.jpg"
         },
         "3": {
-          "name": "Thomas Verstraeten",
-          "role": "Rental Division Manager",
-          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
+          "name": "Bernard",
+          "role": "Brussels Region Specialist",
+          "photo": "/images/team/bernard.png"
         },
         "4": {
-          "name": "Emma De Vries",
-          "role": "Client Relations Manager",
-          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
+          "name": "Dorian Gillebertus",
+          "role": "Brabant Wallon Region Specialist",
+          "photo": "/images/team/dorian.png"
         },
         "5": {
           "name": "Lucas Janssens",
           "role": "Property Valuation Expert",
-          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
+          "photo": "/images/team/lucas.jpg"
         }
       }
     },

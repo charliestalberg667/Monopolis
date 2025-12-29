@@ -220,40 +220,56 @@
         "description": "Conseils d'experts pour les achats sur plan et la gestion de grands projets de construction neuve."
       }
     },
-    "stats": {
-      "agents": "Agents dévoués",
-      "satisfaction": "Satisfaction client",
-      "experience": "Années d'expérience",
-      "office": "Bureau à Alsemberg"
+    "impact": {
+      "title": "Notre Impact",
+      "subtitle": "Des chiffres qui reflètent notre engagement envers l'excellence",
+      "stats": {
+        "agents": {
+          "value": "4-5",
+          "label": "Agents dévoués"
+        },
+        "satisfaction": {
+          "value": "98%",
+          "label": "Satisfaction client"
+        },
+        "years": {
+          "value": "15+",
+          "label": "Années d'expérience"
+        },
+        "office": {
+          "value": "1",
+          "label": "Bureau à Alsemberg"
+        }
+      }
     },
     "team": {
       "title": "Notre Équipe",
       "subtitle": "Rencontrez les professionnels dévoués de Monopolis",
       "members": {
         "1": {
-          "name": "Jean-Pierre Dubois",
-          "role": "Agent Immobilier Principal",
-          "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&fit=crop"
+          "name": "Jeremy Hecht",
+          "role": "Reponsable d'agence ippi",
+          "photo": "/images/team/jeremy.png"
         },
         "2": {
-          "name": "Sophie Martin",
-          "role": "Spécialiste des Biens de Luxe",
-          "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&fit=crop"
+          "name": "Sharon mullender",
+          "role": "conseillère immobilier",
+          "photo": "/images/team/sharon.jpg"
         },
         "3": {
-          "name": "Thomas Verstraeten",
-          "role": "Responsable Location",
-          "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop"
+          "name": "Bernard",
+          "role": "spécialiste de la région Bruxelloise",
+          "photo": "/images/team/bernard.png"
         },
         "4": {
-          "name": "Emma De Vries",
-          "role": "Responsable Relations Clients",
-          "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop"
+          "name": "Dorian gillebertus",
+          "role": "spécialiste de la région Brabant Wallon",
+          "photo": "/images/team/dorian.png"
         },
         "5": {
           "name": "Lucas Janssens",
           "role": "Expert en Évaluation Immobilière",
-          "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&fit=crop"
+          "photo": "/images/team/lucas.jpg"
         }
       }
     },
