@@ -73,9 +73,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center logo-link" aria-label="Monopolis Home">
 
-          <motion.div className="relative w-12 h-12" variants={logoItemVariants} custom={0}>
+          <motion.div className="relative h-12" variants={logoItemVariants} custom={0}>
             <Image
-              src="/logo-black.svg"
+              src="/logo-green.png"
               alt="Monopolis Logo"
               width={48}
               height={48}
@@ -83,8 +83,8 @@ export default function Navbar() {
               className="h-full w-auto"
             />
           </motion.div>
-          <motion.div className="flex flex-col gap-1 ml-2" variants={logoItemVariants} custom={1}>
-            <div className="text-xl sm:text-[60px] pt-1 leading-none font-osp-din" style={{fontFamily: "'OSP-DIN', 'OSP DIN', sans-serif"}}>MONOPOLIS</div>
+          <motion.div className="flex flex-col ml-2" variants={logoItemVariants} custom={1}>
+            <div className="text-xl sm:text-[60px] pt-1 leading-none font-osp-din" style={{fontFamily: "'OSP-DIN', 'OSP DIN', sans-serif", color: '#027B3B'}}>MONOPOLIS</div>
           </motion.div>
         </Link>
 
