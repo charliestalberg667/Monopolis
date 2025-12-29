@@ -256,7 +256,7 @@
     },
     "services": {
       "segmentation": {
-        "label": "Woningsegmentatie",
+        "label": "Vastgoedverdeling",
         "summary": "Maak van één pand conforme, renderende units met architecturale en regelgevende begeleiding.",
         "bullets": [
           "ROI- en haalbaarheidsmodellering",
@@ -283,7 +283,7 @@
         ]
       },
       "relocation": {
-        "label": "Delokalisatie",
+        "label": "Domiciliëring",
         "summary": "Relocatiepartner voor mensen en teams: wijkkennis, huisvesting en administratie geregeld.",
         "bullets": [
           "Advies over wijken, scholen en woon-werk",
@@ -292,7 +292,7 @@
         ]
       },
       "assetManagement": {
-        "label": "Portefeuillbeheer",
+        "label": "Vermogensbeheer",
         "summary": "Strategisch toezicht op uw vastgoedportefeuille om waarde te maximaliseren, onderhoud te waarborgen en belastingefficiëntie te optimaliseren.",
         "bullets": [
           "Analyse portefeuille prestaties",
@@ -301,7 +301,7 @@
         ]
       },
       "newDevelopments": {
-        "label": "Nieuwe Ontwikkelingen",
+        "label": "Nieuwbouwprojecten",
         "summary": "Deskundig advies voor off-plan aankopen en nieuwbouwprojecten van initiële ontwerp tot uiteindelijke oplevering.",
         "bullets": [
           "Analyse off-plan beleggingen",
