@@ -278,7 +278,7 @@
     },
     "services": {
       "segmentation": {
-        "label": "House Segmentation",
+        "label": "Property Division",
         "summary": "Divide a property into compliant, high-yield units with architectural support and regulatory guidance.",
         "bullets": [
           "ROI and feasibility modelling",
@@ -314,7 +314,7 @@
         ]
       },
       "assetManagement": {
-        "label": "Asset Management",
+        "label": "Wealth Management",
         "summary": "Strategic oversight of your real estate portfolio to maximize value, ensure maintenance, and optimize tax efficiency.",
         "bullets": [
           "Portfolio performance analysis",
@@ -323,7 +323,7 @@
         ]
       },
       "newDevelopments": {
-        "label": "New Developments",
+        "label": "New Projects",
         "summary": "Expert guidance for off-plan purchases and new construction projects from initial design to final delivery.",
         "bullets": [
           "Off-plan investment analysis",

@@ -98,7 +98,7 @@
     },
     "services": {
       "segmentation": {
-        "label": "Segmentation Immobilière",
+        "label": "Découpe de biens immobiliers",
         "summary": "Divisez une propriété en unités conformes et rentables avec soutien architectural et conseils réglementaires.",
         "bullets": [
           "Modélisation du ROI et de la faisabilité",
@@ -125,7 +125,7 @@
         ]
       },
       "relocation": {
-        "label": "Délocalisation",
+        "label": "Domiciliation",
         "summary": "Partenaire de relocalisation pour les personnes et les équipes : orientation quartier, logement et administratif réglés.",
         "bullets": [
           "Conseils quartier, école et trajet",
@@ -134,7 +134,7 @@
         ]
       },
       "assetManagement": {
-        "label": "Gestion de Portefeuille",
+        "label": "Gestion de patrimoine",
         "summary": "Suivi stratégique de votre portefeuille immobilier pour maximiser la valeur, assurer la maintenance et optimiser l'efficacité fiscale.",
         "bullets": [
           "Analyse des performances du portefeuille",
@@ -143,7 +143,7 @@
         ]
       },
       "newDevelopments": {
-        "label": "Nouveaux Développements",
+        "label": "Projet neuf",
         "summary": "Conseils d'experts pour les achats sur plans et les projets de nouvelle construction de la conception initiale à la livraison finale.",
         "bullets": [
           "Analyse d'investissement sur plan",
