@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://monopolis.be</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://monopolis.be/"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="fr" 
+      href="https://monopolis.be/fr"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="nl" 
+      href="https://monopolis.be/nl"
+    />
+  </url>
+
+  <!-- Properties Page -->
+  <url>
+    <loc>https://monopolis.be/properties</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://monopolis.be/properties"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="fr" 
+      href="https://monopolis.be/fr/properties"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="nl" 
+      href="https://monopolis.be/nl/properties"
+    />
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://monopolis.be/about</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://monopolis.be/about"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="fr" 
+      href="https://monopolis.be/fr/about"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="nl" 
+      href="https://monopolis.be/nl/about"
+    />
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://monopolis.be/contact</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://monopolis.be/contact"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="fr" 
+      href="https://monopolis.be/fr/contact"
+    />
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="nl" 
+      href="https://monopolis.be/nl/contact"
+    />
+  </url>
+</urlset>

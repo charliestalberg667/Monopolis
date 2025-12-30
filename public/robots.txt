@@ -1,0 +1,6 @@
+# Most permissive robots.txt - allows all crawling
+User-agent: *
+Allow: /
+
+# Sitemap location for search engines
+Sitemap: https://monopolis.be/sitemap.xml
