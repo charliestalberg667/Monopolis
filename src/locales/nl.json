@@ -1,28 +1,28 @@
 {
   "navbar": {
-    "home": "Startpagina",
-    "luxe": "Luxe",
-    "rent": "Te Huur",
-    "buy": "Te Koop",
+    "home": "Home",
+    "luxe": "Luxepanden",
+    "rent": "Huren",
+    "buy": "Kopen",
     "login": "Inloggen",
     "cart": "Winkelwagen",
     "visits": "Afspraken",
     "contact": "Contact",
-    "properties": "Panden",
-    "about": "Over Ons",
-    "services": "Onze Diensten"
+    "properties": "Pandaanbod",
+    "about": "Over ons",
+    "services": "Onze diensten"
   },
   "hero": {
-    "badge": "Uitgelichte Panden",
-    "title1": "Vind Uw",
-    "title2": "Droomhuis in België",
-    "description": "Ontdek uitzonderlijke vastgoedobjecten in het hart van Europa. Uw ideale woning is binnen handbereik.",
+    "badge": "Uitgelichte panden",
+    "title1": "Vind jouw",
+    "title2": "droomwoning in België",
+    "description": "Ontdek hoogwaardige panden in het hart van Europa. Jouw ideale woning is slechts één zoekopdracht verwijderd.",
     "searchPlaceholder": "Zoek op locatie, type of prijs...",
     "search": "Zoeken",
     "properties": "Panden",
-    "clients": "Tevreden Klanten",
-    "years": "Jaar Ervaring",
-    "typewriter": "Uitzonderlijke panden op de meest gewilde locaties",
+    "clients": "Tevreden klanten",
+    "years": "Jaar ervaring",
+    "typewriter": "Uitzonderlijke panden op de meest gegeerde locaties",
     "discoverMore": "Ontdek meer"
   },
   "filters": {
@@ -31,121 +31,121 @@
     "location": "Locatie",
     "apartment": "Appartement",
     "villa": "Villa",
-    "townhouse": "Herenhuis",
+    "townhouse": "Stadswoning",
     "brussels": "Brussel",
     "flanders": "Vlaanderen",
     "wallonia": "Wallonië"
   },
   "featured": {
-    "badge": "Premium Aanbiedingen",
-    "title": "Uitgelichte Panden",
-    "subtitle": "Ontdek onze exclusieve selectie van premium panden op de meest gewilde locaties",
-    "viewAll": "Bekijk Alle Panden",
-    "viewMore": "Meer Panden Bekijken",
+    "badge": "Premium aanbod",
+    "title": "Uitgelichte panden",
+    "subtitle": "Ontdek onze exclusieve selectie van premium panden op de meest gezochte locaties",
+    "viewAll": "Alle panden bekijken",
+    "viewMore": "Meer panden bekijken",
     "bedrooms": "Slaapkamers",
     "bathrooms": "Badkamers",
     "sqft": "m²",
-    "forSale": "Te Koop",
-    "forRent": "Te Huur",
-    "viewDetails": "Bekijk Details",
+    "forSale": "Te koop",
+    "forRent": "Te huur",
+    "viewDetails": "Details bekijken",
     "featured": "Uitgelicht"
   },
   "process": {
-    "title": "Een Eenvoudig, Transparant Proces",
-    "subtitle": "We hebben het zoeken naar vastgoed vereenvoudigd tot drie duidelijke, beheersbare stappen",
+    "title": "Een eenvoudig, transparant proces",
+    "subtitle": "We hebben de zoektocht naar een pand vereenvoudigd tot drie duidelijke, behapbare stappen",
     "step": "Stap",
-    "getStarted": "Aan de Slag",
+    "getStarted": "Aan de slag",
     "step1": {
-      "title": "Vind Uw Pand",
-      "description": "Blader door onze zorgvuldig geselecteerde premium panden die aan uw criteria en voorkeuren voldoen.",
+      "title": "Vind jouw pand",
+      "description": "Blader door onze zorgvuldig geselecteerde premium panden die aansluiten bij jouw criteria en wensen.",
       "detail1": "Gepersonaliseerde aanbevelingen",
       "detail2": "Geavanceerde zoekfilters",
-      "detail3": "Favorieten opslaan",
-      "detail4": "Directe meldingen voor nieuwe matches"
+      "detail3": "Favoriete panden opslaan",
+      "detail4": "Directe meldingen bij nieuwe matches"
     },
     "step2": {
-      "title": "Plan een Bezichtiging",
-      "description": "Boek een bezoek bij een van onze deskundige makelaars die u een grondige analyse van het pand zal geven.",
+      "title": "Plan een bezichtiging",
+      "description": "Plan een bezoek met een van onze expert-makelaars die je een grondige analyse van het pand geven.",
       "detail1": "Flexibele planning",
-      "detail2": "Deskundige begeleiding",
-      "detail3": "Marktinzichten",
+      "detail2": "Professionele begeleiding",
+      "detail3": "Inzicht in de markt",
       "detail4": "Investeringsadvies"
     },
     "step3": {
-      "title": "Voltooi het Proces",
-      "description": "Ons team regelt alles van bod tot overdracht met deskundige onderhandeling en ondersteuning.",
-      "detail1": "Hypotheekondersteuning",
-      "detail2": "Professionele onderhandeling",
+      "title": "Rond het dossier af",
+      "description": "Ons team regelt alles van bod tot akte met deskundige onderhandelingen en volledige ondersteuning.",
+      "detail1": "Hypotheek- en financieringshulp",
+      "detail2": "Professionele onderhandelingen",
       "detail3": "Juridische ondersteuning",
-      "detail4": "Soepele overdracht"
+      "detail4": "Vlotte sleuteloverdracht"
     }
   },
   "services": {
-    "title": "Onze Diensten",
-    "subtitle": "Volledige vastgoedoplossingen op maat van uw behoeften",
-    "buy": "Een Huis Kopen",
-    "buyDesc": "Vind uw droomhuis tussen onze exclusieve aanbiedingen.",
-    "sell": "Een Huis Verkopen",
-    "sellDesc": "Haal de beste prijs voor uw eigendom met onze marketingexpertise.",
-    "rent": "Een Pand Huren",
-    "rentDesc": "Ontdek huurwoningen die bij uw levensstijl passen.",
-    "valuation": "Gratis Schatting",
-    "valuationDesc": "Krijg een nauwkeurige marktwaardebepaling van uw eigendom."
+    "title": "Onze diensten",
+    "subtitle": "Complete vastgoedoplossingen, afgestemd op jouw behoeften",
+    "buy": "Een woning kopen",
+    "buyDesc": "Vind jouw droomwoning in ons exclusieve aanbod.",
+    "sell": "Een woning verkopen",
+    "sellDesc": "Krijg de beste prijs voor jouw pand met onze doordachte marketing.",
+    "rent": "Een pand huren",
+    "rentDesc": "Ontdek huurpanden die aansluiten bij jouw levensstijl.",
+    "valuation": "Gratis schatting",
+    "valuationDesc": "Ontvang een nauwkeurige marktschatting van jouw pand."
   },
   "testimonials": {
     "badge": "Getuigenissen",
-    "title": "Wat Onze Klanten Zeggen",
-    "subtitle": "Neem niet alleen ons woord ervoor. Hier is wat onze klanten zeggen over hun ervaring met ons.",
+    "title": "Wat onze klanten zeggen",
+    "subtitle": "Neem het niet alleen van ons aan. Lees hier hoe klanten hun samenwerking met ons hebben ervaren.",
     "roles": {
-      "homeBuyer": "Huizenkoper",
+      "homeBuyer": "Koper",
       "investor": "Vastgoedinvesteerder",
-      "seller": "Eerste Verkoper"
+      "seller": "Verkoper voor het eerst"
     },
     "items": {
       "1": {
-        "content": "Monopolis heeft het vinden van ons droomhuis moeiteloos gemaakt. Hun team was professioneel en attent voor onze behoeften gedurende het hele proces."
+        "content": "Monopolis maakte het zoeken naar onze droomwoning moeiteloos. Het team was professioneel en luisterde echt naar onze wensen."
       },
       "2": {
-        "content": "De marktinzichten en vastgoedaanbevelingen waren perfect. Ik heb mijn portefeuille aanzienlijk uitgebreid dankzij Monopolis."
+        "content": "De marktinzichten en pandaanbevelingen waren precies on point. Ik heb mijn portefeuille aanzienlijk kunnen uitbouwen dankzij Monopolis."
       },
       "3": {
-        "content": "Mijn eigendom verkocht boven de vraagprijs binnen een week! De marketingstrategie van het team was indrukwekkend."
+        "content": "Mijn pand werd boven de vraagprijs verkocht binnen een week! De marketingaanpak van het team was indrukwekkend."
       }
     }
   },
   "newsletter": {
-    "title": "Blijf Op De Hoogte",
-    "subtitle": "Schrijf u in op onze nieuwsbrief voor de laatste aanbiedingen en marktinzichten",
-    "placeholder": "Uw e-mailadres",
+    "title": "Blijf op de hoogte",
+    "subtitle": "Schrijf je in op onze nieuwsbrief voor de nieuwste panden en marktinzichten",
+    "placeholder": "Je e-mailadres",
     "subscribe": "Inschrijven",
-    "privacy": "We respecteren uw privacy. U kunt u op elk moment uitschrijven."
+    "privacy": "We respecteren je privacy. Uitschrijven kan op elk moment."
   },
   "cta": {
-    "title": "Klaar om Uw Droomhuis te Vinden?",
-    "subtitle": "Neem vandaag nog contact met ons op voor een bezichtiging of een gratis consultatie",
-    "button": "Contact Opnemen"
+    "title": "Klaar om jouw droomwoning te vinden?",
+    "subtitle": "Neem vandaag nog contact op om een bezichtiging te plannen of een gratis adviesgesprek te krijgen",
+    "button": "Neem contact op"
   },
   "footer": {
-    "description": "Een boutique vastgoedkantoor met 5 toegewijde makelaars die zich inzetten om uw perfecte woning in België te vinden.",
+    "description": "Een boutique vastgoedkantoor met 5 toegewijde makelaars die zich inzetten om jouw ideale pand in België te vinden.",
     "company": "Bedrijf",
     "about": "Over ons",
     "contact": "Contact",
     "servicesTitle": "Diensten",
-    "buyProperty": "Pand Kopen",
-    "sellProperty": "Pand Verkopen",
-    "rent": "Huur",
+    "buyProperty": "Woning kopen",
+    "sellProperty": "Woning verkopen",
+    "rent": "Huren",
     "valuation": "Schatting",
     "contactTitle": "Contact",
-    "terms": "Algemene Voorwaarden",
+    "terms": "Algemene voorwaarden",
     "privacy": "Privacybeleid",
     "rights": "Alle rechten voorbehouden"
   },
   "auth": {
     "login": "Inloggen",
     "signup": "Registreren",
-    "email": "E-mailadres",
+    "email": "E-mail",
     "password": "Wachtwoord",
-    "confirmPassword": "Bevestig Wachtwoord",
+    "confirmPassword": "Wachtwoord bevestigen",
     "firstName": "Voornaam",
     "lastName": "Achternaam",
     "signIn": "Aanmelden",
@@ -153,34 +153,55 @@
     "noAccount": "Nog geen account?",
     "haveAccount": "Al een account?",
     "signUpLink": "Registreren",
-    "signInLink": "Aanmelden"
+    "signInLink": "Inloggen"
   },
   "category": {
-    "luxe": "Luxueuze Panden",
-    "rent": "Panden te Huur",
-    "buy": "Panden te Koop"
+    "luxe": "Luxepanden",
+    "rent": "Panden te huur",
+    "buy": "Panden te koop"
   },
   "related": {
-    "title": "Vergelijkbare Panden"
+    "title": "Gerelateerde panden"
+  },
+  "property": {
+    "backToProperties": "Terug naar pandaanbod",
+    "viewAllProperties": "Alle panden bekijken",
+    "forSale": "Te koop",
+    "forRent": "Te huur",
+    "perMonth": "per maand",
+    "bedrooms": "Slaapkamers",
+    "bathrooms": "Badkamers",
+    "sqm": "m²",
+    "propertyDetails": "Panddetails",
+    "quickFacts": "Kerngegevens",
+    "propertyType": "Type pand",
+    "location": "Locatie",
+    "price": "Prijs",
+    "specifications": "Specificaties",
+    "totalArea": "Totale oppervlakte",
+    "interested": "Interesse in dit pand?",
+    "contactPrompt": "Neem contact op met ons team om een bezichtiging te plannen of meer informatie te krijgen.",
+    "contactUs": "Contact opnemen",
+    "exactLocation": "Exacte locatie"
   },
   "schedule": {
-    "title": "Afspraak Maken",
-    "fullName": "Volledige Naam",
-    "email": "E-mailadres",
+    "title": "Bezoek inplannen",
+    "fullName": "Volledige naam",
+    "email": "E-mail",
     "phone": "Telefoonnummer",
-    "preferredDate": "Gewenste Datum",
-    "preferredTime": "Gewenste Tijd",
-    "additionalNotes": "Bijkomende Notities",
-    "scheduleVisit": "Afspraak Maken",
-    "selectTime": "Selecteer Tijd"
+    "preferredDate": "Gewenste datum",
+    "preferredTime": "Gewenste tijdstip",
+    "additionalNotes": "Aanvullende opmerkingen",
+    "scheduleVisit": "Bezoek inplannen",
+    "selectTime": "Tijdstip kiezen"
   },
   "visits": {
-    "title": "Mijn Afspraken",
-    "noVisits": "Geen afspraken gepland",
-    "visitDate": "Datum",
-    "visitTime": "Tijdstip",
-    "visitNotes": "Notities",
-    "cancelVisit": "Afspraak Annuleren",
+    "title": "Mijn bezoeken",
+    "noVisits": "Geen bezoeken gepland",
+    "visitDate": "Bezoekdatum",
+    "visitTime": "Bezoektijd",
+    "visitNotes": "Bezoeknotities",
+    "cancelVisit": "Bezoek annuleren",
     "date": "Datum",
     "time": "Tijd",
     "notes": "Notities",
@@ -193,7 +214,7 @@
   },
   "common": {
     "month": "maand",
-    "loading": "Bezig met laden...",
+    "loading": "Laden...",
     "error": "Er is een fout opgetreden",
     "noResults": "Geen resultaten gevonden",
     "applyFilters": "Filters toepassen",
@@ -203,10 +224,10 @@
     "max": "Max"
   },
   "properties": {
-    "title": "Panden",
-    "subtitle": "Bekijk onze nieuwste aanbiedingen in heel België.",
+    "title": "Pandaanbod",
+    "subtitle": "Bekijk onze nieuwste panden overal in België.",
     "search": {
-      "placeholder": "bijv. stadswoning, loft, villa",
+      "placeholder": "bv. stadswoning, loft, villa",
       "label": "Zoeken"
     },
     "filters": {
@@ -214,13 +235,13 @@
       "type": "Type",
       "bedrooms": "Slaapkamers",
       "location": "Locatie",
-      "priceRange": "Prijsbereik",
-      "locationPlaceholder": "Stad, regio of wijk"
+      "priceRange": "Prijsklasse",
+      "locationPlaceholder": "Stad, buurt of regio"
     },
     "types": {
-      "all": "Alle",
-      "sale": "Te Koop",
-      "rent": "Te Huur"
+      "all": "Alles",
+      "sale": "Te koop",
+      "rent": "Te huur"
     },
     "bedrooms": {
       "any": "Alle",
@@ -230,120 +251,120 @@
       "fourPlus": "4+"
     },
     "results": {
-      "loading": "Panden worden geladen...",
-      "noMatches": "Geen panden gevonden die aan uw criteria voldoen.",
-      "error": "Kon de actuele panden niet laden. Toon voorbeeldaanbiedingen."
+      "loading": "Bezig met laden van panden...",
+      "noMatches": "Er zijn geen panden die overeenkomen met je filters.",
+      "error": "Live panden konden niet worden geladen. Voorbeeldaanbod wordt getoond."
     }
   },
   "servicesPage": {
     "hero": {
       "badge": "Onze diensten",
-      "title": "Expertise van A tot Z voor elke vastgoedstap",
-      "description": "We combineren lokale expertise, betrouwbare partners en helder rapporteren zodat u vlot kunt kopen, segmenteren, verhuren, verkopen of verhuizen.",
-      "ctaPrimary": "Praat met een adviseur",
-      "ctaSecondary": "Bekijk beschikbare panden",
+      "title": "Expertbegeleiding van A tot Z bij elke vastgoedtransactie",
+      "description": "We combineren lokale expertise, geselecteerde partners en duidelijke rapportering zodat je zonder frictie kunt kopen, segmenteren, verhuren, verkopen of verhuizen.",
+      "ctaPrimary": "Spreek met een adviseur",
+      "ctaSecondary": "Beschikbare panden bekijken",
       "highlights": [
         { "label": "Gemiddelde meerwaarde bij verkoop", "value": "+8,4%" },
-        { "label": "Tijd op de markt", "value": "21 dagen" },
-        { "label": "gemeenten gedekt", "value": "+40" },
-        { "label": "Tevredenheid eigenaar", "value": "4,8/5" }
+        { "label": "Gemiddelde marktduur", "value": "21 dagen" },
+        { "label": "Gemeenten gedekt", "value": "+40" },
+        { "label": "Tevredenheid eigenaars", "value": "4,8/5" }
       ]
     },
     "whatWeDeliver": {
-      "title": "Wat we leveren",
-      "subtitle": "Vier gerichte trajecten, één verantwoordelijke partner. Kies één traject of combineer ze in één plan.",
-      "ribbon": "Founders-team, full-service"
+      "title": "Wat we realiseren",
+      "subtitle": "Zes gerichte trajecten, één aanspreekpunt. Kies een traject of combineer ze in één plan.",
+      "ribbon": "Full-service team onder leiding van de oprichters"
     },
     "services": {
       "segmentation": {
-        "label": "Vastgoedverdeling",
-        "summary": "Maak van één pand conforme, renderende units met architecturale en regelgevende begeleiding.",
+        "label": "Opdeling van panden",
+        "summary": "Deel een pand op in conforme, rendabele units met architecturale ondersteuning en begeleiding rond regelgeving.",
         "bullets": [
-          "ROI- en haalbaarheidsmodellering",
-          "Plannen, vergunningen en aannemerscoördinatie",
-          "Compliance per gemeente"
+          "ROI- en haalbaarheidsmodellen",
+          "Plannen, vergunningen en coördinatie van aannemers",
+          "Compliance-handboek per gemeente"
         ]
       },
       "sales": {
         "label": "Verkoop",
-        "summary": "Van waardering tot akte: staging, marketing en onderhandelen om de juiste koper aan de beste prijs te vinden.",
+        "summary": "Van waardebepaling tot akte: wij zorgen voor presentatie, marketing en onderhandelingen om de juiste koper aan de beste prijs te vinden.",
         "bullets": [
-          "Data-gedreven prijszetting en waardering",
-          "Fotografie, staging en internationale zichtbaarheid",
-          "Offertebeheer en juridisch advies"
+          "Data-gedreven prijsbepaling en schatting",
+          "Fotografie, styling en internationale zichtbaarheid",
+          "Bodbeheer en juridische ondersteuning"
         ]
       },
       "rentals": {
         "label": "Verhuur",
-        "summary": "Turnkey verhuur voor eigenaars en huurders met screening, contracten en zorgvuldige onboarding.",
+        "summary": "Turnkey verhuurondersteuning voor eigenaars en huurders met screening, contracten en zorgvuldige onboarding.",
         "bullets": [
-          "Sourcing en screening van huurders",
-          "Contracten, sleuteloverdracht en plaatsbeschrijving",
-          "Opties voor doorlopende beheer"
+          "Zoeken en screenen van huurders",
+          "Contracten, overdracht en plaatsbeschrijving",
+          "Opties voor doorlopende huurbeheer"
         ]
       },
       "relocation": {
         "label": "Domiciliëring",
-        "summary": "Relocatiepartner voor mensen en teams: wijkkennis, huisvesting en administratie geregeld.",
+        "summary": "Relocatiepartner voor particulieren en teams: buurtverkenning, huisvesting en administratie geregeld.",
         "bullets": [
-          "Advies over wijken, scholen en woon-werk",
-          "Zoektocht kort- en langetermijnhuur",
-          "Inschrijving, nutsvoorzieningen en onboarding"
+          "Advies over buurten, scholen en woon-werkverkeer",
+          "Zoeken naar korte en lange termijn huisvesting",
+          "Ondersteuning bij inschrijving, nutsvoorzieningen en verhuis"
         ]
       },
       "assetManagement": {
         "label": "Vermogensbeheer",
-        "summary": "Strategisch toezicht op uw vastgoedportefeuille om waarde te maximaliseren, onderhoud te waarborgen en belastingefficiëntie te optimaliseren.",
+        "summary": "Strategische opvolging van je vastgoedportefeuille om waarde te maximaliseren, onderhoud te borgen en fiscaliteit te optimaliseren.",
         "bullets": [
-          "Analyse portefeuille prestaties",
-          "Planning onderhoud en leveranciertoezicht",
-          "Financiële verslaggeving en belastingoptimalisatie"
+          "Analyse van portefeuilleprestaties",
+          "Onderhoudsplanning en opvolging van leveranciers",
+          "Financiële rapportering en fiscale optimalisatie"
         ]
       },
       "newDevelopments": {
-        "label": "Nieuwbouwprojecten",
-        "summary": "Deskundig advies voor off-plan aankopen en nieuwbouwprojecten van initiële ontwerp tot uiteindelijke oplevering.",
+        "label": "Nieuwe projecten",
+        "summary": "Expertbegeleiding bij aankopen op plan en nieuwbouwprojecten, van eerste ontwerp tot definitieve oplevering.",
         "bullets": [
-          "Analyse off-plan beleggingen",
-          "Technische specificaties en materialenkeuze",
-          "Bouwtoezicht en snagging lijsten"
+          "Analyse van investeringen op plan",
+          "Technische specificaties en materiaalkeuzes",
+          "Werfopvolging en opleveringslijsten"
         ]
       }
     },
     "flow": {
-      "chip": "Aanpak",
+      "chip": "Flow",
       "title": "Hoe we werken",
-      "subtitle": "Duidelijke stappen, één team dat verantwoordelijk blijft.",
+      "subtitle": "Heldere stappen, één team dat van start tot finish verantwoordelijk is.",
       "steps": [
-        { "title": "Ontdekken", "detail": "We stemmen doelen, timing en randvoorwaarden af." },
-        { "title": "Ontwerpen", "detail": "We tekenen het pad uit: prijs, indeling en marketingstrategie." },
-        { "title": "Uitvoeren", "detail": "Geselecteerde partners leveren; wij regelen vergunningen en papierwerk." },
-        { "title": "Rapporteren", "detail": "Heldere updates, metrics en beslissingen op één plaats." }
+        { "title": "Ontdekken", "detail": "We stemmen doelen, timing en randvoorwaarden op elkaar af." },
+        { "title": "Ontwerpen", "detail": "We tekenen het traject uit: prijszetting, indeling en marketingstrategie." },
+        { "title": "Uitvoeren", "detail": "Geselecteerde partners voeren uit; wij beheren vergunningen en papertrail." },
+        { "title": "Rapporteren", "detail": "Duidelijke updates, cijfers en beslissingen op één plaats." }
       ]
     },
     "audience": {
-      "title": "Voor eigenaars en verhuizers",
-      "description": "Investeerder met een portefeuille, gezin dat verhuist of team dat talent verplaatst: we passen het plan aan uw risico en tempo aan.",
+      "title": "Gemaakt voor eigenaars en verhuizers",
+      "description": "Investeerder met portefeuille, gezin dat wil verhuizen of team in relocatie: we stemmen het plan af op jouw risicoprofiel en tempo.",
       "items": [
-        { "title": "Transparant rapporteren", "body": "Eén dashboard, wekelijkse check-ins, geen verrassingen." },
-        { "title": "Lokale specialisten", "body": "Vergunningen, nutsvoorzieningen en regels door mensen die ze kennen." },
-        { "title": "Geselecteerde partners", "body": "Enkel bewezen architecten, aannemers en juristen op het werk." }
+        { "title": "Transparante rapportering", "body": "Eén dashboard, wekelijkse check-ins, geen verrassingen." },
+        { "title": "Lokale specialisten", "body": "Vergunningen, nuts en stadsregels worden opgevolgd door mensen die ze door en door kennen." },
+        { "title": "Geselecteerde partners", "body": "Enkel bewezen architecten, aannemers en juridische partners op het dossier." }
       ],
       "cta": "Plan mijn project"
     },
     "closing": {
-      "title": "Klaar voor de volgende stap?",
-      "description": "Vertel waar u staat en we maken een eenvoudig, meetbaar plan. Geen druk, wel duidelijkheid.",
-      "primary": "Plan een gesprek",
+      "title": "Klaar voor je volgende stap?",
+      "description": "Vertel ons waar je nu staat en wij tekenen een eenvoudig, meetbaar plan uit. Geen druk, wel helderheid over je opties.",
+      "primary": "Boek een gesprek",
       "secondary": "Ontmoet het team"
     }
   },
   "marketReport": {
     "badge": "Marktinzichten",
-    "title": "Belgisch vastgoedmarktrapport",
-    "subtitle": "Recente trends en analyses voor de Belgische vastgoedmarkt (Q2 2024)",
-    "chartTitle": "80 jaar Belgische vastgoedprijzen",
-    "chartTitle20Years": "20 jaar Belgische vastgoedprijzen",
+    "title": "Belgische vastgoedmarktrapport",
+    "subtitle": "Recentste trends en analyses van de Belgische vastgoedmarkt (Q2 2024)",
+    "chartTitle": "80 jaar vastgoedprijzen in België",
+    "chartTitle20Years": "20 jaar vastgoedprijzen in België",
     "pricePerSqmTrend": "Evolutie prijs per m²",
     "propertyTypesTitle": "Type panden",
     "regionalTitle": "Gemiddelde prijs per m² per regio",
@@ -362,7 +383,7 @@
       "houses": "Huizen",
       "apartments": "Appartementen",
       "plots": "Bouwgronden",
-      "others": "Andere"
+      "others": "Overige"
     },
     "regions": {
       "brussels": "Brussel",
@@ -370,64 +391,43 @@
       "wallonia": "Wallonië"
     },
     "meta": {
-      "sources": "Databronnen: Statbel, Notaris.be, BNP Paribas Fortis Housing Market Barometer, Immoweb",
+      "sources": "Databronnen: Statbel, Notaris.be, BNP Paribas Fortis Huismarktbarometer, Immoweb",
       "lastUpdated": "Laatst bijgewerkt: {{date}}"
     }
   },
-  "property": {
-    "backToProperties": "Terug naar Panden",
-    "viewAllProperties": "Bekijk Alle Panden",
-    "forSale": "Te Koop",
-    "forRent": "Te Huur",
-    "perMonth": "per maand",
-    "bedrooms": "Slaapkamers",
-    "bathrooms": "Badkamers",
-    "sqm": "m²",
-    "propertyDetails": "Details van het Pand",
-    "quickFacts": "Snelle Feiten",
-    "propertyType": "Type Pand",
-    "location": "Locatie",
-    "price": "Prijs",
-    "specifications": "Specificaties",
-    "totalArea": "Totale Oppervlakte",
-    "interested": "Geïnteresseerd in dit pand?",
-    "contactPrompt": "Neem contact op met ons team om een bezichtiging in te plannen of meer informatie te krijgen.",
-    "contactUs": "Neem Contact Op",
-    "exactLocation": "Exacte Locatie"
-  },
   "about": {
     "title": "OVER MONOPOLIS",
-    "description": "We helpen mensen bij het kopen, verkopen en verhuren van uitzonderlijke woningen in heel België, waarbij we diepgaande lokale expertise combineren met wereldklasse service.",
+    "description": "Wij helpen mensen om uitzonderlijke panden in heel België te kopen, verkopen en huren, met een combinatie van diepgaande lokale kennis en service op topniveau.",
     "strategicPillars": {
-      "title": "Verder dan Makelardij:",
-      "titleHighlight": "6 Strategische Pijlers",
-      "subtitle": "Ons boutique-agentschap biedt end-to-end expertise over de gehele vastgoedlevenscyclus in België."
+      "title": "Meer dan makelaardij:",
+      "titleHighlight": "6 strategische pijlers",
+      "subtitle": "Ons boutique kantoor biedt end-to-end expertise over de volledige vastgoedlevenscyclus in België."
     },
     "mission": {
-      "title": "Onze Missie & Waarden",
+      "title": "Onze missie & waarden",
       "subtitle": "Ontdek wat ons drijft en hoe we uitzonderlijke service leveren",
-      "missionTitle": "Onze Missie",
-      "missionDescription": "Een boutique-agentschap met 4-5 toegewijde agenten die zich inzetten voor het vinden van de perfecte woning voor elke klant. We combineren diepgaande lokale expertise met gepersonaliseerde service.",
-      "valuesTitle": "Wat We Waarderen",
-      "valuesDescription": "Integriteit, discretie en langetermijnrelaties. We stellen uw doelen voorop boven snelle winsten—altijd.",
-      "howWorkTitle": "Hoe We Werken",
-      "howWorkDescription": "Persoonlijke aandacht van onze expertagenten gecombineerd met marktinzicht—van eerste bezichtiging tot ondertekende akte en verder."
+      "missionTitle": "Onze missie",
+      "missionDescription": "Een boutique kantoor met 4–5 toegewijde makelaars die zich inzetten om voor elke klant het juiste pand te vinden. We combineren lokale expertise met persoonlijke begeleiding.",
+      "valuesTitle": "Onze waarden",
+      "valuesDescription": "Integriteit, discretie en relaties op lange termijn. Jouw doelen gaan altijd boven korte termijn winst.",
+      "howWorkTitle": "Hoe wij werken",
+      "howWorkDescription": "Persoonlijke aandacht van onze expert-makelaars, gekoppeld aan marktinzicht — van de eerste bezichtiging tot aan de akte en daarna."
     },
     "impact": {
-      "title": "Onze Impact",
-      "subtitle": "Cijfers die onze toewijding aan excellentie weerspiegelen",
+      "title": "Onze impact",
+      "subtitle": "Cijfers die onze focus op kwaliteit weerspiegelen",
       "stats": {
         "agents": {
-          "value": "4-5",
-          "label": "Toegewijde agenten"
+          "value": "4–5",
+          "label": "Toegewijde makelaars"
         },
         "satisfaction": {
           "value": "98%",
-          "label": "Klanttevredenheid"
+          "label": "Klantentevredenheid"
         },
         "years": {
           "value": "15+",
-          "label": "Jaren in de markt"
+          "label": "Jaar actief op de markt"
         },
         "office": {
           "value": "1",
@@ -436,12 +436,12 @@
       }
     },
     "team": {
-      "title": "Ons Team",
-      "subtitle": "Ontmoet de toegewijde professionals achter Monopolis",
+      "title": "Ons team",
+      "subtitle": "Maak kennis met de mensen achter Monopolis",
       "members": {
         "1": {
           "name": "Jeremy Hecht",
-          "role": "Ipi Agentschap Manager",
+          "role": "Ipi-kantoorhouder",
           "photo": "/images/team/jeremy.png"
         },
         "2": {
@@ -451,76 +451,76 @@
         },
         "3": {
           "name": "Bernard",
-          "role": "Specialist Brusselse Regio",
+          "role": "Specialist regio Brussel",
           "photo": "/images/team/bernard.png"
         },
         "4": {
           "name": "Dorian Gillebertus",
-          "role": "Specialist Brabant Wallon Regio",
+          "role": "Specialist Waals-Brabant",
           "photo": "/images/team/dorian.png"
         },
         "5": {
           "name": "Lucas Janssens",
-          "role": "Pand Taxatie Expert",
+          "role": "Expert vastgoedschattingen",
           "photo": "/images/team/lucas.jpg"
         }
       }
     },
     "pillars": {
       "segmentation": {
-        "title": "Vastgoedverdeling",
-        "description": "Waarde maximaliseren door grote panden te verdelen in conforme, renderende wooneenheden."
+        "title": "Segmentatie van woningen",
+        "description": "De waarde van grote eigendommen maximaliseren door ze op te delen in conforme, rendabele woonunits."
       },
       "sales": {
-        "title": "Premium Verkoop",
-        "description": "Op maat gemaakte marketing en deskundige onderhandeling om uw pand aan de beste marktprijs te verkopen."
+        "title": "Premium verkoop",
+        "description": "Gerichte marketing en deskundige onderhandelingen om je pand aan de beste marktprijs te verkopen."
       },
       "rentals": {
         "title": "Verhuurbeheer",
         "description": "Volledige service voor het zoeken van huurders en administratief beheer voor een zorgeloze investering."
       },
       "relocation": {
-        "title": "Verhuizing & Administratie",
-        "description": "Uitgebreide ondersteuning voor verhuizen naar België, inclusief wijkonderzoek en inschrijving."
+        "title": "Relocatie & administratie",
+        "description": "Volledige ondersteuning bij verhuizen naar België, van buurtverkenning tot inschrijving bij de gemeente."
       },
       "assetManagement": {
-        "title": "Vermogensbeheer",
-        "description": "Strategisch toezicht op uw vastgoedportefeuille om langetermijn ROI en belastingefficiëntie te maximaliseren."
+        "title": "Asset management",
+        "description": "Strategisch beheer van je vastgoedportefeuille om lange termijn rendement en fiscale efficiëntie te maximaliseren."
       },
       "newDevelopments": {
-        "title": "Nieuwbouwprojecten",
-        "description": "Deskundig advies voor off-plan aankopen en het beheren van grootschalige nieuwbouwontwikkelingen."
+        "title": "Nieuwe projecten",
+        "description": "Expertbegeleiding bij aankopen op plan en grootschalige nieuwbouwontwikkelingen."
       }
     },
     "cta": {
       "title": "Ontmoet het team achter Monopolis",
-      "description": "Onze 4-5 toegewijde agenten brengen expertise, discretie en een persoonlijke touch naar elke transactie.",
-      "button": "Ons team verkennen"
+      "description": "Onze 4–5 toegewijde makelaars combineren expertise, discretie en een persoonlijke aanpak in elk dossier.",
+      "button": "Ontdek ons team"
     }
   },
   "contactPage": {
-    "title": "Neem contact op",
-    "description": "We horen graag van u. Stuur ons een bericht en we antwoorden binnen één werkdag.",
+    "title": "Contact opnemen",
+    "description": "We horen graag van je. Stuur ons een bericht en we reageren binnen één werkdag.",
     "firstName": "Voornaam",
     "lastName": "Achternaam",
-    "email": "E-mailadres",
+    "email": "E-mail",
     "phone": "Telefoon",
     "subject": "Onderwerp",
     "message": "Bericht",
-    "firstNamePlaceholder": "Jane",
-    "lastNamePlaceholder": "Doe",
-    "emailPlaceholder": "jane@example.com",
-    "phonePlaceholder": "+32 2 123 45 67",
-    "subjectPlaceholder": "Hoe kunnen we u helpen?",
-    "messagePlaceholder": "Schrijf uw bericht hier...",
-    "sendButton": "Bericht versturen",
-    "sendingButton": "Verzenden…",
-    "error": "Er is iets misgegaan. Probeer het alstublieft opnieuw.",
-    "successTitle": "Dank u wel!",
-    "successMessage": "Uw bericht is verzonden. We nemen binnenkort contact met u op.",
+    "firstNamePlaceholder": "Jan",
+    "lastNamePlaceholder": "Peeters",
+    "emailPlaceholder": "jan@example.com",
+    "phonePlaceholder": "+32 495 22 33 76",
+    "subjectPlaceholder": "Hoe kunnen we je helpen?",
+    "messagePlaceholder": "Schrijf hier je bericht...",
+    "sendButton": "Bericht verzenden",
+    "sendingButton": "Bezig met verzenden…",
+    "error": "Er is iets misgegaan. Probeer het opnieuw.",
+    "successTitle": "Bedankt!",
+    "successMessage": "Je bericht is verstuurd. We nemen snel contact met je op.",
     "contactDetails": "Contactgegevens",
-    "availability": "Ons boutique-team is maandag tot vrijdag beschikbaar, 9:00–18:00.",
+    "availability": "Ons boutique team is bereikbaar van maandag tot en met vrijdag, 9:00–18:00.",
     "hours": "Ma–Vr: 9:00–18:00",
-    "mapTitle": "Locatie kantoor Monopolis"
+    "mapTitle": "Ligging van het Monopolis-kantoor"
   }
 }
